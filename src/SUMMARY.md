@@ -2,6 +2,7 @@
 
 - [Introduction](./index.md)
 - [Architecture](./architecture.md)
+- [v3 documentation](./v3-documentation.md)
 - [v3 to v4 migration](./v3-v4-migration.md)
 
 ---
@@ -53,7 +54,22 @@
   - [Tenants](./chirpstack/use/tenants.md)
   - [Users](./chirpstack/use/users.md)
 - [Integrations](./chirpstack/integrations/index.md)
+  - [Event types](./chirpstack/integrations/events.md)
+  - [AWS SNS](./chirpstack/integrations/aws-sns.md)
+  - [Azure Service-Bus](./chirpstack/integrations/azure-service-bus.md)
+  - [GCP Pub/Sub](./chirpstack/integrations/gcp-pub-sub.md)
+  - [HTTP](./chirpstack/integrations/http.md)
+  - [InfluxDB](./chirpstack/integrations/influxdb.md)
   - [LoRa Cloud](./chirpstack/integrations/loracloud.md)
+  - [MQTT](./chirpstack/integrations/mqtt.md)
+  - [myDevices](./chirpstack/integrations/mydevices.md)
+  - [Pilot Things](./chirpstack/integrations/pilot-things.md)
+  - [ThingsBoard](./chirpstack/integrations/thingsboard.md)
+- [API](./chirpstack/api/index.md)
+  - [gRPC](./chirpstack/api/grpc.md)
+  - [Protocol documentation](./chirpstack/api/api.md)
+  - [Go examples](./chirpstack/api/go-examples.md)
+  - [Python examples](./chirpstack/api/python-examples.md)
 - [Backends](./chirpstack/backends/index.md)
   - [MQTT](./chirpstack/backends/mqtt.md)
 - [Contribute & source](./chirpstack/contribute.md)
@@ -110,5 +126,13 @@
 # ChirpStack Concentratord
 
 - [Introduction](./concentratord/index.md)
+- [Changelog](./concentratord/changelog.md)
+- [Hardware support](./concentratord/hardware-support.md)
+- [Configuration](./concentratord/configuration.md)
+- [Downloads](./concentratord/downloads.md)
+- [API](./concentratord/api/index.md)
+  - [Commands](./concentratord/api/commands.md)
+  - [Events](./concentratord/api/events.md)
+- [Contribute & source](./concentratord/contribute.md)
 
 ---
