@@ -31,6 +31,7 @@
   - [Device activation](./chirpstack/features/device-activation.md)
   - [Device classes](./chirpstack/features/device-classes.md)
   - [Device profile](./chirpstack/features/device-profile.md)
+  - [Device-profile templates](./chirpstack/features/device-profile-templates.md)
   - [Device status](./chirpstack/features/device-status.md)
   - [Device time](./chirpstack/features/device-time.md)
   - [Frame logging](./chirpstack/features/frame-logging.md)

@@ -1,6 +1,15 @@
 # Device profile
 
-The Device Profile defines the device capabilities and boot parameters that
-are needed by ChirpStack to "connect" with a device. It defines the mac-version
-and regional parameters revision that are implemented by the device, as well
-as various rx and tx related parameters and application related settings.
+The device profile defines the device capabilities and boot parameters that are
+required to establish the (initial) communication between the device and
+ChirpStack.
+
+**Note**: RX parameters are used to establish the initial communication.
+ChirpStack will send mac-commands to the device to synchronize these parameters
+as configured within the ChirpStack configuration files.
+
+## Device-profile templates
+
+On create or update it is possible to use a device-profile template to fill in
+most device-profile values. This also includes payload codecs. Please refer to
+[Device-profile templates](device-profile-templates.md) for more information.
