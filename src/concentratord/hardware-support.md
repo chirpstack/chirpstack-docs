@@ -84,8 +84,11 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 | RAK | RAK5146 KR920 | GNSS, USB | rak_5146_kr920 |
 | RAK | RAK5146 RU864 | GNSS, USB | rak_5146_ru864 |
 | RAK | RAK5146 US915 | GNSS, USB | rak_5146_us915 |
-| Semtech | CoreCell EU868 | | semtech_sx1302c868gw1_eu868 |
-| Semtech | CoreCell US915 | | semtech_sx1302c915gw1_us915 |
+| Semtech | CoreCell EU868 (SX1302CXXXGW1) | | semtech_sx1302c868gw1_eu868 |
+| Semtech | CoreCell US915 (SX1302CXXXGW1) | | semtech_sx1302c915gw1_us915 |
+| Semtech | CoreCell AS923 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css923gw1_as923 |
+| Semtech | CoreCell EU868 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css868gw1_eu868 |
+| Semtech | CoreCell US915 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css915gw1_us915 |
 
 ## 2G4 (SX1280)
 
