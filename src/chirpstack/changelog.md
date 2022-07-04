@@ -30,6 +30,19 @@ ChirpStack v4 also supports multiple configurations of the same region, e.g.
 to configure a US915 for 8 channels and to configure a US915 band for 16
 channels.
 
+#### TTN device repository support
+
+ChirpStack v4 adds support for importing the TTN [LoRaWAN Devices](https://github.com/TheThingsNetwork/lorawan-devices)
+repository as device-profile templates, including codec functions if these are
+defined in this repository.
+
+#### Device metrics dashboard
+
+In the device-profile template and / or device-profile, it is possible to define
+the measurements that are exposed by the device in the decoded payload. Once
+defined, ChirpStack will automatically aggregate and store this data. These
+metrics can be viewed in the web-interface on the device dashboard.
+
 #### Configuration
 
 ##### Directory
@@ -75,6 +88,13 @@ The new UI aims to be more user-friendly. Under the hood the API interface
 has been ported to gRPC-web and all code has been ported to Typescript.
 
 ### Other changes
+
+#### Passive Roaming improvements
+
+The implementation of Passive Roaming has been improved, adding support for
+appending `/sns` and `/fns` server endpoint suffixes. The usage of this
+suffix is not specified in the Backend Interfaces specification, but is
+required by some other network-server implementations.
 
 #### UUID identifiers
 
