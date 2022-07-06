@@ -36,3 +36,4 @@ devices that have been added to the repository.
 ```
 chirpstack -c /etc/chirpstack import-ttn-lorawan-devices -d /opt/lorawan-devices
 ```
+
