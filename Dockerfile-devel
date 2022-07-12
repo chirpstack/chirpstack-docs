@@ -1,4 +1,4 @@
-FROM rust:1.59.0-buster
+FROM rust:1.62.0-buster
 
 WORKDIR /chirpstack-docs
 
@@ -6,5 +6,6 @@ WORKDIR /chirpstack-docs
 RUN cargo install mdbook
 RUN cargo install mdbook-tera
 RUN cargo install mdbook-graphviz
+RUN cargo install mdbook-toc
 
 RUN apt-get update && apt-get install -y graphviz

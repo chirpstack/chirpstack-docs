@@ -30,7 +30,7 @@ digraph G {
 		label="LoRa&reg; Gateway";
 
 		"chirpstack-gateway-bridge-gw" -> "pub-sub" [label="MQTT",dir="both"];
-		"chirpstack-gateway-bridge-gw" [label="Packet Forwarder +\nChirpStack Gateway Bridge"];
+		"chirpstack-gateway-bridge-gw" [label="UDP Packet Forwarder +\nChirpStack Gateway Bridge"];
 	}
 
 
@@ -41,7 +41,7 @@ digraph G {
 		label="LoRa&reg; Gateway";
 
 		"packet-forwarder-gw2" -> "chirpstack-gateway-bridge-cloud" [label="UDP",dir="both"];
-		"packet-forwarder-gw2" [label="Packet Forwarder"];
+		"packet-forwarder-gw2" [label="UDP Packet Forwarder"];
 	}
 
 	subgraph cluster_3 {

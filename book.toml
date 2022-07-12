@@ -25,3 +25,6 @@ command = "mdbook-tera --json ./src/context.json"
 [preprocessor.graphviz]
 command = "mdbook-graphviz"
 
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]

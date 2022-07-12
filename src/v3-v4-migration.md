@@ -3,6 +3,8 @@
 The purpose of this document is to describe the steps needed to migrate
 data from ChirpStack v3 to ChirpStack v4.
 
+<!-- toc -->
+
 ## Preparation
 
 ### ChirpStack Application Server
