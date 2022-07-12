@@ -43,12 +43,14 @@ some errors logged as the database needs to be initialized.
 
 ## Connect gateway
 
+### UDP Packet Forwarder
+
 The example Compose environment contains an instance of the ChirpStack Gateway
 Bridge, pre-configured for the EU868 region and listening for UDP data on port
 `1700`. Please consult the documentation of your gateway how you should
-configure your gateway.
+configure the UDP Packet Forwarder on your gateway.
 
-### Changing the region
+#### Changing the region
 
 To change the gateway region, open the `configuration/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`
 configuration file, and change the topic prefix to the prefix matching the
@@ -59,6 +61,26 @@ to restart the Compose environment.
 docker-compose stop
 docker-compose up
 ```
+
+### ChirpStack Gateway Bridge on gateway
+
+Alternatively, you could install the [ChirpStack Gateway Bridge](../gateway-bridge/install/index.md)
+on your gateway, and connect it to the Mosquitto MQTT Broker (part of this
+`docker-compose.yml`). Please make sure that the `chirpstack-gateway-bridge.toml`
+topic configuration matches the desired ChirpStack region.
+
+## Import TTN device repository
+
+To import the TTN [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
+repository (optional step), run the following command:
+
+```bash
+make import-lorawan-devices
+```
+
+This will clone the `lorawan-devices` repository and execute the `import-ttn-lorawan-devices`
+command of ChirpStack. Please note that for this step, you need to have the `git` and `make`
+commands installed.
 
 ## Login
 
