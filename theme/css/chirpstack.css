@@ -56,11 +56,17 @@
 	.js.sidebar-visible #menu-bar {
 		top: 64px !important;
 	}
+
 	#menu-bar-hover-placeholder {
 		top: 64px;
+	}
+
+	html {
+		scroll-padding: 64px;
 	}
 }
 
 #theme-toggle {
 	display: none;
 }
+
