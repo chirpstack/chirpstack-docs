@@ -9,7 +9,7 @@ The example below demonstrates:
 
 * Configuration of gRPC _dial options_ including API token
 * Connect to a gRPC API
-* Define service client (in this case for the `DeviceQueueService`)
+* Define service client (in this case for the `DeviceService`)
 * Perform an API call for a service (in this case `Enqueue`)
 
 ### `main.go`
@@ -22,9 +22,7 @@ import (
 	"fmt"
 
 	"google.golang.org/grpc"
-
-	"github.com/brocaar/chirpstack-api/go/v3/as/external/api"
-	"github.com/brocaar/lorawan"
+	"github.com/chirpstack/chirpstack/api/go/v4/api"
 )
 
 // configuration
@@ -33,7 +31,7 @@ var (
 	server = "localhost:8080"
 
 	// The DevEUI for which we want to enqueue the downlink
-	devEUI = lorawan.EUI64{0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01}
+	devEUI = "0101010101010101"
 
 	// The API token (retrieved using the web-interface)
 	apiToken = "..."
@@ -65,13 +63,13 @@ func main() {
 		panic(err)
 	}
 
-	// define the DeviceQueueService client
-	queueClient := api.NewDeviceQueueServiceClient(conn)
+	// define the DeviceService client
+	deviceClient := api.NewDeviceServiceClient(conn)
 
 	// make an Enqueue api call
-	resp, err := queueClient.Enqueue(context.Background(), &api.EnqueueDeviceQueueItemRequest{
-		DeviceQueueItem: &api.DeviceQueueItem{
-			DevEui:    devEUI.String(),
+	resp, err := deviceClient.Enqueue(context.Background(), &api.EnqueueDeviceQueueItemRequest{
+		QueueItem: &api.DeviceQueueItem{
+			DevEui:    devEUI,
 			FPort:     10,
 			Confirmed: false,
 			Data:      []byte{0x01, 0x02, 0x03},
@@ -81,6 +79,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Printf("The downlink has been enqueued with FCnt: %d\n", resp.FCnt)
+	fmt.Printf("The downlink has been enqueued with id: %s\n", resp.Id)
 }
 ```

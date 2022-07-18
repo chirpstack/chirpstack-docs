@@ -35,7 +35,7 @@ The key for this metadata is `authorization`, the value `Bearer <API TOKEN>`
 
 The ChirpStack project provides SDKs for the following programming languages:
 
-* [Go](https://pkg.go.dev/github.com/brocaar/chirpstack-api/go/v3/)
+* [Go](https://pkg.go.dev/github.com/chirpstack/chirpstack/api/go/v4)
 * [Python](https://pypi.org/project/chirpstack-api/)
 * [JavaScript](https://www.npmjs.com/package/@chirpstack/chirpstack-api)
 * [Rust](https://crates.io/crates/chirpstack_api)
