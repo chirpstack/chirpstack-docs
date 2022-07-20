@@ -12,7 +12,7 @@ when creating or updating the gateway.
 
 ## Gateway re-configuration
 
-If the [Concentratord](../../concentratord/index.md) is installed on the gateway
+If the [Concentratord](../../chirpstack-concentratord/index.md) is installed on the gateway
 as packet-forwarder, ChirpStack will automatically configure the channel-plan
 of the gateway and will keep it up-to-date with the gateway channels as configured
 in the ChirpStack region configuration (please refer to the `[[regions.gateways.channels]]`

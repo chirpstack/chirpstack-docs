@@ -11,11 +11,11 @@ based image which comes in two flavors:
 
 ## Flashing
 
-Please refer to the ChirpStack Gateway OS [Downloads](../gateway-os/downloads.md)
+Please refer to the ChirpStack Gateway OS [Downloads](../chirpstack-gateway-os/downloads.md)
 for the downloads links and instructions on how to flash the downloaded image
 to a SD Card.
 
 ## Usage
 
-Please refer to the ChirpStack Gateway OS [Getting started](../gateway-os/guides/getting-started.md)
+Please refer to the ChirpStack Gateway OS [Getting started](../chirpstack-gateway-os/guides/getting-started.md)
 guide for instructions on how to get started with the ChirpStack Gateway OS.

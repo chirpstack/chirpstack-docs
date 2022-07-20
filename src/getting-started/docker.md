@@ -64,7 +64,7 @@ docker-compose up
 
 ### ChirpStack Gateway Bridge on gateway
 
-Alternatively, you could install the [ChirpStack Gateway Bridge](../gateway-bridge/install/index.md)
+Alternatively, you could install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/install/index.md)
 on your gateway, and connect it to the Mosquitto MQTT Broker (part of this
 `docker-compose.yml`). Please make sure that the `chirpstack-gateway-bridge.toml`
 topic configuration matches the desired ChirpStack region.

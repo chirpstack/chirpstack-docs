@@ -7,7 +7,7 @@ into a ChirpStack [common data-format](https://github.com/chirpstack/chirpstack/
 
 The following Packet Forwarder backends are provided:
 
-* [ChirpStack Concentratord](../concentratord/index.md)
+* [ChirpStack Concentratord](../chirpstack-concentratord/index.md)
 * [Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder)
 * [Basic Station Packet Forwarder](https://github.com/lorabasics/basicstation)
 

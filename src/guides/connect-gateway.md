@@ -14,7 +14,7 @@ packet-forwarder and the ChirpStack Gateway Bridge.
 The packet-forwarder that is installed on your gateway and
 the steps needed to install the ChirpStack Gateway Bridge vary per gateway vendor
 and model. In some cases you must also install the ChirpStack Gateway Bridge on the
-gateway. Please refer to the ChirpStack Gateway Bridge [Installation](../gateway-bridge/gateway/index.md)
+gateway. Please refer to the ChirpStack Gateway Bridge [Installation](../chirpstack-gateway-bridge/gateway/index.md)
 documentation, which contains instructions for various gateway models.
 
 ### Packet-forwarders
@@ -23,7 +23,7 @@ There are different packet-forwarder implementations.
 The packet-forwarder that is installed on your gateway depends on the gateway vendor and model.
 The packet-forwarders that are compatible with ChirpStack:
 
-* [ChirpStack Concentratord](../concentratord/index.md)
+* [ChirpStack Concentratord](../chirpstack-concentratord/index.md)
 * [Semtech UDP Packet Forwarder](https://github.com/lora-net/packet_forwarder)
 * [Semtech BasicStation](https://doc.sm.tc/station/)
 
@@ -35,7 +35,7 @@ packet-forwarders. It uses [MQTT](https://mqtt.org/) to communicate with ChirpSt
 ## Configuration
 
 There are two components that you need to configure. This section covers a
-summary. Please refer to the ChirpStack Gateway Bridge [Installation](../gateway-bridge/gateway/index.md)
+summary. Please refer to the ChirpStack Gateway Bridge [Installation](../chirpstack-gateway-bridge/gateway/index.md)
 for instructions specific to your gateway model.
 
 ### Packet-forwarder
@@ -52,12 +52,12 @@ matches region configuration of ChirpStack which you want to use.
 ### ChirpStack Gateway Bridge
 
 The ChirpStack Gateway Bridge must be configured
-with the correct packet-forwarder backend. Please refer to the ChirpStack Gateway Bridge [Installation](../../gateway-bridge/gateway/index.md)
+with the correct packet-forwarder backend. Please refer to the ChirpStack Gateway Bridge [Installation](../../chirpstack-gateway-bridge/gateway/index.md)
 for instructions specific to your gateway model. When you have installed a
 vendor specific package, this has already been pre-configured for you.
 
 What you still need to configure is to which MQTT broker the ChirpStack Gateway
-Bridge will connect. This is configured in the following [Configuration](../gateway-bridge/configuration.md)
+Bridge will connect. This is configured in the following [Configuration](../chirpstack-gateway-bridge/configuration.md)
 section of the ChirpStack Gateway Bridge:
 
 ```toml
@@ -72,7 +72,7 @@ servers=[
 ]
 ```
 
-Please refer to the ChirpStack Gateway Bridge [Configuration](../gateway-bridge/configuration.md)
+Please refer to the ChirpStack Gateway Bridge [Configuration](../chirpstack-gateway-bridge/configuration.md)
 documentation for a full configuration example. After making changes to the
 configuration file, do not forget to restart the ChirpStack Gateway Bridge.
 
@@ -130,7 +130,7 @@ If you see data like below, then this does not indicate that there is an issue.
 The ChirpStack Gateway Bridge can publish (and receive) events either as JSON
 or [Protobuf](https://developers.google.com/protocol-buffers), in which case
 the payloads are binary encoded. This option can be configured in the
-ChirpStack Gateway Bridge [Configuration](../gateway-bridge/configuration.md).
+ChirpStack Gateway Bridge [Configuration](../chirpstack-gateway-bridge/configuration.md).
 
 ```text
 eu868/gateway/00800000a00016b6/event/up 
@@ -155,7 +155,7 @@ verify if the gateway is able to receive the uplinks. Not receiving any uplink
 messages could indicate a mis-configuration of the gateway.
 
 Depending the gateway model, the commands to retrieve the packet-forwarder logs
-can vary. Please refer to the ChirpStack Gateway Bridge [Installation](../gateway-bridge/install/index.md)
+can vary. Please refer to the ChirpStack Gateway Bridge [Installation](../chirpstack-gateway-bridge/install/index.md)
 for model specific instructions.
 
 #### ChirpStack Concentratord
@@ -282,7 +282,7 @@ message, you need to confirm that:
    communication between the gateway and the server.
 3. The ChirpStack Gateway Bridge is configured with the correct backend
    configuration for the used packet-forwarder. Please refer to the
-   ChirpStack Gateway Bridge [Configuration](../gateway-bridge/configuration.md)
+   ChirpStack Gateway Bridge [Configuration](../chirpstack-gateway-bridge/configuration.md)
    documentation.
 
 #### Uplink received
@@ -321,6 +321,6 @@ If you do not see similar log items, then validate:
 1. That in case you have configured MQTT ACLs, ChirpStack
    has access to the configured MQTT topics.
 2. That in case you have modified the MQTT topic templates in the
-   ChirpStack Gateway Bridge [Configuration](../gateway-bridge/configuration.md)
+   ChirpStack Gateway Bridge [Configuration](../chirpstack-gateway-bridge/configuration.md)
    and / or ChirpStack region [Configuration](../chirpstack/configuration.md),
    this configuration is aligned.

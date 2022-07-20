@@ -3,7 +3,7 @@
 ## ChirpStack Gateway OS
 
 Rasberry Pi based gateways are supported by the
-[ChirpStack Gateway OS](../../gateway-os/index.md) images. This is the preferred
+[ChirpStack Gateway OS](../../chirpstack-gateway-os/index.md) images. This is the preferred
 and easiest option to get started. Please refer the ChirpStack Gateway OS
 documentation for installation instructions.
 

@@ -171,7 +171,7 @@ each line by a configured delimiter to obtain the key / value pairs.
 
 #### Concentratord backend
 
-The [Concentratord](https://www.chirpstack.io/gateway-bridge/backends/concentratord/) backend is compatible with the
+The [Concentratord](https://www.chirpstack.io/chirpstack-gateway-bridge/backends/chirpstack-concentratord/) backend is compatible with the
 [ChirpStack Concentratord](https://github.com/brocaar/chirpstack-concentratord)
 daemon. Please note that this backend is experimental.
 
@@ -370,7 +370,7 @@ specific context data (like the internal counter).
 The downlink frame contains a `timing` field which can be either
 `IMMEDIATELY`, `DELAY` or `GPS_EPOCH`. Based on the `timing` value, an
 additional object must be given with the additional timing information.
-Refer to [Commands](https://www.chirpstack.io/gateway-bridge/payloads/commands/)
+Refer to [Commands](https://www.chirpstack.io/chirpstack-gateway-bridge/payloads/commands/)
 for more details.
 
 #### Azure IoT Hub integration
@@ -465,7 +465,7 @@ The Prometheus metrics have been updated / cleaned up.
 
 ### Features
 
-* Environment variable based [configuration](https://www.chirpstack.io/gateway-bridge/install/config/) has been re-implemented.
+* Environment variable based [configuration](https://www.chirpstack.io/chirpstack-gateway-bridge/install/config/) has been re-implemented.
 
 ### Improvements
 
@@ -569,7 +569,7 @@ All vendored dependencies have been updated.
 **Features:**
 
 * LoRa Gateway Bridge can now manage the packet-forwarder configuration (channels).
-  See [Send / receive data](https://www.chirpstack.io/gateway-bridge/use/data/) for more information.
+  See [Send / receive data](https://www.chirpstack.io/chirpstack-gateway-bridge/use/data/) for more information.
 
 ## 2.3.2
 
@@ -589,14 +589,14 @@ All vendored dependencies have been updated.
 **Improvements:**
 
 * MQTT topics are now configurable through the configuration file.
-  See [Configuration](https://docs.chirpstack.io/gateway-bridge/install/config/).
+  See [Configuration](https://docs.chirpstack.io/chirpstack-gateway-bridge/install/config/).
 
 ## 2.3.0
 
 **Features:**
 
 * LoRa Gateway Bridge uses a new configuration file format.
-  See [configuration](https://docs.chirpstack.io/gateway-bridge/install/config/) for more information.
+  See [configuration](https://docs.chirpstack.io/chirpstack-gateway-bridge/install/config/) for more information.
 
 * Support MQTT client certificate authentication ([#74](https://github.com/brocaar/chirpstack-gateway-bridge/pull/74)).
 
@@ -604,14 +604,14 @@ All vendored dependencies have been updated.
 
 When upgrading using the `.deb` package / using `apt` or `apt-get`, your
 configuration will be automatically migrated for you. In any other case,
-please see [configuration](https://docs.chirpstack.io/gateway-bridge/install/config/).
+please see [configuration](https://docs.chirpstack.io/chirpstack-gateway-bridge/install/config/).
 
 ## 2.2.0
 
 **Features:**
 
 * LoRa Gateway Bridge now publishes TX acknowledgement messages over MQTT.
-  See [MQTT topics](https://docs.chirpstack.io/gateway-bridge/use/data/).
+  See [MQTT topics](https://docs.chirpstack.io/chirpstack-gateway-bridge/use/data/).
 
 * TX (GPS) `timeSinceGPSEpoch` field is now exposed to transmit at given
   time since GPS epoch (1980-01-06, only possible when the gateway

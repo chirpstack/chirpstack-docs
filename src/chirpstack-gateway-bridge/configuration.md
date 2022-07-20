@@ -4,7 +4,7 @@ The `chirpstack-gateway-bridge` has the following command-line flags:
 
 ```text
 ChirpStack Gateway Bridge abstracts the packet_forwarder protocol into Protobuf or JSON over MQTT
-        > documentation & support: https://www.chirpstack.io/gateway-bridge/
+        > documentation & support: https://www.chirpstack.io/chirpstack-gateway-bridge/
         > source & copyright information: https://github.com/brocaar/chirpstack-gateway-bridge
 
 Usage:
