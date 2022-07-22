@@ -42,6 +42,7 @@
   - [Multicast](./chirpstack/features/multicast.md)
   - [Rejoin](./chirpstack/features/rejoin.md)
   - [RX parameters (re)configuration](./chirpstack/features/rx-parameters-configuration.md)
+  - [TTN Device repository](./chirpstack/features/ttn-device-repository.md)
 - [Use](./chirpstack/use/index.md)
   - [Applications](./chirpstack/use/applications.md)
   - [Device profiles](./chirpstack/use/device-profiles.md)

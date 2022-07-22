@@ -1,10 +1,14 @@
 # Device metrics
 
-ChirpStack is able to visualize collected device metrics in simple graphs
-for the purpose of testing and proof of concepts. In order to start visualizing
-measurements, you must configure the following. Once configured, ChirpStack
-will aggregate the configured measurements per hour for the last 24 hours, per
-day for the last 31 days and per month for the last year.
+ChirpStack can visualize measurements collected by devices in simple graphs.
+This makes testing and setting up proof of concepts really easy, as no external
+software or services are required to visualize collected data.
 
-This feature can be configured within the [Device profiles](../use/device-profiles.md)
-by configuring a **CODEC** and one or multiple **Measurements**.
+In order to start visualizing collected measurements, you must configure the
+following:
+
+* Payload codec: As ChirpStack must decode the data in order to collect the measurements.
+* Measurements: The measurements that must be aggregated by ChirpStack.
+
+Both options can be found in the [Device Profile](../use/device-profiles.md)
+configuration.
