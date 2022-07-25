@@ -17,6 +17,7 @@
 - [Guides](./guides/index.md)
   - [Connecting a gateway](./guides/connect-gateway.md)
   - [Connecting a device](./guides/connect-device.md)
+  - [TTN device repository and metrics](./guides/ttn-device-repository-and-metrics.md)
   - [ThingsBoard integration](./guides/thingsboard.md)
   - [Pilot Things integration](./guides/pilot-things.md)
 
