@@ -6,6 +6,8 @@ the ChirpStack web-interface. In this guide we will use the [Tektelic Smart Room
 as an example to visualize the temperature and humidity measurements, but it can
 be easily substituted by any other device present in the repository.
 
+![device metrics](device-metrics.png)
+
 <!-- toc -->
 
 ## TTN Device Repository

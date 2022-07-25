@@ -1,27 +1,34 @@
-# Node-RED
+# Node-RED integration
 
-[Node-RED](https://nodered.org/) provides a browser-based flow editor that makes
-it easy to wire together flows using the wide range of nodes in the palette.
+This guide explains how to setup [Node-RED](https://nodered.org/) with the
+[ChirpStack Node-RED nodes](https://github.com/brocaar/node-red-contrib-chirpstack/)
+and setup a simple echo flow. This flow will consume uplink event using MQTT
+and will enqueue downlink messages using the downlink node, which uses the
+[gRPC API](../chirpstack/api/grpc.md).
 
-If you have installed the **chirpstack-gateway-os-full** image, then Node-RED
-comes pre-installed with ChirpStack Gateway OS since v3.5.0, including the
-[node-red-contrib-chirpstack](https://github.com/brocaar/node-red-contrib-chirpstack/)
-package which provides several nodes to interact with ChirpStack.
+Before you start, please make sure that you have a working ChirpStack and
+Node-RED and that you have already a device connected. As we will setup an
+echo flow, the best device to use would be a device of which you can read the
+received downlink messages using a serial interface.
 
-## Enabling Node-RED
+## ChirpStack Node-RED package
 
-By default, Node-RED is disabled and must be enabled through the `gateway-config`
-utility. In the root menu, select **Enable / disable applications** and then
-**Enable Node-RED**. Note that once enabled, the option will change to
-**Disable Node-RED**. Starting Node-RED will take some time (~ one minute).
+ChirpStack provides a package called [node-red-contrib-chirpstack](https://github.com/brocaar/node-red-contrib-chirpstack/)
+which provides several Node-RED nodes that will help you to integrate with
+ChirpStack.
 
-## Access Node-RED
+Please refer to the [Adding nodes to the palette](https://nodered.org/docs/user-guide/runtime/adding-nodes)
+documentation for installation instructions. Depending your Node-RED
+installation, the command you need to execute could be:
 
-Once started, Node-RED is accessible in your browser on port
-`http://[IP ADDRESS]:1880`. This means that if the IP address of your gateway
-is `192.168.0.1`, that you can access Node-RED at `http://192.168.0.1:1880`.
+```bash
+npm install @chirpstack/node-red-contrib-chirpstack
+```
 
-### Building an echo flow
+**Note:** If you are using the Node-RED instance of the [ChirpStack Gateway OS](../chirpstack-gateway-os/index.md),
+then you can skip this step as this package is already installed for you.
+
+## Echo flow
 
 ![echo flow](node-red-echo-flow.png)
 
@@ -30,23 +37,23 @@ uplink from the device as downlink. While this probably doesn't cover a real
 use-case, it does demonstrate how to receive uplink messages, process these
 and schedule downlinks.
 
-It is assumed that you already have setup your gateway and device. It is also
-assumed that you have some basic knowledge about Node-RED.
-
 #### Receive from MQTT
 
 After opening Node-RED in your browser, first setup a **mqtt in** node. This
 node will be used to receive device events that are published by the MQTT
-broker that is running on the gateway (provided by the ChirpStack Gateway OS).
+integration of ChirpStack.
 
 The following node properties must be set:
 
 * Server:
-	* Server: `localhost`
-	* Port: `1883`
+	* Server: e.g. `localhost`
+	* Port: `1883` or `8883` in case TLS is used
+	* Select *Use TLS* in case TLS is used, in which case also add a new TLS config
 * Topic: `application/+/device/+/event/+`
 * QoS: `0`
 * Output: *auto-detect*
+
+Note:  	
 
 To test the connection to the MQTT broker, **Deploy** the flow. Under the newly
 added node you should see a label *Connected*.

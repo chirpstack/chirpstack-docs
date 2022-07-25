@@ -18,6 +18,7 @@
   - [Connecting a gateway](./guides/connect-gateway.md)
   - [Connecting a device](./guides/connect-device.md)
   - [TTN device repository and metrics](./guides/ttn-device-repository-and-metrics.md)
+  - [Node-RED integration](./guides/node-red-integration.md)
   - [ThingsBoard integration](./guides/thingsboard.md)
   - [Pilot Things integration](./guides/pilot-things.md)
 
@@ -120,13 +121,13 @@
 - [Downloads](./chirpstack-gateway-os/downloads.md)
 - [Guides](./chirpstack-gateway-os/guides/index.md)
   - [Getting started](./chirpstack-gateway-os/guides/getting-started.md)
-  - [Node-RED](./chirpstack-gateway-os/guides/node-red.md)
 - [Use](./chirpstack-gateway-os/use/index.md)
   - [Configuration](./chirpstack-gateway-os/use/gateway-config.md)
   - [Log files](./chirpstack-gateway-os/use/log-files.md)
   - [Monitoring](./chirpstack-gateway-os/use/monitoring.md)
   - [Modifying files](./chirpstack-gateway-os/use/modifying-files.md)
   - [Software update](./chirpstack-gateway-os/use/software-update.md)
+  - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
 
 # ChirpStack Concentratord
