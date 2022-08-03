@@ -19,12 +19,12 @@ make a database backup.
 
 ### ChirpStack Gateway Bridge
 
-Please make sure to upgrade to the latest v3 version.
+Please make sure to upgrade to the latest v3 version. ChirpStack Gateway Bridge
+v3.14.0+ is compatible with both ChirpStack v3 and ChirpStack v4.
 
 ChirpStack v4 supports the latest ChirpStack Gateway Bridge v3, but it does
 require the `marshaler` option to be set to `protobuf` (this is the default).
-Once ChirpStack Gateway Bridge v4 has been released, it will be possible again
-to use the `json` `marshaler` option for debugging purposes.
+Support for JSON will be added in a future ChirpStack v4 version.
 
 ### ChirpStack (v4)
 

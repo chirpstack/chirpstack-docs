@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0.0 (in development)
+
+### Features
+
+This release implements the ChirpStack v4 API interface. Please note that this
+version is not compatible with ChirpStack Gateway Bridge v3.
+
 ## v3.3.2
 
 This release adds the following gateway model configurations:

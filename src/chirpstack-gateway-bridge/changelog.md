@@ -1,5 +1,35 @@
 # Changelog
 
+## v4.0.0 (in development)
+
+### Features
+
+This release implements the ChirpStack v4 API interface. Please note that this
+version is not compatible with ChirpStack v3.
+
+## v3.14.2
+
+### Bugfixes
+
+* Basics Station: Prefer `gpstime` over `rxtime` in case both are available.
+
+## v3.14.1
+
+### Improvements
+
+* Update dependencies.
+* Update to Go 1.18.
+
+## v3.14.0
+
+### Features
+
+* Add support for periodic time-sync requests (Basics Station).
+
+### Improvements
+
+* Make it possible to use 32bit downlink tokens instead of 16bit only (will be used by ChirpStack v4).
+
 ## v3.13.3
 
 ### Improvements

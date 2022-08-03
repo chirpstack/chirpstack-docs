@@ -6,7 +6,7 @@ v4, please be aware that there are changes that are not backwards compatible!
 
 ## Gateway to ChirpStack MQTT
 
-The latest ChirpStack Gateway Bridge v3 version **is** compatible with both
+The ChirpStack Gateway Bridge v3.14.0+ version **is** compatible with both
 ChirpStack v3 and ChirpStack v4, as long as the `protobuf` marshaler is
 configured (default value). This to eases the migration, as the published
 MQTT data can be consumed by both ChirpStack v3 and ChirpStack v4.
@@ -20,6 +20,10 @@ as MQTT prefix in the configuration. This means that you need to either:
   the topic templates, or
 * Implement a service which re-publishes MQTT messages, resulting in messages
   being published both with and without the topic prefix.
+
+Support for using AMQP, GCP Pub/Sub or Azure IoT Hub as gateway backend is not
+supported by the initial ChirpStack v4 release, but will be added in a future
+version.
 
 ## gRPC API
 

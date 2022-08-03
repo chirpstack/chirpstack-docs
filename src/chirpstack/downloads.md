@@ -5,10 +5,13 @@
 | File name | Type | OS | Arch |
 | --------- | ---- | -- | ---- |
 | [chirpstack_{{chirpstack_version}}_linux_amd64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_amd64.deb) | .deb | Linux | amd64 |
+| [chirpstack_{{chirpstack_version}}_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_armhf.deb) | .deb | Linux | armv7 |
 | [chirpstack_{{chirpstack_version}}_linux_arm64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_arm64.deb) | .deb | Linux | arm64 |
 | [chirpstack_{{chirpstack_version}}_linux_amd64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_amd64.tar.gz) | .tar.gz | Linux | amd64 |
+| [chirpstack_{{chirpstack_version}}_linux_armv7hf.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_armv7hf.tar.gz) | .tar.gz | Linux | armv7 |
 | [chirpstack_{{chirpstack_version}}_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_arm64.tar.gz) | .tar.gz | Linux | arm64 |
 | [chirpstack_{{chirpstack_version}}_linux_amd64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_amd64.rpm) | .rpm | Linux | amd64 |
+| [chirpstack_{{chirpstack_version}}_linux_armv7hl.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_armv7hl.rpm) | .rpm | Linux | armv7 |
 | [chirpstack_{{chirpstack_version}}_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_{{chirpstack_version}}_linux_arm64.rpm) | .rpm | Linux | arm64 |
 
 

@@ -14,12 +14,12 @@ for documentation on how to install Docker.
 
 ChirpStack provides a repository with example Docker Compose configuration
 to help you getting started with ChirpStack. This repository can be found
-at [https://github.com/brocaar/chirpstack-docker](https://github.com/brocaar/chirpstack-docker).
+at [https://github.com/chirpstack/chirpstack-docker](https://github.com/chirpstack/chirpstack-docker).
 
 To clone this repository, you can use the following command:
 
 ```bash
-git clone https://github.com/brocaar/chirpstack-docker.git
+git clone https://github.com/chirpstack/chirpstack-docker.git
 cd chirpstack-docker
 ```
 
