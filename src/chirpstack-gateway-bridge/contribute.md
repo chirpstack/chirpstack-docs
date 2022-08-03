@@ -3,8 +3,8 @@
 ## Links
 
 - Community forum: [https://forum.chirpstack.io/](https://forum.chirpstack.io/)
-- Source repository: [https://github.com/brocaar/chirpstack-gateway-bridge](https://github.com/brocaar/chirpstack-gateway-bridge)
-  - Issue and bug reports: [https://github.com/brocaar/chirpstack-gateway-bridge/issues](https://github.com/brocaar/chirpstack-gateway-bridge/issues)
+- Source repository: [https://github.com/chirpstack/chirpstack-gateway-bridge](https://github.com/chirpstack/chirpstack-gateway-bridge)
+  - Issue and bug reports: [https://github.com/chirpstack/chirpstack-gateway-bridge/issues](https://github.com/chirpstack/chirpstack-gateway-bridge/issues)
 
 ## Building from source
 
