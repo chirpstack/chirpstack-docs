@@ -49,6 +49,17 @@ bootloader.
 * ChirpStack Gateway Bridge to v3.13.1
 * Node-RED to v2.1.6
 
+## v3.6.0
+
+### Updates
+
+* [ChirpStack Application Server](https://www.chirpstack.io/application-server) to v3.17.7
+* [ChirpStack Gateway Bridge](https://www.chirpstack.io/gateway-bridge) to v3.14.2
+* [ChirpStack Network Server](https://www.chirpstack.io/network-server) to v3.16.3
+
+**Note:** The ChirpStack Gateway Bridge version included is compatible with
+ChirpStack v4 which will soon be released.
+
 ## v3.5.1
 
 ### Updates
