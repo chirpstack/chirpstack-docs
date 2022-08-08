@@ -126,6 +126,7 @@
   - [Getting started](./chirpstack-gateway-os/guides/getting-started.md)
 - [Use](./chirpstack-gateway-os/use/index.md)
   - [Configuration](./chirpstack-gateway-os/use/gateway-config.md)
+  - [Subscribe to MQTT](./chirpstack-gateway-os/use/subscribe-to-mqtt.md)
   - [Log files](./chirpstack-gateway-os/use/log-files.md)
   - [Monitoring](./chirpstack-gateway-os/use/monitoring.md)
   - [Modifying files](./chirpstack-gateway-os/use/modifying-files.md)
