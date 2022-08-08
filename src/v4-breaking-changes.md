@@ -82,3 +82,11 @@ consumed by an external application.
 Custom ADR algorithms must now be implemented in JavaScript. In ChirpStack v3
 algorithms needed to be implemented in Go and then compiled using the Go
 toolchain.
+
+## Gateway discovery
+
+The gateway discovery feature has been removed. The problem is that this is not
+supported by the Basics Station packet-forwarder (see [#26](https://github.com/lorabasics/basicstation/issues/26)).
+As well, some gateways have RF filters on the RX and TX path to filter out noise.
+In regions where the uplink frequencies are not equal to the downlink frequencies,
+these filters would prevent proper gateway to gateway communication.
