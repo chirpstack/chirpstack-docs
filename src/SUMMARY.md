@@ -18,6 +18,7 @@
   - [Connecting a gateway](./guides/connect-gateway.md)
   - [Connecting a device](./guides/connect-device.md)
   - [TTN device repository and metrics](./guides/ttn-device-repository-and-metrics.md)
+  - [Mosquitto TLS configuration](./guides/mosquitto-tls-configuration.md)
   - [Node-RED integration](./guides/node-red-integration.md)
   - [ThingsBoard integration](./guides/thingsboard.md)
   - [Pilot Things integration](./guides/pilot-things.md)
