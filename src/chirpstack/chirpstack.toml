@@ -89,13 +89,13 @@
   # will generate client certificates which can be used by the gateway for
   # authentication and authorization. The Common Name of the certificate will
   # be set to the Gateway ID.
-  client_cert_lifetime="11months 30days 3h 50m 24s"
+  ca_key=""
   ca_cert=""
 
   # Certificate lifetime.
   #
   # This defines how long (after generating) the certificate remains valid.
-  ca_key=""
+  client_cert_lifetime="11months 30days 3h 50m 24s"
 
 
 # Network related configuration.
@@ -320,6 +320,24 @@
 
     # TLS key file (optional)
     tls_key=""
+
+
+    # Configuration for MQTT clients.
+    [integration.mqtt.client]
+
+      # CA certificate and key file (optional).
+      #
+      # If setting the CA certificate and key file options, ChirpStack 
+      # will generate client certificates which can be used by the MQTT clients for
+      # authentication and authorization. The Common Name of the certificate will
+      # be set to the ID of the application.
+      ca_key=""
+      ca_cert=""
+
+      # Certificate lifetime.
+      #
+      # This defines how long (after generating) the certificate remains valid.
+      client_cert_lifetime=""
 
 
   # PostgreSQL integration configuration.
