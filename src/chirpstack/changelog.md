@@ -14,7 +14,7 @@ on the forum and GitHub, related to setting up and connecting both services.
 ChirpStack v4 also provides multi-region support out-of-the-box, including
 region configuration. No longer it is needed to define your own configuration
 file or setup multiple ChirpStack Network Server instances to serve multiple
-regions simultaniously.
+regions simultaneously.
 
 A big thank you to the ChirpStack community for supporting and contributing
 to the ChirpStack project! Please find below a breakdown of all the new features
