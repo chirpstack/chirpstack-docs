@@ -2,15 +2,23 @@
 
 ## v4.0.0 (in development)
 
-After many months of development, We are really excited to share ChirpStack v4. The
-idea of ChirpStack v4 was born based on experience using ChirpStack for
-various clients, as well as many discussion with community members
-and recurring issues that were reported on the forum.
+After many months of development and testing, we are really excited to share
+ChirpStack v4.
 
-ChirpStack v4 merges the (v3) ChirpStack Application and ChirpStack Network Server,
-adding support for multi-region without the need to setup multiple ChirpStack
-instances. ChirpStack is a new component, which replaces the ChirpStack Application
-Server and ChirpStack Network Server.
+The aim of ChirpStack v4 is to make it significantly easier to
+setup and use ChirpStack, compared to the previous version.
+One of the major changes that you will notice is that the ChirpStack Network
+Server and ChirpStack Application Server have been merged into a single
+component. Over the years we have seen many issues reported
+on the forum and GitHub, related to setting up and connecting both services.
+ChirpStack v4 also provides multi-region support out-of-the-box, including
+region configuration. No longer it is needed to define your own configuration
+file or setup multiple ChirpStack Network Server instances to serve multiple
+regions simultaniously.
+
+A big thank you to the ChirpStack community for supporting and contributing
+to the ChirpStack project! Please find below a breakdown of all the new features
+and changes that v4 brings.
 
 ### Main features and changes
 
@@ -142,24 +150,14 @@ when API changes are involved, as API definitions are no longer separated
 from the code. In v3 these definitions were moved to an external repository
 to avoid cross dependencies.
 
-### Still missing
-
-There are a few features still missing, that were present in v3. These will be
-added shortly. These are:
-
-* Global integrations (only MQTT is currently implemented)
-* Passive roaming
-* REST API bridge
-* Support for GCP Cloud IoT Core and Azure IoT Hub gateway interfaces
-
 #### Rust
 
 For ChirpStack v4, it was decided to use Rust rather than Go. This was not
 an easy choice and the arguments for this decision are debatable. However, 
 as most code was touched during the ChirpStack Application Server and ChirpStack
 Network Server merge, it was the only moment to re-consider this. The Rust 
-memory management prevents many memory related pitfalls and with that potential
-bugs, as these can be catched at compile-time rather than during runtime.
+memory management prevents many memory related pitfalls and helps catching
+bugs at compile time rather than runtime.
 
 ### Migrating from v3 to v4
 
@@ -168,9 +166,3 @@ PostgreSQL and Redis database and to use the [ChirpStack v3 to v4](https://githu
 migration script. This script will **copy** all the data from the "old"
 into the "new" database. While the script does not make any modifications
 to the old database, it is always recommended to make a backup first.
-
-The script is called with at least three configuration files; the
-`chirpstack-network-server.toml` (v3), `chirpstack-application-server.toml` (v3)
-and the `chirpstack.toml` (v4) configuration files. In case you have setup
-multiple ChirpStack Network Server regions, you can repeat the ChirpStack
-Network Server configuration file argument for each region.
