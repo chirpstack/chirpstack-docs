@@ -7,6 +7,12 @@
 This release implements the ChirpStack v4 API interface. Please note that this
 version is not compatible with ChirpStack v3.
 
+## v3.14.3
+
+### Bugfixes
+
+* Fix incorrect handling of MQTT token timeout, causing re-connect to not work in some cases. ([#210](https://github.com/chirpstack/chirpstack-gateway-bridge/issues/210))
+
 ## v3.14.2
 
 ### Bugfixes
