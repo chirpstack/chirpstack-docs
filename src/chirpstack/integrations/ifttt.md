@@ -27,7 +27,7 @@ IFTTT integration. See also [Device profiles](../use/device-profiles.md).
   an uplink is received, and will store these under **Measurements** in the
   device-profile.
 
-## IFTTT usage examples
+## IFTTT usage example
 
 The following example demonstrates how the selected two values can be sent
 to an e-mail address on uplink.
