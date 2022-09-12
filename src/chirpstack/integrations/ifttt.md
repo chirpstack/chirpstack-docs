@@ -26,3 +26,23 @@ IFTTT integration. See also [Device profiles](../use/device-profiles.md).
   payload. Please note that ChirpStack will automatically detect these when
   an uplink is received, and will store these under **Measurements** in the
   device-profile.
+
+## IFTTT usage examples
+
+The following example demonstrates how the selected two values can be sent
+to an e-mail address on uplink.
+
+* Click the _Create_ button within the IFTTT web-interface
+* Click the _Add_ button next to _If This_
+* Search for **Webhooks**
+* Select _Receive a web request_
+* As _Event Name_ enter **up**
+* Click the _Create trigger_ button
+* Click the _Add_ button next to _Then That_
+* Search for **Email**
+* Select _Send me an email_
+* Edit the _Subject_ and _Body_ as desired, note that you can use the _Add ingredient_ button to select the available values
+* Click the _Create action_ button
+
+If everything is configured correctly, you should receive an email on every
+uplink event.
