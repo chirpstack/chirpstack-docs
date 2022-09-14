@@ -89,6 +89,7 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 | Semtech | CoreCell AS923 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css923gw1_as923 |
 | Semtech | CoreCell EU868 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css868gw1_eu868 |
 | Semtech | CoreCell US915 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css915gw1_us915 |
+| Seeed | WM1302 EU868 | GNSS | seeed_wm1302_spi_eu868 |
 
 ## 2G4 (SX1280)
 
