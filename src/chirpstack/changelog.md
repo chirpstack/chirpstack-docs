@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.0.0 (in development)
+## v4.0.0
 
 After many months of development and testing, we are really excited to share
 ChirpStack v4.
@@ -125,9 +125,7 @@ in JSON.
 #### JavaScript codec engine
 
 The JavaScript codec engine is based on QuickJS, which is an embeddable
-JavaScript engine which supports the ES2020 specification. In the near future
-support for the NodeJS [Buffer class](https://nodejs.org/api/buffer.html)
-will be added.
+JavaScript engine which supports the ES2020 specification. 
 
 #### API interface changes
 
