@@ -46,8 +46,8 @@ bootloader.
 
 ### Other updates
 
-* ChirpStack Concentratord to v3.2.2
-* ChirpStack Gateway Bridge to v3.13.1
+* ChirpStack Concentratord to v4.0.0
+* ChirpStack Gateway Bridge to v4.0.0
 * Node-RED to v2.1.6
 
 ## v3.6.0
