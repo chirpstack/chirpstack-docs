@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.0.0 (in development)
+## v4.0.0
 
 ### Main changes
 
@@ -36,6 +36,7 @@ Support for the following shields has been added:
 
 - RAK2247
 - RAK5147
+- Seeed WM1302
 
 #### Yocto Kirkstone
 
