@@ -1,5 +1,27 @@
 # Changelog
 
+## v4.0.2
+
+### Features
+
+* A new menu option Regions was added to the web-interface, exposing per region
+  information.
+
+### Improvements
+
+* Internal dependencies were updated.
+
+### Bugfixes
+
+* Fix Wi-Fi geolocation issue in LoRa Cloud integration.
+* Fix missing per data-rate stats in gateway dashboard.
+* Fix terminating stream loop (and releasing of Redis connection) on client disconnect. ([#40](https://github.com/chirpstack/chirpstack/issues/40))
+* Fix rendering `client_cert_lifetime` rendering in configuration template (mqtt integration).
+
+## v4.0.1
+
+Not released.
+
 ## v4.0.0
 
 After many months of development and testing, we are really excited to share
