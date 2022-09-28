@@ -32,6 +32,9 @@ to v4. In general, the structure of the gRPC is mostly identical to the v3 gRPC
 API definition, but there are minor changes and renames. The v3 client-code is
 not compatible with the v4 API.
 
+API tokens generated using ChirpStack v3 are not compatible with ChirpStack v4.
+You must generate new tokens (the migration tool will not migrate these tokens).
+
 ## REST API
 
 ChirpStack v3 provided a REST API on top of the gRPC API. This means that REST
