@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.0.1
+
+### Improvements
+
+* Expose ack-rate (Semtech UDP protocol) through Prometheus metrics.
+* Update Go compiler toolchain to latest version.
+
+### Bugfixes
+
+* Update Multitech Conduit packaging to work Monit for process monitoring (included in latest mPower).
+
 ## v4.0.0
 
 ### Features

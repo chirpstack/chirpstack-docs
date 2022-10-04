@@ -83,9 +83,7 @@ of the gateway and `IP-ADDRESS` with the IP address of the gateway.
 	* MQTT connection details (with the hostname of your MQTT broker)
 	* MQTT topic templates (with the correct topic prefix)
 
-5. Start ChirpStack Gateway Bridge and ensure it will be started on boot.
-   Example:
+5. Restart ChirpStack Gateway Bridge:
 
-		sudo /etc/init.d/chirpstack-gateway-bridge start
-		sudo update-rc.d chirpstack-gateway-bridge defaults
+		sudo monit restart chirpstack-gateway-bridge
 
