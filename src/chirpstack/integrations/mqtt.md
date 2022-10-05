@@ -31,7 +31,7 @@ The default event topic is: `application/APPLICATION_ID/device/DEV_EUI/event/EVE
 
 The default topic for scheduling downlink payloads is: `application/APPLICATION_ID/device/DEV_EUI/command/down`.
 
-The Application ID and DevEUI of the device will be taken from the topic.
+The Application ID <s>and DevEUI</s> of the device will be taken from the topic.
 
 Example payload:
 
@@ -39,6 +39,7 @@ Example payload:
 {
     "confirmed": true,                        // whether the payload must be sent as confirmed data down or not
     "fPort": 10,                              // FPort to use (must be > 0)
+    "devEui": "...."                          // The deviceEUI
     "data": "...."                            // base64 encoded data (plaintext, will be encrypted by ChirpStack)
     "object": {                               // decoded object (when application coded has been configured)
         "temperatureSensor": {"1": 25},       // when providing the 'object', you can omit 'data'
