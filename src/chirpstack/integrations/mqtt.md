@@ -37,6 +37,7 @@ Example payload:
 
 ```json
 {
+    "devEui": "*DEV_EUI*"
     "confirmed": true,                        // whether the payload must be sent as confirmed data down or not
     "fPort": 10,                              // FPort to use (must be > 0)
     "data": "...."                            // base64 encoded data (plaintext, will be encrypted by ChirpStack)
