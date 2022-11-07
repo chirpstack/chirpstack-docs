@@ -31,6 +31,11 @@
 
   # Server address or addresses.
   #
+  # Example formats:
+  #   redis://127.0.0.1:6379
+  #   redis://:password@127.0.0.1:6379
+  #   redis://username:password@127.0.0.1:6379
+  #
   # Set multiple addresses when connecting to a cluster.
   servers=[
     "redis://127.0.0.1/",
@@ -97,12 +102,35 @@
   # This defines how long (after generating) the certificate remains valid.
   client_cert_lifetime="11months 30days 3h 50m 24s"
 
+  # Allow unknown gateways.
+  #
+  # If set to true, then uplinks received from gateways not configured in
+  # ChirpStack will be allowed.
+  allow_unknown_gateways=false
+
 
 # Network related configuration.
 [network]
 
   # Network identifier (NetID, 3 bytes) encoded as HEX (e.g. 010203).
   net_id="000000"
+
+  # DevAddr prefix(es).
+  #
+  # This makes it possible to configure one or multiple sub-ranges within
+  # the configured NetID. If left blank, then the complete DevAddr space
+  # provided by the configured NetID will be used.
+  # If multiple prefixes are configured, a random prefix will be chosen when
+  # generating a DevAddr.
+  #
+  # Example configuration:
+  # dev_addr_prefixes=["0000ff00/24"]
+  #
+  # This example configures the DevAddr range to 0000ff00 - 0000ffff.
+  # The /24 means that the 24MSB of the prefix will be used, meaning that the
+  # 8LSB will be used as address space.
+  dev_addr_prefixes=[
+  ]
 
   # Enabled regions.
   #
@@ -337,7 +365,7 @@
       # Certificate lifetime.
       #
       # This defines how long (after generating) the certificate remains valid.
-      client_cert_lifetime=""
+      client_cert_lifetime="11months 30days 3h 50m 24s"
 
 
   # PostgreSQL integration configuration.
