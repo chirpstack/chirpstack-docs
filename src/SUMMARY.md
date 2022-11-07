@@ -71,6 +71,7 @@
   - [MQTT](./chirpstack/integrations/mqtt.md)
   - [myDevices](./chirpstack/integrations/mydevices.md)
   - [Pilot Things](./chirpstack/integrations/pilot-things.md)
+  - [PostgreSQL](./chirpstack/integrations/postgresql.md)
   - [ThingsBoard](./chirpstack/integrations/thingsboard.md)
 - [API](./chirpstack/api/index.md)
   - [gRPC](./chirpstack/api/grpc.md)
