@@ -1,5 +1,25 @@
 # Changelog
 
+## v4.0.3
+
+### Improvements
+
+* Add code example for reading frame-logs from Redis Streams.
+* Add missing metadata logging and add code example for reading metadata from Redis Streams.
+* Add `dev_addr_prefix` configuration. ([#49](https://github.com/chirpstack/chirpstack/issues/49))
+* Make it possible to enable / disable auto-detection of metrics in device-profile. ([#42](https://github.com/chirpstack/chirpstack/issues/42))
+* Add Redis config examples for username and password configuration. ([#54](https://github.com/chirpstack/chirpstack/issues/54))
+* Add metadata tab to gateway configuration in UI.
+
+### Bugfixes
+
+* Use `trust_store` instead of `ca_path` for MQTT integration. ([#47](https://github.com/chirpstack/chirpstack/pull/47))
+* Fix _Cannot serialize NaN as google.protobuf.Value.number_value_ error.
+* Fix logout URL in case OIDC is enabled.
+* Fix `java_outer_classname` in `tenant.proto`. ([#55](https://github.com/chirpstack/chirpstack/pull/55))
+* Fix closing and detecting if eventlog channel is closed.
+* Fix metrics interval calculation on daily aggregate in case of DST to non-DST timezone change.
+
 ## v4.0.2
 
 ### Features
