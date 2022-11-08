@@ -162,7 +162,7 @@
     - [CreateGatewayRequest](#api-CreateGatewayRequest)
     - [DeleteGatewayRequest](#api-DeleteGatewayRequest)
     - [Gateway](#api-Gateway)
-    - [Gateway.PropertiesEntry](#api-Gateway-PropertiesEntry)
+    - [Gateway.MetadataEntry](#api-Gateway-MetadataEntry)
     - [Gateway.TagsEntry](#api-Gateway-TagsEntry)
     - [GatewayListItem](#api-GatewayListItem)
     - [GatewayListItem.PropertiesEntry](#api-GatewayListItem-PropertiesEntry)
@@ -2397,6 +2397,7 @@ DeviceService is the service providing API methods for managing devices.
 | abp_rx2_freq | [uint32](#uint32) |  | RX2 frequency (for ABP, Hz). |
 | tags | [DeviceProfile.TagsEntry](#api-DeviceProfile-TagsEntry) | repeated | User defined tags. |
 | measurements | [DeviceProfile.MeasurementsEntry](#api-DeviceProfile-MeasurementsEntry) | repeated | Measurements. If defined, ChirpStack will visualize these metrics in the web-interface. |
+| auto_detect_measurements | [bool](#bool) |  | Auto-detect measurements. If set to true, measurements will be automatically added based on the keys of the decoded payload. In cases where the decoded payload contains random keys in the data, you want to set this to false. |
 
 
 
@@ -2647,6 +2648,7 @@ DeviceProfileService is the service providing API methods for managing device-pr
 | m_type | [common.MType](#common-MType) |  | Message type. |
 | dev_addr | [string](#string) |  | Device address (optional). |
 | dev_eui | [string](#string) |  | Device EUI (optional). |
+| plaintext_mac_commands | [bool](#bool) |  | Plaintext mac-commands. |
 
 
 
@@ -2668,6 +2670,7 @@ DeviceProfileService is the service providing API methods for managing device-pr
 | dev_addr | [string](#string) |  | Device address (optional). |
 | dev_eui | [string](#string) |  | Device EUI (optional). |
 | time | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Time. |
+| plaintext_mac_commands | [bool](#bool) |  | Plaintext mac-commands. |
 
 
 
@@ -2734,16 +2737,16 @@ DeviceProfileService is the service providing API methods for managing device-pr
 | location | [common.Location](#common-Location) |  | Gateway location. |
 | tenant_id | [string](#string) |  | Tenant ID (UUID). |
 | tags | [Gateway.TagsEntry](#api-Gateway-TagsEntry) | repeated | Tags. |
-| properties | [Gateway.PropertiesEntry](#api-Gateway-PropertiesEntry) | repeated | Properties (provided by the gateway). |
+| metadata | [Gateway.MetadataEntry](#api-Gateway-MetadataEntry) | repeated | Metadata (provided by the gateway). |
 
 
 
 
 
 
-<a name="api-Gateway-PropertiesEntry"></a>
+<a name="api-Gateway-MetadataEntry"></a>
 
-### Gateway.PropertiesEntry
+### Gateway.MetadataEntry
 
 
 
@@ -3527,6 +3530,7 @@ MulticastGroupService is the service managing multicast-groups.
 | limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name. |
+| user_id | [string](#string) |  | If set, filters the result set to the tenants of the user. Only global API keys are able to filter by this field. |
 
 
 
