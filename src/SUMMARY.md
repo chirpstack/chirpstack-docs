@@ -61,6 +61,7 @@
   - [Users](./chirpstack/use/users.md)
 - [Integrations](./chirpstack/integrations/index.md)
   - [Event types](./chirpstack/integrations/events.md)
+  - [AMQP / RabbitMQ](./chirpstack/integrations/amqp.md)
   - [AWS SNS](./chirpstack/integrations/aws-sns.md)
   - [Azure Service-Bus](./chirpstack/integrations/azure-service-bus.md)
   - [GCP Pub/Sub](./chirpstack/integrations/gcp-pub-sub.md)
