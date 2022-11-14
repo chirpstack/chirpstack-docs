@@ -1,5 +1,31 @@
 # Changelog
 
+## v4.0.1
+
+### Updates
+
+* ChirpStack to v4.0.3.
+* ChirpStack Concentratord to v4.0.1.
+* The Things Network [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices) to latest version.
+
+### New shields
+
+* Waveshare SX1302 LoRaWAN Gateway HAT
+
+### Bugfixes
+
+* Add missing `/etc/fw_env.config` file (see upgrade note below).
+* Fix missing Wiregard binaries. ([#93](https://github.com/chirpstack/chirpstack-gateway-os/issues/93))
+
+### Update note
+
+If upgrading from v4.0.0 using the `software-update` utility, you must run the
+following command first because of the missing `/etc/fw_env.config` file:
+
+```
+sudo echo "/boot/uboot.env 0x0000    0x4000" > /etc/fw_env.config
+```
+
 ## v4.0.0
 
 ### Main changes
