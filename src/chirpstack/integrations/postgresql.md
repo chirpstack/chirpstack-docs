@@ -56,8 +56,8 @@ hostname, username, password and the name of the database. Example:
   dsn="postgres://<username>:<password>@<host>/<database>?sslmode=disable"
 ```
 
-In the dns= line, modify <username>, <password>, <host>, and <database> with
-your appropriate credentials and targets. If you followed the example above,
+In the dns= line, modify `<username>`, `<password>`, `<host>`, and `<database>`
+with your appropriate credentials and targets. If you followed the example above,
 you would use chirpstack_integration as your username and target database. If
 your target Postgres database is on the same machine as ChirpStack, use
 localhost as your host.
