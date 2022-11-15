@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0.4
+
+### Bugfixes
+
+* Fix coding-rate for LoRaWAN 2.4GHz. ([#51](https://github.com/chirpstack/chirpstack/issues/51))
+* Fix not removing of queue-item after it was sent, if payload did not fit RX2.
+
 ## v4.0.3
 
 ### Improvements
