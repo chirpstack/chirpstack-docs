@@ -76,7 +76,7 @@ Save the following files to disk:
 Then execute the following command to generate the CA certificate and key:
 
 ```bash
-cfssl gencert -initca ca-csr | cfssljson -bare ca
+cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 ```
 
 ## Generate MQTT server-certificate
