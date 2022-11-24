@@ -52,10 +52,10 @@ Your `docker-compose.yml` file now looks like:
 version: "3"
 
 services:
-  networkserver:
-    image: chirpstack/chirpstack-network-server:3
+  chirpstack:
+    image: chirpstack/chirpstack:4
     volumes:
-      - ./configuration/chirpstack-network-server:/etc/chirpstack-network-server
+      - ./configuration/chirpstack:/etc/chirpstack
 
   [...]
 
