@@ -1,5 +1,18 @@
 # Changelog
 
+## v4.0.5
+
+### Improvements
+
+* Add `keep_alive_interval` for MQTT configuration.
+
+### Bugfixes
+
+* Fix incorrect splitting of multiple URLs in HTTP integration. ([#62](https://github.com/chirpstack/chirpstack/issues/62))
+* Fix missing ThingsBoard location and status telemetry.
+* Send ThingsBoard telemetry (fPort, fCnt, ...) even in case there is no decoded payload.
+* Fix LeafletJS controls floating over header (UI).
+
 ## v4.0.4
 
 ### Bugfixes
