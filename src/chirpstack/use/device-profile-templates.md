@@ -9,21 +9,24 @@ to import from external repositories (read below).
 template values, changing or deleting the device-profile templates will not
 affect the created device profiles.
 
-## The Things Network device repository
+## Import device repository
 
-ChirpStack supports importing the The Things Network [device repository](https://github.com/TheThingsNetwork/lorawan-devices)
+ChirpStack supports importing the [device repository](https://github.com/TheThingsNetwork/lorawan-devices)
 as device-profile templates by executing the following commands from the
 Linux command-line. Depending the filesystem permissions, you might need
 `sudo` to perform these steps.
 
 ### Cloning the device repository
 
-First you need to clone the device repository. In his case, we will clone the
+First you need to clone the device repository. In this case, we will clone the
 repository to `/opt/lorawan-devices`:
 
 ```bash
-git clone https://github.com/TheThingsNetwork/lorawan-devices /opt/lorawan-devices
+git clone https://github.com/brocaar/lorawan-devices /opt/lorawan-devices
 ```
+
+**Note:** an older snapshot of the `lorawan-devices` repository is cloned as the
+latest revision no longer contains a `LICENSE` file.
 
 ### Import into ChirpStack
 
@@ -36,4 +39,3 @@ devices that have been added to the repository.
 ```
 chirpstack -c /etc/chirpstack import-ttn-lorawan-devices -d /opt/lorawan-devices
 ```
-

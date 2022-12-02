@@ -1,6 +1,6 @@
-# TTN device depository and metrics
+# Device depository and metrics
 
-This guide explains how to import the TTN [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
+This guide explains how to import the [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
 Device Repository and to how to visualize the decoded data directly within
 the ChirpStack web-interface. In this guide we will use the [Tektelic Smart Room Sensor](https://tektelic.com/products/sensors/comfort-base-smart-room-sensor/)
 as an example to visualize the temperature and humidity measurements, but it can
@@ -10,9 +10,9 @@ be easily substituted by any other device present in the repository.
 
 <!-- toc -->
 
-## TTN Device Repository
+## Device Repository
 
-The TTN [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
+The [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
 Device Repository contains information about many LoRaWAN devices. For most
 devices a payload codec is included, which makes it really easy as you will
 immediately see the decoded payload, rather than a binary blob.
@@ -48,9 +48,12 @@ packages, then you need to execute the following command to import the
 repository:
 
 ```bash
-git clone https://github.com/TheThingsNetwork/lorawan-devices /tmp/lorawan-devices
+git clone https://github.com/brocaar/lorawan-devices /tmp/lorawan-devices
 chirpstack -c /etc/chirpstack import-ttn-lorawan-devices -d /tmp/lorawan-devices
 ```
+
+**Note:** an older snapshot of the `lorawan-devices` repository is cloned as the
+latest revision no longer contains a `LICENSE` file.
 
 ## Connecting the device
 
@@ -60,7 +63,7 @@ chirpstack -c /etc/chirpstack import-ttn-lorawan-devices -d /tmp/lorawan-devices
 [Device profiles](../chirpstack/use/device-profiles.md) in the left menu. Then
 click the **Add device-profile** button to add a new device profile.
 
-Now that you have installed the TTN Device Repository, there is no need to fill
+Now that you have installed the Device Repository, there is no need to fill
 in all the fields by hand. Click the **Select device-profile template** button
 instead, and select your device from this list. In case of the _Tektelic Smart
 Room Sensor_, we would select:
