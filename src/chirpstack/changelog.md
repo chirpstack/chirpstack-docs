@@ -1,5 +1,42 @@
 # Changelog
 
+## v4.1.0
+
+### Features
+
+#### API request logging
+
+This feature logs API requests to Redis Streams. This enables external services
+to monitor for example device create, update and deletes by reading from the
+Redis Streams. A code-example can be found [here](https://github.com/chirpstack/chirpstack/blob/master/examples/request_log/go/main.go).
+
+#### Uplink logging for unknown devices
+
+While the feature to log frames was already present, it was not possible
+to only read uplink frames of devices that are unknown. This extends the frame
+logging feature to also log uplinks for unknown devices, in which case DevEUI
+`0000000000000000` is used. A code-example for reading the frame log can be
+found [here](https://github.com/chirpstack/chirpstack/blob/master/examples/frame_log/go/main.go).
+
+#### Event logging
+
+A code-example to read event logs from the Redis Streams was added. It can
+be found [here](https://github.com/chirpstack/chirpstack/blob/master/examples/event_log/go/main.go).
+
+### Improvements
+
+* Make `metadata` fields in gateway messages consistent.
+* Emit all fields for JSON integration messages, even if they are their default values. ([#63](https://github.com/chirpstack/chirpstack/pull/63))
+
+### Bugfixes
+
+* Fix Redis pipelined commands in case Redis Cluster is configured.
+* Fix UI notifications z-index.
+
+### Other changes
+
+* The `import-ttn-lorawan-devices` sub-command has been renamed to `import-legacy-lorawan-devices-repository`.
+
 ## v4.0.5
 
 ### Improvements
