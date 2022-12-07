@@ -4,22 +4,24 @@ To list all CLI options, start `chirpstack` with the `--help` flag. This will
 print:
 
 ```text
-ChirpStack open-source LoRaWAN network-server
+ChirpStack is an open-source LoRaWAN(TM) Network Server
 
-USAGE:
-    chirpstack --config-dir <DIR> [SUBCOMMAND]
+Usage: chirpstack --config <DIR> [COMMAND]
 
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
+Commands:
+  configfile
+          Print the configuration template
+  print-ds
+          Print the device-session for debugging
+  import-legacy-lorawan-devices-repository
+          Import legacy lorawan-devices repository
+  help
+          Print this message or the help of the given subcommand(s)
 
-OPTIONS:
-    -c, --config-dir <DIR>    Path to configuration directory
-
-SUBCOMMANDS:
-    configfile    Print the configuration template
-    help          Prints this message or the help of the given subcommand(s)
-    print-ds      Print the device-session for debugging
+Options:
+  -c, --config <DIR>  Path to configuration directory
+  -h, --help          Print help information
+  -V, --version       Print version information
 ```
 
 ## Configuration files

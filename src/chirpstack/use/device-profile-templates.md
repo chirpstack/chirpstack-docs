@@ -37,5 +37,5 @@ re-run this command to update existing templates / create new templates for
 devices that have been added to the repository.
 
 ```
-chirpstack -c /etc/chirpstack import-ttn-lorawan-devices -d /opt/lorawan-devices
+chirpstack -c /etc/chirpstack import-legacy-lorawan-devices-repository -d /opt/lorawan-devices
 ```
