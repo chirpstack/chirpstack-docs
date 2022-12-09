@@ -1,5 +1,23 @@
 # Changelog
 
+## v4.0.2
+
+### Features
+
+#### `meta` in rxpk and stat
+
+If using the Semtech UDP Packet Forwarder backend, it is possible to expose
+additional key / value metadata using an optional `meta` key in either the 
+rxpk or stat package. The value of `meta` must be an object with key (string)
+/ value (string) data if present.
+
+### Improvements
+
+* Update Go compiler to v1.19.3.
+* Update Alpine base container to v3.17.0.
+* Update prometheus/client_golang to v1.14.0.
+* Make `metadata` field in `chirpstack_api` consistent.
+
 ## v4.0.1
 
 ### Improvements
