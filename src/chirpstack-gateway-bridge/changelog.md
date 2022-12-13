@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.3
+
+### Bugfixes
+
+* Add missing coding-rates for TXPK CodR. ([#217](https://github.com/chirpstack/chirpstack-gateway-bridge/issues/217))
+
 ## v4.0.2
 
 ### Features
