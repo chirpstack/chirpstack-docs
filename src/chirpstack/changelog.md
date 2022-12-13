@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.1.1
+
+### Improvements
+
+* Update JS API dependencies to latest versions.
+* Replace relative paths in Rust API build to absolute. ([#69](https://github.com/chirpstack/chirpstack/pull/69))
+
+### Bugfixes
+
+* Fix setting the full frame-counter to the uplink frame after resolving the device-session (this can affect payload decryption).
+
 ## v4.1.0
 
 ### Features
