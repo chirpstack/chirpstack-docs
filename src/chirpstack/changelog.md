@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.2
+
+### Improvement / bugfix
+
+* Do not wait for integrations to finish before sending downlink.
+
 ## v4.1.1
 
 ### Improvements
