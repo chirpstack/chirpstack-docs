@@ -1,5 +1,17 @@
 # Changelog
 
+## v4.0.2
+
+### Updates
+
+* ChirpStack to v4.1.1.
+* ChirpStack Gateway Bridge to v4.0.3.
+* Node-RED to v3.0.2.
+
+### Bugfixes
+
+* Fix NodeJS / Node-RED crashing with "Bus error" error message. ([#95](https://github.com/chirpstack/chirpstack-gateway-os/issues/95))
+
 ## v4.0.1
 
 ### Updates
