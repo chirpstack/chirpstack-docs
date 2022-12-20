@@ -1,9 +1,10 @@
 # Architecture
 
+<!-- toc -->
+
 A typical ChirpStack deployment has the following architecture. Note that in
-this diagram, the ChirpStack Gateway Bridge is both installed on one of the
-gateways as on the server to highlight both connectivity options. This is not
-a requirement.
+this diagram, the gateways are connected in different ways to ChirpStack to
+highlight the different possible connectivity options.
 
 ```dot process
 digraph G {
@@ -32,12 +33,21 @@ digraph G {
 		node [style=filled,color="#e3f2fd"];
 		label="LoRa&reg; Gateway";
 
-		"chirpstack-gateway-bridge-gw" -> "pub-sub" [label="MQTT",dir="both"];
-		"chirpstack-gateway-bridge-gw" [label="UDP Packet Forwarder +\nChirpStack Gateway Bridge"];
+		"chirpstack-mqtt-forwarder-gw1" -> "pub-sub" [label="MQTT",dir="both"];
+		"chirpstack-mqtt-forwarder-gw1" [label="UDP Packet Forwarder +\nChirpStack MQTT Forwarder"];
 	}
 
-
 	subgraph cluster_2 {
+		style=filled;
+		color="#bbdefb";
+		node [style=filled,color="#e3f2fd"];
+		label="LoRa&reg; Gateway";
+
+		"chirpstack-mqtt-forwarder-gw2" -> "pub-sub" [label="MQTT",dir="both"];
+		"chirpstack-mqtt-forwarder-gw2" [label="ChirpStack Concentratord +\nChirpStack MQTT Forwarder"];
+	}
+
+	subgraph cluster_3 {
 		style=filled;
 		color="#bbdefb";
 		node [style=filled,color="#e3f2fd"];
@@ -47,7 +57,7 @@ digraph G {
 		"packet-forwarder-gw2" [label="UDP Packet Forwarder"];
 	}
 
-	subgraph cluster_3 {
+	subgraph cluster_4 {
 		style=filled;
 		color="#bbdefb";
 		node [style=filled,color="#e3f2fd"];
@@ -116,7 +126,7 @@ digraph G {
 		label="LoRa&reg; Gateway (EU868)";
 
 		"chirpstack-gateway-bridge-gw-eu868" -> "pub-sub" [label="MQTT\neu868/gateway/...",dir="both"];
-		"chirpstack-gateway-bridge-gw-eu868" [label="UDP Packet Forwarder +\nChirpStack Gateway Bridge"];
+		"chirpstack-gateway-bridge-gw-eu868" [label="UDP Packet Forwarder +\nChirpStack MQTT Forwarder"];
 	}
 
 
@@ -137,7 +147,7 @@ digraph G {
 		label="LoRa&reg; Gateway (US915)";
 
 		"chirpstack-gateway-bridge-gw-us915" -> "pub-sub" [label="MQTT\nus915_0/gateway/...",dir="both"];
-		"chirpstack-gateway-bridge-gw-us915" [label="UDP Packet Forwarder +\nChirpStack Gateway Bridge"];
+		"chirpstack-gateway-bridge-gw-us915" [label="UDP Packet Forwarder +\nChirpStack MQTT Forwarder"];
 	}
 
 
@@ -191,7 +201,7 @@ digraph G {
 		label="LoRa&reg; Gateway (EU868)";
 
 		"chirpstack-gateway-bridge-gw-eu868" -> "pub-sub-eu868" [label="MQTT",dir="both"];
-		"chirpstack-gateway-bridge-gw-eu868" [label="UDP Packet Forwarder +\nChirpStack Gateway Bridge"];
+		"chirpstack-gateway-bridge-gw-eu868" [label="UDP Packet Forwarder +\nChirpStack MQTT Forwarder"];
 	}
 
 
@@ -212,7 +222,7 @@ digraph G {
 		label="LoRa&reg; Gateway (US915)";
 
 		"chirpstack-gateway-bridge-gw-us915" -> "pub-sub-us915" [label="MQTT",dir="both"];
-		"chirpstack-gateway-bridge-gw-us915" [label="UDP Packet Forwarder +\nChirpStack Gateway Bridge"];
+		"chirpstack-gateway-bridge-gw-us915" [label="UDP Packet Forwarder +\nChirpStack MQTT Forwarder"];
 	}
 
 
@@ -227,3 +237,36 @@ digraph G {
 	}
 }
 ```
+
+## ChirpStack components
+
+### ChirpStack Concentratord
+
+[ChirpStack Concentratord](./chirpstack-concentratord/index.md) is an
+open-source LoRa concentrator daemon. It exposes a [ZeroMQ](https://zeromq.org/)
+based API that can be used by one or multiple (forwarder) applications to
+interact with the gateway hardware.
+
+### ChirpStack MQTT Forwarder
+[ChirpStack MQTT Forwarder](./chirpstack-mqtt-forwarder/index.md) is an
+open-source Protobuf or JSON MQTT packet forwarder, which can either use
+the [Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder)
+or [ChirpStack Concentratord](./chirpstack-concentratord/index.md) as
+gateway backend. It is intended to be installed on each gateway.
+
+### ChirpStack Gateway Bridge
+
+[ChirpStack Gateway Bridge](./chirpstack-gateway-bridge/index.md) is an
+open-source bridge which converts messages received from the
+[Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder)
+or [Semtech Basics Station](https://github.com/lorabasics/basicstation)
+into MQTT. It can be installed on the gateway, or in the cloud.
+
+### ChirpStack
+
+[ChirpStack](./chirpstack/index.md) is an open-source LoRaWAN Network Server which can be used to
+to setup private or public LoRaWAN networks. ChirpStack provides a web-interface
+for the management of gateways, devices and tenants as well to setup data
+integrations with the major cloud providers, databases and services commonly
+used for handling device data. ChirpStack provides a gRPC based API that can
+be used to integrate or extend ChirpStack.

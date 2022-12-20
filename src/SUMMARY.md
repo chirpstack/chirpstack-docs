@@ -86,6 +86,34 @@
   - [GCP Pub/Sub](./chirpstack/backends/gcp-pub-sub.md)
 - [Contribute & source](./chirpstack/contribute.md)
 
+# ChirpStack MQTT Forwarder
+
+- [Introduction](./chirpstack-mqtt-forwarder/index.md)
+- [Changelog](./chirpstack-mqtt-forwarder/changelog.md)
+- [Configuration](./chirpstack-mqtt-forwarder/configuration.md)
+- [Downloads](./chirpstack-mqtt-forwarder/downloads.md)
+- [Installation](./chirpstack-mqtt-forwarder/install/index.md)
+  - [Dragino](./chirpstack-mqtt-forwarder/install/dragino.md)
+  - [Kerlink](./chirpstack-mqtt-forwarder/install/kerlink.md)
+  - [Multitech](./chirpstack-mqtt-forwarder/install/multitech.md)
+  - [Tektelic](./chirpstack-mqtt-forwarder/install/tektelic.md)
+- [Contribute & source](./chirpstack-mqtt-forwarder/contribute.md)
+
+# ChirpStack Concentratord
+
+- [Introduction](./chirpstack-concentratord/index.md)
+- [Changelog](./chirpstack-concentratord/changelog.md)
+- [Hardware support](./chirpstack-concentratord/hardware-support.md)
+- [Configuration](./chirpstack-concentratord/configuration.md)
+- [Downloads](./chirpstack-concentratord/downloads.md)
+- [Installation](./chirpstack-concentratord/installation/index.md)
+  - [Kerlink](./chirpstack-concentratord/installation/kerlink.md)
+  - [Multitech](./chirpstack-concentratord/installation/multitech.md)
+- [API](./chirpstack-concentratord/api/index.md)
+  - [Commands](./chirpstack-concentratord/api/commands.md)
+  - [Events](./chirpstack-concentratord/api/events.md)
+- [Contribute & source](./chirpstack-concentratord/contribute.md)
+
 # ChirpStack Gateway Bridge
 
 - [Introduction](./chirpstack-gateway-bridge/index.md)
@@ -136,16 +164,5 @@
   - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
 
-# ChirpStack Concentratord
-
-- [Introduction](./chirpstack-concentratord/index.md)
-- [Changelog](./chirpstack-concentratord/changelog.md)
-- [Hardware support](./chirpstack-concentratord/hardware-support.md)
-- [Configuration](./chirpstack-concentratord/configuration.md)
-- [Downloads](./chirpstack-concentratord/downloads.md)
-- [API](./chirpstack-concentratord/api/index.md)
-  - [Commands](./chirpstack-concentratord/api/commands.md)
-  - [Events](./chirpstack-concentratord/api/events.md)
-- [Contribute & source](./chirpstack-concentratord/contribute.md)
 
 ---

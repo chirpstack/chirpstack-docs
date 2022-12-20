@@ -6,6 +6,8 @@ In order to make configuration as easy as possible, it comes with the calibratio
 values for many different gateway models embedded (based on calibration values
 provided by the vendors). Model specific features can be turned on and off using flags.
 
+<!-- toc -->
+
 ## SX1301/8
 
 The `chirpstack-concentratord-sx1301` binary implements the [SX1301 HAL](https://github.com/lora-net/lora_gateway).
@@ -66,6 +68,8 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 
 | Vendor | Gateway / Shield | Model flags | Model |
 | --- | --- | --- | --- |
+| Multitech | Multitech Conduit MTAC-003E00 | AP1, AP2, GNSS | multitech_mtac_003e00_eu868 |
+| Multitech | Multitech Conduit MTAC-003U00 | AP1, AP2, GNSS | multitech_mtac_003u00_us915 |
 | RAK | RAK2287 AS923 | GNSS, USB | rak_2287_as923 |
 | RAK | RAK2287 AU915 | GNSS, USB | rak_2287_au915 |
 | RAK | RAK2287 CN470 | GNSS, USB | rak_2287_cn470 |
@@ -90,6 +94,7 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 | Semtech | CoreCell EU868 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css868gw1_eu868 |
 | Semtech | CoreCell US915 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css915gw1_us915 |
 | Seeed | WM1302 EU868 | GNSS | seeed_wm1302_spi_eu868 |
+| Waveshare | SX1302 LoRaWAN Gateway HAT | | waveshare_sx1302_lorawan_gateway_hat_eu868 |
 
 ## 2G4 (SX1280)
 
@@ -97,4 +102,5 @@ The `chirpstack-concentratord-2g4` binary implements the [2g4 HAL](https://githu
 
 | Vendor | Gateway / Shield | Model flags | Model |
 | --- | --- | --- | --- |
+| Multitech | Multitech Conduit MTAC-LORA-2G4 | | multitech_mtac_lora_2g4 |
 | Semtech | SX1280ZXXXXGW1 | | semtech_sx1280z3dsfgw1 |

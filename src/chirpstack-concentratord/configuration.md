@@ -6,13 +6,15 @@ hardware platforms.
 ChirpStack Concentratord makes it possible to use multiple configuration files,
 by repeating the `-c` argument. For example:
 
-* `global.toml` for generic configuration
+* `concentratord.toml` for generic configuration
 * `region.toml` for region specific settings (e.g. Class-B beacon configuration)
 * `channels.toml` to configure the channels
 
 When using ChirpStack Concentratord within a region supporting multiple
 sub-bands, this means that only the `channels.toml` file needs to be updated
 when changing the sub-band, avoiding duplication.
+
+<!-- toc -->
 
 ## `chirpstack-concentratord-sx1301`
 
