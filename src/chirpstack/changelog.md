@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1.3
+
+### Bugfixes
+
+* Fix Redis `key_prefix` configuration. While this value could be configured, it was not applied to the generated keys.
+* Fix header `z-index` issue in UI. This was causing the dropdowns to render partly behind the header.
+
 ## v4.1.2
 
 ### Improvement / bugfix
