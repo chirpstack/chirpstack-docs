@@ -1,5 +1,36 @@
 # Changelog
 
+## v4.2.0 (in development)
+
+### Features
+
+#### Fix devices to specific region configuration (optional)
+
+This adds a _Region configuration_ option to the device-profile, which lists
+the region configurations for the selected _Region_. If a region configuration
+is selected, then the device will only be able to work under the selected
+configuration. If no region configuration is selected, then the device will
+be able to operate under all available region configurations for the selected
+region.
+
+#### Java API SDKs
+
+This adds support for Java and Kotlin API SDK code generation. ([#64](https://github.com/chirpstack/chirpstack/pull/64))
+
+### Improvements
+
+* Add `description` configuration option per region configuration.
+* Change `name` to `id` within the region configuration (`name` will be used as fallback option).
+* Make gateway state in UI consistent and make expected stats interval configurable. ([#76](https://github.com/chirpstack/chirpstack/issues/76))
+* Add Python type information to Python API SDK code. ([#68](https://github.com/chirpstack/chirpstack/pull/68))
+* Add back `crc_status` field to `UplinkRxInfo` message (the status will be reported as no CRC until the ChirpStack Gateway Bridge, ChirpStack Concentratord and / or ChirpStack MQTT Forwarder have been updated).
+* Add back Class-B ping-slot parameters to the device-profile.
+* Update Class-B ping-slot data-rate configuration in examples.
+
+### Bugfixes
+
+* Fix hiding _Delete device_ option if the user has no permissions to perform this action. ([#71](https://github.com/chirpstack/chirpstack/issues/71))
+
 ## v4.1.3
 
 ### Bugfixes
