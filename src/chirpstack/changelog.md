@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.2.0 (in development)
+## v4.2.0
 
 ### Features
 
@@ -26,10 +26,14 @@ This adds support for Java and Kotlin API SDK code generation. ([#64](https://gi
 * Add back `crc_status` field to `UplinkRxInfo` message (the status will be reported as no CRC until the ChirpStack Gateway Bridge, ChirpStack Concentratord and / or ChirpStack MQTT Forwarder have been updated).
 * Add back Class-B ping-slot parameters to the device-profile.
 * Update Class-B ping-slot data-rate configuration in examples.
+* Remove separate gateway topic config and move it into single `topic_prefix` configuration.
+* Reset internally stored channels to default on `ADRACKReq` uplink to avoid out-of-sync channel configuration on device.
+* Update internal dependencies.
 
 ### Bugfixes
 
 * Fix hiding _Delete device_ option if the user has no permissions to perform this action. ([#71](https://github.com/chirpstack/chirpstack/issues/71))
+* Fix not recording device metrics if auto-detect of measurements is disabled. ([#94](https://github.com/chirpstack/chirpstack/issues/94))
 
 ## v4.1.3
 
