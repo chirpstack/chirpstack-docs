@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.0.4
+
+### Improvements
+
+* Support for multiple configuration files. ([#199](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/199))
+* Add filters to Concentratord backend. ([#218](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/218))
+* Add CRC status back to UplinkRxInfo.
+
 ## v4.0.3
 
 ### Bugfixes
