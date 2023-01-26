@@ -176,6 +176,8 @@
     - [ListGatewaysResponse](#api-ListGatewaysResponse)
     - [UpdateGatewayRequest](#api-UpdateGatewayRequest)
   
+    - [GatewayState](#api-GatewayState)
+  
     - [GatewayService](#api-GatewayService)
   
 - [api/multicast_group.proto](#api_multicast_group-proto)
@@ -2381,13 +2383,15 @@ DeviceService is the service providing API methods for managing devices.
 | payload_codec_runtime | [CodecRuntime](#api-CodecRuntime) |  | Payload codec runtime. |
 | payload_codec_script | [string](#string) |  | Payload codec script. |
 | flush_queue_on_activate | [bool](#bool) |  | Flush queue on device activation. |
-| uplink_interval | [uint32](#uint32) |  | Uplink interval (seconds). This defines the expected uplink interval which the device uses for communication. When the uplink interval has expired and no uplink has been received, the device is considered inactive. |
+| uplink_interval | [uint32](#uint32) |  | Uplink interval (seconds). This defines the expected uplink interval which the device uses for communication. If the uplink interval has expired and no uplink has been received, the device is considered inactive. |
 | device_status_req_interval | [uint32](#uint32) |  | Device-status request interval (times / day). This defines the times per day that ChirpStack will request the device-status from the device. |
 | supports_otaa | [bool](#bool) |  | Supports OTAA. |
 | supports_class_b | [bool](#bool) |  | Supports Class B. |
 | supports_class_c | [bool](#bool) |  | Supports Class-C. |
 | class_b_timeout | [uint32](#uint32) |  | Class-B timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
-| class_b_ping_slot_period | [uint32](#uint32) |  | Class-B ping-slot periodicity. |
+| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7.
+
+The actual number of ping-slots per beacon period equals to 2^k. |
 | class_b_ping_slot_dr | [uint32](#uint32) |  | Class-B ping-slot DR. |
 | class_b_ping_slot_freq | [uint32](#uint32) |  | Class-B ping-slot freq (Hz). |
 | class_c_timeout | [uint32](#uint32) |  | Class-C timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
@@ -2398,6 +2402,7 @@ DeviceService is the service providing API methods for managing devices.
 | tags | [DeviceProfile.TagsEntry](#api-DeviceProfile-TagsEntry) | repeated | User defined tags. |
 | measurements | [DeviceProfile.MeasurementsEntry](#api-DeviceProfile-MeasurementsEntry) | repeated | Measurements. If defined, ChirpStack will visualize these metrics in the web-interface. |
 | auto_detect_measurements | [bool](#bool) |  | Auto-detect measurements. If set to true, measurements will be automatically added based on the keys of the decoded payload. In cases where the decoded payload contains random keys in the data, you want to set this to false. |
+| region_config_id | [string](#string) |  | Region configuration ID. If set, devices will only use the associated region. If let blank, then devices will use all regions matching the selected common-name. Note that multiple region configurations can exist for the same common-name, e.g. to provide an 8 channel and 16 channel configuration for the US915 band. |
 
 
 
@@ -2738,6 +2743,7 @@ DeviceProfileService is the service providing API methods for managing device-pr
 | tenant_id | [string](#string) |  | Tenant ID (UUID). |
 | tags | [Gateway.TagsEntry](#api-Gateway-TagsEntry) | repeated | Tags. |
 | metadata | [Gateway.MetadataEntry](#api-Gateway-MetadataEntry) | repeated | Metadata (provided by the gateway). |
+| stats_interval | [uint32](#uint32) |  | Stats interval (seconds). This defines the expected interval in which the gateway sends its statistics. |
 
 
 
@@ -2793,6 +2799,7 @@ DeviceProfileService is the service providing API methods for managing device-pr
 | created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
 | updated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Last update timestamp. |
 | last_seen_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Last seen at timestamp. |
+| state | [GatewayState](#api-GatewayState) |  | Gateway state. Please note that the state of the gateway is driven by the stats packages that are sent by the gateway. |
 
 
 
@@ -2969,6 +2976,19 @@ DeviceProfileService is the service providing API methods for managing device-pr
 
 
  
+
+
+<a name="api-GatewayState"></a>
+
+### GatewayState
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NEVER_SEEN | 0 | The gateway has never sent any stats. |
+| ONLINE | 1 | Online. |
+| OFFLINE | 2 | Offline. |
+
 
  
 
