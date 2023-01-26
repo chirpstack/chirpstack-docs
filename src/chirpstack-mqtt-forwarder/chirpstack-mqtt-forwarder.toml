@@ -22,16 +22,25 @@
 # MQTT settings.
 [mqtt]
 
-  # Event topic template.
-  event_topic="eu868/gateway/{{ gateway_id }}/event/{{ event }}"
-
-  # State topic template.
-  state_topic="eu868/gateway/{{ gateway_id }}/state/{{ state }}"
-
-  # Command topic template.
-  command_topic="eu868/gateway/{{ gateway_id }}/command/{{ command }}"
+  # Topic prefix.
+  #
+  # ChirpStack MQTT Forwarder publishes to the following topics:
+  #
+  #  * [Prefix/]gateway/[Gateway ID]/event/[Event]
+  #  * [Prefix/]gateway/[Gateway ID]/state/[State]
+  #
+  # And subscribes to the following topic:
+  #
+  #  * [Prefix/]gateway/[Gateway ID]/command/[Command]
+  #
+  # The topic prefix can be used to define the region of the gateway.
+  # Note, there is no need to add a trailing '/' to the prefix. The trailing
+  # '/' is automatically added to the prefix if it is configured.
+  topic_prefix="eu868"
 
   # Use JSON encoding instead of Protobuf (binary).
+  #
+  # Note, only use this for debugging purposes.
   json=false
 
   # MQTT server (e.g. scheme://host:port where scheme is tcp, ssl or ws)
@@ -85,7 +94,31 @@
 [backend]
 
   # Enabled backend.
+  #
+  # Set this to the backend that must be used by the ChirpStack MQTT Forwarder.
+  # Valid options are:
+  #   * concentratord
+  #   * semtech_udp
   enabled="semtech_udp"
+
+  # Forward CRC ok.
+  forward_crc_ok=true
+
+  # Forward CRC invalid.
+  forward_crc_invalid=false
+
+  # Forward CRC missing.
+  forward_crc_missing=false
+
+
+  # ChirpStack Concentratord backend configuration.
+  [backend.concentratord]
+
+    # Event API URL.
+    event_url="ipc:///tmp/concentratord_event"
+
+    # Command API URL.
+    command_url="ipc:///tmp/concentratord_command"
 
 
   # Semtech UDP backend configuration.
@@ -98,16 +131,6 @@
     # so make sure the 'serv_port_up' and 'serv_port_down' from your
     # packet-forwarder matches this port.
     bind="0.0.0.0:1700"
-
-
-  # ChirpStack Concentratord backend configuration.
-  [backend.concentratord]
-
-    # Event API URL.
-    event_url="ipc:///tmp/concentratord_event"
-
-    # Command API URL.
-    command_url="ipc:///tmp/concentratord_command"
 
 
 # Gateway metadata configuration.
