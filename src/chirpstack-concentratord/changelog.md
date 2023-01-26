@@ -1,5 +1,36 @@
 # Changelog
 
+## v4.1.0
+
+### Features
+
+* Add `multitech_mtac_lora_2g4` model support.
+* Add `multitech_mtac_003e00_eu868` model support.
+* Add `multitech_mtac_003u00_us915` model support.
+* Add support for Class-B beacons for SX1302 version.
+* Expose CRC status + option to disable CRC check.
+
+### Improvements
+
+* Update Multitech Conduit packaging.
+* Update Multitech Conduit AP packaging.
+* Update Kerlink iFemtoCell packaging.
+* Refactor reset-pin configuration.
+* Implement support for using GPSd.
+* Update parsing of UBX binary format parsing.
+* Make I2C temperature sensor compatible + add support for TMP-102 sensor (used by the Multitech SX1302 MTAC modules).
+* Update internal dependencies.
+
+## v4.0.1
+
+### Features
+
+* Add `waveshare_sx1302_lorawan_gateway_hat_eu868` model support.
+
+### Improvements
+
+* Update internal dependencies.
+
 ## v4.0.0
 
 ### Features
