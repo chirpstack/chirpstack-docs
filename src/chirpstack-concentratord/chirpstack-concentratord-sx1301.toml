@@ -20,6 +20,13 @@
   # Statistics interval.
   stats_interval="30s"
 
+  # Disable CRC status filter.
+  #
+  # By default, the Concentratord will ignore received frames which do not have
+  # a valid CRC. This option makes it possible to disable this filter such that
+  # received frames without (valid) CRC can be analyzed.
+  disable_crc_filter=false
+
   # Configuration for the (ZeroMQ based) API.
   [concentratord.api]
     # Event PUB socket bind.
@@ -121,7 +128,7 @@
     # When set to non-zero values, the static gateway location will be reported
     # when the gateway does not have a GNSS module or when no GNSS location fix
     # is available.
-    latitude=0
-    longitude=0
+    latitude=0.0
+    longitude=0.0
     altitude=0
 
