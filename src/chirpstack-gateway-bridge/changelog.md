@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.5
+
+### Bugfixes
+
+* Fix loading config from default paths after merging [#199](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/199).
+
 ## v4.0.4
 
 ### Improvements
