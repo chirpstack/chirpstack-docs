@@ -6,7 +6,7 @@ The **chirpstack-gateway-os-base** image provides all the features and component
 to use a Raspberry Pi as LoRa gateway, forwarding data to an external server.
 
 - ChirpStack Concentratord
-- ChirpStack Gateway Bridge
+- ChirpStack MQTT Forwarder
 - Gateway configuration utility (`gateway-config`)
 
 ## Full

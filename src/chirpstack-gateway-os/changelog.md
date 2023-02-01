@@ -1,5 +1,29 @@
 # Changelog
 
+## v4.1.0
+
+### Features
+
+#### ChirpStack MQTT Forwarder
+
+This release replaces the ChirpStack Gateway Bridge with the ChirpStack MQTT
+Forwarder. The following MQTT configuration values will be automatically migrated
+from the `chirpstack-gateway-bridge.toml` configuration file:
+
+* `server`
+* `topic_prefix` (detected based on `event_topic_template`)
+* `username`
+* `password`
+* `ca_cert`
+* `tls_cert`
+* `tls_key`
+
+### Updates
+
+* ChirpStack to v4.2.0.
+* ChirpStack Concentratord to v4.1.0.
+* ChirpStack UDP Forwarder to v4.1.0.
+
 ## v4.0.2
 
 ### Updates

@@ -52,8 +52,8 @@ and the channel-configuration that the gateway must use.
 ### Base image
 
 After the board and channel-plan have been configured, you must update the
-ChirpStack Gateway Bridge configuration, such that it connects to your MQTT
-broker. This can be done using the **Edit ChirpStack Gateway Bridge config**
+ChirpStack MQTT Forwarder configuration, such that it connects to your MQTT
+broker. This can be done using the **Edit ChirpStack MQTT Forwarder config**
 option in the `gateway-config` menu.
 
 Use the **Edit configuration file** option to edit the configuration file or
@@ -64,7 +64,7 @@ do directly paste the certificate files.
 ## Full image
 
 Unlike the **chirpstack-gateway-os-base** image, you **should not** update the
-ChirpStack Gateway Bridge configuration. It is configured to point to the MQTT broker
+ChirpStack MQTT Forwarder configuration. It is configured to point to the MQTT broker
 which comes with the **chirpstack-gateway-os-full** image.
 
 If using the **chirpstack-gateway-os-full** image and after configuring the
