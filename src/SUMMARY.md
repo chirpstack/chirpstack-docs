@@ -78,6 +78,7 @@
   - [REST](./chirpstack/api/rest.md)
   - [Go examples](./chirpstack/api/go-examples.md)
   - [Python examples](./chirpstack/api/python-examples.md)
+  - [JavaScript examples](./chirpstack/api/js-examples.md)
   - [Protocol documentation](./chirpstack/api/api.md)
 - [Backends](./chirpstack/backends/index.md)
   - [MQTT](./chirpstack/backends/mqtt.md)
