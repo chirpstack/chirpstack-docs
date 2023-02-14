@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.6
+
+### Improvements
+
+* Include location in `UplinkRxInfo` if Semtech UDP payload contains both `rxpk` and `stat` (with location).
+
 ## v4.0.5
 
 ### Bugfixes
