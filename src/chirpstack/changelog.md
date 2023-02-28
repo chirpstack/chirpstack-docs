@@ -1,5 +1,53 @@
 # Changelog
 
+## v4.3.0 (in development)
+
+### Features
+
+### C# SDK
+
+This adds support for generating C# API code. ([#100](https://github.com/chirpstack/chirpstack/pull/100))
+
+### Multicast improvements
+
+#### Add gateways to multicast-group
+
+This makes it possible to explicitly define which gateways will be used for
+a given multicast-group. In the gateways overview it is possible to select
+one or multiple gateways and then add these gateways to a multicast-group.
+
+#### Multicast scheduling option
+
+This moves the multicast scheduling configuration to the multicast-group
+configuration from the `chirpstack.toml` configuration file. Scheduling
+options include scheduling based on GPS time or delay based.
+
+#### Split private gateways in private uplink and downlink
+
+This makes it possible to define per tenant if and how gateways can be used
+by other tenants. For example in case downlink is set to private, other
+tenants will benefit from uplinks received by these gateways, but they will
+not be able to send downlinks (ChirpStack will filter these gateways out when
+selecting the gateway for scheduling the downlink).
+
+### Improvements
+
+* Implement `get_downlink_data_delay` setting.
+* Update internal dependencies.
+* Add missing `fPort` validation to avoid enqueue on `fPort=0`.
+* Do not overwrite `RxInfo` `location` field with gateway location if it is already set.
+* Do not log stats handling `NotFound` errors if `allow_unknown_gateways` is configured.
+
+### Bugfixes
+
+* Fix `/api/multcast-groups/...` > `/api/multicast-groups/...` typo in enqueue API URL.
+* Fix `gateway_id` is missing errors (in case the uplink was also received by an unknown gateway).
+* Fix region configuration defaults + use region `id` as fallback for `description` if the latter is missing. ([#120](https://github.com/chirpstack/chirpstack/issues/120))
+* Fix API authorization for listing ADR algorithms. ([#112](https://github.com/chirpstack/chirpstack/issues/112))
+* Fix US915 downlink channel `min_dr` configuration. ([#115](https://github.com/chirpstack/chirpstack/pull/115))
+* Fix incorrect rendering of `integration.mqtt.client.ca_key` and `.ca_cert` in config template. ([#124](https://github.com/chirpstack/chirpstack/pull/124))
+* Remove `tls_enabled` config option as it is not actually implemented. ([#128](https://github.com/chirpstack/chirpstack/issues/128))
+
 ## v4.2.0
 
 ### Features
