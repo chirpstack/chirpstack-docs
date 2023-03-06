@@ -37,11 +37,14 @@ selecting the gateway for scheduling the downlink).
 * Add missing `fPort` validation to avoid enqueue on `fPort=0`.
 * Do not overwrite `RxInfo` `location` field with gateway location if it is already set.
 * Do not log stats handling `NotFound` errors if `allow_unknown_gateways` is configured.
+* Decode FRMPayload mac-commands in device LoRaWAN frames log.
+* Show `FCnt` in device event log.
 
 ### Bugfixes
 
 * Fix `/api/multcast-groups/...` > `/api/multicast-groups/...` typo in enqueue API URL.
 * Fix `gateway_id` is missing errors (in case the uplink was also received by an unknown gateway).
+* Fix disabling mac-commands.
 * Fix region configuration defaults + use region `id` as fallback for `description` if the latter is missing. ([#120](https://github.com/chirpstack/chirpstack/issues/120))
 * Fix API authorization for listing ADR algorithms. ([#112](https://github.com/chirpstack/chirpstack/issues/112))
 * Fix US915 downlink channel `min_dr` configuration. ([#115](https://github.com/chirpstack/chirpstack/pull/115))
