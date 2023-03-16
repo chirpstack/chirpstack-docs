@@ -580,7 +580,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -610,7 +610,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -640,7 +640,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -670,7 +670,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -860,7 +860,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -920,7 +920,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -980,7 +980,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -1040,7 +1040,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 
 
 
@@ -1070,7 +1070,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 | headers | [HttpIntegration.HeadersEntry](#api-HttpIntegration-HeadersEntry) | repeated | HTTP headers to set when making requests. |
 | encoding | [Encoding](#api-Encoding) |  | Payload encoding. |
 | event_endpoint_url | [string](#string) |  | Event endpoint URL. The HTTP integration will POST all events to this enpoint. The request will contain a query parameters &#34;event&#34; containing the type of the event. |
@@ -1123,7 +1123,7 @@ Note: The first value is always used for the DevEUI. |
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 | endpoint | [string](#string) |  | InfluxDb API write endpoint (e.g. http://localhost:8086/write). |
 | db | [string](#string) |  | InfluxDb database name. (InfluxDb v1) |
 | username | [string](#string) |  | InfluxDb username. (InfluxDb v1) |
@@ -1273,7 +1273,7 @@ Note: The first value is always used for the DevEUI. |
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 | endpoint | [string](#string) |  | myDevices API endpoint. |
 
 
@@ -1306,7 +1306,7 @@ Note: The first value is always used for the DevEUI. |
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUIO). |
+| application_id | [string](#string) |  | Application ID (UUID). |
 | server | [string](#string) |  | ThingsBoard server endpoint, e.g. https://example.com |
 
 
