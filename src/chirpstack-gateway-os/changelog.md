@@ -1,5 +1,21 @@
 # Changelog
 
+## v4.1.1
+
+### New shields
+
+* Add support for Dragino PG1302 (EU868 + US915).
+
+### Updates
+
+* Update ChirpStack to v4.3.0.
+* Update ChirpStack Concentratord to v4.1.1.
+* Update ChirpStack UDP Forwarder to v4.1.1.
+
+### Bugfixes
+
+* Change `band_` to `_region_` after rename in Concentratord repo. ([#97](https://github.com/chirpstack/chirpstack-gateway-os/issues/97))
+
 ## v4.1.0
 
 ### Features

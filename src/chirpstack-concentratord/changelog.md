@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.1.1
+
+### Features
+
+* Add `dragino_pg1302_eu868` model support.
+* Add `dragino_pg1302_us915` model support.
+
+### Improvements
+
+* Update internal dependencies.
+
 ## v4.1.0
 
 ### Features

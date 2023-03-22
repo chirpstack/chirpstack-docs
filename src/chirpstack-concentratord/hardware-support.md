@@ -68,6 +68,8 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 
 | Vendor | Gateway / Shield | Model flags | Model |
 | --- | --- | --- | --- |
+| Dragino | PG1302 EU868 | | dragino_pg1302_eu868 |
+| Dragino | PG1302 US915 | | dragino_pg1302_us915 |
 | Multitech | Multitech Conduit MTAC-003E00 | AP1, AP2, GNSS | multitech_mtac_003e00_eu868 |
 | Multitech | Multitech Conduit MTAC-003U00 | AP1, AP2, GNSS | multitech_mtac_003u00_us915 |
 | RAK | RAK2287 AS923 | GNSS, USB | rak_2287_as923 |
