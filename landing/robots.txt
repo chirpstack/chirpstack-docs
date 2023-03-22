@@ -1,0 +1,8 @@
+# Exclude v3 documentation
+User-agent: *
+Disallow: /project/
+Disallow: /gateway-bridge/
+Disallow: /application-server/
+Disallow: /network-server/
+Disallow: /concentratord/
+Disallow: /gateway-os/
