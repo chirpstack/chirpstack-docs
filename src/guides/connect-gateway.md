@@ -1,4 +1,4 @@
-# Connecting a device
+# Connecting a Gateway
 
 This guide describes how to connect your gateway to ChirpStack and how
 to validate that it is successfully communicating with the ChirpStack Network Server.
