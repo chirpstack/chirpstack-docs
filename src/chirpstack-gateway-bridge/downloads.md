@@ -5,7 +5,7 @@
 | File name | Type | OS | Arch |
 | --------- | ---- | -- | ---- |
 | [chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_amd64.deb](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_amd64.deb) | .deb | Linux   | amd64 |
-| [chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_armv7.deb) | .deb | Linux   | armv7 |
+| [chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_armhf.deb) | .deb | Linux   | armv7 |
 | [chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_arm64.deb](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_arm64.deb) | .deb | Linux   | arm64 |
 | [chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_amd64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_amd64.tar.gz) | .tar.gz | Linux | amd64 |
 | [chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_armv7.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-bridge/chirpstack-gateway-bridge_{{gateway_bridge_version}}_linux_armv7.tar.gz) | .tar.gz | Linux | armv7 |
