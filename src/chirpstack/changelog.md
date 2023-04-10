@@ -1,5 +1,32 @@
 # Changelog
 
+## v4.3.1
+
+### Improvements
+
+#### LoRa Cloud integration
+
+This adds a _Forward messages on these FPorts to LoRa Cloud_ configuration
+option, which based on FPort, let LoRa Cloud Modem & Geolocation Services
+automatically handle the payload according.
+
+This also adds a toggle button to make using the reported gateway location
+optional for geolocation assistance.
+
+#### Rust SDK features
+
+This improves the SDK `features`, to make it easier to exclude certain
+dependencies by disabling features in `Cargo.toml` configuration.
+
+#### Internal dependencies
+
+Internal dependencies have been updated to the latest versions.
+
+### Bugfixes
+
+* Fix typo in `application.proto`. ([#143](https://github.com/chirpstack/chirpstack/pull/143))
+* Earlier db initialization + fix unwrap errors. ([#147](https://github.com/chirpstack/chirpstack/issues/147))
+
 ## v4.3.0
 
 ### Features
