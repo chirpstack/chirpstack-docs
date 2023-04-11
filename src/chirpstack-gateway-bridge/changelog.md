@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.0.7
+
+### Improvements
+
+* Add `MuxTime` to downlink messages (Basics Station) and remove `timesync_interval` default.
+* Update internal dependencies.
+
 ## v4.0.6
 
 ### Improvements
