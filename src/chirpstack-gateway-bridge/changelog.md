@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.8
+
+### Bugfixes
+
+* Fix cached RouterConfig response (Basics Station).
+
 ## v4.0.7
 
 ### Improvements
