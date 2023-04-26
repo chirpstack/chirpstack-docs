@@ -1,5 +1,29 @@
 # Changelog
 
+## v4.3.2
+
+### Improvements
+
+#### Disable v3 compatibility option
+
+This add a configuration option, to enable / disable compatibility with the
+latest ChirpStack Gateway Bridge v3 version. If compatibility is not needed,
+then add `v4_migrate=false` to the
+`[regions.gateway.backend.mqtt]` section (in `region_...toml`). This will
+save some bandwidth in the GW <> NS communication. The current default is
+`true`, in ChirpStack v4.4+, the default will change to `false` (and thus
+it must be explicitly enabled).
+
+#### Other improvements
+
+* Add back web-interface option to download events and frames as JSON.
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix sending to multiple URLs in case one endpoint fails.
+* Enable new `tls-rustls` feature of `redis` dependency (fixes Redis TLS issues). ([#170](https://github.com/chirpstack/chirpstack/issues/170))
+
 ## v4.3.1
 
 ### Improvements
