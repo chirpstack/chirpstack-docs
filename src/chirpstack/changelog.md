@@ -1,5 +1,49 @@
 # Changelog
 
+## v4.4.0 (in development)
+
+### Features
+
+#### Relay support (TS011)
+
+This adds support for the Relay specification (TS011). In the Device Profile
+it is possible to configure the Relay and Relay capable end-device parameters.
+Under the Application view it is possible to assign devices to a Relay
+(required for filtering and exchanging the device list with the Relay).
+
+**Note:** Please note that this requires a Relay and Relay capable end-device.
+
+### Improvements
+
+#### Build changes
+
+The build configuration has been updated to generate fully static binaries
+based on _musl libc_. This solves the issue where in some cases ChirpStack
+would not connect over TLS to a PostgreSQL database. ([#156](https://github.com/chirpstack/chirpstack/issues/156)).
+
+This also changes the Docker base image to `alpine`, reducing the Docker image
+size by ~ 50% compared to `debian:buster-slim`. Within the `Dockerfile` we now
+`COPY` the already compiled binaries, which also reduces the build time on
+release.
+
+If you are compiling ChirpStack from source, please refer to the `README.md`
+in the source repository as some commands have changed.
+
+#### IFTTT integration
+
+Configuration has been added to configure the prefix of the event name and
+to send arbitrary JSON payloads instead of the 3 value payload.
+
+#### Other improvements
+
+* Add `lrwn_filters` crate for filtering LoRaWAN PHYPayloads.
+* Dependencies have been updated.
+
+### Bugfixes
+
+* Fix `netid_type` method `panic` in case of invalid DevAddr prefix type.
+* Fix missing device `search` filter (API).
+
 ## v4.3.2
 
 ### Improvements
