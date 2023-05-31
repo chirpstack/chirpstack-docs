@@ -8,16 +8,7 @@
 
 ## Building from source
 
-The easiest way to get started is by using the provided 
-[docker-compose](https://docs.docker.com/compose/) environment. This environment
-comes with all dependencies pre-installed.
+For instructions on building the ChirpStack MQTT Forwarder source-code from source,
+please refer to the `README.md` in the source repository:
 
-To start a bash shell for development, execute the following command from the
-root of this project:
-
-```bash
-make devshell
-```
-
-For a list of available make commands that can be executed, please consult
-the `Makefile` that can be found in the root of each component.
+[https://github.com/chirpstack/chirpstack-mqtt-forwarder/](https://github.com/chirpstack/chirpstack-mqtt-forwarder/)
