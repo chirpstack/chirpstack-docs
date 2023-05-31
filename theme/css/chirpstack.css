@@ -29,6 +29,12 @@
 		float: right;
 	}
 
+	.chirpstack-buttons {
+		margin-top: 5px;
+		float: right;
+		margin-right: 32px;
+	}
+
 	.sidebar {
 		margin-top: 64px;
 	}
@@ -51,7 +57,7 @@
 	}
 
 	#menu-bar.sticky,
-	.js #menu-bar-hover-placeholder:hover + #menu-bar,
+	.js #menu-bar-hover-placeholder:hover+#menu-bar,
 	.js #menu-bar:hover,
 	.js.sidebar-visible #menu-bar {
 		top: 64px !important;
@@ -69,4 +75,3 @@
 #theme-toggle {
 	display: none;
 }
-
