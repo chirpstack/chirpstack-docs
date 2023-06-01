@@ -12,7 +12,7 @@ unknown devices.
 
 ### Device frame logs
 
-The **LoRaWAN frames** tab on the device detail apge will display all frames
+The **LoRaWAN frames** tab on the device detail page will display all frames
 which have been authenticated with the (session)keys of the device. This means
 that in case your device is experiencing MIC calculation issues, you will see
 the uplink frame under the gateway frame logs, but not under the device frame
