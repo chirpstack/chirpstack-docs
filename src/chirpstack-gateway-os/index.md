@@ -16,6 +16,10 @@ your gateway(s).
 
 ## Supported shields
 
+### Dragino
+
+* [x] [Dragino PG1302](https://www.dragino.com/products/lora/item/223-pg1302.html)
+
 ### IMST
 
 * [x] [IMST - iC880A](https://wireless-solutions.de/products/long-range-radio/ic880a.html)
@@ -45,6 +49,6 @@ your gateway(s).
 
 ### Semtech
 
-* [x] [Semtech - SX1302 evaluation kit](https://www.semtech.com/products/wireless-rf/lora-core/sx1302cxxxgw1)
+* [x] [Semtech - SX1302 evaluation kit - SX1302CXXXGW1](https://www.semtech.com/products/wireless-rf/lora-core/sx1302cxxxgw1)
+* [x] [Semtech - SX1302 evalidation kit - SX1302CSSXXXGW1](https://www.semtech.com/products/wireless-rf/lora-core/sx1302cssxxxgw1)
 * [x] [Semtech - SX1280 2.4 GHz evaluation kit](https://www.semtech.com/products/wireless-rf/lora-24ghz/sx1280zxxxxgw1)
-
