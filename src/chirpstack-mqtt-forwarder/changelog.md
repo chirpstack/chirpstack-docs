@@ -1,5 +1,37 @@
 # Changelog
 
+## v4.1.0
+
+### Features
+
+### Improvements
+
+#### DevAddr and JoinEUI filters
+
+This adds a `[backend.filters]` configuration section under which it is
+possible to configure the prefix-filters for DevAddr (data uplink) and
+JoinEUIs (join-requests).
+
+#### Time fallback
+
+This adds a `time_fallback_enabled` configuration option to the `semtech_udp`
+section. If enabled and no RX time is provided by the packet-forwarder, then
+the ChirpStack MQTT Forwarder server-time will be used as fallback.
+
+#### Build improvements
+
+The provided pre-compiled binaries are fully static and based on _musl libc_.
+This removes the need to compile against a very old verion of _glibc_ to
+stay compatible with old gateway firmwares.
+
+#### Other improvements
+
+* Update dependencies.
+
+### Bugfixes
+
+* Fix bootstript for Dragino `.ipk` package.
+
 ## v4.0.0
 
 This marks the initial release of the ChirpStack MQTT Forwarder.
