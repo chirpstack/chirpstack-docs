@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.4.0 (in development)
+## v4.4.0
 
 ### Features
 
@@ -38,11 +38,16 @@ to send arbitrary JSON payloads instead of the 3 value payload.
 
 * Add `lrwn_filters` crate for filtering LoRaWAN PHYPayloads.
 * Dependencies have been updated.
+* Expose enabled device-class in API and integration event output. ([#58](https://github.com/chirpstack/chirpstack/issues/58)) 
 
 ### Bugfixes
 
 * Fix `netid_type` method `panic` in case of invalid DevAddr prefix type.
 * Fix missing device `search` filter (API).
+* Fix incorrect config template key for `bind` ([backend_interface]).
+* Fix default `CN470` Class-B ping-slot frequencies.
+* Fix using system CA certificates for TLS. ([#204](https://github.com/chirpstack/chirpstack/pull/204))
+* Fix OTAA join-request MIC check and DevNonce validation order.
 
 ## v4.3.2
 
