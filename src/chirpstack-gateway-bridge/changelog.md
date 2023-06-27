@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.9
+
+### Bugfixes
+
+* Prevent duplicate MQTT connections. ([#229](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/229))
+
 ## v4.0.8
 
 ### Bugfixes
