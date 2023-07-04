@@ -1,4 +1,21 @@
 
+# Logging configuration
+[logging]
+
+  # Log level.
+  #
+  # Valid options are:
+  #   * TRACE
+  #   * DEBUG
+  #   * INFO
+  #   * WARN
+  #   * ERROR
+  #   * OFF
+  level="info"
+
+  # Log as JSON.
+  json=false
+
 # PostgreSQL configuration.
 [postgresql]
 
@@ -137,7 +154,6 @@
   # Multiple regions can be enabled simultaneously. Each region must match
   # the 'name' parameter of the region configuration in '[[regions]]'.
   enabled_regions=[
-    "eu868",
   ]
 
   # Device session expiration.
@@ -154,8 +170,27 @@
   # must be less than the (first) receive-window.
   deduplication_delay="200ms"
 
+  # Get downlink data delay.
+  #
+  # This is the time that ChirpStack waits between forwarding data to the
+  # integration(s) and reading data from the queue. A higher value means that
+  # an end-application has more time to schedule a downlink queue item which
+  # can be processed within the same uplink / downlink transaction.
+  # Please note that this value has influence on the uplink / downlink
+  # roundtrip time. Setting this value too high means ChirpStack will be
+  # unable to respond to the device within its receive-window.
+  get_downlink_data_delay="100ms"
+
   # Mac-commands disabled.
   mac_commands_disabled=false
+
+  # Custom ADR plugins.
+  #
+  # The custom ADR plugin must be implemented in JavaScript. For an example
+  # skeleton, please see:
+  # https://github.com/chirpstack/chirpstack/blob/master/examples/adr_plugins/plugin_skeleton.js
+  adr_plugins=[
+  ]
 
 
   # Scheduler settings.
@@ -181,15 +216,6 @@
     # overlap between scheduling Class-C downlinks and / or spreading the 
     # downlink capacity load on the gateway.
     class_c_lock_duration="5s"
-
-    # Multicast Class-C use GPS time.
-    #
-    # Use GPS time for scheduling multicast class-c downlinks. If this is enabled
-    # and the downlink must be send by multiple gateways to cover all devices
-    # within the multicast-group, these downlinks will be sent at exactly the same
-    # time by these gateways. If disabled, ChirpStack will use the configured
-    # margin. Only enable this features when all gateways have GNSS support.
-    multicast_class_c_use_gps_time=false
 
     # Multicast Class-C margin.
     #
@@ -577,7 +603,9 @@
   #
   # Note: this interface is used both for passive-roaming and when
   # integrating with Join Servers that implement the async interface.
-  bind="0.0.0.0:8080"
+  # Leaving this option blank will disable the Backend Interfaces API,
+  # which is fine in most cases.
+  bind=""
 
   # CA certificate (path).
   ca_cert=""
