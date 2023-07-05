@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.4.1
+
+### Improvements
+
+* Update internal dependencies.
+* Add support for JSON log output.
+
+### Bugfixes
+
+* Fix sending channel-mask twice (CFList + LinkADRReq) for US915-like regions.
+
 ## v4.4.0
 
 ### Features
