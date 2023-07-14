@@ -1,5 +1,19 @@
 # Changelog
 
+## v4.4.2
+
+### Features
+
+* Add `create-api-key` sub-command to create API keys using the CLI.
+
+### Improvements
+
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix sending multiple `FilterListReq` mac-commands (Relay).
+
 ## v4.4.1
 
 ### Improvements
