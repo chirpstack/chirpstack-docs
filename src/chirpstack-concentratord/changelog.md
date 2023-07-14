@@ -1,5 +1,52 @@
 # Changelog
 
+## v4.2.0
+
+### Features
+
+#### Refactor model configuration
+
+This release adds a `region` configuration option and removes the region suffix
+from the gateway / shield model. This changes the configuration from:
+
+```toml
+model="rak_rak2247_eu868"
+```
+
+to:
+
+```toml
+model="rak_rak2247"
+region="EU868"
+```
+
+For backwards compatibility, the old `model` configuration remains valid in
+this version, but will be removed in `v4.3.0`.
+
+#### Other features
+
+* Add `CN470` support for `semtech_sx1302c490gw1` shield.
+* Add `AU915` support for `sandbox_lorago_port` shield.
+* Add fine-timestamp for SX1302/SX1302. ([#66](https://github.com/chirpstack/chirpstack-concentratord/pull/66))
+
+### Improvements
+
+#### Build improvements
+
+The provided pre-compiled binaries are fully static and based on _musl libc_.
+This removes the need to compile against a very old verion of _glibc_ to
+stay compatible with old gateway firmwares.
+
+#### Other improvements
+
+* Update internal dependencies.
+* Implement time fallback option in case no GPS time-source is available. ([#49](https://github.com/chirpstack/chirpstack-concentratord/issues/49))
+
+### Bugfixes
+
+* Fix Class-B beacon channel-hopping.
+* Fix typo in `2g4` logs (it would log under the `chirpstack-concentratord-sx1301` process name).
+
 ## v4.1.1
 
 ### Features
