@@ -1,7 +1,7 @@
 {
 	"chirpstack_version": "4.4.2",
 	"gateway_os_version": "4.1.1",
-	"gateway_bridge_version": "4.0.9",
+	"gateway_bridge_version": "4.0.10",
 	"concentratord_version": "4.2.0",
 	"mqtt_forwarder_version": "4.1.0"
 }

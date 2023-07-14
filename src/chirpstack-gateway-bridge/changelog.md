@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0.10
+
+### Improvements
+
+* Add configuration option to print log in JSON format.
+
 ## v4.0.9
 
 ### Bugfixes
