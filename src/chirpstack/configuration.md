@@ -15,13 +15,15 @@ Commands:
           Print the device-session for debugging
   import-legacy-lorawan-devices-repository
           Import legacy lorawan-devices repository
+  create-api-key
+          Create global API key
   help
           Print this message or the help of the given subcommand(s)
 
 Options:
   -c, --config <DIR>  Path to configuration directory
-  -h, --help          Print help information
-  -V, --version       Print version information
+  -h, --help          Print help
+  -V, --version       Print version
 ```
 
 ## Configuration files
