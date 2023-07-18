@@ -150,20 +150,20 @@
 # ChirpStack Gateway OS
 
 - [Introduction](./chirpstack-gateway-os/index.md)
-- [Image types](./chirpstack-gateway-os/image-types.md)
 - [Changelog](./chirpstack-gateway-os/changelog.md)
+- [Image types](./chirpstack-gateway-os/image-types.md)
+- [Hardware support](./chirpstack-gateway-os/hardware-support.md)
 - [Downloads](./chirpstack-gateway-os/downloads.md)
-- [Guides](./chirpstack-gateway-os/guides/index.md)
-  - [Getting started](./chirpstack-gateway-os/guides/getting-started.md)
+- [Installation](./chirpstack-gateway-os/install/index.md)
+  - [Raspberry Pi](./chirpstack-gateway-os/install/raspberry-pi.md)
+- [Getting started](./chirpstack-gateway-os/getting-started.md)
 - [Use](./chirpstack-gateway-os/use/index.md)
-  - [Configuration](./chirpstack-gateway-os/use/gateway-config.md)
+  - [Configuration](./chirpstack-gateway-os/use/configuration.md)
   - [Subscribe to MQTT](./chirpstack-gateway-os/use/subscribe-to-mqtt.md)
   - [Log files](./chirpstack-gateway-os/use/log-files.md)
-  - [Monitoring](./chirpstack-gateway-os/use/monitoring.md)
   - [Modifying files](./chirpstack-gateway-os/use/modifying-files.md)
   - [Software update](./chirpstack-gateway-os/use/software-update.md)
   - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
-
 
 ---

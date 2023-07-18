@@ -1,5 +1,39 @@
 # Changelog
 
+## v4.2.0 (in development)
+
+### Features
+
+This is a very exciting release, as this release migrates the ChirpStack Gateway OS
+from [Yocto](https://www.yoctoproject.org/) to [OpenWrt](https://openwrt.org/).
+Thanks to [LuCI](https://github.com/openwrt/luci/) and the [UCI configuration system](https://openwrt.org/docs/guide-user/base-system/uci)
+it is now possible to configure the provided ChirpStack components as well
+thinks like network configuration through a web-interface instead of a CLI.
+This release also splits the [packages](https://github.com/chirpstack/chirpstack-openwrt-feed)
+from the ChirpStack Gateway OS [configuration](https://github.com/chirpstack/chirpstack-openwrt-config/)
+such that these can be integrated in other OpenWrt based projects.
+Main features that this release brings:
+
+#### Web-interface
+
+There is no need to configure the ChipStack Gateway OS using a terminal.
+Powered by [LuCI](https://github.com/openwrt/luci/)), the ChirpStack Gateway OS
+now provides an easy-to-use web-interface to configure ChirpStack components and
+system configuration.
+
+#### Custom packages
+
+Through the web-interface (and cli) it is possible to install additional
+software using the OpenWrt package repositories. This has been requested
+several times, but until now would require to compile a custom ChirpStack
+Gateway OS image which would take several hours to complete.
+
+### Upgrade notes
+
+Unfortunately it is not possible to migrate from ChirpStack Gateway OS v4.1.1
+to ChirpStack Gateway OS v4.2.0. You need to re-flash your SD-Card with the
+ChirpStack Gateway OS v4.2.0 image. 
+
 ## v4.1.1
 
 ### New shields

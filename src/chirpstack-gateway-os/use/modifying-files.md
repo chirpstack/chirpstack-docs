@@ -7,11 +7,13 @@ different data partition.
 
 ## Important
 
-Although this gives the complete freedom to make modifications to the root
-filesystem, it also means that once you make a modification a ChirpStack Gateway OS
-update will never "overwrite" this changed file. In reality, a ChirpStack Gateway OS
-update will still update the file on the root filesystem, the OverlayFS will
-present you the file from the data partition.
+Before performing a backup or upgrade, please make sure that the directories /
+files are listed in the files that must be included during a sysupgrade. This
+list can be configured in the web-interface by clicking the **System**, then
+**Backup / Flash Firmware** in the left menu and then clicking the
+**Configuration** tab.
 
-To "rollback" changes, you can simply remove these from `/data/upperdir`.
-Removing all the content from `/data/upperdir` would effectively be a "factory reset".
+## Reset
+
+To perform a factory reset using the web-interface, click **System**, then
+**Backup / Flash Firmware** in the left menu. Then click **Perform reset**.

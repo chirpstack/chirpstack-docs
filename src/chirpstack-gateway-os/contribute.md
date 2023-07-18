@@ -2,55 +2,29 @@
 
 ## Links
 
-- Community forum: [https://forum.chirpstack.io/](https://forum.chirpstack.io/)
-- Source repository: [https://github.com/brocaar/chirpstack-gateway-os](https://github.com/brocaar/chirpstack-gateway-os)
-  - Issue and bug reports: [https://github.com/brocaar/chirpstack-gateway-os/issues](https://github.com/brocaar/chirpstack-gateway-os/issues)
+* Community forum: [https://forum.chirpstack.io/](https://forum.chirpstack.io/)
+* ChirpStack Gateway OS build environment scripts:
+  * [https://github.com/chirpstack/chirpstack-gateway-os](https://github.com/chirpstack/chirpstack-gateway-os)
+  * Issue and bug reports [https://github.com/chirpstack/chirpstack-gateway-os/issues](https://github.com/chirpstack/chirpstack-gateway-os/issues)
+* OpenWrt configuration for ChirpStack Gateway OS:
+  * [https://github.com/chirpstack/chirpstack-openwrt-config](https://github.com/chirpstack/chirpstack-openwrt-config)
+  * Issue and bug reports: [https://github.com/chirpstack/chirpstack-openwrt-config/issues](https://github.com/chirpstack/chirpstack-openwrt-config/issues)
+* ChirpStack packages for OpenWrt:
+  * [https://github.com/chirpstack/chirpstack-openwrt-feed](https://github.com/chirpstack/chirpstack-openwrt-feed)
+  * Issue and bug reports: [https://github.com/chirpstack/chirpstack-openwrt-feed/issues](https://github.com/chirpstack/chirpstack-openwrt-feed/issues)
 
-  
+
 ## Building from source
 
-The ChirpStack Gateway OS uses [Docker](https://www.docker.com/) and
-[Docker Compose](https://docs.docker.com/compose/). Make sure you have
-these tools installed.
+For instructions on building the ChirpStack Gateway OS from source, please
+refer to the `README.md` in the:
 
+[https://github.com/chirpstack/chirpstack-gateway-os](https://github.com/chirpstack/chirpstack-gateway-os/)
 
-### Initial setup
+## ChirpStack OpenWrt feed
 
-Run the following command to set the `/build` folder permissions:
+If you would like to include one or multiple ChirpStack components in your own
+OpenWrt based project, then please refer to the following repository which
+contains the `Makefiles` for the ChirpStack components:
 
-```bash
-# on the host
-docker-compose run --rm busybox
-
-# within the container
-chown 999:999 /build
-```
-
-### Building
-
-Run the following command to setup the build environment:
-
-```bash
-# on the host
-docker-compose run --rm yocto bash
-
-# within the container
-
-# update the submodules
-make submodules
-
-# initialize the yocto / openembedded build environment
-source oe-init-build-env /build/ /chirpstack-gateway-os/bitbake/
-
-
-# build the chirpstack-gateway-os-base image
-bitbake chirpstack-gateway-os-base
-```
-
-#### Configuration
-
-By default, Raspberry Pi3 is configured as the target platform. You need to
-update the following configuration files to configure a different target:
-
-* `/build/config/local.conf`
-* `/build/config/bblayers.conf`
+[https://github.com/chirpstack/chirpstack-openwrt-feed](https://github.com/chirpstack/chirpstack-openwrt-feed)

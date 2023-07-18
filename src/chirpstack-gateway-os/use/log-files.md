@@ -1,21 +1,19 @@
 # Log files
 
-The ChirpStack components are writing their log output to [Syslog](https://en.wikipedia.org/wiki/Syslog),
-which writes to `/var/log/messages`.
+## Web-interface
 
-## All logs
+To read log output using the web-interface, click **Status** and then
+**System Log** in the left menu.
 
-To view the logs, run:
+## SSH
 
-```bash
-sudo tail -f /var/log/messages
-```
-
-## By service
-
-To filter the messages by a specific service (e.g. `chirpstack-concentratord`),
-run:
+To read log output using SSH, you need to use the `logread` utility.
+Examples:
 
 ```bash
-sudo tail -f /var/log/messages |grep chirpstack-concentratord
+# Print log output
+logread
+
+# Get last 20 lines and follow log messages
+logread -n 20 -f 
 ```

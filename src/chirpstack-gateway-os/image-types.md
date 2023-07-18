@@ -2,17 +2,27 @@
 
 ## Base
 
-The **chirpstack-gateway-os-base** image provides all the features and components
-to use a Raspberry Pi as LoRa gateway, forwarding data to an external server.
+The ChirpStack Gateway OS **Base** image provides all the components to use
+the hardware has a LoRa<sup>&reg;</sup> gateway. This includes:
 
-- ChirpStack Concentratord
-- ChirpStack MQTT Forwarder
-- Gateway configuration utility (`gateway-config`)
+- [ChirpStack Concentratord](../chirpstack-concentratord/index.md)
+- [ChirpStack MQTT Forwarder](../chirpstack-mqtt-forwarder/index.md)
+- [ChirpStack UDP Forwarder](https://github.com/chirpstack/chirpstack-udp-forwarder/)
+
+The **Base** image provides a web-interface for configuring all ChirpStack
+components, network (Wi-Fi, ethernet, firewall, ...) and system settings.
+
+![gateway-config](gateway-config.png)
 
 ## Full
 
-The **chirpstack-gateway-os-full** provides all the features of the
-**chirpstack-gateway-os-base** image, but is also bundled with the ChirpStack
-Network Server and all requirements to run a complete LoRaWAN stack on the
-Raspberry Pi. As all components are pre-configured, this is ideal when getting
-started with LoRaWAN.
+The ChirpStack Gateway OS **Full** image contains everything that is included
+with the **Base** image, but is also bundled with:
+
+* [ChirpStack LoRaWAN Network Server](../chirpstack/index.md)
+* *[NodeRED](https://nodered.org/)
+
+This image is intended to provide an easy-to-setup Gateway + Network Server
+solution for prototyping and testing.
+
+![applications](applications.png)
