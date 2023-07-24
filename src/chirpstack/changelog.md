@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.4.3
+
+### Bugfixes
+
+* Wait for first uplink before scheduling Class-C downlink.
+* Do not disable device activation fields in UI (making it impossible to read & copy session-keys).
+
 ## v4.4.2
 
 ### Features
