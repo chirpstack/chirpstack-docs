@@ -3,7 +3,7 @@
 Please refer to the [Installation](./install/index.md) section for per-target
 downloads.
 
-## Older version
+## Older version (v{{yocto_gateway_os_version}})
 
 ChirpStack Gateway OS has been migrated from [Yocto](https://www.yoctoproject.org/)
 to [OpenWrt](https://openwrt.org/) since version v4.2.0, making it possible to
