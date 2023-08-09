@@ -1,5 +1,29 @@
 # Changelog
 
+## v4.2.2
+
+### Features
+
+* Add `AU915` support for Semtech SX1302 LoRa(R) CoreCell modules.
+
+### Internal
+
+* Update dependencies.
+
+### Bugfixes
+
+* Remove GNSS config from Seeed WM1302 configuration (the GNSS module is not supported by the Semtech HAL).
+
+## v4.2.1
+
+### Internal
+
+* Fix filling of `wrapper::timespec` fields in case of `bindgen` generating `_bitfield_...` fields for memory alignment.
+
+### Bugfixes
+
+* Update documentation urls.
+
 ## v4.2.0
 
 ### Features
