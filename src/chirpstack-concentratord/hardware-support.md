@@ -12,97 +12,47 @@ provided by the vendors). Model specific features can be turned on and off using
 
 The `chirpstack-concentratord-sx1301` binary implements the [SX1301 HAL](https://github.com/lora-net/lora_gateway).
 
-| Vendor | Gateway / Shield | Model flags | Model |
-| --- | --- | --- | --- |
-| IMST | iC880A EU868 | | imst_ic880a_eu868 |
-| IMST | iC880A IN865 | | imst_ic880a_in865 |
-| IMST | iC880A RU864 | | imst_ic880a_ru864 |
-| Kerlink | iFemtoCell | | kerlink_ifemtocell_eu868 |
-| Multitech | Multitech Conduit AP EU868 | | multitech_mtcap_lora_868_eu868 |
-| Multitech | Multitech Conduit AP US915 | | multitech_mtcap_lora_915_us915 |
-| Multitech | Multitech Conduit MTAC-LORA-H-868 | AP1, AP2, GNSS | multitech_mtac_lora_h_868_eu868 |
-| Multitech | Multitech Conduit MTAC-LORA-H-915 | AP1, AP2, GNSS | multitech_mtac_lora_h_915_us915 |
-| Pi Supply | LoRa Gateway HAT AS923 | GNSS | pi_supply_lora_gateway_hat_as923 |
-| Pi Supply | LoRa Gateway HAT AU915 | GNSS | pi_supply_lora_gateway_hat_au915 |
-| Pi Supply | LoRa Gateway HAT EU868 | GNSS | pi_supply_lora_gateway_hat_eu868 |
-| Pi Supply | LoRa Gateway HAT IN865 | GNSS | pi_supply_lora_gateway_hat_in865 |
-| Pi Supply | LoRa Gateway HAT KR920 | GNSS | pi_supply_lora_gateway_hat_kr920 |
-| Pi Supply | LoRa Gateway HAT RU864 | GNSS | pi_supply_lora_gateway_hat_ru864 |
-| Pi Supply | LoRa Gateway HAT US915 | GNSS | pi_supply_lora_gateway_hat_us915 |
-| RAK | RAK2245 AS923 | GNSS | rak_2245_as923 |
-| RAK | RAK2245 AU915 | GNSS | rak_2245_au915 |
-| RAK | RAK2245 CN470 | GNSS | rak_2245_cn470 |
-| RAK | RAK2245 EU433 | GNSS | rak_2245_eu433 |
-| RAK | RAK2245 EU868 | GNSS | rak_2245_eu868 |
-| RAK | RAK2245 IN865 | GNSS | rak_2245_in865 |
-| RAK | RAK2245 KR920 | GNSS | rak_2245_kr920 |
-| RAK | RAK2245 RU864 | GNSS | rak_2245_ru864 |
-| RAK | RAK2245 US915 | GNSS | rak_2245_us915 |
-| RAK | RAK2246 AS923 | GNSS | rak_2246_as923 |
-| RAK | RAK2246 AU915 | GNSS | rak_2246_au915 |
-| RAK | RAK2246 CN470 | GNSS | rak_2246_cn470 |
-| RAK | RAK2246 EU433 | GNSS | rak_2246_eu433 |
-| RAK | RAK2246 EU868 | GNSS | rak_2246_eu868 |
-| RAK | RAK2246 IN865 | GNSS | rak_2246_in865 |
-| RAK | RAK2246 KR920 | GNSS | rak_2246_kr920 |
-| RAK | RAK2246 RU864 | GNSS | rak_2246_ru864 |
-| RAK | RAK2246 US915 | GNSS | rak_2246_us915 |
-| RAK | RAK2247 AS923 | GNSS | rak_2247_as923 |
-| RAK | RAK2247 AU915 | GNSS | rak_2247_au915 |
-| RAK | RAK2247 CN433 | GNSS | rak_2247_cn433 |
-| RAK | RAK2247 EU433 | GNSS | rak_2247_eu433 |
-| RAK | RAK2247 EU868 | GNSS | rak_2247_eu868 |
-| RAK | RAK2247 IN865 | GNSS | rak_2247_in865 |
-| RAK | RAK2247 KR920 | GNSS | rak_2247_kr920 |
-| RAK | RAK2247 RU864 | GNSS | rak_2247_ru864 |
-| RAK | RAK2247 US915 | GNSS | rak_2247_us915 |
-| RisingHF | RHF0M301 EU868 | | risinghf_rhf0m301_eu868 |
-| RisingHF | RHF0M301 US915 | | risinghf_rhf0m301_us915 |
-| Sandbox | LoRaGo Port EU868 | | sandbox_lorago_port_eu868 |
-| Sandbox | LoRaGo Port US915 | | sandbox_lorago_port_us915 |
-| Wifx | LORIX One EU868 | | wifx_lorix_one_eu868 |
+| Vendor | Gateway / Shield | Flags | Regions | Model |
+| --- | --- | --- | --- | --- |
+| IMST | iC880A | | EU868, IN865, RU864 | imst_ic880a |
+| Kerlink | iFemtoCell | | EU868, IN865, RU864 | kerlink_ifemtocell |
+| Multitech | Multitech Conduit AP EU868 | | EU868 | multitech_mtcap_lora_868 |
+| Multitech | Multitech Conduit AP US915 | | US915 | multitech_mtcap_lora_915 |
+| Multitech | Multitech Conduit MTAC-LORA-H-868 | AP1, AP2, GNSS | EU868 | multitech_mtac_lora_h_868 |
+| Multitech | Multitech Conduit MTAC-LORA-H-915 | AP1, AP2, GNSS | US915 |multitech_mtac_lora_h_915 |
+| Pi Supply | LoRa Gateway HAT | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | pi_supply_lora_gateway_hat |
+| RAK | RAK2245 | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2245 |
+| RAK | RAK2246 | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2246 |
+| RAK | RAK2247 | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2247 |
+| RisingHF | RHF0M301 | | EU868, US915 | risinghf_rhf0m301 |
+| Sandbox | LoRaGo Port | | AU915, EU868, US915 | sandbox_lorago_port |
+| Wifx | LORIX One | | EU868 | wifx_lorix_one |
 
 ## SX1302
 
 The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https://github.com/lora-net/sx1302_hal).
 
-| Vendor | Gateway / Shield | Model flags | Model |
-| --- | --- | --- | --- |
-| Dragino | PG1302 EU868 | | dragino_pg1302_eu868 |
-| Dragino | PG1302 US915 | | dragino_pg1302_us915 |
-| Multitech | Multitech Conduit MTAC-003E00 | AP1, AP2, GNSS | multitech_mtac_003e00_eu868 |
-| Multitech | Multitech Conduit MTAC-003U00 | AP1, AP2, GNSS | multitech_mtac_003u00_us915 |
-| RAK | RAK2287 AS923 | GNSS, USB | rak_2287_as923 |
-| RAK | RAK2287 AU915 | GNSS, USB | rak_2287_au915 |
-| RAK | RAK2287 CN470 | GNSS, USB | rak_2287_cn470 |
-| RAK | RAK2287 EU433 | GNSS, USB | rak_2287_eu433 |
-| RAK | RAK2287 EU868 | GNSS, USB | rak_2287_eu868 |
-| RAK | RAK2287 IN865 | GNSS, USB | rak_2287_in865 |
-| RAK | RAK2287 KR920 | GNSS, USB | rak_2287_kr920 |
-| RAK | RAK2287 RU864 | GNSS, USB | rak_2287_ru864 |
-| RAK | RAK2287 US915 | GNSS, USB | rak_2287_us915 |
-| RAK | RAK5146 AS923 | GNSS, USB | rak_5146_as923 |
-| RAK | RAK5146 AU915 | GNSS, USB | rak_5146_au915 |
-| RAK | RAK5146 CN470 | GNSS, USB | rak_5146_cn470 |
-| RAK | RAK5146 EU433 | GNSS, USB | rak_5146_eu433 |
-| RAK | RAK5146 EU868 | GNSS, USB | rak_5146_eu868 |
-| RAK | RAK5146 IN865 | GNSS, USB | rak_5146_in865 |
-| RAK | RAK5146 KR920 | GNSS, USB | rak_5146_kr920 |
-| RAK | RAK5146 RU864 | GNSS, USB | rak_5146_ru864 |
-| RAK | RAK5146 US915 | GNSS, USB | rak_5146_us915 |
-| Semtech | CoreCell EU868 (SX1302CXXXGW1) | | semtech_sx1302c868gw1_eu868 |
-| Semtech | CoreCell US915 (SX1302CXXXGW1) | | semtech_sx1302c915gw1_us915 |
-| Semtech | CoreCell AS923 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css923gw1_as923 |
-| Semtech | CoreCell EU868 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css868gw1_eu868 |
-| Semtech | CoreCell US915 (USB) (SX1302CSSXXXGW1) | GNSS | semtech_sx1302css915gw1_us915 |
-| Seeed | WM1302 EU868 | GNSS | seeed_wm1302_spi_eu868 |
-| Waveshare | SX1302 LoRaWAN Gateway HAT | | waveshare_sx1302_lorawan_gateway_hat_eu868 |
+| Vendor | Gateway / Shield | Flags | Regions | Model |
+| --- | --- | --- | --- | --- |
+| Dragino | PG1302 | | EU868, US915 | dragino_pg1302 |
+| Multitech | Multitech Conduit MTAC-003E00 | AP1, AP2, GNSS | EU868 | multitech_mtac_003e00 |
+| Multitech | Multitech Conduit MTAC-003U00 | AP1, AP2, GNSS | US915 | multitech_mtac_003u00 |
+| RAK | RAK2287 AS923 | GNSS, USB | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2287 |
+| RAK | RAK5146 AS923 | GNSS, USB | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_5146 |
+| Seeed | WM1302 | GNSS | EU868, US915 | seeed_wm1302_spi |
+| Semtech | CoreCell SX1302C490GW1 | | CN470 | semtech_sx1302c470gw1 |
+| Semtech | CoreCell SX1302C868GW1 | | EU868 | semtech_sx1302c868gw1 |
+| Semtech | CoreCell SX1302C915GW1 | | AU915, US915 | semtech_sx1302c915gw1 |
+| Semtech | CoreCell SX1302CSS868GW1 (USB) | GNSS | EU868| semtech_sx1302css868gw1 |
+| Semtech | CoreCell SX1302CSS915GW1 (USB) | GNSS | AU915, US915 | semtech_sx1302css915gw1 |
+| Semtech | CoreCell SX1302CSS923GW1 (USB) | GNSS | AS923, AS923_2, AS923_3, AS923_4 | semtech_sx1302css923gw1 |
+| Waveshare | SX1302 LoRaWAN Gateway HAT | | EU868 | waveshare_sx1302_lorawan_gateway_hat |
 
 ## 2G4 (SX1280)
 
 The `chirpstack-concentratord-2g4` binary implements the [2g4 HAL](https://github.com/Lora-net/gateway_2g4_hal/).
 
-| Vendor | Gateway / Shield | Model flags | Model |
+| Vendor | Gateway / Shield | Flags | Model |
 | --- | --- | --- | --- |
 | Multitech | Multitech Conduit MTAC-LORA-2G4 | | multitech_mtac_lora_2g4 |
 | Semtech | SX1280ZXXXXGW1 | | semtech_sx1280z3dsfgw1 |
