@@ -45,11 +45,19 @@
   # Public LoRaWAN network.
   lorawan_public=true
 
+  # Region.
+  #
+  # The region of the gateway. Options:
+  #  EU868, US915, CN779, EU433, AU915, CN470, AS923, AS923_2, AS923_3, AS923_4,
+  #  KR923, IN865, RU864
+  #
+  # Not not all the gateway models implement all regions.
+  region="EU868"
+
   # Gateway vendor / model.
   #
-  # This configures various vendor and model specific settings like the min / max
-  # frequency and TX gain table.
-  model="rak_2245_eu868"
+  # This configures various vendor and model specific settings.
+  model="rak_2245"
 
   # Gateway vendor / model flags.
   #
@@ -66,6 +74,12 @@
 
   # Gateway ID.
   gateway_id="0000000000000000"
+
+  # Time fallback.
+  #
+  # In case the gateway does not have a GNSS module or is unable to aquire a
+  # GNSS fix, use the system-time for setting the 'time' field on RX.
+  time_fallback_enabled=true
 
 
   # LoRa concentrator configuration.
