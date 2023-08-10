@@ -25,7 +25,7 @@ addresses of connected devices.
 #### Wi-Fi
 
 If your gateway has Wi-Fi support, then the ChirpStack Gateway OS will create
-an access-point to which you can connect with the name `ChirpStackAP` and 
+an access-point to which you can connect with the name `ChirpStackAP-XXXXXX` and 
 password `ChirpStackAP`.
 
 Once connected with `ChirpStackAP` the IP of the gateway is `192.168.0.1`.

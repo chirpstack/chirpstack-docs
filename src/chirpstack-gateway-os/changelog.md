@@ -28,6 +28,14 @@ software using the OpenWrt package repositories. This has been requested
 several times, but until now would require to compile a custom ChirpStack
 Gateway OS image which would take several hours to complete.
 
+### Updates
+
+* Update ChirpStack to v4.4.3.
+* Update ChirpStack Concentratord to v4.2.2.
+* Update ChirpStack UDP Forwarder to v4.1.2.
+* Update ChirpStack MQTT Forwarder to v4.1.0.
+* Update Node-RED to v3.0.2.
+
 ### Upgrade notes
 
 Unfortunately it is not possible to migrate from ChirpStack Gateway OS v4.1.1
