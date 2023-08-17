@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.2.3
+
+### Features
+
+* Add support for [RAK5148](https://store.rakwireless.com/products/2-4-ghz-mini-pcie-concentrator-module-for-lora-based-on-sx1280-rak5148).
+
+### Internal
+
+* Update dependencies.
+
 ## v4.2.2
 
 ### Features

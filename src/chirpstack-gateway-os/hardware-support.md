@@ -34,6 +34,7 @@
 * [x] [RAK - RAK2247](https://store.rakwireless.com/products/rak2247-lpwan-gateway-concentrator-module)
 * [x] [RAK - RAK2287](https://store.rakwireless.com/products/rak2287-lpwan-gateway-concentrator-module)
 * [x] [RAK - RAK5146](https://store.rakwireless.com/products/wislink-lpwan-concentrator-rak5146)
+* [x] [RAK - RAK5148](https://store.rakwireless.com/products/2-4-ghz-mini-pcie-concentrator-module-for-lora-based-on-sx1280-rak5148)
 * [x] [RAK - RAK831](https://store.rakwireless.com/products/rak831-gateway-module)
 
 #### RisingHF

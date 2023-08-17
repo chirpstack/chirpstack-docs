@@ -55,4 +55,5 @@ The `chirpstack-concentratord-2g4` binary implements the [2g4 HAL](https://githu
 | Vendor | Gateway / Shield | Flags | Model |
 | --- | --- | --- | --- |
 | Multitech | Multitech Conduit MTAC-LORA-2G4 | | multitech_mtac_lora_2g4 |
+| Rak | RAK5148 | | rak_5148 |
 | Semtech | SX1280ZXXXXGW1 | | semtech_sx1280z3dsfgw1 |
