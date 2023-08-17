@@ -31,7 +31,7 @@ Gateway OS image which would take several hours to complete.
 ### Updates
 
 * Update ChirpStack to v4.4.3.
-* Update ChirpStack Concentratord to v4.2.2.
+* Update ChirpStack Concentratord to v4.2.3.
 * Update ChirpStack UDP Forwarder to v4.1.2.
 * Update ChirpStack MQTT Forwarder to v4.1.0.
 * Update Node-RED to v3.0.2.
