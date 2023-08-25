@@ -25,14 +25,13 @@ cd chirpstack-docker
 
 ## Configuration
 
-ChirpStack configuration can be found in the `configuration/chirpstack`
-directory. It contains the global `chirpstack.toml` configuration, as well
-the configuration for all regions. The example configuration works out of the
-box.
+Please refer to the [README.md](https://github.com/chirpstack/chirpstack-docker)
+for configuration instructions. By default the EU868 region is configured but
+this can be changed to any supported region.
 
 ## Start
 
-You can execute the following command to start ChirpStack and its dependencies:
+Execute the following command to start ChirpStack and its dependencies:
 
 ```bash
 docker-compose up
@@ -45,31 +44,39 @@ some errors logged as the database needs to be initialized.
 
 ### UDP Packet Forwarder
 
-The example Compose environment contains an instance of the ChirpStack Gateway
-Bridge, pre-configured for the EU868 region and listening for UDP data on port
-`1700`. Please consult the documentation of your gateway how you should
-configure the UDP Packet Forwarder on your gateway.
+The example Compose environment provides an instance of the ChirpStack Gateway
+Bridge, by default configured for the EU868 region and listening for UDP data
+ on port `1700`. Please consult the documentation of your gateway for
+ configuration instructions.
 
-#### Changing the region
+### ChirpStack MQTT
 
-To change the gateway region, open the `configuration/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`
-configuration file, and change the topic prefix to the prefix matching the
-ChirpStack region configuration. After making configuration changes, make sure
-to restart the Compose environment.
+#### ChirpStack MQTT Forwarder
 
-```bash
-docker-compose stop
-docker-compose up
-```
+If you have installed the [ChirpStack MQTT Forwarder](../chirpstack-mqtt-forwarder/install/index.md)
+on your gateway or are planning to do so, then you can connect it to the MQTT
+broker (part of the `docker-compose.yml`). For this you must update the
+ChirpStack MQTT Forwarder configuration (on your gateway) which can be found
+in `chirpstack-mqtt-forwarder.toml`. Please make sure that the
+`chirpstack-mqtt-forwarder.toml` topic-prefix configuration matches the desired
+ChirpStack region.
+#### ChirpStack Gateway Bridge
 
-### ChirpStack Gateway Bridge on gateway
+If you have installed the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/install/index.md)
+on your gateway or are planning to do so, then you can connect it to the MQTT
+broker (part of the `docker-compose.yml`). For this you must update the
+ChirpStack Gateway Bridge configuration (on your gateway) which can be found
+in `chirpstack-gateway-bridge.toml`. Please make sure that the
+`chirpstack-gateway-bridge.toml` topic configuration matches the desired
+ChirpStack region.
 
-Alternatively, you could install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/install/index.md)
-on your gateway, and connect it to the Mosquitto MQTT Broker (part of this
-`docker-compose.yml`). Please make sure that the `chirpstack-gateway-bridge.toml`
-topic configuration matches the desired ChirpStack region.
+### Semtech Basics Station
 
-## Import TTN device repository
+The example Compose environment provides an instance of the ChirpStack Gateway
+Bridge with Basics Station backend listening on port `3001`. Please consult
+the documentation of your gateway for configuration instructions.
+
+## Import LoRaWAN device repository
 
 To import the TTN [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
 repository (optional step), run the following command:
@@ -78,9 +85,9 @@ repository (optional step), run the following command:
 make import-lorawan-devices
 ```
 
-This will clone the `lorawan-devices` repository and execute the `import-ttn-lorawan-devices`
-command of ChirpStack. Please note that for this step, you need to have the `git` and `make`
-commands installed.
+This will clone the `lorawan-devices` repository and execute the import
+command of ChirpStack. Please note that for this step, you need to have the
+`git` and `make` commands installed.
 
 ## Login
 
