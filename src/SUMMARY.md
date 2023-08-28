@@ -13,6 +13,7 @@
 - [Docker](./getting-started/docker.md)
 - [Debian / Ubuntu](./getting-started/debian-ubuntu.md)
 - [Raspberry Pi](./getting-started/raspberry-pi.md)
+- [Ansible and Vagrant](./getting-started/ansible-vagrant.md)
 
 - [Guides](./guides/index.md)
   - [Connecting a gateway](./guides/connect-gateway.md)
