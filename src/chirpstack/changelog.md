@@ -1,5 +1,33 @@
 # Changelog
 
+## v4.5.0 (in development)
+
+### Features
+
+#### UI improvements
+
+This updates the ChirpStack UI to [Ant Design](https://ant.design/) v5 and
+[React](https://react.dev/) v18.2.0. This also refactors the UI components
+code from classes to functions.
+
+While this refactor does not add additional features to the UI, it does
+eliminate some unnecessary reloading of data due to better route handling.
+This should result in less flickering when navigating between some of the
+UI pages.
+
+### Improvements
+
+* Make it possible to use `DeviceModeInd` for LoRaWAN 1.0.x devices (this is not according the LoRaWAN 1.0.x specs).
+* Implement removing device from Relay filter list.
+* Add `rediss://` connection string example to config template (for TLS). ([#219](https://github.com/chirpstack/chirpstack/issues/219))
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix showing initial InfluxDB integration form. ([#254](https://github.com/chirpstack/chirpstack/issues/254))
+* Fix ADR plugin variable mapping typo (`maxRd` > `maxDr`). ([#256](https://github.com/chirpstack/chirpstack/pull/256))
+* Fix setting empty username / password in MQTT. ([#257](https://github.com/chirpstack/chirpstack/issues/257))
+
 ## v4.4.3
 
 ### Bugfixes
