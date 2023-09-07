@@ -70,6 +70,15 @@ Wi-Fi (which will also disable the access-point mode).
 After your gateway has connected to the Wi-Fi network, you need to obtain the
 IP address again and re-connect. Please see the _Connecting_ steps.
 
+## Flash concentrator firmware (optional)
+
+In case you have a USB based concentrator module (USB based SX1302/3 module
+or 2.4GHz module), you must flash the MCU firmware of the module before
+it can be used.
+
+To upgrade the MCU firmware, click **System** and then **Custom Commands**.
+Click the **Run** button for the firmware upgrade option.
+
 ## Configure Concentratord
 
 To configure the concentrator, click **ChirpStack** and then **Concentratord**
