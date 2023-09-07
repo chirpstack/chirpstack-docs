@@ -99,6 +99,7 @@
   - [Dragino](./chirpstack-mqtt-forwarder/install/dragino.md)
   - [Kerlink](./chirpstack-mqtt-forwarder/install/kerlink.md)
   - [Multitech](./chirpstack-mqtt-forwarder/install/multitech.md)
+  - [RAK](./chirpstack-mqtt-forwarder/install/rak.md)
   - [Tektelic](./chirpstack-mqtt-forwarder/install/tektelic.md)
 - [Contribute & source](./chirpstack-mqtt-forwarder/contribute.md)
 

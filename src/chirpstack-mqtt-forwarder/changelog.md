@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.1.1
+
+### Improvements
+
+* Add packaging for RAK `ramips_24kec` based gateways.
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix setting empty username and password in MQTT. ([#257](https://github.com/chirpstack/chirpstack/issues/257))
+
 ## v4.1.0
 
 ### Features
