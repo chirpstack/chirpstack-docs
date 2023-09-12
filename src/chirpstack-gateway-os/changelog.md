@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.2.0 (in development)
+## v4.2.0
 
 ### Features
 
@@ -8,7 +8,7 @@ This is a very exciting release, as this release migrates the ChirpStack Gateway
 from [Yocto](https://www.yoctoproject.org/) to [OpenWrt](https://openwrt.org/).
 Thanks to [LuCI](https://github.com/openwrt/luci/) and the [UCI configuration system](https://openwrt.org/docs/guide-user/base-system/uci)
 it is now possible to configure the provided ChirpStack components as well
-thinks like network configuration through a web-interface instead of a CLI.
+things like network configuration through a web-interface instead of a CLI.
 This release also splits the [packages](https://github.com/chirpstack/chirpstack-openwrt-feed)
 from the ChirpStack Gateway OS [configuration](https://github.com/chirpstack/chirpstack-openwrt-config/)
 such that these can be integrated in other OpenWrt based projects.
