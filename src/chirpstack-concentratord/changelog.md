@@ -1,5 +1,21 @@
 # Changelog
 
+## v4.3.0
+
+### Features
+
+* Add missing regions for `seeed_wm1302_spi` module.
+
+### Improvements
+
+* Update dependencies.
+
+### Important
+
+This release removes the region suffix in the model names, e.g. `..._eu868`.
+Instead, you must configure the `region` configuration option. Please refer
+to the v4.2.0 release note.
+
 ## v4.2.3
 
 ### Features

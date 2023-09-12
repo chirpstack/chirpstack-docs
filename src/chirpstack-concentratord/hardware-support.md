@@ -39,7 +39,7 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 | Multitech | Multitech Conduit MTAC-003U00 | AP1, AP2, GNSS | US915 | multitech_mtac_003u00 |
 | RAK | RAK2287 AS923 | GNSS, USB | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2287 |
 | RAK | RAK5146 AS923 | GNSS, USB | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_5146 |
-| Seeed | WM1302 | GNSS | EU868, US915 | seeed_wm1302_spi |
+| Seeed | WM1302 | | AS923, AS923_2, AS923_3, AS923_4, AU915, EU868, IN865, KR920, RU864, US915 | seeed_wm1302_spi |
 | Semtech | CoreCell SX1302C490GW1 | | CN470 | semtech_sx1302c470gw1 |
 | Semtech | CoreCell SX1302C868GW1 | | EU868 | semtech_sx1302c868gw1 |
 | Semtech | CoreCell SX1302C915GW1 | | AU915, US915 | semtech_sx1302c915gw1 |
