@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.5.0 (in development)
+## v4.5.0
 
 ### Features
 
@@ -27,6 +27,7 @@ UI pages.
 * Fix showing initial InfluxDB integration form. ([#254](https://github.com/chirpstack/chirpstack/issues/254))
 * Fix ADR plugin variable mapping typo (`maxRd` > `maxDr`). ([#256](https://github.com/chirpstack/chirpstack/pull/256))
 * Fix setting empty username / password in MQTT. ([#257](https://github.com/chirpstack/chirpstack/issues/257))
+* Fix RPM install error caused by auto dependencies. ([#267](https://github.com/chirpstack/chirpstack/issues/267))
 
 ## v4.4.3
 
