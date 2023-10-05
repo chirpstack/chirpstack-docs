@@ -1,5 +1,19 @@
 # Changelog
 
+## v4.5.1
+
+### Improvements
+
+* Show notification in UI for form validation errors. ([#282](https://github.com/chirpstack/chirpstack/issues/282))
+* Log OTAA join-requests of unknown devices as warning instead of error.
+* Re-export `prost` dependency in `chirpstack_api` crate. ([#285](https://github.com/chirpstack/chirpstack/pull/285))
+
+### Bugfixes
+
+* Fix `enabled_uplink_channels` error in `region_au915_2.toml`. ([#274](https://github.com/chirpstack/chirpstack/pull/274))
+* Fix AS923 max-payload size table. ([#283](https://github.com/chirpstack/chirpstack/pull/283))
+* Fix doughnut chart resizing in UI. ([https://github.com/chirpstack/chirpstack/issues/284])
+
 ## v4.5.0
 
 ### Features
