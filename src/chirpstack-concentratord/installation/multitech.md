@@ -272,3 +272,112 @@ To view the ChirpStack Concentratord log output, use the following command:
 ```bash
 tail -f -n 100 /var/log/messages |grep chirpstack-concentratord
 ```
+
+## Multitech Conduit AP3
+
+* [Product detail page](https://www.multitech.com/brands/conduit-ap-300)
+* [Product documentation page](https://www.multitech.net/developer/products/multiconnect-conduit-access-point/)
+
+**Note:** This was tested with the following firmware version: `6.3.0`.
+
+
+### Disable internal packet forwarder
+
+In order to install the ChirpStack Concentratord, you must disable any packet
+forwarder provided by Multitech.
+
+#### Web-interface log in
+
+The mPower web-interface can be accessed by entering `https://IP-ADDRESS/` into
+your browser. As the web-interface uses a self-signed certificate, your browser
+will probably raise a warning.
+
+#### Disable packet-forwarder
+
+1. In the left menu, click _LoRaWAN&reg;_
+2. Under _LoRa mode_, select **DISABLED**
+3. Click _Submit_, and then _Save and Appy_ in the left menu.
+
+### Install ChirpStack Concentratord
+
+#### Enable SSH
+
+In order to install ChirpStack packages on the gateway, you must first enable SSH
+in the web-interface.
+
+1. In the left menu, click _Administration_ and then _Access configuration_. 
+2. Under _SSH Settings_, make sure this option is **Enabled**.
+3. In case of changes, click _Submit_ and then _Save and Apply_ in the left menu.
+
+#### SSH log in
+
+To log in into your gateway, use the following command:
+
+```bash
+ssh USERNAME@IP-ADDRESS
+```
+
+Where `USERNAME` is the username that you use to gain access to the web-interface
+of the gateway and `IP-ADDRESS` with the IP address of the gateway.
+
+#### Download IPK
+
+Use the following commands to download the latest version of the
+`chirpstack-concentratord` package:
+
+```bash
+cd /tmp
+wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap/chirpstack-concentratord_{{concentratord_version}}-r1_mtcap3.ipk
+```
+
+#### Install IPK
+
+Use the `opkg` package-manager to install the downloaded package. Example:
+
+```bash
+sudo opkg install chirpstack-concentratord_{{concentratord_version}}-r1_mtcap3.ipk
+```
+
+#### Configuration
+
+The first time ChirpStack Concentratord is started, it will automatically
+detect the region of the gateway, and copy the configuration.
+
+To start the Concentratord, use the following command:
+
+```bash
+sudo monit start chirpstack-concentratord
+```
+
+Configuration files can be found at:
+
+* `/var/config/chirpstack-concentratord/concentratord.toml` - Concentratord configuration
+* `/var/config/chirpstack-concentratord/channels.toml` - Channel configuration
+* `/var/config/chirpstack-concentratord/examples` - Directory containing example configuration
+
+#### (Re)start and stop commands
+
+Use the following commands to (re)start and stop the ChirpStack Concentratord
+service:
+
+```bash
+# Status
+sudo monit summary
+
+# start
+monit start chirpstack-concentratord
+
+# stop
+monit stop chirpstack-concentratord
+
+# restart
+monit restart chirpstack-concentratord
+```
+
+#### Log output
+
+To view the ChirpStack Concentratord log output, use the following command:
+
+```bash
+tail -f -n 100 /var/log/messages |grep chirpstack-concentratord
+```
