@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.1.2
+
+### Features
+
+* Provide package for Multitech Conduit AP3.
+
+### Improvements
+
+* Update internal dependencies.
+
 ## v4.1.1
 
 ### Improvements
