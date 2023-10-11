@@ -327,7 +327,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap/chirpstack-concentratord_{{concentratord_version}}-r1_mtcap3.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap3/chirpstack-concentratord_{{concentratord_version}}-r1_mtcap3.ipk
 ```
 
 #### Install IPK

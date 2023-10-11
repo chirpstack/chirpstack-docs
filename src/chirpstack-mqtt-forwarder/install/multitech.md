@@ -308,7 +308,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit_ap/chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_mtcap3.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit_ap3/chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_mtcap3.ipk
 ```
 
 #### Install IPK
