@@ -28,7 +28,7 @@ The `chirpstack-concentratord-sx1301` binary implements the [SX1301 HAL](https:/
 | Sandbox | LoRaGo Port | | AU915, EU868, US915 | sandbox_lorago_port |
 | Wifx | LORIX One | | EU868 | wifx_lorix_one |
 
-## SX1302
+## SX1302/3
 
 The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https://github.com/lora-net/sx1302_hal).
 
