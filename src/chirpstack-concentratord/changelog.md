@@ -1,5 +1,33 @@
 # Changelog
 
+## v4.3.3
+
+### Features
+
+* Add support for Multitech Conduit AP3 (EU868 and US915).
+* Add missing `waveshare_sx1302_lorawan_gateway_hat` regions. ([#92](https://github.com/chirpstack/chirpstack-concentratord/issues/92))
+
+### Improvements
+
+* Update internal dependencies.
+
+### Bugfixes
+
+* Update (modified) SX1302 HAL version to fix `qsort` issue. ([#107](https://github.com/chirpstack/chirpstack-concentratord/issues/107))
+
+## v4.3.2
+
+### Features
+
+* Add AMD64 build. ([#99](https://github.com/chirpstack/chirpstack-concentratord/pull/99))
+* Add `AU915` support for `risinghf_rhf0m301` module. ([#104](https://github.com/chirpstack/chirpstack-concentratord/pull/104))
+
+### Improvements
+
+* Refactor gnss / spi / i2c device path overwrites.
+* Refactor (reset)pin overwrites.
+
+
 ## v4.3.0
 
 ### Features

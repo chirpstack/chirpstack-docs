@@ -24,7 +24,7 @@ The `chirpstack-concentratord-sx1301` binary implements the [SX1301 HAL](https:/
 | RAK | RAK2245 | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2245 |
 | RAK | RAK2246 | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2246 |
 | RAK | RAK2247 | GNSS | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2247 |
-| RisingHF | RHF0M301 | | EU868, US915 | risinghf_rhf0m301 |
+| RisingHF | RHF0M301 | | AU915, EU868, US915 | risinghf_rhf0m301 |
 | Sandbox | LoRaGo Port | | AU915, EU868, US915 | sandbox_lorago_port |
 | Wifx | LORIX One | | EU868 | wifx_lorix_one |
 
@@ -48,7 +48,7 @@ The `chirpstack-concentratord-sx1302` binary implements the [SX1302 HAL](https:/
 | Semtech | CoreCell SX1302CSS868GW1 (USB) | GNSS | EU868| semtech_sx1302css868gw1 |
 | Semtech | CoreCell SX1302CSS915GW1 (USB) | GNSS | AU915, US915 | semtech_sx1302css915gw1 |
 | Semtech | CoreCell SX1302CSS923GW1 (USB) | GNSS | AS923, AS923_2, AS923_3, AS923_4 | semtech_sx1302css923gw1 |
-| Waveshare | SX1302 LoRaWAN Gateway HAT | | EU868 | waveshare_sx1302_lorawan_gateway_hat |
+| Waveshare | SX1302 LoRaWAN Gateway HAT | | AS923, AS923_2, AS923_3, AS923_4, AU915, EU868, IN865, KR920, RU864, US915 | waveshare_sx1302_lorawan_gateway_hat |
 
 ## 2G4 (SX1280)
 
