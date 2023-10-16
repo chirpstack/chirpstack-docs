@@ -23,6 +23,7 @@
   - [Node-RED integration](./guides/node-red-integration.md)
   - [ThingsBoard integration](./guides/thingsboard.md)
   - [Pilot Things integration](./guides/pilot-things.md)
+  - [Auth0.com integration](./guides/auth0-integration.md)
   - [Migrating from Semtech NS](./guides/migrating-from-semtech-ns.md)
 
 # ChirpStack
