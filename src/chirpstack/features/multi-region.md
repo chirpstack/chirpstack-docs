@@ -8,7 +8,7 @@ mix of 8-channel and 16-channel gateways.
 There are two terms that are important:
 
 * **Region name**, which is a user-defined name for a region configuration, this can be anything.
-* **Region common name**, wich is the region common name as defined by the LoRa Alliance.
+* **Region common name**, which is the region common name as defined by the LoRa Alliance.
 
 In the ChirpStack configuration examples, you will find for example region name
 `us915_0` for the channels 0 - 7 configuration, `us915_1` for the channels
