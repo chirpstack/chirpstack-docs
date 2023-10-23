@@ -84,7 +84,7 @@ in the ChirpStack region configuration are aligned.
 
 The default configuration that is provided by ChirpStack v4 assumes a region
 name as MQTT topic prefix (e.g. `eu868/gateway/...` or `us915_0/gateway/...` for
-the US915 region with channels 0 - 7). Please refer to the [Multi region](./chirpstack/features/multi-reagion.md)
+the US915 region with channels 0 - 7). Please refer to the [Multi region](./chirpstack/features/multi-region.md)
 documentation for more information.
 
 ## Validation
