@@ -44,7 +44,7 @@
   - [Gateway management](./chirpstack/features/gateway-management.md)
   - [Geolocation](./chirpstack/features/geolocation.md)
   - [Join server](./chirpstack/features/join-server.md)
-  - [Multi-region](./chirpstack/features/multi-reagion.md)
+  - [Multi-region](./chirpstack/features/multi-region.md)
   - [Multicast](./chirpstack/features/multicast.md)
   - [Rejoin](./chirpstack/features/rejoin.md)
   - [RX parameters (re)configuration](./chirpstack/features/rx-parameters-configuration.md)
