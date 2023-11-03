@@ -24,7 +24,6 @@ v3.14.0+ is compatible with both ChirpStack v3 and ChirpStack v4.
 
 ChirpStack v4 supports the latest ChirpStack Gateway Bridge v3, but it does
 require the `marshaler` option to be set to `protobuf` (this is the default).
-Support for JSON will be added in a future ChirpStack v4 version.
 
 ### ChirpStack (v4)
 
