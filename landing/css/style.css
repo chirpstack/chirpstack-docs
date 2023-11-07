@@ -56,5 +56,6 @@ h3 {
 }
 
 .chirpstack-supported-by img {
-	height: 135px;
+	max-height: 135px;
+	max-width: 350px;
 }
