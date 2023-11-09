@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.1.3
+
+### Improvements
+
+* Update RAK packaging for WisGateOS2 v2.2+.
+* Implement `preamble` and `no_crc` fields.
+* Update internal dependencies.
+
 ## v4.1.2
 
 ### Features
