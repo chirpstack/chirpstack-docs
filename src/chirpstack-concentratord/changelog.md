@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.3.4
+
+### Improvements
+
+* Mention in config that antenna gain is in dBi.
+* Implement `preamble` and `no_crc` fields.
+* Update internal dependencies.
+
 ## v4.3.3
 
 ### Features
