@@ -26,6 +26,12 @@
   - [Auth0.com integration](./guides/auth0-integration.md)
   - [Migrating from Semtech NS](./guides/migrating-from-semtech-ns.md)
   - [Roaming with Helium](./guides/helium-roaming.md)
+- [Gateway configuration](./gateway-configuration/index.md)
+  - [Dragino](./gateway-configuration/dragino.md)
+  - [Kerlink](./gateway-configuration/kerkink.md)
+  - [Multitech](./gateway-configuration/multitech.md)
+  - [RAK](./gateway-configuration/rak.md)
+  - [Tektelic](./gateway-configuration/tektelic.md)
 
 # ChirpStack
 
