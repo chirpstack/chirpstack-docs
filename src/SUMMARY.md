@@ -27,6 +27,7 @@
   - [Migrating from Semtech NS](./guides/migrating-from-semtech-ns.md)
   - [Roaming with Helium](./guides/helium-roaming.md)
 - [Gateway configuration](./gateway-configuration/index.md)
+  - [Browan](./gateway-configuration/browan.md)
   - [Dragino](./gateway-configuration/dragino.md)
   - [Kerlink](./gateway-configuration/kerkink.md)
   - [Multitech](./gateway-configuration/multitech.md)
