@@ -2,9 +2,9 @@
 
 <!-- toc -->
 
-## MiniHub Pro
+## MerryIoT Hub
 
-The MiniHub Pro gateway supports:
+The MerryIoT Hub supports:
 
 * Semtech UDP Packet Forwarder
 * Semtech Basics Station
@@ -46,6 +46,16 @@ Steps:
     * **Install LNS CRT**: If using mutual-TLS, upload the gateway client-certificate.
     * **Install LNS Key**: If using mutual-TLS, upload the gateway private-key.
 * Click **Save**.
+
+
+## MiniHub Pro
+
+The MiniHub Pro gateway supports:
+
+* Semtech UDP Packet Forwarder
+* Semtech Basics Station
+
+The configuration steps are equal to the _MerryIoT Hub_ gateway.
 
 ## Pico Next Indoor Gateway
 
