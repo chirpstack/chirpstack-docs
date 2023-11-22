@@ -1,5 +1,90 @@
 # Changelog
 
+## v4.6.0 (in development)
+
+### Feature
+
+#### End-to-end encryption
+
+This feature makes it possible to implement end-to-end encryption between the
+end-device and end-application. On OTAA join, the join-server will provide
+Chirpstack with the encrypted `AppSKey`, which will be forwarded on every
+uplink to the end-application (integration events). The end-application then
+first decrypts the `AppSKey` with the KEK key shared between the JS and
+end-application, and then uses the decrypted `AppSKey` to decrypt the
+application payload.
+
+On enqueue downlink, the end-application encrypts the application payload
+before enqueue. As well, it must set the `f_cnt_down` and `is_encrypted` fields
+such that ChirpStack knows that the payload is already encrypted and which
+downlink frame-counter was used during the encryption of the payload.
+
+**Note:** This feature requires an external join-server.
+
+#### Add `chirpstack_integration` crate
+
+This `chirpstack_integration` crate can be used to build external integrations
+using the Redis Streams that are exposed by ChirpStack. An example implementation
+is the [ChirpStack Pulsar Integration](https://github.com/chirpstack/chirpstack-pulsar-integration/).
+
+#### Tenant and application tags
+
+This adds tags (like already can be found on device-profiles and devices) to
+tenants and applications. Note that the integration events will contain the
+aggregation of application + device-profile + device tags. Integration events
+will not contain the tenant tags.
+
+#### Allow JoinEUI prefix configuration
+
+This makes it possible to configure a JoinEUI prefix when configuring a
+join-server, to forward a range of JoinEUI to a single join-server without
+the need to add multiple join-server configuration blocks. As well, this
+makes it possible to configure a 'catch-all' join-server, using a JoinEUI
+prefix that would match all JoinEUIs.
+
+#### Refactor streams API + expose Backend Interfaces requests
+
+This moves some of the API:
+
+* `meta/meta.proto` -> `streams/meta.proto`
+* `api/frame_log.proto` -> `streams/frames.proto`
+* `api/request_log.proto` -> `streams/api_requests.proto`
+
+If you are using these messages in your application, then you might need to
+update the import paths when updating the API SDK.
+
+As well, this adds a new Redis Stream exposing the Backend Interfaces requests
+and responses (Passive Roaming + Join Server).
+
+### Improvements
+
+* Expose `skip_f_cnt` and device variables to ADR plugins.
+* Reset uplink ADR history table in case of DR / TxPower / NbTrans change.
+* Add `secondary_net_ids` configuration option.
+* Do not fail in case of corrupted mac-commands.
+* Use region default RX2 frequency if device-session RX2 frequency == 0.
+* Make it explicit that TX Power is in EIRP + update region configuration from ERP to EIRP.
+* Refactor device-lock / `scheduler_run_after` setting.
+* Ignore unknown JSON fields when decoding JSON to API structures in Rust.
+* Rename `time` to `gw_time` and add `ns_time` to the gateway rx-info struct.
+* Speed up API authorization validation queries (SQL).
+* Improve log output (better log messages + adding better correlation identifiers to each message).
+* Add `preamble` and `no_crc` fields to `LoraModulationInfo` (this is not used
+  by ChirpStack, but it can be used by applications directly interacting with
+  the gateway).
+* Omit `null` fields in Backend Interfaces JSON output. ([#316](https://github.com/chirpstack/chirpstack/pull/316))
+* Reduce dependencies for AWS SNS integration by replacing `aws-sdk-sns` crate with `aws-sign-v4` + REST call.
+* Make device metric name optional. ([#313](https://github.com/chirpstack/chirpstack/issues/313))
+* Get all device-data in a single query to improve performance.
+
+## Bugfixes
+
+* Debian package: Fix `postinst` to only run on install.
+* Fix setting initial tags in tenant form (UI).
+* Use unbounded MQTT client channels / fix dropping MQTT messages under high load.
+* Add misspelled `UnkownReceiver` as valid `ResultCode` in Backend Interfaces (this is a typo in the specifications). ([#317](https://github.com/chirpstack/chirpstack/pull/317))
+* Reload device on change event. ([#319](https://github.com/chirpstack/chirpstack/issues/319))
+
 ## v4.5.1
 
 ### Improvements
