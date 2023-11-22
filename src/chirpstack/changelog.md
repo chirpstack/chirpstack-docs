@@ -79,7 +79,7 @@ and responses (Passive Roaming + Join Server).
 
 ## Bugfixes
 
-* Debian package: Fix `postinst` to only run on install.
+* Debian package: Fix `postinst` to only run on install. ([#295](https://github.com/chirpstack/chirpstack/issues/295))
 * Fix setting initial tags in tenant form (UI).
 * Use unbounded MQTT client channels / fix dropping MQTT messages under high load.
 * Add misspelled `UnkownReceiver` as valid `ResultCode` in Backend Interfaces (this is a typo in the specifications). ([#317](https://github.com/chirpstack/chirpstack/pull/317))
