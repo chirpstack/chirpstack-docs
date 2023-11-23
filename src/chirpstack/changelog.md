@@ -2,7 +2,7 @@
 
 ## v4.6.0 (in development)
 
-### Feature
+### Features
 
 #### End-to-end encryption
 
