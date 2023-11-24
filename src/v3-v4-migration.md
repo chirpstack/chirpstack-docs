@@ -35,6 +35,22 @@ strictly required, it is also recommended to create a new Redis server.
 will delete all objects from the ChirpStack v4 database, before copying over
 the data from the v3 databases.
 
+## Enable v3 compatibility to ChirpStack
+
+You must add the following configuration to the `[regions.gateway.backend.mqtt]`
+configuration section (`region_xxxxx.toml`) and restart ChirpStack:
+
+```
+v4_migrate=true
+```
+
+This will add backwards compatibility to ChirpStack to work with
+ChirpStack Gateway Bridge v3.14.0+. As this adds some overhead in terms of
+data sent between the gateway <> Network Server, you should disable this once
+the migration has been completed.
+
+See also the [ChirpStack Changelog](https://www.chirpstack.io/docs/chirpstack/changelog.html#disable-v3-compatibility-option).
+
 ## Data migration
 
 The ChirpStack project provides a migration script which will copy data from
