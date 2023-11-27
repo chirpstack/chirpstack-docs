@@ -4,5 +4,6 @@
 	"yocto_gateway_os_version": "4.1.1",
 	"gateway_bridge_version": "4.0.10",
 	"concentratord_version": "4.3.4",
-	"mqtt_forwarder_version": "4.1.3"
+	"mqtt_forwarder_version": "4.1.3",
+	"pulsar_integration_version": "4.0.0-test.3"
 }
