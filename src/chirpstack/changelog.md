@@ -56,6 +56,20 @@ update the import paths when updating the API SDK.
 As well, this adds a new Redis Stream exposing the Backend Interfaces requests
 and responses (Passive Roaming + Join Server).
 
+#### Add allow roaming option to Device Profile
+
+This makes it possible to select which devices are allowed to use roaming
+and which devices not. This option can be configured in the device-profile.
+On migration this value will be set to `true` (as all devices could use
+roaming before this version).
+
+#### Add `assume_email_verified` option for OIDC
+
+Some OpenID Connect providers do not provide an `email_verified` value. By
+setting the `assume_email_verified` to `true`, ChirpStack will assume that
+the e-mail address has been verified. ([#302](https://github.com/chirpstack/chirpstack/issues/302))
+
+
 ### Improvements
 
 * Expose `skip_f_cnt` and device variables to ADR plugins.
@@ -76,6 +90,7 @@ and responses (Passive Roaming + Join Server).
 * Reduce dependencies for AWS SNS integration by replacing `aws-sdk-sns` crate with `aws-sign-v4` + REST call.
 * Make device metric name optional. ([#313](https://github.com/chirpstack/chirpstack/issues/313))
 * Get all device-data in a single query to improve performance.
+* Change `v4_migrate` default to `false` (please [v3 to v4 migration guide](https://www.chirpstack.io/docs/v3-v4-migration.html)).
 
 ## Bugfixes
 
@@ -84,6 +99,8 @@ and responses (Passive Roaming + Join Server).
 * Use unbounded MQTT client channels / fix dropping MQTT messages under high load.
 * Add misspelled `UnkownReceiver` as valid `ResultCode` in Backend Interfaces (this is a typo in the specifications). ([#317](https://github.com/chirpstack/chirpstack/pull/317))
 * Reload device on change event. ([#319](https://github.com/chirpstack/chirpstack/issues/319))
+* Fix sending empty downlink to Relay in case uplink `ADRACKReq` bit was set. 
+* Return error in ThingsBoard integration if `ThingsBoardAccessToken` is not set. ([#277](https://github.com/chirpstack/chirpstack/issues/277))
 
 ## v4.5.1
 
