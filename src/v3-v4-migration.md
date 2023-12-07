@@ -23,7 +23,13 @@ Please make sure to upgrade to the latest v3 version. ChirpStack Gateway Bridge
 v3.14.0+ is compatible with both ChirpStack v3 and ChirpStack v4.
 
 ChirpStack v4 supports the latest ChirpStack Gateway Bridge v3, but it does
-require the `marshaler` option to be set to `protobuf` (this is the default).
+require the `marshaler` option to be set to `protobuf` and the `v4_migrate`
+option to be set to `true` (default `false`), please see below for details
+on how to enable this.
+
+After the migration has been completed, it is recommended to upgrade to
+ChirpStack Gateway Bridge v4 or ChirpStack MQTT Forwarder v4. And remove
+the `v4_migrate` configuration flag.
 
 ### ChirpStack (v4)
 

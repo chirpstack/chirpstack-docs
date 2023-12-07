@@ -2,6 +2,12 @@
 
 ## v4.6.0 (in development)
 
+**Important note before you upgrade:**
+
+* If you are migrating from ChirpStack v3 to ChirpStack v4 and are still using
+  the ChirpStack Gateway Bridge v3.14.x, then you must add `v4_migrate=true` to
+  your configuration as described by the [v3 to v4 migration documentation](https://www.chirpstack.io/docs/v3-v4-migration.html#enable-v3-compatibility-to-chirpstack).
+
 ### Features
 
 #### End-to-end encryption
