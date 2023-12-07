@@ -135,13 +135,22 @@
   # Network identifier (NetID, 3 bytes) encoded as HEX (e.g. 010203).
   net_id="000000"
 
+  # Secondary NetIDs.
+  #
+  # Additional NetIDs. At this moment, the additional NetIDs are only used to
+  # validate if an uplink belongs to the ChirpStack instance or if it is a
+  # roaming device (if roaming is enabled).
+  # If you would like to assign DevAddrs from multiple NetIDs, you must specify
+  # these in the dev_addr_prefixes configuration.
+  secondary_net_ids=[
+  ]
+
   # DevAddr prefix(es).
   #
-  # This makes it possible to configure one or multiple sub-ranges within
-  # the configured NetID. If left blank, then the complete DevAddr space
-  # provided by the configured NetID will be used.
-  # If multiple prefixes are configured, a random prefix will be chosen when
-  # generating a DevAddr.
+  # This makes it possible to configure one or multiple DevAddr (sub)ranges
+  # If left blank, then the complete DevAddr space provided by the configured
+  # net_id value will be used. If multiple prefixes are configured, a random
+  # prefix will be chosen when generating a DevAddr.
   #
   # Example configuration:
   # dev_addr_prefixes=["0000ff00/24"]
@@ -245,7 +254,12 @@
   #
   # If not set, this endpoint will be disabled.
   bind=""
-  
+
+  # Backend Interfaces log max history.
+  #
+  # This defines the max number of Backend Interface request records that will be persisted
+  # in Redis Streams. Setting this value to 0 disables this features.
+  backend_interfaces_log_max_history=10
 
   # Meta-log max history.
   #
@@ -562,16 +576,37 @@
     # The login label is used in the web-interface login form.
     login_label=""
 
+    # Assume e-mail verified.
+    #
+    # If set to true, then ChirpStack will ignore the email_verified received
+    # from the OpenID Connect provider, assuming it will be true. Some
+    # providers do not provide this field, in which case setting this value
+    # is needed.
+    assume_email_verified=false
+
 
 # Join Server configuration.
 [join_server]
 
     # Per Join Server configuration (this can be repeated).
+    #
+    # ChirpStack will try to match the Join-Request JoinEUI against each
+    # join_eui_prefix in the same order as they appear in the configuration.
+    #
+    # If you configure a 'catch-all' Join Server, then this entry must appear
+    # as the last item in the list.
+    #
     # Example:
     # [[join_server.servers]]
     #
-    #   # JoinEUI of the Join Server.
-    #   join_eui="0102030405060708"
+    #   # JoinEUI prefix that must be routed to the Join Server.
+    #   #
+    #   # Example '0102030405060700/56` means that the 56MSB of the
+    #   # join_eui_prefix will be used to match against the JoinEUI.
+    #   # Thus the following JoinEUI range will be forwarded to the
+    #   # configured Join Server:
+    #   #   0102030405060700 - 01020304050607ff
+    #   join_eui_prefix="0102030405060708/64"
     #
     #   # Server endpoint.
     #   server="https://example.com:1234/join/endpoint"
