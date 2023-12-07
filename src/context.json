@@ -1,5 +1,5 @@
 {
-	"chirpstack_version": "4.5.1",
+	"chirpstack_version": "4.6.0",
 	"gateway_os_version": "4.2.0",
 	"yocto_gateway_os_version": "4.1.1",
 	"gateway_bridge_version": "4.0.10",

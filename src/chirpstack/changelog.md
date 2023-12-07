@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.6.0 (in development)
+## v4.6.0
 
 **Important note before you upgrade:**
 
