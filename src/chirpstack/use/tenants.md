@@ -12,9 +12,8 @@ An tenant can have:
 
 ## Device Profiles
 
-[Device profiles](device-profiles.md) can be created by
-(tenant) admin users and can be assigned when creating a
-[Device](devices.md).
+[Device profiles](device-profiles.md) can be created by (tenant) admin users
+and can be assigned when creating a [Device](devices.md).
 
 ## Gateways
 
