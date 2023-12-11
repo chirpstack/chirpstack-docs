@@ -91,6 +91,7 @@
   - [Go examples](./chirpstack/api/go-examples.md)
   - [Python examples](./chirpstack/api/python-examples.md)
   - [JavaScript examples](./chirpstack/api/js-examples.md)
+  - [C# examples](./chirpstack/api/csharp-examples.md)
   - [Protocol documentation](./chirpstack/api/api.md)
 - [Backends](./chirpstack/backends/index.md)
   - [MQTT](./chirpstack/backends/mqtt.md)
