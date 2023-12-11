@@ -86,6 +86,7 @@
   - [Pilot Things](./chirpstack/integrations/pilot-things.md)
   - [PostgreSQL](./chirpstack/integrations/postgresql.md)
   - [ThingsBoard](./chirpstack/integrations/thingsboard.md)
+  - [Building new integrations](./chirpstack/integrations/building-new-integrations.md)
 - [API](./chirpstack/api/index.md)
   - [gRPC](./chirpstack/api/grpc.md)
   - [REST](./chirpstack/api/rest.md)
