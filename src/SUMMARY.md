@@ -48,6 +48,7 @@
   - [Device metrics](./chirpstack/features/device-metrics.md)
   - [Device status](./chirpstack/features/device-status.md)
   - [Device time](./chirpstack/features/device-time.md)
+  - [End-to-end encryption](./chirpstack/features/end-to-end-encryption.md)
   - [Frame logging](./chirpstack/features/frame-logging.md)
   - [Gateway management](./chirpstack/features/gateway-management.md)
   - [Geolocation](./chirpstack/features/geolocation.md)
