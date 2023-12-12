@@ -1,5 +1,57 @@
 # Changelog
 
+## v4.7.0 (in development)
+
+### Features
+
+#### MQTT shared subscription
+
+This by defaults connects to the MQTT broker using a shared subscription name
+`chirpstack`. Using a shared subscription, the MQTT broker will send a received
+uplink only to one subscriber. In case ChirpStack is deployed as a cluster,
+this removes the overhead caused by all instances receiving the same uplink
+(which would be correctly handled by the deduplication logic).
+
+In case you have multiple ChirpStack environments (e.g. production, staging
+and testing) connected to the same MQTT broker, then make sure that each
+environment has a correct `share_name` configured in the `region_XXXXX.toml`
+configuration.
+
+### Improvements
+
+#### Replace OpenSSL with Rustls
+
+This is an internal improvement and removes the OpenSSL dependency in favor of
+Rustls, which is a pure Rust TLS implementation. This makes the build process
+easier as it is no longer needed to build a (static) OpenSSL version to link
+against.
+
+#### Use async PostgreSQL
+
+This is an internal improvement, and migrates away from `pq-sys` in favor of
+`tokio-postgres`, which is a pure Rust client implementation which works with
+`async`. This removes all `task::spawn_blocking(...)` blocks around SQL queries.
+As well, we no longer need to static link against libpq (C library, with
+dependency on OpenSSL).
+
+#### Use async Redis
+
+This is an internal improvement and updates all Redis queries to use
+`async` / `await` and removes all `task::spawn_blocking(...)` blocks around
+Redis queries.
+
+#### Paho MQTT > rumqttc client
+
+This is an internal improvement and replaces `paho-mqtt` with `rumqttc`. The
+latter crate is a pure Rust client which uses `rustls` for TLS instead of
+OpenSSL.
+
+#### Other
+
+* Update dependencies.
+* Return Redis connection to the pool immediately after query completion.
+* Return PostgreSQL client to the pool immediately after query completion.
+
 ## v4.6.0
 
 **Important note before you upgrade:**
