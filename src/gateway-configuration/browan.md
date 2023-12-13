@@ -109,3 +109,24 @@ Steps:
     * **CRT**: If using mutual-TLS, upload the gateway client-certificate.
     * **Key**: If using mutual-TLS, upload the gateway private-key.
 * Click **Apply**.
+
+## Outdoor Micro Gateway
+
+The Outdoor Micro Gateway supports:
+
+* Semtech Packet Forwarder
+
+### Semtech UDP Packet Forwarder
+
+**Note:** You must install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)
+on your server first and configure the `semtech_udp` backend.
+
+Steps (in the Outdoor Micro Gateway web-interface):
+
+* In the menu, click **Packet Forward > Module 1 Settings**.
+* In the _Gateway Info_ form, enter the following details:
+  * **Server Address**: The hostname / IP of your server on which the
+    ChirpStack Gateway Bridge is installed, for example `example.com`.
+  * **Server Uplink Port**: The ChirpStack Gateway Bridge port (default `1700`).
+  * **Server Downlink Port**: The ChirpStack Gateway Bridge port (default `1700`).
+* Click **Apply**.
