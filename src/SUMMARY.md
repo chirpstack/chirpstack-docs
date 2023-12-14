@@ -188,4 +188,9 @@
   - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
 
+# ChirpStack Gateway Relay
+
+- [Introduction](./chirpstack-gateway-relay/index.md)
+- [Protocol](./chirpstack-gateway-relay/protocol.md)
+
 ---
