@@ -127,11 +127,11 @@ Bytes:
 
 On downlink, the Border Gateway creates and re-transmits a Relay encapsulated
 to the Relay Gateway in the following format. The minimum Relay encapsulation
-overhead is 7 bytes (assuming a Relay Gateway ID of 1 byte).
+overhead is 8 bytes (assuming a Relay Gateway ID of 1 byte).
 
 Bytes:
 
-| 1 byte        | 5 bytes           | n bytes          | n bytes            |
+| 1 byte        | 6 bytes           | n bytes          | n bytes            |
 | ------------- | ----------------- | ---------------- | ------------------ |
 | Downlink MHDR | Downlink Metadata | Relay Gateway ID | LoRaWAN PHYPayload |
 
