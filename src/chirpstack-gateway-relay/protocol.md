@@ -181,8 +181,8 @@ Encoded as Frequency<sub>Hz</sub> = `Downlink Frequency x 100`.
 
 #### Delay
 
-This holds the relative delay to the Uplink ID which must be used for the
-downlink transmission:
+This holds the relative delay in seconds to the Uplink ID which must be used
+for the downlink transmission:
 
 Bits:
 
@@ -190,8 +190,9 @@ Bits:
 | ----- | ----- |
 | RFU   | Delay |
 
-Delay is an unsigned integer with a minimum value of `0` and a maximum value
-of `15`.
+Delay is an unsigned integer, encoded as:
+
+Delay<sub>Seconds</sub> = `Delay + 1`.
 
 ### Relay Gateway ID
 
