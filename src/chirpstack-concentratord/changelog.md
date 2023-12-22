@@ -1,5 +1,20 @@
 # Changelog
 
+## v4.3.5
+
+### Features
+
+* Add support for `embit_emb_lr1302_mpcie` module.
+
+### Improvements
+
+* Refactor (reset) pin configuration. ([#126](https://github.com/chirpstack/chirpstack-concentratord/pull/126))
+* Update internal dependencies.
+
+### Bugfixes
+
+* `sx1302`: No need to trigger (reset) pins if using USB.
+
 ## v4.3.4
 
 ### Improvements
