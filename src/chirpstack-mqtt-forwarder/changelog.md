@@ -1,5 +1,25 @@
 # Changelog
 
+## v4.2.0 (in development)
+
+### Features
+
+#### `paho-mqtt` to `rumqttc` refactor
+
+This refactors the code to use `rumqttc` instead of `paho-mqtt` as MQTT client
+library. As `rumqttc` is a pure-Rust MQTT client, which uses `rustls` for TLS,
+it is no longer needed to statically link against OpenSSL.
+
+### Improvements
+
+* Add AMD64 build. ([#46](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/46))
+* Reconnect ZeroMQ REQ socket on error.
+* Update dependencies.
+
+### Bugfixes
+
+* Fix extending meta-data in Concentratord backend.
+
 ## v4.1.3
 
 ### Improvements
