@@ -11,23 +11,16 @@ This section describes which context must be known at the different components
 in the Relay architecture. Unless otherwise specified, this context must be
 known at both the Relay Gateway and Border Gateway.
 
-### Relay Gateway ID length
-
-Indicates the number of Gateway ID bytes that are included in the Relay
-Gateway ID field. Default `1`. The Relay Gateway might use the full 8 byte
-Gateway ID and uses the N least significant bytes, or it might make the
-Relay Gateway ID configurable.
-
 ### Data-rate table
 
 A data-rate table, which maps the data-rate parameters to an integer value
-(and back). There is no requirement that this follows the data-rates as
-specified in RP002.
+(and back). There is no requirement that this follows the data-rate indices
+as specified in RP002.
 
 ### Uplink channel index table
 
 An uplink channel table, which maps an uplink channel to an integer value
-(and back). There is no requirement that this follows the channels as
+(and back). There is no requirement that this follows the channel indices as
 specified in RP002.
 
 ### Uplink table
@@ -41,12 +34,11 @@ to the Uplink ID.
 ## Uplink payload format
 
 On receiving an uplink, the Relay creates and re-transmits a Relay encapsulated
-LoRaWAN payload. The minimum Relay encapsulation overhead is 7 bytes (assuming
-a Relay Gateway ID of 1 byte).
+LoRaWAN payload. The Relay encapsulation overhead is 10 bytes.
 
 Bytes:
 
-| 1 byte      | 5 bytes         | n bytes          | n bytes            |
+| 1 byte      | 5 bytes         | 4 bytes          | n bytes            |
 | ----------- | --------------- | ---------------- | ------------------ |
 | Uplink MHDR | Uplink Metadata | Relay Gateway ID | LoRaWAN PHYPayload |
 
@@ -55,14 +47,13 @@ Bytes:
 
 Bits:
 
-| 7..5  | 4         | 3..2      | 1..0    |
-| ----- | --------- | --------- | ------- |
-| MType | Direction | Hop count | Version |
+| 7..5  | 4..5         | 2..0      |
+| ----- | -------------| --------- |
+| MType | Payload type | Hop count |
 
 * MType = `111` (= Proprietary LoRaWAN MType)
-* Direction = `0` (uplink)
-* Hop count = `00`
-* Version = `00`
+* Payload type = `00` (= Relayed uplink)
+* Hop count = `000`
 
 ### Uplink Metadata
 
@@ -111,14 +102,11 @@ Uplink channel, unsigned integer.
 
 ### Relay Gateway ID
 
-This contains the Relay Gateway ID, using the number of bytes as configured.
-E.g. for a small network, 1 byte might be sufficient to uniquely identify all
-the Relay Gateways. For larger networks, it might be needed to increase this
-number.
+This contains the Relay Gateway ID which received the uplink from the End Device.
 
 Bytes:
 
-| n bytes          |
+| 4 bytes          |
 | ---------------- |
 | Relay Gateway ID |
 
@@ -126,12 +114,12 @@ Bytes:
 ## Downlink payload format
 
 On downlink, the Border Gateway creates and re-transmits a Relay encapsulated
-to the Relay Gateway in the following format. The minimum Relay encapsulation
-overhead is 8 bytes (assuming a Relay Gateway ID of 1 byte).
+to the Relay Gateway in the following format. The Relay encapsulation overhead
+is 11 bytes.
 
 Bytes:
 
-| 1 byte        | 6 bytes           | n bytes          | n bytes            |
+| 1 byte        | 6 bytes           | 4 bytes          | n bytes            |
 | ------------- | ----------------- | ---------------- | ------------------ |
 | Downlink MHDR | Downlink Metadata | Relay Gateway ID | LoRaWAN PHYPayload |
 
@@ -139,14 +127,13 @@ Bytes:
 
 Bits:
 
-| 7..5  | 4         | 3..2      | 1..0    |
-| ----- | --------- | --------- | ------- |
-| MType | Direction | Hop count | Version |
+| 7..5  | 4..5         | 2..0      |
+| ----- | -------------| --------- |
+| MType | Payload type | Hop count |
 
 * MType = `111` (= Proprietary LoRaWAN MType)
-* Direction = `1` (downlink)
-* Hop count = `00`
-* Version = `00`
+* Payload type = `01` (Relayed downlink)
+* Hop count = `000`
 
 ### Downlink Metadata
 
