@@ -1,5 +1,47 @@
 # Changelog
 
+## v4.3.0
+
+### Upgrade notes
+
+This release updates the PostgreSQL database version. If you would like to
+retain all data, You must create a PostgreSQL + Redis backup **before**
+upgrading. You must use the following commands (using SSH):
+
+```bash
+mkdir -p /srv/backup
+chmod 777 /srv/backup
+sudo -u postgres /usr/bin/pg_dump -h localhost -d chirpstack -F c -f /srv/backup/chirpstack.pg
+
+service redis stop
+cp /srv/redis/dump.rdb /srv/backup/chirpstack.redis
+service redis start
+```
+
+After upgrading, you can use the _Restore ChirpStack backup_ command to
+restore the backup. For future backups, you can use the _Create ChirpStack
+Backup_ command (see features) after upgrading.
+
+### Features
+
+#### PostgreSQL & Redis backup / restore
+
+This adds _Create ChirpStack backup_ and _Restore ChirpStack backup_
+commands under **System > Custom Commands**.
+
+#### Other features
+
+* Add Wireguard VPN support.
+* Add experimental support for RAK7268v2 gateways (to be documented).
+
+### Updates
+
+* Update OpenWrt to v23.05.2.
+* Update ChirpStack to v4.6.0.
+* Update ChirpStack Concentratord to v4.3.5.
+* Update ChirpStack MQTT Forwarder to v4.1.3.
+* Update ChirpStack UDP Forwarder to v4.1.6.
+
 ## v4.2.0
 
 ### Features
