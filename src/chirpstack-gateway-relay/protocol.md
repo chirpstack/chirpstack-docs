@@ -38,16 +38,16 @@ LoRaWAN payload. The Relay encapsulation overhead is 10 bytes.
 
 Bytes:
 
-| 1 byte      | 5 bytes         | 4 bytes          | n bytes            |
-| ----------- | --------------- | ---------------- | ------------------ |
-| Uplink MHDR | Uplink Metadata | Relay Gateway ID | LoRaWAN PHYPayload |
+| 1 byte      | 5 bytes         | 4 bytes  | n bytes            |
+| ----------- | --------------- | -------- | ------------------ |
+| Uplink MHDR | Uplink Metadata | Relay ID | LoRaWAN PHYPayload |
 
 
 ### Uplink MHDR
 
 Bits:
 
-| 7..5  | 4..5         | 2..0      |
+| 7..5  | 4..3         | 2..0      |
 | ----- | -------------| --------- |
 | MType | Payload type | Hop count |
 
@@ -100,15 +100,15 @@ SNR is a signed integer with a minimum value of `-32` and a maximum value of
 
 Uplink channel, unsigned integer.
 
-### Relay Gateway ID
+### Relay ID
 
-This contains the Relay Gateway ID which received the uplink from the End Device.
+This contains the Relay ID which received the uplink from the End Device.
 
 Bytes:
 
-| 4 bytes          |
-| ---------------- |
-| Relay Gateway ID |
+| 4 bytes  |
+| -------- |
+| Relay ID |
 
 
 ## Downlink payload format
@@ -119,15 +119,15 @@ is 11 bytes.
 
 Bytes:
 
-| 1 byte        | 6 bytes           | 4 bytes          | n bytes            |
-| ------------- | ----------------- | ---------------- | ------------------ |
-| Downlink MHDR | Downlink Metadata | Relay Gateway ID | LoRaWAN PHYPayload |
+| 1 byte        | 6 bytes           | 4 bytes  | n bytes            |
+| ------------- | ----------------- | -------- | ------------------ |
+| Downlink MHDR | Downlink Metadata | Relay ID | LoRaWAN PHYPayload |
 
 ### Downlink MHDR
 
 Bits:
 
-| 7..5  | 4..5         | 2..0      |
+| 7..5  | 4..3         | 2..0      |
 | ----- | -------------| --------- |
 | MType | Payload type | Hop count |
 
@@ -181,7 +181,7 @@ Delay is an unsigned integer, encoded as:
 
 Delay<sub>Seconds</sub> = `Delay + 1`.
 
-### Relay Gateway ID
+### Relay ID
 
-This contains the Relay Gateway ID that must relay the downlink to the
+This contains the Relay ID that must relay the downlink to the
 End Device using the provided Downlink metadata.
