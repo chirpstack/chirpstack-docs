@@ -11,6 +11,12 @@ This section describes which context must be known at the different components
 in the Relay architecture. Unless otherwise specified, this context must be
 known at both the Relay Gateway and Border Gateway.
 
+### TX Power table
+
+A TX Power table, which maps the (downlink) TX Power to an integer (0 - 15)
+and back. Ideally this matches the TX Power table of the Concentratord
+configuration.
+
 ### Data-rate table
 
 A data-rate table, which maps the data-rate parameters to an integer value
@@ -139,9 +145,9 @@ Bits:
 
 Bytes:
 
-| 2 bytes                        | 3 bytes            | 1 byte |
-| ------------------------------ | ------------------ | ------ |
-| Uplink ID + Downlink data-rate | Downlink Frequency | Delay  |
+| 2 bytes                        | 3 bytes            | 1 byte           |
+| ------------------------------ | ------------------ | ---------------- |
+| Uplink ID + Downlink data-rate | Downlink Frequency | Delay + TX Power |
 
 #### Uplink ID + Downlink data-rate
 
@@ -166,18 +172,22 @@ value of `15`.
 
 Encoded as Frequency<sub>Hz</sub> = `Downlink Frequency x 100`.
 
-#### Delay
-
-This holds the relative delay in seconds to the Uplink ID which must be used
-for the downlink transmission:
+#### Delay + TX Power
 
 Bits:
 
-| 7..4  | 3..0  |
-| ----- | ----- |
-| RFU   | Delay |
+| 7..4     | 3..0  |
+| -------- | ----- |
+| TX Power | Delay |
 
-Delay is an unsigned integer, encoded as:
+##### TX Power
+
+The TX Power which must be used for sending the downlink.
+
+##### Delay
+
+The relative delay in seconds to the Uplink ID which must be used
+for the downlink transmission. Delay is an unsigned integer, encoded as:
 
 Delay<sub>Seconds</sub> = `Delay + 1`.
 
