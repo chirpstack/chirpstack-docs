@@ -173,7 +173,7 @@ for the downlink transmission:
 
 Bits:
 
-| 15..4 | 3..0  |
+| 7..4  | 3..0  |
 | ----- | ----- |
 | RFU   | Delay |
 
