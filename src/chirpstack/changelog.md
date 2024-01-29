@@ -34,6 +34,10 @@ This is an internal improvement, and migrates away from `pq-sys` in favor of
 As well, we no longer need to static link against libpq (C library, with
 dependency on OpenSSL).
 
+**Important note:** this also adds a new `ca_cert` option to the `[postgresql]`
+configuration section where you can configure the CA certificate which must
+be used for validating the PostgreSQL server certificate.
+
 #### Use async Redis
 
 This is an internal improvement and updates all Redis queries to use
