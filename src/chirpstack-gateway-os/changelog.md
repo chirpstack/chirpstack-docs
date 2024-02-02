@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.3.2
+
+### Bugfixes
+
+* Fix regression introduced by v4.3.1 causing the ChirpStack UDP Forwarder to not start (missing `chirpstack-udp-forwarder.sh`).
+
 ## v4.3.1
 
 ### Improvements
