@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.3.1
+
+### Improvements
+
+* RPi: Add FTDI kernel module for USB -> Serial devices. ([#105](https://github.com/chirpstack/chirpstack-gateway-os/issues/105))
+* Refactor ChirpStack package scripts and configuration in preparation to support targets with multiple concentrator modules.
+
+### Bugfixes
+
+* Fix error in SX1301 init script. ([#108](https://github.com/chirpstack/chirpstack-gateway-os/issues/108))
+
 ## v4.3.0
 
 ### Upgrade notes
