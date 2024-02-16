@@ -103,9 +103,6 @@
   - [Protocol documentation](./chirpstack/api/api.md)
 - [Backends](./chirpstack/backends/index.md)
   - [MQTT](./chirpstack/backends/mqtt.md)
-  - [AMQP / RabbitMQ](./chirpstack/backends/amqp.md)
-  - [Azure IoT Hub](./chirpstack/backends/azure-iot-hub.md)
-  - [GCP Pub/Sub](./chirpstack/backends/gcp-pub-sub.md)
 - [Contribute & source](./chirpstack/contribute.md)
 
 # ChirpStack MQTT Forwarder
