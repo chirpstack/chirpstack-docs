@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.2.0 (in development)
+## v4.2.0
 
 ### Features
 
@@ -19,6 +19,8 @@ it is no longer needed to statically link against OpenSSL.
 ### Bugfixes
 
 * Fix extending meta-data in Concentratord backend.
+* Fix `udp_bind` > `bind` error in config examples. ([#49](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/49))
+* Fix corrupted payloads on mips / mipsel platforms. ([#50](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/50), [#52](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/52))
 
 ## v4.1.3
 
