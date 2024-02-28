@@ -2,6 +2,20 @@
 
 ## v4.7.0 (in development)
 
+**Important note before you upgrade:**
+
+This release moves the device-session storage from Redis to PostgreSQL. After
+upgrading, you must execute the following command (adapted to your environment):
+
+```bash
+chirpstack -c /etc/chirpstack migrate-device-sessions-to-postgres
+```
+
+This command will iterate over the devices in the PostgreSQL database of which
+the device-session column is empty and will migrate the device-session from
+Redis if it exists. This will not overwrite existing device-sessions in
+PostgreSQL thus it is safe to re-execute this command in case needed.
+
 ### Features
 
 #### MQTT shared subscription
@@ -18,6 +32,27 @@ environment has a correct `share_name` configured in the `region_XXXXX.toml`
 configuration.
 
 ### Improvements
+
+#### Store device-sessions in PostgreSQL
+
+This moves the device-session storage from Redis to PostgreSQL. In case of a
+high DevAddr re-usage (where multiple DevEUIs share the same DevAddr), the
+old architecture had a significant overhead, because it would perform a 
+significant amount of Redis queries to retrieve all the potential
+device-sessions. It would retrieve the DevAddr -> DevEUIs mapping, and then
+retrieve the device-session for each DevEUI. Because device-session data
+can be sharded (Redis Cluster), a separate query per device-session was
+required.
+
+With this improvement, a device-session column has been added to the device
+table in the PostgreSQL database, which also contains a DevAddr column. The
+big advantage is that all device-sessions for a given DevAddr can be retrieved
+using a single query.
+
+This improvements also means that:
+
+* Device-sessions will no longer expire after device inactivity
+* Device-sessions can be restored from a PostgreSQL backup
 
 #### Replace OpenSSL with Rustls
 
