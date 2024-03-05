@@ -191,6 +191,10 @@
 # ChirpStack Gateway Relay
 
 - [Introduction](./chirpstack-gateway-relay/index.md)
+- [Changelog](./chirpstack-gateway-relay/changelog.md)
+- [Configuration](./chirpstack-gateway-relay/configuration.md)
+- [Downloads](./chirpstack-gateway-relay/downloads.md)
 - [Protocol](./chirpstack-gateway-relay/protocol.md)
+- [Contribute & source](./chirpstack-gateway-relay/contribute.md)
 
 ---
