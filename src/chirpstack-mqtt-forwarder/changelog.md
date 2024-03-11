@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.2.2
+
+### Bugfixes
+
+* Fix mips corrupted payloads regression re-introduced by v4.2.1. ([#50](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/50))
+
 ## v4.2.1
 
 ### Bugfixes
