@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.2.1
+
+### Bugfixes
+
+* Fix firewall security issue on Kerlink gateways.
+
 ## v4.2.0
 
 ### Features
