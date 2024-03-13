@@ -1,8 +1,10 @@
 # Changelog
 
-## v4.7.0 (in development)
+## v4.7.0
 
-**Important note before you upgrade:**
+### Notes before you upgrade
+
+#### Device-session migration
 
 This release moves the device-session storage from Redis to PostgreSQL. After
 upgrading, you must execute the following command (adapted to your environment):
@@ -15,6 +17,29 @@ This command will iterate over the devices in the PostgreSQL database of which
 the device-session column is empty and will migrate the device-session from
 Redis if it exists. This will not overwrite existing device-sessions in
 PostgreSQL thus it is safe to re-execute this command in case needed.
+
+#### OpenID Connect / OAuth2
+
+A new authentication backend has been added for OAuth2 based providers (see
+below). If you are using the OpenID Connect authentication backend, you must
+update your configuration from:
+
+```toml
+[user_authentication.openid_connect]
+enabled=true
+```
+
+To:
+
+```toml
+[user_authentication]
+enabled="openid_connect"
+```
+
+#### PostgreSQL CA certificate
+
+If the PostgreSQL server uses TLS, please read the note below with regards to
+the `ca_cert` configuration option.
 
 ### Features
 
@@ -30,6 +55,11 @@ In case you have multiple ChirpStack environments (e.g. production, staging
 and testing) connected to the same MQTT broker, then make sure that each
 environment has a correct `share_name` configured in the `region_XXXXX.toml`
 configuration.
+
+#### OAuth2 / Clerk integration
+
+This adds support for integrating with the [Clerk](https://clerk.com/)
+authentication backend (OAuth2 interface).
 
 ### Improvements
 
@@ -71,7 +101,8 @@ dependency on OpenSSL).
 
 **Important note:** this also adds a new `ca_cert` option to the `[postgresql]`
 configuration section where you can configure the CA certificate which must
-be used for validating the PostgreSQL server certificate.
+be used for validating the PostgreSQL server certificate (if not already
+provided by the host system).
 
 #### Use async Redis
 
