@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.2.3
+
+### Improvements
+
+* Add `keep_alive_interval` config option for MQTT. ([#54](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/54)) 
+* Update internal dependencies.
+
 ## v4.2.2
 
 ### Bugfixes
