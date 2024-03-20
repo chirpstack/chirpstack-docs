@@ -59,7 +59,7 @@ Bits:
 
 * MType = `111` (= Proprietary LoRaWAN MType)
 * Payload type = `00` (= Relayed uplink)
-* Hop count = `000`
+* Hop count = `000` = 1, ... `111` = 8
 
 ### Uplink Metadata
 
