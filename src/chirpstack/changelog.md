@@ -56,6 +56,9 @@ and testing) connected to the same MQTT broker, then make sure that each
 environment has a correct `share_name` configured in the `region_XXXXX.toml`
 configuration.
 
+**Note:** Shared subscriptions is a MQTTv5 feature and therefore a MQTTv5
+capable MQTT broker is required (Mosquitto supports MQTTv5 since v1.6).
+
 #### OAuth2 / Clerk integration
 
 This adds support for integrating with the [Clerk](https://clerk.com/)
