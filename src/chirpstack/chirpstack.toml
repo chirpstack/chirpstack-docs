@@ -115,8 +115,11 @@
   # will generate client certificates which can be used by the gateway for
   # authentication and authorization. The Common Name of the certificate will
   # be set to the Gateway ID.
-  ca_key=""
+  #
+  # The ca_key is expected to be in PKCS#8 format (you can use openssl to
+  # convert to PKCS#8).
   ca_cert=""
+  ca_key=""
 
   # Certificate lifetime.
   #
@@ -390,7 +393,7 @@
     # TLS certificate file (optional)
     tls_cert=""
 
-    # TLS key file (optional)
+    # TLS key file (PKCS#8) (optional)
     tls_key=""
 
 
@@ -403,8 +406,11 @@
       # will generate client certificates which can be used by the MQTT clients for
       # authentication and authorization. The Common Name of the certificate will
       # be set to the ID of the application.
-      ca_key=""
+      #
+      # The ca_key is expected to be in PKCS#8 format (you can use openssl to
+      # convert to PKCS#8).
       ca_cert=""
+      ca_key=""
 
       # Certificate lifetime.
       #
@@ -734,7 +740,7 @@
   # TLS certificate (path).
   tls_cert=""
 
-  # TLS key (path).
+  # TLS key (PKCS#8) (path).
   tls_key=""
 
 
@@ -743,6 +749,50 @@
 
   # Resolve NetID domain suffix.
   resolve_net_id_domain_suffix=""
+
+
+  # Default roaming server.
+  [roaming.default]
+
+    # Enable default roaming server.
+    enabled=false
+
+    # Async timeout (set to 0 to disable async interface).
+    async_timeout="0s"
+
+    # Passive-roaming session lifetime (set to 0 for stateless).
+    passive_roaming_lifetime="0s"
+   
+    # Passive-roaming KEK label (optional).
+    #
+    # If set, the session-keys will be encrypted using the given KEK.
+    passive_roaming_kek_label=""
+   
+    # Server.
+    #
+    # If set, this will bypass the DNS resolving of the server.
+    server=""
+   
+    # Use target role suffix.
+    #
+    # Depending the context of the remote server, this will add
+    # the /sns or /fns path to the server endpoint.
+    use_target_role_suffix=false
+   
+    # CA certificate (path).
+    ca_cert=""
+  
+    # TLS certificate (path).
+    tls_cert=""
+  
+    # TLS key (PKCS#8) (path).
+    tls_key=""
+   
+    # Authorization header.
+    #
+    # Optional value of the Authorization header, e.g. token or password.
+    authorization_header=""
+
 
   # Per server roaming configuration (this can be repeated).
   # Example:
@@ -779,7 +829,7 @@
   #  # TLS certificate (path).
   #  tls_cert=""
   #
-  #  # TLS key (path).
+  #  # TLS key (PKCS#8) (path).
   #  tls_key=""
   #
   #  # Authorization header.
