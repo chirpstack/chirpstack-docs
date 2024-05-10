@@ -1,5 +1,35 @@
 # Changelog
 
+## v4.4.0
+
+### Features
+
+#### Duty-cycle support
+
+This implements duty-cycle tracking and reporting support for the `EU868` region.
+By default this does not enforce the duty-cycle limitations, enforcing can be
+enabled by setting the model-flag `ENFORCE_DC`.
+
+#### Concentrator module updates
+
+* Add `EU433` support to `semtech_sx1302c490gw1` module.
+* Add `IN865` and `RU864` support to `semtech_sx1302c868gw1` module.
+* Add `IN865` and `RU864` support to `semtech_sx1302css868gw1` module.
+* Add USB support to `seeed_wm1302` module (`USB` model-flag). ([#151](https://github.com/chirpstack/chirpstack-concentratord/pull/151))
+
+#### Other features
+
+* Make it possible to use environment variables in configuration (like ChirpStack).
+
+### Improvements
+
+* Improve error handling in threads.
+* Update internal dependencies.
+
+### Bugfixes
+
+* Add missing `region_as923_2.toml`, `_3.toml` and `_4.toml` config files. ([#150](https://github.com/chirpstack/chirpstack-concentratord/issues/150))
+
 ## v4.3.5
 
 ### Features
