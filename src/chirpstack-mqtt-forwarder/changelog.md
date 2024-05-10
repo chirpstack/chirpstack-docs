@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.3.0
+
+### Features
+
+* Expose duty-cycle stats exposed by ChirpStack Concentratord.
+* Make it possible to use environment variables in configuration (like ChirpStack).
+
+### Improvements
+
+* Update internal dependencies.
+
 ## v4.2.3
 
 ### Improvements

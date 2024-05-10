@@ -3,6 +3,6 @@
 	"gateway_os_version": "4.3.2",
 	"gateway_bridge_version": "4.0.11",
 	"concentratord_version": "4.4.0",
-	"mqtt_forwarder_version": "4.2.3",
+	"mqtt_forwarder_version": "4.3.0",
 	"pulsar_integration_version": "4.0.0-test.3"
 }
