@@ -1,5 +1,52 @@
 # Changelog
 
+## v4.8.1
+
+### Features
+
+#### Duty-cycle metrics
+
+This release implements duty-cycle metrics for each gateway. Please note
+that this feature is (currently) only available for EU868 region and if
+the ChirpStack Concentratord is used (v4.4.0+).
+
+#### Increase RX1 Delay in device-profile
+
+This makes it possible to increase the RX1 delay for one or multiple
+devices through the device-profile. This can be useful when the latency
+between ChirpStack and the integration is too high to be able to
+enqueue a downlink for the same RX1 / RX2 receive-windows. Note that
+it does not allow setting a RX1 delay lower than the `rx1_delay` value
+configured in the ChirpStack configuration files.
+
+
+### Improvements
+
+* Update internal dependencies.
+* Document missing `recvTime` codec option. ([#385](https://github.com/chirpstack/chirpstack/issues/385))
+* Show error in UI if clipboard API is not available. ([231](https://github.com/chirpstack/chirpstack/issues/231))
+* Show ChirpStack version in web-interface (if user is admin). ([#73](https://github.com/chirpstack/chirpstack/issues/73))
+* Expose more verbose JavaScript codec error output. ([#391](https://github.com/chirpstack/chirpstack/issues/391))
+* Align multicast Class-B ping-slot configuration. ([#255](https://github.com/chirpstack/chirpstack/issues/255))
+* Remove generated API code from repository to reduce amount of changes in case of API changes.
+* Add support for responding to `HomeNSReq` API requests (Backend Interfaces).
+
+### Bugfixes
+
+* Do not update gateway location when updated lat / lon / alt are all set to 0.
+* Fix typo in auth error string. ([#367](https://github.com/chirpstack/chirpstack/pull/367))
+* Add auto-coversion from SEC1 EC keys to PKCS#8. ([#386](https://github.com/chirpstack/chirpstack/issues/386))
+* Fix drawer header z-index issue in web-interface. ([#393](https://github.com/chirpstack/chirpstack/pull/393))
+* Auto-detect if MQTT (v5) broker supports shared-subscriptions. ([#413](https://github.com/chirpstack/chirpstack/pull/413))
+* Fix stats interval calculations in case of DST changes (in which case some timestamps don't exist). ([#415](https://github.com/chirpstack/chirpstack/issues/415))
+* Fix loading auto-complete options in web-interface. ([#334](https://github.com/chirpstack/chirpstack/issues/334))
+* Do not schedule Class-B / Class-C downlinks for disabled devices.
+
+## v4.8.0
+
+Release was skipped because an issue was found with the generated gRPC-web
+and JavaScript API packages.
+
 ## v4.7.0
 
 ### Notes before you upgrade
