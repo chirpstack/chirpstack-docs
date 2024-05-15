@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.4.1
+
+### Bugfixes
+
+* Fix duty-cycle tracking causes downlink to be rejected for antenna gains < 2dBi. ([#157](https://github.com/chirpstack/chirpstack-concentratord/issues/157))
+
 ## v4.4.0
 
 ### Features
