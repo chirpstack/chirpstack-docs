@@ -1,5 +1,32 @@
 # Changelog
 
+## v4.4.0
+
+### Upgrade notes
+
+#### Backup and restore (Full image)
+
+Before upgrading, please make sure to create a backup. Please see 
+**System > Custom Commands**.
+
+#### Enable services
+
+This release adds an _Enabled_ configuration flag to the ChirpStack
+Concentratord, ChirpStack MQTT Forwarder and ChirpStack UDP Forwarder
+in the configuration. After upgrading, you must enable the services
+you would like to use.
+
+### Updates
+
+* Update OpenWrt to v23.05.3.
+* Update ChirpStack to v4.8.1.
+* Update ChirpStack MQTT Forwarder to v4.3.0.
+* Update ChirpStack Concentratord to v4.4.1.
+
+### Bugfixes
+
+* Add `-c` flag to `pg_restore` command (PostgreSQL database backup restore).
+
 ## v4.3.2
 
 ### Bugfixes
