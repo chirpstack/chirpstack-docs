@@ -30,6 +30,18 @@ password `ChirpStackAP`.
 
 Once connected with `ChirpStackAP` the IP of the gateway is `192.168.0.1`.
 
+**Notes:**
+
+* It is recommended to reconfigure the gateway to connect to your Wi-Fi
+  network, or to disable the access-point mode if the gateway is connected using
+  ethernet.
+
+* The `ChirpStackAP` access-point IP address `192.168.0.1` might conflict with
+  your local network. If that is the case, please make sure you are disconnected
+  from your local network before connecting to the `ChirpStackAP` access-point.
+  Once you have re-configured the gateway to connect to your Wi-Fi network, you
+  can re-connect your machine back to your local network.
+
 ### Web-interface
 
 The ChirpStack Gateway OS provides a web-interface. You can connect to the

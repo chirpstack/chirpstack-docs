@@ -1,6 +1,92 @@
 # Changelog
 
-## v4.7.0 (in development)
+## v4.8.1
+
+### Features
+
+#### Duty-cycle metrics
+
+This release implements duty-cycle metrics for each gateway. Please note
+that this feature is (currently) only available for EU868 region and if
+the ChirpStack Concentratord is used (v4.4.0+).
+
+#### Increase RX1 Delay in device-profile
+
+This makes it possible to increase the RX1 delay for one or multiple
+devices through the device-profile. This can be useful when the latency
+between ChirpStack and the integration is too high to be able to
+enqueue a downlink for the same RX1 / RX2 receive-windows. Note that
+it does not allow setting a RX1 delay lower than the `rx1_delay` value
+configured in the ChirpStack configuration files.
+
+
+### Improvements
+
+* Update internal dependencies.
+* Document missing `recvTime` codec option. ([#385](https://github.com/chirpstack/chirpstack/issues/385))
+* Show error in UI if clipboard API is not available. ([231](https://github.com/chirpstack/chirpstack/issues/231))
+* Show ChirpStack version in web-interface (if user is admin). ([#73](https://github.com/chirpstack/chirpstack/issues/73))
+* Expose more verbose JavaScript codec error output. ([#391](https://github.com/chirpstack/chirpstack/issues/391))
+* Align multicast Class-B ping-slot configuration. ([#255](https://github.com/chirpstack/chirpstack/issues/255))
+* Remove generated API code from repository to reduce amount of changes in case of API changes.
+* Add support for responding to `HomeNSReq` API requests (Backend Interfaces).
+
+### Bugfixes
+
+* Do not update gateway location when updated lat / lon / alt are all set to 0.
+* Fix typo in auth error string. ([#367](https://github.com/chirpstack/chirpstack/pull/367))
+* Add auto-coversion from SEC1 EC keys to PKCS#8. ([#386](https://github.com/chirpstack/chirpstack/issues/386))
+* Fix drawer header z-index issue in web-interface. ([#393](https://github.com/chirpstack/chirpstack/pull/393))
+* Auto-detect if MQTT (v5) broker supports shared-subscriptions. ([#413](https://github.com/chirpstack/chirpstack/pull/413))
+* Fix stats interval calculations in case of DST changes (in which case some timestamps don't exist). ([#415](https://github.com/chirpstack/chirpstack/issues/415))
+* Fix loading auto-complete options in web-interface. ([#334](https://github.com/chirpstack/chirpstack/issues/334))
+* Do not schedule Class-B / Class-C downlinks for disabled devices.
+
+## v4.8.0
+
+Release was skipped because an issue was found with the generated gRPC-web
+and JavaScript API packages.
+
+## v4.7.0
+
+### Notes before you upgrade
+
+#### Device-session migration
+
+This release moves the device-session storage from Redis to PostgreSQL. After
+upgrading, you must execute the following command (adapted to your environment):
+
+```bash
+chirpstack -c /etc/chirpstack migrate-device-sessions-to-postgres
+```
+
+This command will iterate over the devices in the PostgreSQL database of which
+the device-session column is empty and will migrate the device-session from
+Redis if it exists. This will not overwrite existing device-sessions in
+PostgreSQL thus it is safe to re-execute this command in case needed.
+
+#### OpenID Connect / OAuth2
+
+A new authentication backend has been added for OAuth2 based providers (see
+below). If you are using the OpenID Connect authentication backend, you must
+update your configuration from:
+
+```toml
+[user_authentication.openid_connect]
+enabled=true
+```
+
+To:
+
+```toml
+[user_authentication]
+enabled="openid_connect"
+```
+
+#### PostgreSQL CA certificate
+
+If the PostgreSQL server uses TLS, please read the note below with regards to
+the `ca_cert` configuration option.
 
 ### Features
 
@@ -17,7 +103,36 @@ and testing) connected to the same MQTT broker, then make sure that each
 environment has a correct `share_name` configured in the `region_XXXXX.toml`
 configuration.
 
+**Note:** Shared subscriptions is a MQTTv5 feature and therefore a MQTTv5
+capable MQTT broker is required (Mosquitto supports MQTTv5 since v1.6).
+
+#### OAuth2 / Clerk integration
+
+This adds support for integrating with the [Clerk](https://clerk.com/)
+authentication backend (OAuth2 interface).
+
 ### Improvements
+
+#### Store device-sessions in PostgreSQL
+
+This moves the device-session storage from Redis to PostgreSQL. In case of a
+high DevAddr re-usage (where multiple DevEUIs share the same DevAddr), the
+old architecture had a significant overhead, because it would perform a 
+significant amount of Redis queries to retrieve all the potential
+device-sessions. It would retrieve the DevAddr -> DevEUIs mapping, and then
+retrieve the device-session for each DevEUI. Because device-session data
+can be sharded (Redis Cluster), a separate query per device-session was
+required.
+
+With this improvement, a device-session column has been added to the device
+table in the PostgreSQL database, which also contains a DevAddr column. The
+big advantage is that all device-sessions for a given DevAddr can be retrieved
+using a single query.
+
+This improvements also means that:
+
+* Device-sessions will no longer expire after device inactivity
+* Device-sessions can be restored from a PostgreSQL backup
 
 #### Replace OpenSSL with Rustls
 
@@ -33,6 +148,11 @@ This is an internal improvement, and migrates away from `pq-sys` in favor of
 `async`. This removes all `task::spawn_blocking(...)` blocks around SQL queries.
 As well, we no longer need to static link against libpq (C library, with
 dependency on OpenSSL).
+
+**Important note:** this also adds a new `ca_cert` option to the `[postgresql]`
+configuration section where you can configure the CA certificate which must
+be used for validating the PostgreSQL server certificate (if not already
+provided by the host system).
 
 #### Use async Redis
 

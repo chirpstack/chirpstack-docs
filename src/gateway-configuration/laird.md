@@ -31,7 +31,7 @@ web-interface using the following steps:
 ### Semtech Forwarder
 
 For this option you need to install the ChirpStack Gateway Bridge component first on
-a server. See the [Install Documentation](../install/) for
+a server. See the [Install Documentation](../chirpstack-gateway-bridge/install/index.md) for
 more information.
 
 The Semtech (UDP) Forwarder can be configured through the gateway

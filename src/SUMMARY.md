@@ -30,6 +30,8 @@
   - [Browan](./gateway-configuration/browan.md)
   - [Dragino](./gateway-configuration/dragino.md)
   - [Kerlink](./gateway-configuration/kerkink.md)
+  - [Laird](./gateway-configuration/laird.md)
+  - [MatchX](./gateway-configuration/matchx.md)
   - [Multitech](./gateway-configuration/multitech.md)
   - [RAK](./gateway-configuration/rak.md)
   - [Tektelic](./gateway-configuration/tektelic.md)
@@ -103,9 +105,6 @@
   - [Protocol documentation](./chirpstack/api/api.md)
 - [Backends](./chirpstack/backends/index.md)
   - [MQTT](./chirpstack/backends/mqtt.md)
-  - [AMQP / RabbitMQ](./chirpstack/backends/amqp.md)
-  - [Azure IoT Hub](./chirpstack/backends/azure-iot-hub.md)
-  - [GCP Pub/Sub](./chirpstack/backends/gcp-pub-sub.md)
 - [Contribute & source](./chirpstack/contribute.md)
 
 # ChirpStack MQTT Forwarder
@@ -149,8 +148,6 @@
   - [Cisco](./chirpstack-gateway-bridge/install/cisco.md)
   - [Dragino](./chirpstack-gateway-bridge/install/dragino.md)
   - [Kerlink](./chirpstack-gateway-bridge/install/kerlink.md)
-  - [Laird](./chirpstack-gateway-bridge/install/laird.md)
-  - [MatchX](./chirpstack-gateway-bridge/install/matchx.md)
   - [Multitech](./chirpstack-gateway-bridge/install/multitech.md)
   - [Tektelic](./chirpstack-gateway-bridge/install/tektelic.md)
   - [Wifx](./chirpstack-gateway-bridge/install/wifx.md)

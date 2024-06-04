@@ -36,11 +36,12 @@
   # PostgreSQL connection pool.
   max_open_connections=10
 
-  # Min idle connections.
+  # CA certificate (optional).
   #
-  # This sets the min. number of idle connections in the PostgreSQL connection
-  # pool (0 = equal to max_open_connections).
-  min_idle_connections=0
+  # Set this to the path of the CA certificate in case you are using TLS and
+  # the server-certificate is not signed by a CA in the platform certificate
+  # store.
+  ca_cert=""
 
 
 # Redis configuration.
@@ -114,8 +115,11 @@
   # will generate client certificates which can be used by the gateway for
   # authentication and authorization. The Common Name of the certificate will
   # be set to the Gateway ID.
-  ca_key=""
+  #
+  # The ca_key is expected to be in PKCS#8 format (you can use openssl to
+  # convert to PKCS#8).
   ca_cert=""
+  ca_key=""
 
   # Certificate lifetime.
   #
@@ -167,12 +171,6 @@
   # the 'name' parameter of the region configuration in '[[regions]]'.
   enabled_regions=[
   ]
-
-  # Device session expiration.
-  #
-  # The TTL value defines the time after which a device-session expires
-  # after no activity.
-  device_session_ttl="1month 13h 26m 24s"
 
   # Time to wait for uplink de-duplication.
   #
@@ -395,7 +393,7 @@
     # TLS certificate file (optional)
     tls_cert=""
 
-    # TLS key file (optional)
+    # TLS key file (PKCS#8) (optional)
     tls_key=""
 
 
@@ -408,8 +406,11 @@
       # will generate client certificates which can be used by the MQTT clients for
       # authentication and authorization. The Common Name of the certificate will
       # be set to the ID of the application.
-      ca_key=""
+      #
+      # The ca_key is expected to be in PKCS#8 format (you can use openssl to
+      # convert to PKCS#8).
       ca_cert=""
+      ca_key=""
 
       # Certificate lifetime.
       #
@@ -437,11 +438,12 @@
     # PostgreSQL connection pool.
     max_open_connections=10
 
-    # Min idle connections.
+    # CA certificate (optional).
     #
-    # This sets the min. number of idle connections in the PostgreSQL connection
-    # pool (0 = equal to max_open_connections).
-    min_idle_connections=0
+    # Set this to the path of the CA certificate in case you are using TLS and
+    # the server-certificate is not signed by a CA in the platform certificate
+    # store.
+    ca_cert=""
 
 
   # AMQP / RabbitMQ integration configuration.
@@ -518,13 +520,16 @@
 # User authentication configuration.
 [user_authentication]
 
+  # Enabled authentication backend.
+  #
+  # Options are:
+  #  * internal       - Internal authentication backend (default).
+  #  * openid_connect - OpenID Connect based backend.
+  #  * oauth2         - OAuth2 based backend.
+  enabled="internal"
+
   # OpenID Connect.
   [user_authentication.openid_connect]
-
-    # Enable OpenID Connect authentication.
-    #
-    # Enabling this option replaces password authentication.
-    enabled=false
 
     # Registration enabled.
     #
@@ -561,15 +566,21 @@
 
     # Redirect URL.
     #
-    # This must contain the ChirpStack Application Server web-interface hostname
+    # This must contain the ChirpStack web-interface hostname
     # with '/auth/oidc/callback' path, e.g. https://example.com/auth/oidc/callback.
     redirect_url=""
 
     # Logout URL.
     #
-    # When set, ChirpStack Application Server will redirect to this URL instead
+    # When set, ChirpStack will redirect to this URL instead
     # of redirecting to the login page.
     logout_url=""
+
+    # Login redirect.
+    #
+    # If set to true, then ChirpStack will immediately redirect to the OAuth2
+    # provider for login.
+    login_redirect=false
 
     # Login label.
     #
@@ -582,6 +593,84 @@
     # from the OpenID Connect provider, assuming it will be true. Some
     # providers do not provide this field, in which case setting this value
     # is needed.
+    assume_email_verified=false
+
+
+  # OAuth2 backend.
+  [user_authentication.oauth2]
+
+    # Provider.
+    #
+    # Options are:
+    #  * clerk
+    provider=""
+
+    # Registration enabled.
+    #
+    # Enabling this will automatically register the user when it is not yet present
+    # in the ChirpStack database. There is no registration form as the user information
+    # is automatically received using the OAuth2 provided information.
+    # The user will not be associated with any organization, but in order to
+    # facilitate the automatic onboarding of users, it is possible to configure a
+    # registration callback URL (next config option).
+    registration_enabled=false
+
+    # Registration callback URL.
+    #
+    # This (optional) endpoint will be called on the registration of the user and
+    # can implement the association of the user with an organization, create a new
+    # organization, ...
+    # ChirpStack will make a HTTP POST call to this endpoint,
+    # with the following URL parameters:
+    # - user_id, of the newly created user in ChirpStack.
+    #
+    # The POST body contains a JSON payload with the OAuth2 payload.
+    registration_callback_url=""
+
+    # OAuth2 client ID.
+    client_id=""
+
+    # OAuth2 client secret.
+    client_secret=""
+
+    # OAuth2 auth URL.
+    auth_url=""
+
+    # OAuth2 token URL.
+    token_url=""
+
+    # Userinfo URL.
+    #
+    # This is the URL that ChirpStack will request to receive the user information.
+    userinfo_url=""
+    
+    # Redirect URL.
+    #
+    # This must contain the ChirpStack web-interface hostname
+    # with '/auth/oauth2/callback' path, e.g. https://example.com/auth/oauth2/callback.
+    redirect_url=""
+
+    # Logout URL.
+    #
+    # When set, ChirpStack will redirect to this URL instead
+    # of redirecting to the login page.
+    logout_url=""
+
+    # Login redirect.
+    #
+    # If set to true, then ChirpStack will immediately redirect to the OAuth2
+    # provider for login.
+    login_redirect=false
+
+    # Login label.
+    #
+    # The login label is used in the web-interface login form.
+    login_label=""
+
+    # Assume e-mail verified.
+    #
+    # If set to true, then ChirpStack will ignore the email_verified received
+    # from the userinfo URL, assuming it will be true.
     assume_email_verified=false
 
 
@@ -651,7 +740,7 @@
   # TLS certificate (path).
   tls_cert=""
 
-  # TLS key (path).
+  # TLS key (PKCS#8) (path).
   tls_key=""
 
 
@@ -660,6 +749,50 @@
 
   # Resolve NetID domain suffix.
   resolve_net_id_domain_suffix=""
+
+
+  # Default roaming server.
+  [roaming.default]
+
+    # Enable default roaming server.
+    enabled=false
+
+    # Async timeout (set to 0 to disable async interface).
+    async_timeout="0s"
+
+    # Passive-roaming session lifetime (set to 0 for stateless).
+    passive_roaming_lifetime="0s"
+   
+    # Passive-roaming KEK label (optional).
+    #
+    # If set, the session-keys will be encrypted using the given KEK.
+    passive_roaming_kek_label=""
+   
+    # Server.
+    #
+    # If set, this will bypass the DNS resolving of the server.
+    server=""
+   
+    # Use target role suffix.
+    #
+    # Depending the context of the remote server, this will add
+    # the /sns or /fns path to the server endpoint.
+    use_target_role_suffix=false
+   
+    # CA certificate (path).
+    ca_cert=""
+  
+    # TLS certificate (path).
+    tls_cert=""
+  
+    # TLS key (PKCS#8) (path).
+    tls_key=""
+   
+    # Authorization header.
+    #
+    # Optional value of the Authorization header, e.g. token or password.
+    authorization_header=""
+
 
   # Per server roaming configuration (this can be repeated).
   # Example:
@@ -696,7 +829,7 @@
   #  # TLS certificate (path).
   #  tls_cert=""
   #
-  #  # TLS key (path).
+  #  # TLS key (PKCS#8) (path).
   #  tls_key=""
   #
   #  # Authorization header.

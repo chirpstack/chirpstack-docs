@@ -5,6 +5,13 @@
 Please refer to the ChirpStack MQTT Forwarder [installation instructions](../chirpstack-mqtt-forwarder/install/dragino.md)
 for this gateway.
 
+## LPS8V2 Indoor LoRaWAN Gateway
+
+Please refer to the ChirpStack MQTT Forwarder [installation instructions](../chirpstack-mqtt-forwarder/install/dragino.md)
+for this gateway.
+
+
+
 
 ## LG308(N) LoRaWAN Gateway
 

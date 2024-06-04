@@ -8,7 +8,7 @@ gateway events and sending gateway commands.
 By default, ChirpStack uses MQTT for subscribing to gateway events and sending
 commands to the gateway. [Mosquitto](http://mosquitto.org) is a popular
 open-source MQTT broker. Any other MQTT broker can be used, as long as it
-implements the MQTT 3.1.1 specification.
+implements the MQTT v5.0 specification and supports shared-subscriptions.
 
 ### Install
 

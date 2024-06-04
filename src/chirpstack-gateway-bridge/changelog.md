@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.0.11
+
+### Improvements
+
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix firewall security issue on Kerlink gateways.
+
 ## v4.0.10
 
 ### Improvements

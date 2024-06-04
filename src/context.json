@@ -1,10 +1,9 @@
 {
-	"chirpstack_version": "4.6.0",
-	"gateway_os_version": "4.2.0",
-	"yocto_gateway_os_version": "4.1.1",
-	"gateway_bridge_version": "4.0.10",
-	"concentratord_version": "4.3.4",
-	"mqtt_forwarder_version": "4.1.3",
+	"chirpstack_version": "4.8.1",
+	"gateway_os_version": "4.4.0",
+	"gateway_bridge_version": "4.0.11",
+	"concentratord_version": "4.4.1",
+	"mqtt_forwarder_version": "4.3.0",
 	"pulsar_integration_version": "4.0.0-test.3",
-	"gateway_relay_version": "4.0.0-test.5"
+  "gateway_relay_version": "4.0.0-test.5"
 }

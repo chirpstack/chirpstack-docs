@@ -1,5 +1,91 @@
 # Changelog
 
+## v4.4.0
+
+### Upgrade notes
+
+#### Backup and restore (Full image)
+
+Before upgrading, please make sure to create a backup. Please see 
+**System > Custom Commands**.
+
+#### Enable services
+
+This release adds an _Enabled_ configuration flag to the ChirpStack
+Concentratord, ChirpStack MQTT Forwarder and ChirpStack UDP Forwarder
+in the configuration. After upgrading, you must enable the services
+you would like to use.
+
+### Updates
+
+* Update OpenWrt to v23.05.3.
+* Update ChirpStack to v4.8.1.
+* Update ChirpStack MQTT Forwarder to v4.3.0.
+* Update ChirpStack Concentratord to v4.4.1.
+
+### Bugfixes
+
+* Add `-c` flag to `pg_restore` command (PostgreSQL database backup restore).
+
+## v4.3.2
+
+### Bugfixes
+
+* Fix regression introduced by v4.3.1 causing the ChirpStack UDP Forwarder to not start (missing `chirpstack-udp-forwarder.sh`).
+
+## v4.3.1
+
+### Improvements
+
+* RPi: Add FTDI kernel module for USB -> Serial devices. ([#105](https://github.com/chirpstack/chirpstack-gateway-os/issues/105))
+* Refactor ChirpStack package scripts and configuration in preparation to support targets with multiple concentrator modules.
+
+### Bugfixes
+
+* Fix error in SX1301 init script. ([#108](https://github.com/chirpstack/chirpstack-gateway-os/issues/108))
+
+## v4.3.0
+
+### Upgrade notes
+
+This release updates the PostgreSQL database version. If you would like to
+retain all data, You must create a PostgreSQL + Redis backup **before**
+upgrading. You must use the following commands (using SSH):
+
+```bash
+mkdir -p /srv/backup
+chmod 777 /srv/backup
+sudo -u postgres /usr/bin/pg_dump -h localhost -d chirpstack -F c -f /srv/backup/chirpstack.pg
+
+service redis stop
+cp /srv/redis/dump.rdb /srv/backup/chirpstack.redis
+service redis start
+```
+
+After upgrading, you can use the _Restore ChirpStack backup_ command to
+restore the backup. For future backups, you can use the _Create ChirpStack
+Backup_ command (see features) after upgrading.
+
+### Features
+
+#### PostgreSQL & Redis backup / restore
+
+This adds _Create ChirpStack backup_ and _Restore ChirpStack backup_
+commands under **System > Custom Commands**.
+
+#### Other features
+
+* Add Wireguard VPN support.
+* Add experimental support for RAK7268v2 gateways (to be documented).
+
+### Updates
+
+* Update OpenWrt to v23.05.2.
+* Update ChirpStack to v4.6.0.
+* Update ChirpStack Concentratord to v4.3.5.
+* Update ChirpStack MQTT Forwarder to v4.1.3.
+* Update ChirpStack UDP Forwarder to v4.1.6.
+
 ## v4.2.0
 
 ### Features

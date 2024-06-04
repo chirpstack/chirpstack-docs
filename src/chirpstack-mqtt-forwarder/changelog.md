@@ -1,5 +1,57 @@
 # Changelog
 
+## v4.3.0
+
+### Features
+
+* Expose duty-cycle stats exposed by ChirpStack Concentratord.
+* Make it possible to use environment variables in configuration (like ChirpStack).
+
+### Improvements
+
+* Update internal dependencies.
+
+## v4.2.3
+
+### Improvements
+
+* Add `keep_alive_interval` config option for MQTT. ([#54](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/54)) 
+* Update internal dependencies.
+
+## v4.2.2
+
+### Bugfixes
+
+* Fix mips corrupted payloads regression re-introduced by v4.2.1. ([#50](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/50))
+
+## v4.2.1
+
+### Bugfixes
+
+* Fix firewall security issue on Kerlink gateways.
+
+## v4.2.0
+
+### Features
+
+#### `paho-mqtt` to `rumqttc` refactor
+
+This refactors the code to use `rumqttc` instead of `paho-mqtt` as MQTT client
+library. As `rumqttc` is a pure-Rust MQTT client, which uses `rustls` for TLS,
+it is no longer needed to statically link against OpenSSL.
+
+### Improvements
+
+* Add AMD64 build. ([#46](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/46))
+* Reconnect ZeroMQ REQ socket on error.
+* Update dependencies.
+
+### Bugfixes
+
+* Fix extending meta-data in Concentratord backend.
+* Fix `udp_bind` > `bind` error in config examples. ([#49](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/49))
+* Fix corrupted payloads on mips / mipsel platforms. ([#50](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/50), [#52](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/52))
+
 ## v4.1.3
 
 ### Improvements
