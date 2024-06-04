@@ -11,6 +11,11 @@ for example in very remote areas. This solution is different from the
 LoRa Alliance Relay Protocol, as no software implementation changes are
 required in the device stack.
 
+It is possible that there are multiple Relay Gateways inbetween the End-Device
+and the Border Gateway. The technical limitation is 8 hops (the first Relay
+Gateway counts as the 1st), but this is also influenced by required airtime
+to receive and relay these payloads.
+
 ## ChirpStack Gateway Mesh architecture
 
 ```dot process
@@ -22,8 +27,9 @@ digraph G {
     color="#bbdefb";
     node [style=filled,color="#e3f2fd"];
 
-    "End Device" -> "Relay Gateway" [dir="both", label="LoRaWAN payload"];
-    "Relay Gateway" -> "Border Gateway" [dir="both", label="Mesh encapsulated LoRaWAN payload"];
+    "End Device" -> "Relay Gateway 1" [dir="both", label="LoRaWAN payload"];
+    "Relay Gateway 1" -> "Relay Gateway 2" [dir="both", label="Mesh encapsulated LoRaWAN payload"];
+    "Relay Gateway 2" -> "Border Gateway" [dir="both", label="Mesh encapsulated LoRaWAN payload"];
     "Border Gateway" -> "ChirpStack" [dir="both", label="LoRaWAN payload + Mesh context blob"];
 }
 ```

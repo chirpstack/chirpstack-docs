@@ -68,6 +68,10 @@ Bits:
 * Payload type = `00` (= Relayed uplink)
 * Hop count = `000` = 1, ... `111` = 8
 
+**Note:** The hop count is incremented each time the uplink payload is relayed
+by an other Relay Gateway. As this changes the uplink payload, the MIC must be
+re-calculated.
+
 ### Uplink Metadata
 
 Bytes:
@@ -159,6 +163,10 @@ Bits:
 * Payload type = `01` (Relayed downlink)
 * Hop count = `000`
 
+**Note:** The hop count is incremented each time the downlink payload is relayed
+by an other Relay Gateway. As this changes the downlink payload, the MIC must be
+re-calculated.
+
 ### Downlink Metadata
 
 Bytes:
@@ -223,4 +231,58 @@ The LoRaWAN PHYPayload that must be sent to the End-Device.
 Message integrity code, used by other Relay gateways to check the
 data integrity of the packet. This is obtained by calculating the CMAC over
 the downlink payload (- MIC bytes), and using the first 4 bytes of the calculated
+CMAC as MIC.
+
+## Relay stats format
+
+Periodically, each Relay Gateway will send a stats message to indicate that
+that it is still only. Each Relay Gateway relaying this stats payload will
+add its own Relay ID to the path, such that after the Border Gateway has
+receive the payload, the full path from sending Relay Gateway to Border Gateway
+can be obtained. The maximum payload size (with hop count = 7) is 41 bytes.
+
+Bytes:
+
+| 1 byte     | 4 bytes     | 4 bytes  | 0 - 28 bytes | 4 bytes |
+| ---------- | ----------- | -------- | ------------ | ------- |
+| Stats MHDR | Timestamp   | Relay ID | Relay path   | MIC     |
+
+
+### Stats MHDR
+
+Bits:
+
+| 7..5  | 4..3         | 2..0      |
+| ----- | -------------| --------- |
+| MType | Payload type | Hop count |
+
+* MType = `111` (= Proprietary LoRaWAN MType)
+* Payload type = `10` (= Relay stats)
+* Hop count = `000` = 1, ... `111` = 8
+
+**Note:** The hop count is incremented each time the stats payload is relayed
+by an other Relay Gateway. As this changes the stats payload, the MIC must be
+re-calculated.
+
+### Timestamp
+
+Unix timestamp (seconds).
+
+### Relay ID
+
+The Relay ID of the Relay Gateway sending the stats message.
+
+### Relay path
+
+This contains the Relay IDs of each Relay Gateway that has Relayed
+the stats payload. Each relaying gateway adds its 4 byte Relay ID
+to the back of this field. Initially this field is empty. If the
+stats payload is not relayed by other Relay Gateways, then this field remains
+empty.
+
+### MIC
+
+Message integrity code, used by other Relay gateways to check the
+data integrity of the packet. This is obtained by calculating the CMAC over
+the stats payload (- MIC bytes), and using the first 4 bytes of the calculated
 CMAC as MIC.
