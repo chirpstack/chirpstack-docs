@@ -11,12 +11,12 @@
   #   * WARN
   #   * ERROR
   #   * OFF
-  level="INFO"
+  level = "INFO"
 
   # Log to syslog.
   #
   # When set to true, log messages are being written to syslog instead of stdout.
-  log_to_syslog=false
+  log_to_syslog = false
 
 
 # Relay configuration.
@@ -27,7 +27,7 @@
   # If this is set to true, then the ChirpStack Gateway Relay will consider
   # this gateway as a Border Gateway, meaning that it will unwrap relayed
   # uplinks and forward these to the proxy API, rather than relaying these.
-  border_gateway=false
+  border_gateway = false
 
   # Ignore direct uplinks (Border Gateway).
   #
@@ -35,44 +35,40 @@
   # encapsulated) will be silently ignored. This option is especially useful
   # for testing, in which case you want to set this to true for the Border
   # Gateway.
-  border_gateway_ignore_direct_uplinks=false
+  border_gateway_ignore_direct_uplinks = false
 
   # Relay frequencies.
   #
   # The ChirpStack Gateway Relay will randomly use one of the configured
   # frequencies when relaying uplink and downlink messages.
-  frequencies=[
-    868100000,
-    868300000,
-    868500000,
-  ]
+  frequencies = [868100000, 868300000, 868500000]
 
   # TX Power (EIRP).
   #
   # The TX Power in EIRP used when relaying uplink and downlink messages.
-  tx_power=16
+  tx_power = 16
 
   # Data-rate properties.
   #
   # The data-rate properties when relaying uplink and downlink messages.
   [relay.data_rate]
-  
+
     # Modulation.
     #
     # Valid options are: LORA, FSK
-    modulation="LORA"
+    modulation = "LORA"
 
     # Spreading-factor (LoRa).
-    spreading_factor=7
+    spreading_factor = 7
 
     # Bandwidth (LoRa).
-    bandwidth=125000
+    bandwidth = 125000
 
     # Code-rate (LoRa).
-    code_rate="4/5"
+    code_rate = "4/5"
 
     # Bitrate (FSK).
-    bitrate=0
+    bitrate = 0
 
 
   # Proxy API configuration.
@@ -91,10 +87,10 @@
   [relay.proxy_api]
 
     # Event PUB socket bind.
-    event_bind="ipc:///tmp/gateway_relay_event"
+    event_bind = "ipc:///tmp/gateway_relay_event"
 
     # Command REP socket bind.
-    command_bind="ipc:///tmp/gateway_relay_command"
+    command_bind = "ipc:///tmp/gateway_relay_command"
 
 
 # Backend configuration.
@@ -104,10 +100,10 @@
   [backend.concentratord]
 
     # Event API URL.
-    event_url="ipc:///tmp/concentratord_event"
+    event_url = "ipc:///tmp/concentratord_event"
 
     # Command API URL.
-    command_url="ipc:///tmp/concentratord_command"
+    command_url = "ipc:///tmp/concentratord_command"
 
 
   # ChirpStack Concentratord configuration (Relay <> Relay).
@@ -118,8 +114,7 @@
   [backend.relay_concentratord]
 
     # Event API URL.
-    event_url="ipc:///tmp/concentratord_event"
+    event_url = "ipc:///tmp/concentratord_event"
 
     # Command API URL.
-    command_url="ipc:///tmp/concentratord_command"
-
+    command_url = "ipc:///tmp/concentratord_command"

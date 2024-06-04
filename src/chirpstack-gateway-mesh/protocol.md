@@ -8,14 +8,21 @@ uplink and downlink transmissions.
 ## Stored context
 
 This section describes which context must be known at the different components
-in the Relay architecture. Unless otherwise specified, this context must be
+in the Mesh architecture. Unless otherwise specified, this context must be
 known at both the Relay Gateway and Border Gateway.
+
+### Signing key
+
+An AES128 key which is used to add a message integrity code to each mesh
+packet. Each Relay and Border gateway must be configured with this same key
+in order to sign and validate all mesh packets.
 
 ### TX Power table
 
 A TX Power table, which maps the (downlink) TX Power to an integer (0 - 15)
 and back. Ideally this matches the TX Power table of the Concentratord
-configuration.
+configuration (if there is no exact match, the Concentratord will use the
+highest value, that is less than the requested TX Power).
 
 ### Data-rate table
 
@@ -40,13 +47,13 @@ to the Uplink ID.
 ## Uplink payload format
 
 On receiving an uplink, the Relay creates and re-transmits a Relay encapsulated
-LoRaWAN payload. The Relay encapsulation overhead is 10 bytes.
+LoRaWAN payload. The Relay encapsulation overhead is 14 bytes.
 
 Bytes:
 
-| 1 byte      | 5 bytes         | 4 bytes  | n bytes            |
-| ----------- | --------------- | -------- | ------------------ |
-| Uplink MHDR | Uplink Metadata | Relay ID | LoRaWAN PHYPayload |
+| 1 byte      | 5 bytes         | 4 bytes  | n bytes            | 4 bytes |
+| ----------- | --------------- | -------- | ------------------ | ------- |
+| Uplink MHDR | Uplink Metadata | Relay ID | LoRaWAN PHYPayload | MIC     |
 
 
 ### Uplink MHDR
@@ -116,18 +123,29 @@ Bytes:
 | -------- |
 | Relay ID |
 
+### LoRaWAN PHYPayload
+
+The received LoRaWAN PHYPayload.
+
+### MIC
+
+Message integrity code, used by other Relay and Border gateways to check the
+data integrity of the packet. This is obtained by calculating the CMAC over
+the uplink payload (- MIC bytes), and using the first 4 bytes of the calculated
+CMAC as MIC.
+
 
 ## Downlink payload format
 
 On downlink, the Border Gateway creates and re-transmits a Relay encapsulated
 to the Relay Gateway in the following format. The Relay encapsulation overhead
-is 11 bytes.
+is 15 bytes.
 
 Bytes:
 
-| 1 byte        | 6 bytes           | 4 bytes  | n bytes            |
-| ------------- | ----------------- | -------- | ------------------ |
-| Downlink MHDR | Downlink Metadata | Relay ID | LoRaWAN PHYPayload |
+| 1 byte        | 6 bytes           | 4 bytes  | n bytes            | 4 bytes |
+| ------------- | ----------------- | -------- | ------------------ | ------- |
+| Downlink MHDR | Downlink Metadata | Relay ID | LoRaWAN PHYPayload | MIC     |
 
 ### Downlink MHDR
 
@@ -195,3 +213,14 @@ Delay<sub>Seconds</sub> = `Delay + 1`.
 
 This contains the Relay ID that must relay the downlink to the
 End Device using the provided Downlink metadata.
+
+### LoRaWAN PHYPayload
+
+The LoRaWAN PHYPayload that must be sent to the End-Device.
+
+### MIC
+
+Message integrity code, used by other Relay gateways to check the
+data integrity of the packet. This is obtained by calculating the CMAC over
+the downlink payload (- MIC bytes), and using the first 4 bytes of the calculated
+CMAC as MIC.

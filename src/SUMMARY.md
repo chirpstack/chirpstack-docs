@@ -185,13 +185,13 @@
   - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
 
-# ChirpStack Gateway Relay
+# ChirpStack Gateway Mesh
 
-- [Introduction](./chirpstack-gateway-relay/index.md)
-- [Changelog](./chirpstack-gateway-relay/changelog.md)
-- [Configuration](./chirpstack-gateway-relay/configuration.md)
-- [Downloads](./chirpstack-gateway-relay/downloads.md)
-- [Protocol](./chirpstack-gateway-relay/protocol.md)
-- [Contribute & source](./chirpstack-gateway-relay/contribute.md)
+- [Introduction](./chirpstack-gateway-mesh/index.md)
+- [Changelog](./chirpstack-gateway-mesh/changelog.md)
+- [Configuration](./chirpstack-gateway-mesh/configuration.md)
+- [Downloads](./chirpstack-gateway-mesh/downloads.md)
+- [Protocol](./chirpstack-gateway-mesh/protocol.md)
+- [Contribute & source](./chirpstack-gateway-mesh/contribute.md)
 
 ---

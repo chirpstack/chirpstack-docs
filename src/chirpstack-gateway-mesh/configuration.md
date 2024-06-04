@@ -1,12 +1,12 @@
 # Configuration
 
-To list all CLI options, start `chirpstack-gateway-relay` with the `--help`
+To list all CLI options, start `chirpstack-gateway-mesh` with the `--help`
 flag. This will print:
 
 ```text
-ChirpStack Gateway Relay
+ChirpStack Gateway Mesh
 
-Usage: chirpstack-gateway-relay [OPTIONS] [COMMAND]
+Usage: chirpstack-gateway-mesh [OPTIONS] [COMMAND]
 
 Commands:
   configfile  Print the configuration template
@@ -20,10 +20,10 @@ Options:
 
 ## Configuration example
 
-Example `chirpstack-gateway-relay.toml` configuration:
+Example `chirpstack-gateway-mesh.toml` configuration:
 
 ```toml
 {%raw-%}
-{{#include chirpstack-gateway-relay.toml}}
+{{#include chirpstack-gateway-mesh.toml}}
 {%endraw-%}
 ```
