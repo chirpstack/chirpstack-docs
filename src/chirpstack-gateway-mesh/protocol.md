@@ -233,22 +233,22 @@ data integrity of the packet. This is obtained by calculating the CMAC over
 the downlink payload (- MIC bytes), and using the first 4 bytes of the calculated
 CMAC as MIC.
 
-## Relay stats format
+## Relay heartbeat format
 
-Periodically, each Relay Gateway will send a stats message to indicate that
-that it is still only. Each Relay Gateway relaying this stats payload will
+Periodically, each Relay Gateway will send a heartbeat message to indicate that
+that it is still online. Each Relay Gateway relaying this heartbeat payload will
 add its own Relay ID to the path, such that after the Border Gateway has
 receive the payload, the full path from sending Relay Gateway to Border Gateway
-can be obtained. The maximum payload size (with hop count = 7) is 41 bytes.
+can be obtained. The maximum payload size (with hop count = 8) is 55 bytes.
 
 Bytes:
 
-| 1 byte     | 4 bytes     | 4 bytes  | 0 - 28 bytes | 4 bytes |
-| ---------- | ----------- | -------- | ------------ | ------- |
-| Stats MHDR | Timestamp   | Relay ID | Relay path   | MIC     |
+| 1 byte         | 4 bytes     | 4 bytes  | 0 - 28 bytes          | 4 bytes |
+| -------------- | ----------- | -------- | --------------------- | ------- |
+| Heartbeat MHDR | Timestamp   | Relay ID | Relay path (repeated) | MIC     |
 
 
-### Stats MHDR
+### Heartbeat MHDR
 
 Bits:
 
@@ -257,11 +257,11 @@ Bits:
 | MType | Payload type | Hop count |
 
 * MType = `111` (= Proprietary LoRaWAN MType)
-* Payload type = `10` (= Relay stats)
+* Payload type = `10` (= Relay heartbeat)
 * Hop count = `000` = 1, ... `111` = 8
 
-**Note:** The hop count is incremented each time the stats payload is relayed
-by an other Relay Gateway. As this changes the stats payload, the MIC must be
+**Note:** The hop count is incremented each time the heartbeat payload is relayed
+by an other Relay Gateway. As this changes the heartbeat payload, the MIC must be
 re-calculated.
 
 ### Timestamp
@@ -270,19 +270,24 @@ Unix timestamp (seconds).
 
 ### Relay ID
 
-The Relay ID of the Relay Gateway sending the stats message.
+The Relay ID of the Relay Gateway sending the heartbeat message.
 
 ### Relay path
 
-This contains the Relay IDs of each Relay Gateway that has Relayed
-the stats payload. Each relaying gateway adds its 4 byte Relay ID
-to the back of this field. Initially this field is empty. If the
-stats payload is not relayed by other Relay Gateways, then this field remains
-empty.
+Bytes (repeated):
+
+| 4 bytes  | 1 byte | 1 byte |
+| -------- | ------ | ------ |
+| Relay ID | RSSI   | SNR    |
+
+Each Relay Gateway relaying the heartbeat payload adds its Relay ID, and the
+RSSI and SNR of the received heartbeat payload to the end of the Relay path field.
+Initially this field is empty. If the heartbeat payload is not relayed by any
+other Relay Gateway, then this field remains empty.
 
 ### MIC
 
 Message integrity code, used by other Relay gateways to check the
 data integrity of the packet. This is obtained by calculating the CMAC over
-the stats payload (- MIC bytes), and using the first 4 bytes of the calculated
+the heartbeat payload (- MIC bytes), and using the first 4 bytes of the calculated
 CMAC as MIC.
