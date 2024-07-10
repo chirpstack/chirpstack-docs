@@ -1,21 +1,8 @@
 [![Milesight Logo](http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Milesight-logo.png)](https://www.milesight.com/)
 
-# How to Connect a Milesight Gateway to Chirpstack v4 Platform
+# Milesight
 
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-   - [Device Details](#device-details)
-   - [Network Connectivity](#network-connectivity)
-2. [Configuring the Gateway](#configuring-the-gateway)
-   - [Accessing the Gateway Management Interface](#accessing-the-gateway-management-interface)
-   - [Setting Up Multi-Destination](#setting-up-multi-destination)
-   - [Saving and Applying the Configuration](#saving-and-applying-the-configuration)
-3. [Adding the Gateway to Chirpstack](#adding-the-gateway-to-chirpstack)
-   - [Logging into Chirpstack](#logging-into-chirpstack)
-   - [Adding the Gateway](#adding-the-gateway)
-   - [Verifying the Gateway Connection](#verifying-the-gateway-connection)
-4. [Finally](#finally)
+<!-- toc -->
 
 ## Prerequisites
 
@@ -25,13 +12,9 @@
 
 **Note:** UG65/UG67 has built-in ChirpStack MQTT Forwarder, please ensure the firmware version is 60.0.0.43 and later.
 
-
-
 ### Network Connectivity
 
 - Ensure that the gateway and the Chirpstack v4 system are on the same network and can communicate with each other.
-
-  
 
 ## Configuring the Gateway
 
@@ -58,7 +41,7 @@
 1. At the bottom of the `Multi-Destination` page, click `Save & Apply`.
 2. Wait 3-5 minutes and refresh the page.
 3. Check the `Connect Status` under the `Multi-Destination` section for the `Type` `ChirpStack-v4`. If it shows `Connected`, the gateway configuration is successful.
-   <br><img src="http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Config-Gateway-02.png" alt="Gateway configuration complete" style="width:50%;">
+   <br /><img src="http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Config-Gateway-02.png" alt="Gateway configuration complete" />
 
 ## Adding the Gateway to Chirpstack
 
@@ -75,7 +58,7 @@
    - `Gateway ID (EUI64)`: Enter `24E124FFFEF5408E`.
    - Fill in other parameters as required.
 4. Click `Submit`.
-   <br><img src="http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Config-Chirpstack-01.png" alt="Config-Chirpstack" style="width:50%;">
+   <br /><img src="http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Config-Chirpstack-01.png" alt="Config-Chirpstack" />
 
 ### Verifying the Gateway Connection
 
@@ -84,7 +67,8 @@
 3. Click on the blue ID code under the `Gateway ID` column.
 4. In the new interface, go to the `LoRaWAN frames` tab.
 5. Ensure there is data scrolling, indicating a successful data link between the gateway and Chirpstack.
-   <img src="http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Config-Chirpstack-02.png" alt="Config-Chirpstack" style="width:50%;">
+   <br />
+   <img src="http://resource.milesight-iot.com/Support/lockon/ChirpStack-v4-doc/Config-Chirpstack-02.png" alt="Config-Chirpstack" />
 
 ## Finally
 
