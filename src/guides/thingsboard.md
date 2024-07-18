@@ -1,10 +1,10 @@
 # ThingsBoard getting started
 
-[ThingsBoard](https://www.thingsboard.io) is an Open-source IoT Platform for
+[ThingsBoard](https://www.thingsboard.io) is an Open-core IoT Platform for
 Device management, data collection, processing and visualization for your IoT
 solution.
 
-This guide describes how to setup ChirpStack so that it forwards device-data
+This guide describes how to setup ChirpStack Professional Edition so that it forwards device-data
 to [ThingsBoard](https://www.thingsboard.io) for processing and visualization.
 
 ## Installing ChirpStack components
@@ -13,7 +13,7 @@ The installation of the ChirpStack components is not covered in this guide. The 
 option to get started is the [Docker Compose](../getting-started/docker.md), on which this
 guide continues.
 
-Before you continue, make sure that you have a working ChirpStack environment.
+Before you continue, make sure that you have a working ChirpStack environment with activated Professional Licence.
 
 ## Install ThingsBoard
 
