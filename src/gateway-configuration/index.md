@@ -111,7 +111,7 @@ digraph G {
     then you must also configure the CA certificate that has been used to sign
     the server certificate.
   * If you are using the _Mutual TLS_ configuration in the ChirpStack Gateway
-    Bridge, then you must configure the CA certificate that has been sued to sign
+    Bridge, then you must configure the CA certificate that has been used to sign
     the server certificate, the gateway client-certificate and private key.
 
 **Note:** If ChirpStack has been configured for this, then you can generate
