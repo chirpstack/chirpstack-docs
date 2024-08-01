@@ -26,6 +26,39 @@ Download either the **Base** or **Full** SD card image for your your Raspberry
 Pi version. Then use one of the available tools to write this image to a SD
 card.
 
+#### Using Command Line
+
+* Download the SD card image for your Raspberry Pi.
+* Open your terminal application.
+* Using the ls command, move to the directory where the SD card image is located.
+* Rename the SD card image to chirpstack-gateway-os.img.gz for convenience:
+```bash
+mv put-your-downloaded-sd-card-image-filename-here.img.gz chirpstack-gateway-os.img.gz
+```
+* Unzip the SD card image:
+```bash
+gzip --decompress chirpstack-gateway-os.img.gz
+```
+* Connect the SD card to your computer, determine its mount point by running the lsblk command:
+```bash
+lsblk
+```
+* You will get an output similar to this:
+<pre>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+sda      8:0    0 238.5G  0 disk 
+├─sda1   8:1    0   512M  0 part /boot/efi
+├─sda2   8:2    0   237G  0 part /
+└─sda3   8:3    0   977M  0 part [SWAP]
+sdb      8:16   1  14.9G  0 disk 
+├─sdb1   8:17   1    64M  0 part /media/user/boot
+└─sdb2   8:18   1     4G  0 part /media/user/disk
+sr0     11:0    1  1024M  0 rom </pre>
+* Determine which one of the sda, sdb, ... , sdX devices is your SD card based on the SIZE column and other attributes. I assume that your SD card is named sdX. Any time you see a command containing the sdX string since now, swap it with your card drive name. BE EXTRA CAREFUL WHEN DETERMINING YOUR sdX DRIVE NAME, using a wrong card drive in the command line may lead to irrepairabale data loss!
+* Use the dd command to flash the SD card:
+```bash
+sudo dd if=chirpstack-gateway-os.img of=/dev/sdX bs=4M status=progress
+```
+
 #### Using Balena Etcher
 
 * Download the SD card image for your Raspberry Pi.
