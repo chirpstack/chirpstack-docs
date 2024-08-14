@@ -32,6 +32,7 @@
   - [Kerlink](./gateway-configuration/kerkink.md)
   - [Laird](./gateway-configuration/laird.md)
   - [MatchX](./gateway-configuration/matchx.md)
+  - [Milesight](./gateway-configuration/milesight.md)
   - [Multitech](./gateway-configuration/multitech.md)
   - [RAK](./gateway-configuration/rak.md)
   - [Tektelic](./gateway-configuration/tektelic.md)
