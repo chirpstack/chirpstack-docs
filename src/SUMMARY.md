@@ -193,6 +193,7 @@
 - [Configuration](./chirpstack-gateway-mesh/configuration.md)
 - [Downloads](./chirpstack-gateway-mesh/downloads.md)
 - [Protocol](./chirpstack-gateway-mesh/protocol.md)
+- [Comparison](./chirpstack-gateway-mesh/comparison.md)
 - [Contribute & source](./chirpstack-gateway-mesh/contribute.md)
 
 ---

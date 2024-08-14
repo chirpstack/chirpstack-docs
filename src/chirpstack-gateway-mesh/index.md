@@ -7,9 +7,11 @@ are solar powered) or Border Gateways (gateways terminating the mesh
 protocol and directly communicating with ChirpStack).
 
 The aim of this component is to extend LoRaWAN<sup>&reg;</sup> coverage,
-for example in very remote areas. This solution is different from the 
-LoRa Alliance Relay Protocol, as no software implementation changes are
-required in the device stack.
+by adding LoRa gateways that are not connected to the internet which
+will repeat uplink and downlink LoRaWAN payloads. This can be useful in
+remote areas where internet coverage is sparse.
+This solution is different from the  LoRa Alliance Relay Protocol,
+as no software implementation changes are required in the device stack.
 
 It is possible that there are multiple Relay Gateways inbetween the End-Device
 and the Border Gateway. The technical limitation is 8 hops (the first Relay
