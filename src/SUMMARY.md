@@ -186,4 +186,14 @@
   - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
 
+# ChirpStack Gateway Mesh
+
+- [Introduction](./chirpstack-gateway-mesh/index.md)
+- [Changelog](./chirpstack-gateway-mesh/changelog.md)
+- [Configuration](./chirpstack-gateway-mesh/configuration.md)
+- [Downloads](./chirpstack-gateway-mesh/downloads.md)
+- [Protocol](./chirpstack-gateway-mesh/protocol.md)
+- [Comparison](./chirpstack-gateway-mesh/comparison.md)
+- [Contribute & source](./chirpstack-gateway-mesh/contribute.md)
+
 ---
