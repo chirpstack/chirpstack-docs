@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.4.2
+
+### Improvements
+
+* Update internal dependencies.
+* Fix typo (Ctatus > Status). ([#179](https://github.com/chirpstack/chirpstack-concentratord/pull/179))
+
 ## v4.4.1
 
 ### Bugfixes
