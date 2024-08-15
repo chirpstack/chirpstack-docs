@@ -1,5 +1,48 @@
 # Changelog
 
+## v4.9.0
+
+### Features
+
+#### Gateway Mesh
+
+This is a new feature that makes it possible to extend network coverage by
+deploying 'Relay Gateways' that operate without internet access. While the
+Gatway Mesh only requires changes to the LoRa Gateways, this implements an
+overview of detected Relay Gateways and their last heartbeat. Please see
+[ChirpStack Gateway Mesh](../chirpstack-gateway-mesh/index.md) for for
+information. Support for this feature will be implemented in the next
+[ChirpStack Gateway OS](../chirpstack-gateway-os/index.md) version.
+
+#### Other features
+
+* Add support for generating PHP gRPC code. ([#431](https://github.com/chirpstack/chirpstack/pull/431))
+
+### Improvements
+
+* Update internal dependencies.
+* Add `passive_roaming_validate_mic` configuration option to enable / disable MIC validation for passive-roaming.
+* Update sslmode options in PostgreSQL config template. ([#433](https://github.com/chirpstack/chirpstack/pull/433))
+* Fallback to empty DevAddr, EUI, NetID or AES-key in case of empty string. ([#453](https://github.com/chirpstack/chirpstack/issues/453))
+* Make OIDC and OAuth2 scopes configurable. ([#443](https://github.com/chirpstack/chirpstack/pull/445))
+* Update GitHub workflow action versions. ([#461](https://github.com/chirpstack/chirpstack/pull/461))
+* Document `user_info` configuration in `region_xxxx.toml` configuration files. ([#462](https://github.com/chirpstack/chirpstack/issues/462))
+* Replace `warp` dependency by `axum` for API request handling.
+* UI: Make it possible to configure the tileserver. ([#451](https://github.com/chirpstack/chirpstack/pull/451)) 
+* UI: Replace `moment` with `date-fns`. ([#460](https://github.com/chirpstack/chirpstack/pull/460))
+* UI: Migrate from `create-react-app` to `vite`. ([#459](https://github.com/chirpstack/chirpstack/pull/459))
+* UI: Update codec template with JSDoc. ([#473](https://github.com/chirpstack/chirpstack/pull/473))
+* API: Improve device activation in documentation. ([#454](https://github.com/chirpstack/chirpstack/pull/454))
+
+### Bugfixes
+
+* API: Remove `frame_log` from `__init__.py` in Python SDK. ([#422](https://github.com/chirpstack/chirpstack/issues/422))
+* Fix sending `HomeNSAns` message-type to `HomeNSReq` request.
+* Fix empty string in Regional Paramaters revision column. ([#432](https://github.com/chirpstack/chirpstack/pull/432))
+* Fix exposing full JS codec errors. ([#440](https://github.com/chirpstack/chirpstack/issues/440))
+* Fix setting gateway altitude in stats handler. ([#458](https://github.com/chirpstack/chirpstack/pull/458))
+* Add signal handler to handle `SIGTERM` correctly. ([#480](https://github.com/chirpstack/chirpstack/issues/480))
+
 ## v4.8.1
 
 ### Features
