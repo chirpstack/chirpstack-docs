@@ -1,5 +1,19 @@
 # Changelog
 
+## v4.3.1
+
+### Features
+
+* Implement handling of ChirpStack Gateway Mesh heartbeat messages.
+
+### Improvements
+
+* Update internal dependencies.
+
+### Bugfixes
+
+* Spawn message-callback to not block MQTT eventloop. ([#57](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/57))
+
 ## v4.3.0
 
 ### Features
