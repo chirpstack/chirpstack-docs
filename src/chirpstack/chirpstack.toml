@@ -24,10 +24,9 @@
   # Format example: postgres://<USERNAME>:<PASSWORD>@<HOSTNAME>/<DATABASE>?sslmode=<SSLMODE>.
   #
   # SSL mode options:
-  #  * disable - no SSL
-  #  * require - Always SSL (skip verification)
-  #  * verify-ca - Always SSL (verify that the certificate presented by the server was signed by a trusted CA)
-  #  * verify-full - Always SSL (verify that the certification presented by the server was signed by a trusted CA and the server host name matches the one in the certificate)
+  #  * disable - Do not use TLS
+  #  * prefer - Attempt to connect with TLS but allow sessions without
+  #  * require - Require the use of TLS
   dsn="postgresql://chirpstack:chirpstack@localhost/chirpstack?sslmode=disable"
 
   # Max open connections.
@@ -595,6 +594,14 @@
     # is needed.
     assume_email_verified=false
 
+    # Scopes.
+    #
+    # This configures the scopes that are used during login. You must at least define
+    # "email" and "profile".
+    scopes=[
+      "email",
+      "profile",
+    ]
 
   # OAuth2 backend.
   [user_authentication.oauth2]
@@ -672,6 +679,14 @@
     # If set to true, then ChirpStack will ignore the email_verified received
     # from the userinfo URL, assuming it will be true.
     assume_email_verified=false
+
+    # Scopes.
+    #
+    # This configures the scopes that are used during login. You must at least define
+    # "email".
+    scopes=[
+      "email",
+    ]
 
 
 # Join Server configuration.
@@ -767,6 +782,13 @@
     #
     # If set, the session-keys will be encrypted using the given KEK.
     passive_roaming_kek_label=""
+
+    # Passive-roaming validate MIC.
+    #
+    # If set ChirpStack will validate the MIC (for non-stateless roaming
+    # agreements). As well it means it will expose the NwkSKey / FNwkSIntKey
+    # on PRStartAns.
+    passive_roaming_validate_mic=false
    
     # Server.
     #
@@ -811,6 +833,13 @@
   #  #
   #  # If set, the session-keys will be encrypted using the given KEK.
   #  passive_roaming_kek_label=""
+
+  #  # Passive-roaming validate MIC.
+  #  #
+  #  # If set ChirpStack will validate the MIC (for non-stateless roaming
+  #  # agreements). As well it means it will expose the NwkSKey / FNwkSIntKey
+  #  # on PRStartAns.
+  #  passive_roaming_validate_mic=false
   #
   #  # Server.
   #  #
@@ -855,4 +884,19 @@
 
 #   # Encryption key.
 #   kek="01020304050607080102030405060708"
+
+# UI configuration.
+[ui]
+  # Tileserver URL.
+  #
+  # This configures the tileserver used in the UI to display maps.
+  # The default value uses the OSM tiles.
+  tileserver_url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+
+  # Map attribution.
+  #
+  # This configures the map attribution. The default attribution relates to the
+  # default tileserver_url (OSM). If you configure a different tile-server, you
+  # might need to update the map_attribution.
+  map_attribution="&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors"
 
