@@ -75,7 +75,7 @@ Wi-Fi (which will also disable the access-point mode).
 4. In the Joining Network form, enter the following values and click **Submit**:
    * _Replace wireless configuration_: **Selected**
    * _WPA passphrase_: Enter the password of the selected Wi-Fi network
-   * _Create / Assign firewall-zone_: Select **lan [lan: ] [wwan: ]**
+   * _Create / Assign firewall-zone_: Select the dropdown item with the green background.
 5. Click **Save**
 6. Click **Save & Apply**
 

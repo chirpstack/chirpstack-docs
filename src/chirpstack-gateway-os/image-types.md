@@ -1,6 +1,8 @@
 # Image types
 
-## Base
+## Raspberry Pi
+
+### Base
 
 The ChirpStack Gateway OS **Base** image provides all the components to use
 the hardware has a LoRa<sup>&reg;</sup> gateway. This includes:
@@ -14,7 +16,7 @@ components, network (Wi-Fi, ethernet, firewall, ...) and system settings.
 
 ![gateway-config](gateway-config.png)
 
-## Full
+### Full
 
 The ChirpStack Gateway OS **Full** image contains everything that is included
 with the **Base** image, but is also bundled with:
@@ -26,3 +28,8 @@ This image is intended to provide an easy-to-setup Gateway + Network Server
 solution for prototyping and testing.
 
 ![applications](applications.png)
+
+## Other targets
+
+For other targets, only a single ChirpStack Gateway OS image exists matching
+the gateway architecture.

@@ -175,6 +175,7 @@
 - [Hardware support](./chirpstack-gateway-os/hardware-support.md)
 - [Downloads](./chirpstack-gateway-os/downloads.md)
 - [Installation](./chirpstack-gateway-os/install/index.md)
+  - [RAK](./chirpstack-gateway-os/install/rak.md)
   - [Raspberry Pi](./chirpstack-gateway-os/install/raspberry-pi.md)
 - [Getting started](./chirpstack-gateway-os/getting-started.md)
 - [Use](./chirpstack-gateway-os/use/index.md)

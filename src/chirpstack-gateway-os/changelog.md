@@ -1,5 +1,38 @@
 # Changelog
 
+## v4.5.0
+
+### Upgrade notes
+
+#### Backup and restore (Full image)
+
+Before upgrading, please make sure to create a backup. Please see 
+**System > Custom Commands**.
+
+### Features
+
+#### ChirpStack Gateway Mesh
+
+This release adds the [ChirpStack Gateway Mesh](../chirpstack-gateway-mesh/index.md)
+component to the ChirpStack Gateway OS images.
+
+#### New targets
+
+This release adds support for the following RAK gateways:
+
+* [RAK7267 - WisGate Soho Pro Gateway](https://store.rakwireless.com/products/wisgate-soho-pro-gateway-rak7267)
+* [RAK7268v2 - WisGate Edge Lite 2](https://store.rakwireless.com/products/rak7268-8-channel-indoor-lorawan-gateway)
+* [RAK7289v2 - WisGate Edge Pro](https://store.rakwireless.com/products/rak7289-8-16-channel-outdoor-lorawan-gateway)
+* [RAK7391 - WisGate Connect / Compute Module 4 (CM4) Carrier Board](https://store.rakwireless.com/products/wisgate-connect-base-kit-rak7391)
+
+### Updates
+
+* Update OpenWrt to v23.05.4.
+* Update ChirpStack to v4.9.0.
+* Update ChirpStack MQTT Forwarder to v4.3.1.
+* Update ChirpStack Concentratord to v4.4.2.
+* Update ChirpStack UDP Forwarder to v4.1.8.
+
 ## v4.4.0
 
 ### Upgrade notes
