@@ -54,6 +54,24 @@ hardware capabilities + use-case requirements).
 In this setup, only the ChirpStack Concentratord and ChirpStack Gateway Mesh
 components must be installed on the gateway.
 
+```dot process
+digraph G {
+    node [shape=record,fontsize="10"];
+    edge [fontsize="10"];
+    fontsize="10";
+    style=filled;
+    color="#bbdefb";
+    node [style=filled,color="#e3f2fd"];
+
+    subgraph cluster_0 {
+        label = "LoRa&reg; Gateway";
+        node [style=filled,color="#e3f2fd"];
+
+        "ChirpStack Gateway Mesh" -> "ChirpStack Concentratord" [dir="both", label="ZeroMQ"];
+    }
+}
+```
+
 ### Border Gateway
 
 LoRa Gateway, which is internet connected. It handles the wrapping / unwrapping
