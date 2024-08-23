@@ -18,6 +18,9 @@ and the Border Gateway. The technical limitation is 8 hops (the first Relay
 Gateway counts as the 1st), but this is also influenced by required airtime
 to receive and relay these payloads.
 
+The ChirpStack Gateway Mesh component has been developed in collaboration
+with [RAK](https://www.rakwireless.com/en-us).
+
 ## ChirpStack Gateway Mesh architecture
 
 ```dot process

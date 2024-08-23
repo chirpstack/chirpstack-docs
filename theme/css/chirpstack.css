@@ -75,3 +75,10 @@
 #theme-toggle {
 	display: none;
 }
+
+.sponsors img {
+	max-height: 135px;
+	max-width: 300px;
+  margin-left: 25px;
+  margin-right: 25px;
+}

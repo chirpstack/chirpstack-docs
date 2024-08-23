@@ -5,6 +5,7 @@
 - [v3 documentation](./v3-documentation.md)
 - [v4 breaking changes](./v4-breaking-changes.md)
 - [v3 to v4 migration](./v3-v4-migration.md)
+- [Sponsors](./sponsors.md)
 
 ---
 
