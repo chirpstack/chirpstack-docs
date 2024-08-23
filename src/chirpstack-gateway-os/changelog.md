@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.5.1
+
+### Bugfixes
+
+* Fix regression in ChirpStack MQTT Forwarder init script.
+
 ## v4.5.0
 
 ### Upgrade notes
