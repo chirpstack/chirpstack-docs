@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.5.2
+
+### Bugfixes
+
+* Fix GNSS device path for RAK7289v2 and RAK7267.
+* Include correct configuration for RAK7267.
+
 ## v4.5.1
 
 ### Bugfixes
