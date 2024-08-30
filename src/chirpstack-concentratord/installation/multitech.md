@@ -164,6 +164,18 @@ To view the ChirpStack Concentratord log output, use the following command:
 tail -f -n 100 /var/log/messages |grep chirpstack-concentratord
 ```
 
+#### Notes
+
+##### MTAC-LORA-H-XXX
+
+In case the Concentratord does not start, please make sure the FPGA version is 31.
+To validate:
+
+1. In the lest menu, click **LoRaWAN&reg; > Network Settings**
+2. Under _LoRa Card Information_ you will find _FPGA Version_
+3. Click **Upgrade FPGA** and select _Upgrade Version: 31_
+4. Click **Start**
+
 ## Multitech Conduit AP
 
 * [Product detail page](https://www.multitech.com/brands/multiconnect-conduit-ap)
