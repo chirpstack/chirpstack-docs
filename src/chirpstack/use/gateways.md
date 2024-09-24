@@ -15,3 +15,10 @@ and will be able to see its statistics.
 Gateway statistics are based on the aggregated values sent by the gateway /
 packet-forwarder. In case no statistics are visible, it could mean that the
 gateway is incorrectly configured.
+
+The statistics grahps display the following values over the past month:
+* __Received__ displays the number of Rx packets received from LoRa devices by the gateway.
+* __Transmitted__ shows how many Tx packets have been sent from the gateway over LoRa.
+* The __/frequency__ graphs display the distribution of packets on each frequency (Hz).
+* The __/DR__ graphs show the distribution of packets for each data rate.
+* __TX packets / status__ shows the distribution of the Tx packets' status.
