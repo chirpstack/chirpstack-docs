@@ -1,5 +1,33 @@
 # Changelog
 
+## v4.4.3
+
+### Features
+
+#### Override pin / device-path config
+
+It is now possible to override all (reset)pin configuration and SPI / GNSS / 
+I2C device-paths of all concentrator modules. A configuration example is
+added to the `configfile` template.
+
+#### GPSd support
+
+This adds support for using Concentratord together with [GPSd](https://gpsd.gitlab.io/gpsd/).
+If GPSd has been configured (e.g. `gnss_dev_path="gpsd://localhost:2947"`), the
+Concentratord will automatically enable the `NAV-TIMEGPS` binary message of
+the U-blox module on start. By using GPSd, it is possible to also use the GNSS
+module for time-synchronization by using GPSd as a time-source for NTPD.
+
+### Improvements
+
+* Add more log context in case of (beacon) enqueue error.
+* Refactor min/max tx frequency validation (such that gateway can also use uplink frequencies).
+
+### Bugfixes
+
+* Update `multitech_mtac_lora_h_915` SPI path. ([#167](https://github.com/chirpstack/chirpstack-concentratord/issues/167))
+* Set `stats_interval` on receiving gateway configuration. ([#181](https://github.com/chirpstack/chirpstack-concentratord/issues/181))
+
 ## v4.4.2
 
 ### Improvements
