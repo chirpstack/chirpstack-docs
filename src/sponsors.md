@@ -16,6 +16,8 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![Reese](./sponsors/reese.jpg)](https://reesesystems.com)
 [![Skiply](./sponsors/skiply.png)](https://www.skiply.eu/en)
 
+[![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
+
 </div>
 
 ## Feature sponsors
