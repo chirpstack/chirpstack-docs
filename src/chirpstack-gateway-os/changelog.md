@@ -1,5 +1,40 @@
 # Changelog
 
+## v4.5.3
+
+### Updates
+
+* Update OpenWrt to v23.05.5.
+* Update ChirpStack Concentratord to v4.4.4.
+
+### Improvements
+
+#### GPS time synchronization
+
+This adds GPS time synchronization for the following gateways:
+
+* RAK7267
+* RAK7289v2
+
+If these gateways are operating as Relay gateways (ChirpStack Gateway Mesh)
+this assures that the heartbeat timestamp is accurate.
+
+#### RAK7268v2 multi-slot
+
+This changes the RAK7268v2 image to support multiple slots. While this gateway
+is (currently) sold with a single concentrator module, it is possible to
+install an additional concentrator module, for example a 2.4GHz module to use
+together with the ChirpStack Gateway Mesh feature. ([#5](https://github.com/chirpstack/chirpstack-openwrt-feed/pull/5))
+
+**Note:** After upgrading, you must re-configure the Concentratord / MQTT
+Forwarder and Gateway Mesh (if used) to use the _Slot 1_ configuration.
+
+#### Other improvements
+
+* Show all Gateway IDs in web-interface footer. ([#7](https://github.com/chirpstack/chirpstack-openwrt-feed/pull/7))
+* RAK7391: Add SPI device-paths to concentrator selector. ([#6](https://github.com/chirpstack/chirpstack-openwrt-feed/pull/6))
+* RAK7391: Add reset GPIOs for SPI concentrators. ([#9](https://github.com/chirpstack/chirpstack-openwrt-feed/pull/9))
+
 ## v4.5.2
 
 ### Bugfixes
