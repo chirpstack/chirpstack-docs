@@ -1,5 +1,11 @@
 # Changelog
 
+# v4.4.4
+
+### Bugfixes
+
+* Fix parsing fix status in case NMEA RMC has 12 fields (e.g. using Gpsd).
+
 ## v4.4.3
 
 ### Features
