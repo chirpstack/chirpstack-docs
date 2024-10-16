@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.5.4
+
+### Bugfixes
+
+* Fix duplicated `[concentratord]` configuration section preventing ChirpStack UDP Forwarder from starting.
+
 ## v4.5.3
 
 ### Updates
