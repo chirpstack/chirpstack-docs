@@ -17,6 +17,7 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![Skiply](./sponsors/skiply.png)](https://www.skiply.eu/en)
 
 [![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
+[![Browan](./sponsors/browan.png)](https://browan.com)
 
 </div>
 
