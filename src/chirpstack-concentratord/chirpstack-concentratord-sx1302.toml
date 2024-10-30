@@ -75,6 +75,11 @@
   # GNSS fix, use the system-time for setting the 'time' field on RX.
   time_fallback_enabled=true
 
+  # Gateway ID.
+  #
+  # Only set this if you would like to override the Gateway ID provided by the SX1302/3.
+  gateway_id=""
+
 
   # LoRa concentrator configuration.
   [gateway.concentrator]
