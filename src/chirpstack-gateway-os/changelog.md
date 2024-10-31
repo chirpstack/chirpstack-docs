@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.5.5
+
+### Updates
+
+* Update ChirpStack Concentratord to v4.4.5.
+
+### Bugfixes
+
+* Fix random wifi interface MAC for MIPS-based RAK gateways.
+* UDP Forwarder: Fix missing slog configuration. ([#120](https://github.com/chirpstack/chirpstack-gateway-os/issues/120))
+
 ## v4.5.4
 
 ### Bugfixes
