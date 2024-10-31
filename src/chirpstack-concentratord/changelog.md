@@ -1,6 +1,17 @@
 # Changelog
 
-# v4.4.4
+## v4.4.5
+
+### Improvements
+
+* Provide option to override SX1302/3 embedded Gateway ID. ([#187](https://github.com/chirpstack/chirpstack-concentratord/pull/187))
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix default `sx1302` model name. ([#188](https://github.com/chirpstack/chirpstack-concentratord/issues/188))
+
+## v4.4.4
 
 ### Bugfixes
 
