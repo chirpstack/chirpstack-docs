@@ -1,5 +1,43 @@
 # Changelog
 
+## v4.10.1
+
+### Features
+
+#### SQLite support
+
+This add support for using SQLite instead of PostgreSQL as database. Please
+note that the database backend must be selected at compile time (default 
+PostgreSQL). SQLite is ideal for embedded ChirpStack deployments (like the
+ChirpStack Gateway OS, which will migrate to SQLite in the next version).
+Pre-compiled binaries are provided for both PostgreSQL and SQLite in the
+[Downloads](https://www.chirpstack.io/docs/chirpstack/downloads.html).
+([#418](https://github.com/chirpstack/chirpstack/pull/418), [#540](https://github.com/chirpstack/chirpstack/pull/540))
+
+#### Queue-item expiration
+
+This makes it possible to set an expires-at timestamp for multicast and unicast
+queue-items, in case they must be automatically removed from the queue after
+a given timestamp.
+
+### Improvements
+
+* ui: Update page-title according to page. ([#539](https://github.com/chirpstack/chirpstack/pull/539))
+* api: Update gRPC dependencies in Java API. ([#494](https://github.com/chirpstack/chirpstack/pull/494))
+* api: Re-export `pbjson_types` and `tonic` in Rust API. ([#503](https://github.com/chirpstack/chirpstack/pull/504))
+* api: Add support for C. ([#549](https://github.com/chirpstack/chirpstack/pull/549))
+
+### Bugfixes
+
+* ui: Fix tooltip data formatting. ([#503](https://github.com/chirpstack/chirpstack/issues/503))
+* Remove `OFF` from log levels (this is an invalid level).
+* Fix escaping when generating config template.
+* Fix `validate_mic` clause (Backend Interfaces).
+
+## v4.10.0
+
+Unreleased because of issue in Debian packaging.
+
 ## v4.9.0
 
 ### Features
