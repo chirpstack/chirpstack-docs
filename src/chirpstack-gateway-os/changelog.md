@@ -1,5 +1,36 @@
 # Changelog
 
+## v4.6.0
+
+This release only includes changes for the ChirpStack Gateway OS Full 
+(Raspberry Pi) and the RAK7391 (Raspberry Pi CM4) images.
+
+### Features
+
+#### PostgreSQL > SQLite migration
+
+This release replaces the ChirpStack PostgreSQL database with SQLite.
+By migrating to SQLite, PostgreSQL is no longer required and thus
+reducing the dependencies. It also makes it easier to create backups
+as the SQLite database is stored as a single file (`/src/chirpstack/chirpstack.sqlite`).
+
+### Before you upgrade
+
+Before you upgrade, you should migrate the data to SQLite first, as after
+upgrading the PostgreSQL binaries will no longer be available. To migrate
+ChirpStack data, you can use the migration utility (for ARMv7) that will
+automatically create the SQLite database and migrate the data.
+
+You must download the `.ipk` package from [https://github.com/chirpstack/chirpstack-pg-to-sqlite/releases](https://github.com/chirpstack/chirpstack-pg-to-sqlite/releases).
+In the ChirpStack Gateway OS v4.5.x web-interface, navigate to **System > Software**
+click the **Upload package...** button and upload the `.ipk` package. After 
+uploading it will immediately initialize the SQLite database and print the 
+status of the migration.
+
+### Updates
+
+* ChirpStack to v4.10.1.
+
 ## v4.5.5
 
 ### Updates
