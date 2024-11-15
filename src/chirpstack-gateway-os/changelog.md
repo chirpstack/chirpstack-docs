@@ -12,7 +12,7 @@ This release only includes changes for the ChirpStack Gateway OS Full
 This release replaces the ChirpStack PostgreSQL database with SQLite.
 By migrating to SQLite, PostgreSQL is no longer required and thus
 reducing the dependencies. It also makes it easier to create backups
-as the SQLite database is stored as a single file (`/src/chirpstack/chirpstack.sqlite`).
+as the SQLite database is stored as a single file (`/srv/chirpstack/chirpstack.sqlite`).
 
 ### Before you upgrade
 
