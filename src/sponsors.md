@@ -19,6 +19,8 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
 [![Browan](./sponsors/browan.png)](https://browan.com)
 
+[![Kerlink](./sponsors/kerlink.png)](https://www.kerlink.com)
+
 </div>
 
 ## Feature sponsors
