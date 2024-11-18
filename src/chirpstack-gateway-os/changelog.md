@@ -1,5 +1,18 @@
 # Changelog
 
+## v4.6.1
+
+This release only includes changes for the ChirpStack Gateway OS Full 
+(Raspberry Pi) and the RAK7391 (Raspberry Pi CM4) images.
+
+### Improvements
+
+* Import LoRaWAN device repository after starting ChirpStack (such that the web-interface is immediately accessible after boot).
+
+### Bugfixes
+
+* Fix mkdir typo in `chirpstack` init script.
+
 ## v4.6.0
 
 This release only includes changes for the ChirpStack Gateway OS Full 
