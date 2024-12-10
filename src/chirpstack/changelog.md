@@ -1,5 +1,17 @@
 # Changelog
 
+## v4.10.2
+
+### Improvements
+
+* Store DevNonces per JoinUI.
+* Update base Docker base to Alpine 3.21.0.
+* Internal dependency updates.
+
+### Bugfixes
+
+* Delete expired multicast queue-items in case the gateway is offline (previously these would be delete once the gateway would come online).
+
 ## v4.10.1
 
 ### Features
