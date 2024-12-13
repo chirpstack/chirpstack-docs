@@ -273,14 +273,19 @@ The Relay ID of the Relay Gateway sending the event payload.
 
 ### TLV payload
 
-The Type and Length are both encoded as single bytes. Please see the TLV eventpayloads
-payloads section for the known payload types.
+Bytes:
+
+| 1 byte | 1 byte | n bytes |
+| ------ | ------ | ------- |
+| Type   | Length | Payload |
+
+Please see the TLV event payloads payloads section for the known payload types.
 
 ## TLV event payloads
 
-| Type | Length   | Name      | Mixed |
-| ---- | -------- | --------- | ----- |
-| 0x00 | Variable | Heartbeat | No    |
+| Type        | Length   | Name            |
+| ----------- | -------- | --------------- |
+| 0x00        | Variable | Heartbeat       |
 | 0x80 - 0xff | Proprietary event payloads |
 
 ### Heartbeat
@@ -291,8 +296,8 @@ add its own Relay ID to the path, such that after the Border Gateway has
 receive the payload, the full path from sending Relay Gateway to Border Gateway
 can be obtained.
 
-As the payload size is variable and will increment each time it is relayed, this
-event type must not be mixed with other TLV payloads.
+As the payload size is variable and will increment each time it is relayed, caution
+must be taken when mixing this event with other events.
 
 Bytes:
 
