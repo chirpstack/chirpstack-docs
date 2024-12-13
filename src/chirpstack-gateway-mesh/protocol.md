@@ -233,22 +233,21 @@ data integrity of the packet. This is obtained by calculating the CMAC over
 the downlink payload (- MIC bytes), and using the first 4 bytes of the calculated
 CMAC as MIC.
 
-## Relay heartbeat format
+## Relay event payload
 
-Periodically, each Relay Gateway will send a heartbeat message to indicate that
-that it is still online. Each Relay Gateway relaying this heartbeat payload will
-add its own Relay ID to the path, such that after the Border Gateway has
-receive the payload, the full path from sending Relay Gateway to Border Gateway
-can be obtained. The maximum payload size (with hop count = 8) is 55 bytes.
+The Relay event payload allows a Relay Gateway to broadcast data like a heartbeat,
+location information, battery status, ... The information is encoded as [TLV](https://en.wikipedia.org/wiki/Type%E2%80%93length%E2%80%93value)
+such that the event payload can contain data for known and unknown (proprietary)
+event types.
 
 Bytes:
 
-| 1 byte         | 4 bytes     | 4 bytes  | 0 - 28 bytes          | 4 bytes |
-| -------------- | ----------- | -------- | --------------------- | ------- |
-| Heartbeat MHDR | Timestamp   | Relay ID | Relay path (repeated) | MIC     |
+| 1 byte     | 4 bytes   | n bytes     | 4 bytes |
+| ---------- | --------- | ----------- | ------- |
+| Event MHDR | Timestamp | TLV payload | MIC     |
 
 
-### Heartbeat MHDR
+### Event MHDR
 
 Bits:
 
@@ -257,22 +256,51 @@ Bits:
 | MType | Payload type | Hop count |
 
 * MType = `111` (= Proprietary LoRaWAN MType)
-* Payload type = `10` (= Relay heartbeat)
+* Payload type = `10` (= Relay event)
 * Hop count = `000` = 1, ... `111` = 8
 
-**Note:** The hop count is incremented each time the heartbeat payload is relayed
-by an other Relay Gateway. As this changes the heartbeat payload, the MIC must be
-re-calculated.
+**Note:** The hop count is incremented each time the event payload is relayed
+by an other Relay Gateway. In the case this changes the payload (e.g. in case
+of a heartbeat), the MIC must be re-calculated.
 
 ### Timestamp
 
 Unix timestamp (seconds).
 
-### Relay ID
+### TLV payload
+
+The Type and Length are both encoded as single bytes. Please see the TLV eventpayloads
+payloads section for the known payload types.
+
+## TLV event payloads
+
+| Type | Length   | Name      | Mixed |
+| ---- | -------- | --------- | ----- |
+| 0x00 | Variable | Heartbeat | No    |
+| 0x80 - 0xff | Proprietary event payloads |
+
+### Heartbeat
+
+Periodically, each Relay Gateway will send a heartbeat message to indicate that
+that it is still online. Each Relay Gateway relaying this heartbeat payload will
+add its own Relay ID to the path, such that after the Border Gateway has
+receive the payload, the full path from sending Relay Gateway to Border Gateway
+can be obtained.
+
+As the payload size is variable and will increment each time it is relayed, this
+event type must not be mixed with other TLV payloads.
+
+Bytes:
+
+| 4 bytes  | 0 - 28 bytes          |
+| -------- | --------------------- |
+| Relay ID | Relay path (repeated) |
+
+#### Relay ID
 
 The Relay ID of the Relay Gateway sending the heartbeat message.
 
-### Relay path
+#### Relay path
 
 Bytes (repeated):
 
@@ -285,9 +313,17 @@ RSSI and SNR of the received heartbeat payload to the end of the Relay path fiel
 Initially this field is empty. If the heartbeat payload is not relayed by any
 other Relay Gateway, then this field remains empty.
 
-### MIC
+##### RSSI
 
-Message integrity code, used by other Relay gateways to check the
-data integrity of the packet. This is obtained by calculating the CMAC over
-the heartbeat payload (- MIC bytes), and using the first 4 bytes of the calculated
-CMAC as MIC.
+Encoded as RSSI<sub>dBm</sub> = `-1 x RSSI`
+
+##### SNR
+
+Bits:
+
+| 7..6 | 5..0 |
+| ---- | ---- |
+| RFU  | SNR  |
+
+SNR is a signed integer with a minimum value of `-32` and a maximum value of
+`31`.
