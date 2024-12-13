@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.6.2
+
+### Updates
+
+* Update ChipStack to v4.10.2.
+* Update ChirpStack Concentratord to v4.4.6.
+
+### Improvements
+
+* ChirpStack MQTT Forwarder: Make commands and metadata configurable in UI.
+
 ## v4.6.1
 
 This release only includes changes for the ChirpStack Gateway OS Full 
