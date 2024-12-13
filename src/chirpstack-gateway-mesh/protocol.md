@@ -273,8 +273,13 @@ The Relay ID of the Relay Gateway sending the event payload.
 
 ### TLV payload
 
-The Type and Length are both encoded as single bytes. Please see the TLV eventpayloads
-payloads section for the known payload types.
+Bytes:
+
+| 1 byte | 1 byte | n bytes |
+| ------ | ------ | ------- |
+| Type   | Length | Payload |
+
+Please see the TLV eventpayloads payloads section for the known payload types.
 
 ## TLV event payloads
 
