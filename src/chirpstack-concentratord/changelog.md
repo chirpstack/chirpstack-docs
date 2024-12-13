@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.4.6
+
+### Improvements
+
+* Set read-timeout + fail if no 'u-blox' device was found (Gpsd). ([#198](https://github.com/chirpstack/chirpstack-concentratord/issues/198))
+* Internal dependency updates.
+
+### Bugfixes
+
+* Fix incorrect FSK datarate multiplication.
+
 ## v4.4.5
 
 ### Improvements
