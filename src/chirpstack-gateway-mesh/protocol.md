@@ -242,9 +242,9 @@ event types.
 
 Bytes:
 
-| 1 byte     | 4 bytes   | n bytes     | 4 bytes |
-| ---------- | --------- | ----------- | ------- |
-| Event MHDR | Timestamp | TLV payload | MIC     |
+| 1 byte     | 4 bytes   | 4 bytes  | n bytes     | 4 bytes |
+| ---------- | --------- | -------- | ----------- | ------- |
+| Event MHDR | Timestamp | Relay ID | TLV payload | MIC     |
 
 
 ### Event MHDR
@@ -266,6 +266,10 @@ of a heartbeat), the MIC must be re-calculated.
 ### Timestamp
 
 Unix timestamp (seconds).
+
+#### Relay ID
+
+The Relay ID of the Relay Gateway sending the event payload.
 
 ### TLV payload
 
@@ -292,13 +296,9 @@ event type must not be mixed with other TLV payloads.
 
 Bytes:
 
-| 4 bytes  | 0 - 28 bytes          |
-| -------- | --------------------- |
-| Relay ID | Relay path (repeated) |
-
-#### Relay ID
-
-The Relay ID of the Relay Gateway sending the heartbeat message.
+| 0 - 28 bytes          |
+| --------------------- |
+| Relay path (repeated) |
 
 #### Relay path
 
