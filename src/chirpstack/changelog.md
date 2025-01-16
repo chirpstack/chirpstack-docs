@@ -1,5 +1,27 @@
 # Changelog
 
+## v4.11.0
+
+### Improvements
+
+#### Refactor (multi-region) de-duplication
+
+This release refactors the uplink de-duplication, such that uplinks received
+by gateways in different region configurations (but with overlapping channels)
+are de-duplicated separately. After de-duplication and after resolving the
+device-session of the device, ChirpStack will only handle the de-duplicated
+uplink that is within the same region-configuration assigned to the device-session.
+
+This makes it possible to create region configurations of which channels and
+gateway-coverage are overlapping. Before this release such scenario could
+result in constantly changing settings (through mac-commands) of the end-device
+or errors related to unknown channels.
+
+This does include two integration changes:
+
+* Region information is no longer exposed through the `rxInfo` elements.
+* A new `region_config_id` field has been added to join and uplink events.
+
 ## v4.10.2
 
 ### Improvements
