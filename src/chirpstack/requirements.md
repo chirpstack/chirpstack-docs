@@ -81,7 +81,7 @@ create extension pg_trgm;
 ## Redis database
 
 ChirpStack stores device-sessions, metrics and cache into a [Redis](http://redis.io)
-database. Note that at least Redis 5.0.0 is required.
+database. Note that at least Redis 6.2.0 is required.
 
 ### Install
 
