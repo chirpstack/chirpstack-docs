@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.11.1
+
+### Improvements
+
+* Return `LinkCheckAns` with `margin=0` for non-LoRa modulations.
+* Re-use http clients in integrations to reduce overhead.
+
+### Bugfixes
+
+* Fix missing `ns_time` after multi-region refactor.
+
 ## v4.11.0
 
 ### Improvements

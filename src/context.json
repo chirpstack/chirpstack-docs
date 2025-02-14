@@ -1,5 +1,5 @@
 {
-	"chirpstack_version": "4.11.0",
+	"chirpstack_version": "4.11.1",
 	"gateway_os_version": "4.6.2",
 	"gateway_bridge_version": "4.0.11",
 	"concentratord_version": "4.4.6",
