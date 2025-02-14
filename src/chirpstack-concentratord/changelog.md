@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.4.7
+
+### Improvements
+
+* Make reset compatible with cdev uAPI v2. 
+
 ## v4.4.6
 
 ### Improvements
