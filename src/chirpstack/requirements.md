@@ -77,6 +77,15 @@ create extension pg_trgm;
 \q
 ```
 
+## SQLite database
+
+As an alternative to PostgreSQL, ChirpStack can use [SQLite](https://www.sqlite.org) as persistent
+data-storage.
+
+There is no extra software to install or configure to use SQLite database.
+
+Make sure to run the `chirpstack-sqlite` binary to use SQLite database. It can be found in
+[Downloads](https://www.chirpstack.io/docs/chirpstack/downloads.html).
 
 ## Redis database
 
