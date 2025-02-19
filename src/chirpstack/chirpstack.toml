@@ -42,6 +42,14 @@
   # store.
   ca_cert=""
 
+# SQLite configuration. For chirpstack-sqlite flavor only.
+[sqlite]
+
+  # SQLite database path.
+  #
+  # Make sure path exists and is accessible 'rw' to the chirpstack user.
+  # If the database file does not exist, it will be created on first run.
+  path="sqlite:///path/to/chirpstack.sqlite"
 
 # Redis configuration.
 [redis]
