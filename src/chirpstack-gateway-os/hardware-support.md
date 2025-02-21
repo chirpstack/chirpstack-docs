@@ -2,14 +2,18 @@
 
 <!-- toc -->
 
-## RAK
+## Gateways
 
-### Supported gateways
+### RAK
 
 * [RAK7267 - WisGate Soho Pro Gateway](https://store.rakwireless.com/products/wisgate-soho-pro-gateway-rak7267)
 * [RAK7268v2 - WisGate Edge Lite 2](https://store.rakwireless.com/products/rak7268-8-channel-indoor-lorawan-gateway)
 * [RAK7289v2 - WisGate Edge Pro](https://store.rakwireless.com/products/rak7289-8-16-channel-outdoor-lorawan-gateway)
 * [RAK7391 - WisGate Connect / Compute Module 4 (CM4) Carrier Board](https://store.rakwireless.com/products/wisgate-connect-base-kit-rak7391)
+
+### Seeed
+
+* [SenseCAP M2](https://wiki.seeedstudio.com/Network/SenseCAP_Network/SenseCAP_M2_Multi_Platform/SenseCAP_M2_Multi_Platform_Overview/)
 
 ## Raspberry Pi
 
