@@ -1,5 +1,32 @@
 # Changelog
 
+## v4.7.0
+
+### Updates
+
+* Update ChirpStack to v4.11.1.
+* Update ChirpStack Concentratord to v4.4.7.
+* Update ChirpStack Gateway Mesh to v4.0.1.
+
+### Features
+
+#### Seeed SenseCAP M2 support
+
+This release adds support for the [Seeed SenseCAP M2](https://wiki.seeedstudio.com/Network/SenseCAP_Network/SenseCAP_M2_Multi_Platform/SenseCAP_M2_Multi_Platform_Overview/)
+gateway.
+
+#### OpenWrt 24.10
+
+This release updates OpenWrt to v24.10.0.
+
+### ChirpStack Gateway Mesh
+
+This release adds AS923 and IN865 region configuration.
+
+### Bugfixes
+
+* Fix missing `chirpstack-gateway-mesh` for `bcm2708` target. ([#122](https://github.com/chirpstack/chirpstack-gateway-os/issues/122))
+
 ## v4.6.2
 
 ### Updates

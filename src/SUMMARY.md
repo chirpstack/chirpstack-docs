@@ -178,6 +178,7 @@
 - [Installation](./chirpstack-gateway-os/install/index.md)
   - [RAK](./chirpstack-gateway-os/install/rak.md)
   - [Raspberry Pi](./chirpstack-gateway-os/install/raspberry-pi.md)
+  - [Seeed](./chirpstack-gateway-os/install/seeed.md)
 - [Getting started](./chirpstack-gateway-os/getting-started.md)
 - [Use](./chirpstack-gateway-os/use/index.md)
   - [Configuration](./chirpstack-gateway-os/use/configuration.md)
