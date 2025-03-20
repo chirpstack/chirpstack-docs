@@ -10,13 +10,15 @@
   #   * INFO
   #   * WARN
   #   * ERROR
-  #   * OFF
   level="info"
 
   # Log as JSON.
   json=false
 
+
 # PostgreSQL configuration.
+#
+# Note: this option is only available to ChirpStack with PostgreSQL support (default).
 [postgresql]
 
   # PostgreSQL DSN.
@@ -42,14 +44,37 @@
   # store.
   ca_cert=""
 
-# SQLite configuration. For chirpstack-sqlite flavor only.
+
+# SQLite configuration.
+#
+# Note: this option is only available to ChirpStack with SQLite support.
 [sqlite]
 
-  # SQLite database path.
+  # Sqlite DB path.
   #
-  # Make sure path exists and is accessible 'rw' to the chirpstack user.
-  # If the database file does not exist, it will be created on first run.
-  path="sqlite:///path/to/chirpstack.sqlite"
+  # Make sure the path exists and that the ChirpStack process has read-write
+  # access to it. If the database file does not exists, it will be created the
+  # first time ChirpStack starts.
+  #
+  # Format example: sqlite:///<DATABASE>.
+  path="sqlite://chirpstack.sqlite"
+
+  # Max open connections.
+  #
+  # This sets the max. number of open connections that are allowed in the
+  # SQLite connection pool.
+  max_open_connections=4
+
+  # PRAGMAs.
+  #
+  # This configures the list of PRAGMAs that are executed to prepare the
+  # SQLite library. For a full list of available PRAGMAs see:
+  # https://www.sqlite.org/pragma.html
+  pragmas=[
+    "busy_timeout = 1000",
+    "foreign_keys = ON",
+  ]
+
 
 # Redis configuration.
 [redis]
@@ -893,6 +918,7 @@
 #   # Encryption key.
 #   kek="01020304050607080102030405060708"
 
+
 # UI configuration.
 [ui]
   # Tileserver URL.
@@ -906,5 +932,5 @@
   # This configures the map attribution. The default attribution relates to the
   # default tileserver_url (OSM). If you configure a different tile-server, you
   # might need to update the map_attribution.
-  map_attribution="&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors"
+  map_attribution="&copy; <a href=\"http://osm.org/copyright\">OpenStreetMap</a> contributors"
 
