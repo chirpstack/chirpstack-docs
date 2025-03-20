@@ -12,6 +12,14 @@ When creating or updating a device, you need to select the
 capabilities. E.g. the Device profile defines if the device is of type
 OTAA or ABP.
 
+### For Relay capable devices
+
+Relay capable devices need to be explicitly added for Relay to work:
+
+1. select such devices by the tick box on the left side
+2. click the **Selected devices** button from top-right side
+3. choose **Add to relay** option
+
 ### Tags and variables
 
 Each device can have multiple user-defined tags and variables assigned.
