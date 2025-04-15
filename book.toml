@@ -1,30 +1,30 @@
 [book]
-title = "ChirpStack open-source LoRaWAN® Network Server documentation"
-authors = []
-language = "en"
-multilingual = false
-src = "src"
+  title = "ChirpStack open-source LoRaWAN® Network Server documentation"
+  authors = []
+  language = "en"
+  multilingual = false
+  src = "src"
 
 [output.html]
-no-section-label = true
-additional-css = ["theme/css/chirpstack.css"]
-git-repository-url = "https://github.com/chirpstack/chirpstack-docs"
-git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/chirpstack/chirpstack-docs/edit/master/{path}"
+  no-section-label = true
+  additional-css = ["theme/css/chirpstack.css"]
+  git-repository-url = "https://github.com/chirpstack/chirpstack-docs"
+  git-repository-icon = "fa-github"
+  edit-url-template = "https://github.com/chirpstack/chirpstack-docs/edit/master/{path}"
 
-[output.html.print]
-enable = false
+  [output.html.print]
+    enable = false
 
-[output.html.fold]
-enable = true
-level = 0
+  [output.html.fold]
+    enable = true
+    level = 0
 
 [preprocessor.tera]
-command = "mdbook-tera --json ./src/context.json"
+  command = "mdbook-tera --json ./src/context.json"
 
 [preprocessor.graphviz]
-command = "mdbook-graphviz"
+  command = "mdbook-graphviz"
 
 [preprocessor.toc]
-command = "mdbook-toc"
-renderer = ["html"]
+  command = "mdbook-toc"
+  renderer = ["html"]

@@ -3,7 +3,7 @@ FROM rust:1.81.0-bookworm
 WORKDIR /chirpstack-docs
 
 
-RUN cargo install mdbook@0.4.37
+RUN cargo install mdbook@0.4.48
 RUN cargo install mdbook-tera
 RUN cargo install mdbook-graphviz
 RUN cargo install mdbook-toc
