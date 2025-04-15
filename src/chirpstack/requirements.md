@@ -28,7 +28,7 @@ for information about how to setup Mosquitto for your platform.
 ## PostgreSQL database
 
 ChirpStack uses [PostgreSQL](https://www.postgresql.org) as persistent
-data-storage. PostgreSQL 9.5+ is required.
+data-storage. PostgreSQL v13+ is required.
 
 ### Install
 
