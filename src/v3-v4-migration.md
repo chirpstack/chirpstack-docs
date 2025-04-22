@@ -33,8 +33,9 @@ the `v4_migrate` configuration flag.
 
 ### ChirpStack (v4)
 
-Please make sure that the latest ChirpStack v4 version has been installed
-and is up and running. You must create a new PostgreSQL database, while not
+As the migration script is compatible with the latest v4.11.x version only, please
+make sure that you have the latest ChirpStack **v4.11.x** version installed and
+that it is up and running. You must create a new PostgreSQL database, while not
 strictly required, it is also recommended to create a new Redis server.
 
 **Note:** Do not create any gateways and devices yet, as the migration script
@@ -117,3 +118,7 @@ steps in the ChirpStack v4 web-interface:
 - [ ] Gateway frames are being reported
 - [ ] Device frames are appearing in the web-interface
 - [ ] Device events are appearing in the web-interface
+
+## Update ChirpStack
+
+After the migration, you can update to the latest ChirpStack v4 version.
