@@ -1,5 +1,37 @@
 # Changelog
 
+## v4.12.0
+
+### Features
+
+#### FUOTA Support
+
+This release brings FUOTA support to ChirpStack, deprecating the need to
+use the [ChirpStack FUOTA Server](https://github.com/chirpstack/chirpstack-fuota-server).
+Currently it supports both the v1 and v2 versions of TS003, TS004 and TS005
+specifications.
+
+**Note:**
+
+This has been tested against the [LoRa Basics Modem](https://github.com/lora-net/SWL2001)
+stack. While testing, a small implementation difference has been found between
+the LoRa Basics Modem and the TS005 (v2) specification ([#106](https://github.com/Lora-net/SWL2001/issues/106)).
+At this moment, the ChirpStack implementation has been aligned with the
+LoRa Basics Modem.
+
+### Improvements
+
+* Add sorting to device and gateway tables. ([#579](https://github.com/chirpstack/chirpstack/pull/579))
+* Add Yandex ID OAuth provider support. ([#622](https://github.com/chirpstack/chirpstack/pull/622))
+* Generalize auto-conversion of SEC1 EC Keys to PKCS#8. ([#618](https://github.com/chirpstack/chirpstack/pull/618))
+* Replace static UUIDs by `gen_random_uuid()` in PostgreSQL migration. ([#634](https://github.com/chirpstack/chirpstack/issues/634))
+* Show origin in case of bind parse error. ([#632](https://github.com/chirpstack/chirpstack/issues/632))
+* Refactor device-profile fields in database to reduce amount of used columns.
+* Add filtering to device table.
+* Update internal dependencies.
+* Add JavaScript example for default ADR algorithm.
+* Add option to configure join-server authorization header.
+
 ## v4.11.1
 
 ### Improvements
