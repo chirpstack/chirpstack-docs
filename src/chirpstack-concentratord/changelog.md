@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.4.8
+
+### Improvements
+
+* Update internal dependencies.
+
 ## v4.4.7
 
 ### Improvements
