@@ -1,5 +1,17 @@
 # Changelog
 
+## v4.3.2
+
+### Features
+
+* Add MQTT connection callback configuration (e.g. to exec. command to turn on / off LED on gateway).
+
+### Improvements
+
+* Make MQTT re-connect interval configurable through `reconnect_interval` config option. ([#63](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/63))
+* On startup, validate that Gateway ID is 8-bytes. ([#65](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/65))
+* Update internal dependencies.
+
 ## v4.3.1
 
 ### Features
