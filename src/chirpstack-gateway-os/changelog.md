@@ -1,5 +1,20 @@
 # Changelog
 
+## v4.7.1
+
+### Updates
+
+* Update ChirpStack to v4.12.0.
+* Update ChirpStack Concentratord to v4.4.8.
+* Update ChirpStack MQTT Forwarder to v4.3.2.
+* Update ChirpStack UDP Forwarder to v4.1.10.
+* Update Node-RED to v3.1.15.
+* Update OpenWrt to v24.10.1.
+
+### Improvements
+
+* Seeed SenseCAP M2: Fix Wi-Fi mac address (to be consistent with package label).
+
 ## v4.7.0
 
 ### Updates
