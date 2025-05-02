@@ -1,5 +1,17 @@
 # Changelog
 
+## v4.12.1
+
+### Improvements
+
+* Update internal dependencies.
+
+### Bugfixes
+
+* ui: Fix JSON enqueue error. (#[658](https://github.com/chirpstack/chirpstack/issues/658))
+* ui: Fix error after deleting tenant. ([#635](https://github.com/chirpstack/chirpstack/issues/635))
+* ui: Fix potential code-editor rendering issues (by replacing codemirror by ace).
+
 ## v4.12.0
 
 ### Features
