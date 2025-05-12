@@ -8,17 +8,18 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 <div class="sponsors">
 
 [![RAK](./sponsors/rak.png)](https://www.rakwireless.com/en-us)
+[![Project-Q](./sponsors/project_q.png)](https://project-q.ai/)
+
 [![Dragino](./sponsors/dragino.png)](https://www.dragino.com)
-
 [![Milesight](./sponsors/milesight.png)](https://www.milesight.com)
+
 [![Smart Parks](./sponsors/smartparks.png)](http://www.smartparks.org)
-
 [![Reese](./sponsors/reese.jpg)](https://reesesystems.com)
+
 [![Skiply](./sponsors/skiply.png)](https://www.skiply.eu/en)
-
 [![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
-[![Browan](./sponsors/browan.png)](https://browan.com)
 
+[![Browan](./sponsors/browan.png)](https://browan.com)
 [![Kerlink](./sponsors/kerlink.png)](https://www.kerlink.com)
 
 </div>
