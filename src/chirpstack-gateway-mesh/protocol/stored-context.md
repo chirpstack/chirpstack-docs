@@ -11,6 +11,22 @@ packet. In case of events and commands packets, it is also used for
 encryption / decryption.  Each Relay and Border gateway must be configured
 with this same key.
 
+### MIC key
+
+The MIC key is generated as follow:
+
+```
+MIC key = aes128_encrypt(Mesh Root Key, 0x00 | pad16)
+```
+
+### Encryption key
+
+The encryption key is generated as follow:
+
+```
+Encryption key = aes128_encrypt(Mesh Root Key, 0x01 | pad16)
+```
+
 ## TX Power table
 
 A TX Power table, which maps the (downlink) TX Power to an integer (0 - 15)

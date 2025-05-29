@@ -9,9 +9,9 @@ event types.
 
 Bytes:
 
-| 1 byte     | 4 bytes   | 4 bytes  | n bytes     | 4 bytes |
-| ---------- | --------- | -------- | ----------- | ------- |
-| Event MHDR | Timestamp | Relay ID | TLV payload | MIC     |
+| 1 byte     | 4 bytes   | 4 bytes  | n bytes                 | 4 bytes |
+| ---------- | --------- | -------- | ----------------------- | ------- |
+| Event MHDR | Timestamp | Relay ID | TLV payload (encrypted) | MIC     |
 
 
 ## Event MHDR
@@ -46,3 +46,23 @@ Bytes:
 | Type   | Length | Payload |
 
 Please see the [TLV payloads](./tlv-payloads.md) page for the known payload types.
+
+### Encryption
+
+The TLV payload is encrypted using the same encryption scheme as the
+LoRaWAN FrmPayload (see section 4.3.3 of the LoRaWAN 1.0.4 specs). For the
+encryption the block Ai is defined as follow:
+
+Octets:
+
+| 1    | 4        | 1    | 4        | 4         | 1    | 1 |
+| ---- | -------- | ---- | -------- | --------- | ---- | - |
+| 0x01 | 4 x 0x00 | 0x00 | Relay ID | Timestamp | 0x00 | i |
+
+
+## MIC
+
+Message integrity code, used by other Relay and Border gateways to check the
+data integrity of the packet. This is obtained by calculating the CMAC over
+the event payload (- MIC bytes), and using the first 4 bytes of the calculated
+CMAC as MIC. **Note:** The MIC must be calculated after encrypting the TLV payload!
