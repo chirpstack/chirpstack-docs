@@ -16,7 +16,7 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![Smart Parks](./sponsors/smartparks.png)](http://www.smartparks.org)
 [![Reese](./sponsors/reese.jpg)](https://reesesystems.com)
 
-[![Skiply](./sponsors/skiply.png)](https://www.skiply.eu/en)
+[![Pollex](./sponsors/pollex.png)](https://pollex.nl/)
 [![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
 
 [![Browan](./sponsors/browan.png)](https://browan.com)
