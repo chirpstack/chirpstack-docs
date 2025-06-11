@@ -2,7 +2,7 @@
 
 For debugging purposes, ChirpStack keeps a log of the last LoRaWAN frames that
 are exposed through the available integrations. This feature is available both
-for gateways as devices.
+for gateways and devices.
 
 ### Gateway frame logs
 
