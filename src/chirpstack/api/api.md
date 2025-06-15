@@ -1153,9 +1153,7 @@
 | ----- | ---- | ----- | ----------- |
 | application_id | [string](#string) |  | Application ID (UUID). |
 | key | [string](#string) |  | Key. This key can be obtained from the IFTTT Webhooks documentation page. |
-| uplink_values | [string](#string) | repeated | Values. Up to 2 values can be forwarded to IFTTT. These values must map to the decoded payload keys. For example: { &#34;batteryLevel&#34;: 75.3, &#34;buttons&#34;: [{&#34;pressed&#34;: false}, {&#34;pressed&#34;: true}] } You would specify the following fields: uplink_values = [&#34;batteryLevel&#34;, &#34;buttons_0_pressed&#34;]
-
-Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json is set to true. |
+| uplink_values | [string](#string) | repeated | Values. Up to 2 values can be forwarded to IFTTT. These values must map to the decoded payload keys. For example: { &#34;batteryLevel&#34;: 75.3, &#34;buttons&#34;: [{&#34;pressed&#34;: false}, {&#34;pressed&#34;: true}] } You would specify the following fields: uplink_values = [&#34;batteryLevel&#34;, &#34;buttons_0_pressed&#34;] Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json is set to true. |
 | arbitrary_json | [bool](#bool) |  | Arbitrary JSON. If set to true, ChirpStack events will be sent as-is as arbitrary JSON payload. If set to false (default), the 3 JSON values format will be used. |
 | event_prefix | [string](#string) |  | Event prefix. If set, the event name will be PREFIX_EVENT. For example if event_prefix is set to weatherstation, and uplink event will be sent as weatherstation_up to the IFTTT webhook. Note: Only characters in the A-Z, a-z and 0-9 range are allowed. |
 
@@ -2476,9 +2474,7 @@ DeviceService is the service providing API methods for managing devices.
 | supports_class_b | [bool](#bool) |  | Supports Class B. |
 | supports_class_c | [bool](#bool) |  | Supports Class-C. |
 | class_b_timeout | [uint32](#uint32) |  | Class-B timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
-| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7.
-
-The actual number of ping-slots per beacon period equals to 2^k. |
+| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7. The actual number of ping-slots per beacon period equals to 2^k. |
 | class_b_ping_slot_dr | [uint32](#uint32) |  | Class-B ping-slot DR. |
 | class_b_ping_slot_freq | [uint32](#uint32) |  | Class-B ping-slot freq (Hz). |
 | class_c_timeout | [uint32](#uint32) |  | Class-C timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
@@ -2502,49 +2498,17 @@ The actual number of ping-slots per beacon period equals to 2^k. |
 | relay_ed_activation_mode | [RelayModeActivation](#api-RelayModeActivation) |  | Relay end-device activation mode. |
 | relay_ed_smart_enable_level | [uint32](#uint32) |  | Relay end-device smart-enable level. |
 | relay_ed_back_off | [uint32](#uint32) |  | Relay end-device back-off (in case it does not receive WOR ACK frame). 0 = Always send a LoRaWAN uplink 1..63 = Send a LoRaWAN uplink after X WOR frames without a WOR ACK |
-| relay_ed_uplink_limit_bucket_size | [uint32](#uint32) |  | Relay end-device uplink limit bucket size.
-
-This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size
-
-Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
-| relay_ed_uplink_limit_reload_rate | [uint32](#uint32) |  | Relay end-device uplink limit reload rate.
-
-Valid values: * 0 - 62 = X tokens every hour * 63 = no limitation |
-| relay_join_req_limit_reload_rate | [uint32](#uint32) |  | Relay join-request limit reload rate.
-
-Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
-| relay_notify_limit_reload_rate | [uint32](#uint32) |  | Relay notify limit reload rate.
-
-Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
-| relay_global_uplink_limit_reload_rate | [uint32](#uint32) |  | Relay global uplink limit reload rate.
-
-Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
-| relay_overall_limit_reload_rate | [uint32](#uint32) |  | Relay overall limit reload rate.
-
-Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
-| relay_join_req_limit_bucket_size | [uint32](#uint32) |  | Relay join-request limit bucket size.
-
-This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size
-
-Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
-| relay_notify_limit_bucket_size | [uint32](#uint32) |  | Relay notify limit bucket size.
-
-This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size
-
-Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
-| relay_global_uplink_limit_bucket_size | [uint32](#uint32) |  | Relay globak uplink limit bucket size.
-
-This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size
-
-Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
-| relay_overall_limit_bucket_size | [uint32](#uint32) |  | Relay overall limit bucket size.
-
-This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size
-
-Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
-| allow_roaming | [bool](#bool) |  | Allow roaming.
-
-If set to true, it means that the device is allowed to use roaming. |
+| relay_ed_uplink_limit_bucket_size | [uint32](#uint32) |  | Relay end-device uplink limit bucket size. This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size. Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
+| relay_ed_uplink_limit_reload_rate | [uint32](#uint32) |  | Relay end-device uplink limit reload rate. Valid values: * 0 - 62 = X tokens every hour * 63 = no limitation |
+| relay_join_req_limit_reload_rate | [uint32](#uint32) |  | Relay join-request limit reload rate. Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
+| relay_notify_limit_reload_rate | [uint32](#uint32) |  | Relay notify limit reload rate. Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
+| relay_global_uplink_limit_reload_rate | [uint32](#uint32) |  | Relay global uplink limit reload rate. Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
+| relay_overall_limit_reload_rate | [uint32](#uint32) |  | Relay overall limit reload rate. Valid values: * 0 - 126 = X tokens every hour * 127 = no limitation |
+| relay_join_req_limit_bucket_size | [uint32](#uint32) |  | Relay join-request limit bucket size. This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size. Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
+| relay_notify_limit_bucket_size | [uint32](#uint32) |  | Relay notify limit bucket size. This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size. Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
+| relay_global_uplink_limit_bucket_size | [uint32](#uint32) |  | Relay globak uplink limit bucket size. This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size. Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
+| relay_overall_limit_bucket_size | [uint32](#uint32) |  | Relay overall limit bucket size. This field indicates the multiplier to determine the bucket size according to the following formula: BucketSize TOKEN = _reload_rate x _bucket_size. Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
+| allow_roaming | [bool](#bool) |  | Allow roaming. If set to true, it means that the device is allowed to use roaming. |
 
 
 
@@ -2882,9 +2846,7 @@ device-profiles.
 | supports_class_b | [bool](#bool) |  | Supports Class B. |
 | supports_class_c | [bool](#bool) |  | Supports Class-C. |
 | class_b_timeout | [uint32](#uint32) |  | Class-B timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
-| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7.
-
-The actual number of ping-slots per beacon period equals to 2^k. |
+| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7. The actual number of ping-slots per beacon period equals to 2^k. |
 | class_b_ping_slot_dr | [uint32](#uint32) |  | Class-B ping-slot DR. |
 | class_b_ping_slot_freq | [uint32](#uint32) |  | Class-B ping-slot freq (Hz). |
 | class_c_timeout | [uint32](#uint32) |  | Class-C timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
