@@ -1,5 +1,21 @@
 # Changelog
 
+## v4.5.0
+
+### Features
+
+#### ZMQ API
+
+This updates the ZMQ API to make it easier and less error-prone to handle all
+events and commands implemented by the Concentratord. This has been achieved
+by refactoring the multi-part ZMQ messages by a single ZMQ message containing
+a "wrapper" Protobuf message containing a `oneof` field containing the
+different event / command messages.
+
+#### Get location API
+
+This adds a new ZMQ API command, to retrieve the current gateway location.
+
 ## v4.4.8
 
 ### Improvements
