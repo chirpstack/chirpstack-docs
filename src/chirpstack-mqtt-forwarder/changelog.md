@@ -1,5 +1,28 @@
 # Changelog
 
+## v4.4.0
+
+### Features
+
+#### Concentratord ZMQ API
+
+This updates the Concentratord ZMQ API interface to be compatible with the
+ChirpStack Concentratord v4.5+ and ChirpStack Gateway Mesh v4.1+. If using
+the Concentratord backend, make sure to update this / these component(s)
+too.
+
+#### Mesh events / commands
+
+This refactors the Gateway Mesh heartbeat payload into a more generic Mesh Event
+payload, which can be used by both "known" and "proprietary" event types. The
+first implemented "known" type is the heartbeat. It also implements Mesh
+commands that can be used to execute commands configured on the Relay gateway.
+
+### Bugfixes
+
+* Handle `ant` payload sent by Tektelic gateways. ([#691](https://github.com/chirpstack/chirpstack/issues/691))
+* Fix handling of negative altitude. ([#66](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/66))
+
 ## v4.3.2
 
 ### Features
