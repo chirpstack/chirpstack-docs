@@ -1,5 +1,33 @@
 # Changelog
 
+## v4.13.0
+
+### Features
+
+#### Refactor Mesh heartbeat
+
+This refactors the Gateway Mesh heartbeat payload into a more generic Mesh Event
+payload, which can be used by both "known" and "proprietary" event types. The
+first implemented "known" type is the heartbeat. While this refactor is not
+backwards compatible and requires [ChirpStack MQTT Forwarder](https://www.chirpstack.io/docs/chirpstack-mqtt-forwarder/)
+v4.4+, the backwards incompatibility does not affect the functioning of the
+Gateway Mesh itself.
+
+### Improvements
+
+* Store mac-command stats in device-session (instead of Redis key).
+* Update `scheduler_run_after` directly at devicve-session get (avoiding race-conditions between Class-A & Class-B & -C).
+* Rename `m_type` to `f_type` to align with LoRaWAN 1.0.4 specification naming.
+* Make it more clear if FUOTA job is running or if it is schedule.
+* Make AMQP integration exchange configurable. ([#677](https://github.com/chirpstack/chirpstack/pull/677))
+* Replace Redis `GETDEL` by pipelined `GET` and `DEL` commands. ([#682](https://github.com/chirpstack/chirpstack/pull/682))
+* Sort `NULL` values as smallest value (device and gateway last-seen sorting). ([#683](https://github.com/chirpstack/chirpstack/issues/683))
+
+### Bugfixes
+
+* Fix custom root CA certificates not taken into account. ([#684](https://github.com/chirpstack/chirpstack/pull/684))
+* Fix inconsistency in Class-B periodicity between backend and UI and align naming with LoRaWAN 1.0.4 specification naming. ([#670](https://github.com/chirpstack/chirpstack/issues/670))
+
 ## v4.12.1
 
 ### Improvements
