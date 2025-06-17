@@ -164,6 +164,15 @@
   # ChirpStack will be allowed.
   allow_unknown_gateways=false
 
+  # RX timestamp max. drift.
+  #
+  # If the delta between the gateway reported RX timestamp vs ChirpStack
+  # server time is bigger than the configured value, then ChirpStack will
+  # ignore it. ChirpStack will then use the RX timestamp from the other
+  # receiving gateways, or failing that, will fall back onto the current
+  # server time.
+  rx_timestamp_max_drift="30s"
+
 
 # Network related configuration.
 [network]
@@ -769,6 +778,11 @@
     #   #
     #   # Set this to enable client-certificate authentication with the join-server.
     #   tls_key="/path/to/tls_key.pem"
+
+    #   # Authorization header.
+    #   #
+    #   # Optional value of the Authorization header, e.g. token or password.
+    #   authorization_header="Bearer sometoken"
 
 
 # Backend Interfaces configuration (optional).
