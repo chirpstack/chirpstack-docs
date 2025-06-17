@@ -1,4 +1,3 @@
-
 # Logging settings.
 [logging]
 
@@ -21,10 +20,19 @@
 
 # Mesh configuration.
 [mesh]
-  # Signing key (AES128, HEX encoded).
+  # Mesh root key (AES128, HEX encoded).
+  #
+  # This key is used to derive the signing and encryption keys. The same key
+  # must be configured on every Border and Relay gateway.
+  root_key="00000000000000000000000000000000"
+
+  # Signing key (AES128, HEX encoded) (deprecated).
   #
   # This key is used to sign and validate each mesh packet. This key must be
   # configured on every Border / Relay gateway equally.
+  #
+  # Deprecation note: If set, the signing key will not be derrived from the
+  # above root_key, but this key will be used.
   signing_key="00000000000000000000000000000000"
 
   # Border Gateway.
@@ -33,12 +41,6 @@
   # this gateway as a Border Gateway, meaning that it will unwrap relayed
   # uplinks and forward these to the proxy API, rather than relaying these.
   border_gateway=false
-
-  # Heartbeat interval (Relay Gateway only).
-  #
-  # This defines the interval in which a Relay Gateway (border_gateway=false)
-  # will emit heartbeat messages.
-  heartbeat_interval="5m"
 
   # Max hop count.
   #
@@ -139,4 +141,50 @@
 
     # Command API URL.
     command_url="ipc:///tmp/concentratord_command"
+
+
+# Events configuration (Relay only).
+[events]
+
+  # Heartbeat interval (Relay Gateway only).
+  #
+  # This defines the interval in which a Relay Gateway (border_gateway=false)
+  # will emit heartbeat messages.
+  heartbeat_interval="5m"
+
+  # Commands.
+  #
+  # This configures for each event type the command that must be executed. The
+  # stdout of the command will be used as event payload. Example:
+  #
+  #   128 = ["/path/to/command", "arg1", "arg2"]
+  #
+  [events.commands]
+
+
+  # Event sets (can be repeated).
+  #
+  # This configures sets of events that will be periodically sent by the
+  # relay. Example:
+  #
+  #  [[events.sets]]
+  #    interval = "5min"
+  #    events = [128, 129, 130]
+  #
+
+
+# Commands configuration (Relay only).
+[commands]
+
+  # Commands.
+  #
+  # On receiving a command, the Gateway Mesh will execute the command matching
+  # the command type (128 - 255 is for proprietary commands). The payload will
+  # be provided to the command using stdin. The returned stdout will be sent
+  # back as event (using the same type). Example:
+  #
+  #   "129" = ["/path/to/command", "arg1", "arg2"]
+  #
+  [commands.commands]
+
 
