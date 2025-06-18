@@ -200,6 +200,7 @@
 - [Installation](./chirpstack-gateway-mesh/install/index.md)
   - [RAK](./chirpstack-gateway-mesh/install/rak.md)
   - [Raspberry Pi](./chirpstack-gateway-mesh/install/raspberry-pi.md)
+- [Events](./chirpstack-gateway-mesh/events.md)
 - [Protocol](./chirpstack-gateway-mesh/protocol/index.md)
   - [Stored context](./chirpstack-gateway-mesh/protocol/stored-context.md)
   - [Uplink](./chirpstack-gateway-mesh/protocol/uplink.md)
