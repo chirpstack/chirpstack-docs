@@ -4,10 +4,11 @@ The ChirpStack Gateway Mesh provides the option to send events from the Relay
 Gateways to the server (through the Border Gateway(s), ChirpStack MQTT Forwarder
 to the MQTT broker).
 
-These events can be divided into:
+These events can be divided into the following ranges:
 
-* Known / built-in events (encoding / decoding known)
-* Proprietary / custom events (passed as binary payloads)
+* 0 - 127: Known / built-in events (encoding / decoding known)
+* 128 - 255: Proprietary / custom events (passed as binary payloads)
+
 
 ### Known events
 
@@ -23,7 +24,22 @@ file. Configuration is done in two steps:
 * Configuration of type (number) to command
 * Configuration of event-sets (list of type numbers and the interval)
 
+## MQTT topic
+
+Events are published to the following MQTT topic using the [MeshEvent](https://github.com/chirpstack/chirpstack/blob/master/api/proto/gw/gw.proto)
+payload:
+
+```
+[PREFIX]/gateway/[GATEWAY_ID]/event/mesh
+````
+
+**Note:** Depending the ChirpStack MQTT Forwarder [Configuration](../chirpstack-mqtt-forwarder/configuration.md)
+this payload will be Protobuf or JSON encoded.
+
 ## Example
+
+**Note:** The following example assumes the ChirpStack MQTT Forwarder on the
+Border Gateway is configured with `json=true`.
 
 The following example demonstrates how to periodically send the output of the
 `uptime` command as event-type `128`. Please in this example, for simplicity
