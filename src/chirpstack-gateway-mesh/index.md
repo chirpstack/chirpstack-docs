@@ -19,7 +19,8 @@ Gateway counts as the 1st), but this is also influenced by required airtime
 to receive and relay these payloads.
 
 The ChirpStack Gateway Mesh component has been developed in collaboration
-with [RAKwireless](https://learn.rakwireless.com/hc/en-us/articles/26826770321559-How-To-Set-Up-Gateway-Mesh-Quick-Start-Using-ChirpStackOS-on-RAK-Gateways).
+with [RAKwireless](https://learn.rakwireless.com/hc/en-us/articles/26826770321559-How-To-Set-Up-Gateway-Mesh-Quick-Start-Using-ChirpStackOS-on-RAK-Gateways)
+and [Smart Parks](https://www.smartparks.org/).
 
 ## ChirpStack Gateway Mesh architecture
 
