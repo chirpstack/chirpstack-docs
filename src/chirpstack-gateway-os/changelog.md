@@ -1,5 +1,22 @@
 # Changelog
 
+## v4.8.0
+
+### Features
+
+#### Raspberry Pi 5
+
+This release adds support for Raspberry Pi 5 based gateways.
+
+### Updates
+
+* Update ChirpStack to v4.13.0.
+* Update ChirpStack Concentratord to v4.5.0.
+* Update ChirpStack MQTT Forwarder to v4.4.0.
+* Update ChirpStack UDP Forwarder to v4.2.0.
+* Update ChirpStack Gateway Mesh to v4.1.0-test.1.
+* Update Node-RED to v4.0.9.
+
 ## v4.7.1
 
 ### Updates
