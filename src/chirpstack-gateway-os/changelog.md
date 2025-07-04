@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.8.1
+
+### Updates
+
+* Update ChirpStack UDP Forwarder to v4.2.1.
+
 ## v4.8.0
 
 ### Features
