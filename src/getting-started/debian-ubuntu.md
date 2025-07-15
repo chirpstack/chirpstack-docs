@@ -3,8 +3,8 @@
 This tutorial describes the steps needed to setup ChirpStack
 on a single machine. Recommended distributions are:
 
-* Ubuntu 22.04 LTS
-* Debian 11 (bullseye)
+* Ubuntu LTS
+* Debian latest stable
 
 ## Note before you start
 
