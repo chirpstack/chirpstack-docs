@@ -3,8 +3,8 @@
 This tutorial describes the steps needed to setup ChirpStack
 on a single machine. Recommended distributions are:
 
-* Ubuntu LTS
-* Debian latest stable
+* Ubuntu (latest LTS)
+* Debian (latest stable)
 
 ## Note before you start
 
@@ -57,23 +57,23 @@ create extension pg_trgm;
 ## Setup software repository
 
 ChirpStack provides a Debian / Ubuntu repository which can be used to install
-the latest ChirpStack version. First make sure that both `dirmngr` and
-`apt-transport-https` are installed:
+the latest ChirpStack version. First make sure that `gpg` is installed:
 
 ```bash
-sudo apt install apt-transport-https dirmngr
+sudo apt install gpg
 ```
 
 Set up the key for the ChirpStack repository:
 
 ```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
+sudo mkdir -p /etc/apt/keyrings/
+sudo sh -c 'wget -q -O - https://artifacts.chirpstack.io/packages/chirpstack.key | gpg --dearmor > /etc/apt/keyrings/chirpstack.gpg'
 ```
 
 Add the repository to the repository list:
 
 ```bash
-sudo echo "deb https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
+echo "deb [signed-by=/etc/apt/keyrings/chirpstack.gpg] https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
 ```
 
 Update the apt package cache:

@@ -20,20 +20,22 @@
 ChirpStack provides pre-compiled binaries as Debian (`.deb`) packages. To
 activate this repository, execute the following commands:
 
-```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
+Set up the key for the ChirpStack repository:
 
-sudo echo "deb https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack_4.list
-sudo apt update
+```bash
+sudo mkdir -p /etc/apt/keyrings/
+sudo sh -c 'wget -q -O - https://artifacts.chirpstack.io/packages/chirpstack.key | gpg --dearmor > /etc/apt/keyrings/chirpstack.gpg'
 ```
 
-ChirpStack also provides a repository for test-builds. To activate the test
-channel use the following commands (notice that `stable` has changed into `testing`):
+Add the repository to the repository list:
 
 ```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
+echo "deb [signed-by=/etc/apt/keyrings/chirpstack.gpg] https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
+```
 
-sudo echo "deb https://artifacts.chirpstack.io/packages/4.x/deb testing main" | sudo tee /etc/apt/sources.list.d/chirpstack_4.list
+Update the apt package cache:
+
+```bash
 sudo apt update
 ```
 
