@@ -85,7 +85,6 @@
   - [HTTP](./chirpstack/integrations/http.md)
   - [IFTTT](./chirpstack/integrations/ifttt.md)
   - [InfluxDB](./chirpstack/integrations/influxdb.md)
-  - [LoRa Cloud](./chirpstack/integrations/loracloud.md)
   - [MQTT](./chirpstack/integrations/mqtt.md)
   - [myDevices](./chirpstack/integrations/mydevices.md)
   - [Pilot Things](./chirpstack/integrations/pilot-things.md)
