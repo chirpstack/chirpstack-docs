@@ -34,6 +34,10 @@ Concentratord v4.5+. Please make sure to update to this Concentratord
 version or later. For Border Gateways, please make sure to also update the
 ChirpStack MQTT Forwarder to v4.4 or later.
 
+### Improvements
+
+* Make Relay ID configurable.
+
 ### Bugfixes
 
 * Add `tx_power` to AU915 (`region_au915.toml`) configuration example. ([#67](https://github.com/chirpstack/chirpstack-gateway-mesh/pull/67))
