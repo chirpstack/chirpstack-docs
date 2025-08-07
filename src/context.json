@@ -2,7 +2,7 @@
 	"chirpstack_version": "4.14.0",
 	"gateway_os_version": "4.8.1",
 	"gateway_bridge_version": "4.0.11",
-	"concentratord_version": "4.5.0",
+	"concentratord_version": "4.5.1",
 	"mqtt_forwarder_version": "4.4.0",
 	"pulsar_integration_version": "4.0.0-test.3",
   "gateway_mesh_version": "4.1.0-test.1"

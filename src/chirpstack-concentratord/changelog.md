@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.5.1
+
+### Improvements
+
+* Make Gateway ID configurable (2g4).
+* Update internal dependencies.
+
 ## v4.5.0
 
 ### Features
