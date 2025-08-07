@@ -1,5 +1,28 @@
 # Changelog
 
+## v4.14.0
+
+### LoRa Cloud integration removal
+
+This release removes the [LoRa Cloud](https://www.semtech.com/) integration
+from ChirpStack as it has been discontinued by Semtech. This will also remove
+the LoRa Cloud integration settings (if any) from the database.
+
+### Improvements
+
+* Update internal dependencies.
+* Update device-profile importer.
+* Ensure `jq` is available in the development shell. ([#705](https://github.com/chirpstack/chirpstack/pull/705))
+* Add support for 2.4GHz frequencies in FUOTA multicast-setup. ([#700](https://github.com/chirpstack/chirpstack/issues/700))
+* Improve reported errors by ADR plugin system. ([#712](https://github.com/chirpstack/chirpstack/pull/712))
+* Add `expires_at` field to MQTT downlink command. ([#608](https://github.com/chirpstack/chirpstack/issues/608))
+
+### Bugfixes 
+
+* Fix missing FUOTA API methods in gRPC client packages. ([#709](https://github.com/chirpstack/chirpstack/issues/709))
+* Add distance type to Cayenne LPP codec. ([#704](https://github.com/chirpstack/chirpstack/pull/704))
+* Fix FUOTA `block_ack_delay` and `descriptor` fields. ([#717](https://github.com/chirpstack/chirpstack/issues/717))
+
 ## v4.13.0
 
 ### Features
