@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.14.1
+
+### Improvements
+
+* Implement using `fPort` returned by JS codec.
+
+### Bugfixes
+
+* Fix dependency mismatch in AMQP integration.
+
 ## v4.14.0
 
 ### LoRa Cloud integration removal
