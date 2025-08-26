@@ -22,6 +22,9 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![Browan](./sponsors/browan.png)](https://browan.com)
 [![Kerlink](./sponsors/kerlink.png)](https://www.kerlink.com)
 
+[![Object Spectrum](./sponsors/objectspectrum.png)](https://objectspectrum.com/)
+
+
 </div>
 
 ## Feature sponsors
