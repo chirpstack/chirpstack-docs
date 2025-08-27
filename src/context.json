@@ -5,5 +5,5 @@
 	"concentratord_version": "4.5.1",
 	"mqtt_forwarder_version": "4.4.0",
 	"pulsar_integration_version": "4.0.0-test.3",
-  "gateway_mesh_version": "4.1.0-test.2"
+  "gateway_mesh_version": "4.1.0"
 }

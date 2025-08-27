@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.1.0 (test-releases)
+## v4.1.0
 
 ### Features
 
