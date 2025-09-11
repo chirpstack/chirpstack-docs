@@ -1,5 +1,45 @@
 # Changelog
 
+## v4.8.3
+
+### Bugfixes
+
+#### Raspberry Pi: fix failing boot after upgrade
+
+This release fixes an issue with the Raspberry Pi images that could cause
+the bootprocess of the Raspberry Pi to fail after an upgrade. For more details
+about this issue, please see:
+
+* Issue [#139](https://github.com/chirpstack/chirpstack-gateway-os/issues/139)
+* OpenWrt issue [#9113](https://github.com/openwrt/openwrt/issues/9113)
+* OpenWrt pull-request [#19997](https://github.com/openwrt/openwrt/pull/19997)
+
+In case you are affected by this issue and you have access to the terminal
+(e.g. USB keyboard + HDMI display) you could try the following command to
+restore the Raspberry Pi: `firstboot && reboot`. `firstboot` will normally
+reset the overlayfs containing the configuration, but as in case of this issue
+OpenWrt fails to mount it, this will cause OpenWrt to re-create the overlayfs
+and restore the configuration backup to it after the reboot.
+
+## v4.8.2
+
+### Updates
+
+* Update ChirpStack to v4.14.1.
+* Update ChirpStack Gateway Mesh to v4.1.0.
+* Update Concentratord to v4.5.1.
+* Update OpenWrt to v24.10.2.
+
+### Improvements
+
+* ChirpStack Gateway Mesh: Make Relay ID configurable.
+* ChirpStack Concentratord: Make Gateway ID configurable for sx1302/3 and 2g4.
+
+### Bugfixes
+
+* Only automatically set hostname if the current value is `OpenWrt`.
+* Fix broken `python3` dependency in `Dockerfile-devel` (after Debian update).
+
 ## v4.8.1
 
 ### Updates
