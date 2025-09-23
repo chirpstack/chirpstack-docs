@@ -1,12 +1,12 @@
 # Wifx
 
-LORIX OS, running on Wifx gateways, provides built-in support for ChirpStack Gateway Bridge for all Wifx gateway models.
+LORIX OS, running on Wifx gateways, provides built-in support for ChirpStack Concentratord on modern Wifx gateway models.
 
 ## Gateway Compatibility
 
 ### Supported Gateways
 
-The following Wifx gateways have native support of the ChirpStack Gateway Bridge:
+The following Wifx gateways have native support of the ChirpStack Concentratord:
 
 #### Wifx L1
 
@@ -24,19 +24,23 @@ The following Wifx gateways have native support of the ChirpStack Gateway Bridge
 - **Product Information**: [Wifx L1 4G product page](https://iot.wifx.net/en/products/wifx-l1-4g/)
 - **Product Documentation**: [Wifx L1 4G documentation](https://iot.wifx.net/docs/wifx-l1-4g)
 
+### Legacy Gateways
+
 #### LORIX One
 
 - **Platform**: LORIX OS
 - **Gateway Bridge Backend**: Semtech UDP Packet Forwarder
-- **Product Information**: [Wifx LORIX One product page](https://iot.wifx.net/en/products/lorix-one/)
-- **Product Documentation**: [Wifx LORIX One documentation](https://iot.wifx.net/docs/lorix-one)
 
-## Setup
+## Configuration
 
-Please refer to the [ChirStack page in the LORIX OS documentation](https://iot.wifx.net/docs/lorix-os/latest/wifx-l1/user-s-guide/lorawan/lorawan-networks/chirpstack)
-for more information.
+For detailed configuration instructions and setup procedures, please refer to the [ChirpStack Gateway Bridge configuration guide](https://iot.wifx.net/docs/lorix-os/latest/wifx-l1/user-s-guide/lorawan/packet-forwarders/chirpstack-gateway-bridge) in the official LORIX OS documentation.
 
-![ChirpStack Gateway Bridge configuration page in LORIX OS](wifx-lorix-os-chirpstack-gateway-bridge.png "ChirpStack Gateway Bridge configuration page")
+The LORIX OS documentation provides comprehensive guidance on:
+
+- Initial gateway setup and network configuration
+- ChirpStack Concentratord service configuration
+- Network server connection settings
+- Troubleshooting and monitoring
 
 ## Additional Resources
 
