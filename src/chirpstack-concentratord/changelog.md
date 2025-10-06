@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.5.2
+
+### Improvements
+
+* Align `asap_count` in JIT queue with Semtech SX1302 implementation.
+* Update internal dependencies and workspace configuration.
+
 ## v4.5.1
 
 ### Improvements
