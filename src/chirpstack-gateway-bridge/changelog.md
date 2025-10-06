@@ -1,5 +1,27 @@
 # Changelog
 
+## v4.1.0
+
+### Removal
+
+#### Concentratord backend
+
+This release removes the ChirpStack Concentratord backend. For a long time, the
+ChirpStack MQTT Forwarder has been a better alternative to the ChirpStack
+Gateway Bridge for on-gateway installation. For more information, please see
+[ChirpStack MQTT Forwarder](https://www.chirpstack.io/docs/chirpstack-mqtt-forwarder/).
+
+### Improvements
+
+* Make UDP connection timeout configurable. ([#238](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/238))
+* Add TLS support by Reverse-Proxy for Basics Station. ([#241](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/241))
+* Make Semtech UDP cache expiration and cleanup interval configurable. ([#244](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/244))
+
+### Bugfixes
+
+* Add missing multiplier to convert to nanoseconds. ([#234](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/234))
+* Fix typo in Prometheus metric name. ([#247](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/247))
+
 ## v4.0.11
 
 ### Improvements
