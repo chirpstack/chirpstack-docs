@@ -2,7 +2,7 @@
 
 ## Links
 
-- Community forum: [https://forum.chirpstack.io/](https://forum.chirpstack.io/)
+- Community support: [https://support.chirpstack.io/](https://support.chirpstack.io/)
 - Source repository: [https://github.com/chirpstack/chirpstack-concentratord](https://github.com/chirpstack/chirpstack-concentratord)
   - Issue and bug reports: [https://github.com/chirpstack/chirpstack-concentratord/issues](https://github.com/chirpstack/chirpstack/issues)
 

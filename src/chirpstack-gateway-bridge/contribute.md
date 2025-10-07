@@ -2,7 +2,7 @@
 
 ## Links
 
-- Community forum: [https://forum.chirpstack.io/](https://forum.chirpstack.io/)
+- Community support: [https://support.chirpstack.io/](https://support.chirpstack.io/)
 - Source repository: [https://github.com/chirpstack/chirpstack-gateway-bridge](https://github.com/chirpstack/chirpstack-gateway-bridge)
   - Issue and bug reports: [https://github.com/chirpstack/chirpstack-gateway-bridge/issues](https://github.com/chirpstack/chirpstack-gateway-bridge/issues)
 

@@ -2,7 +2,7 @@
 
 ## Links
 
-* Community forum: [https://forum.chirpstack.io/](https://forum.chirpstack.io/)
+* Community support: [https://support.chirpstack.io/](https://support.chirpstack.io/)
 * ChirpStack Gateway OS build environment scripts:
   * [https://github.com/chirpstack/chirpstack-gateway-os](https://github.com/chirpstack/chirpstack-gateway-os)
   * Issue and bug reports [https://github.com/chirpstack/chirpstack-gateway-os/issues](https://github.com/chirpstack/chirpstack-gateway-os/issues)
