@@ -1,5 +1,45 @@
 # Changelog
 
+## v4.15.0
+
+### Features
+
+#### Blynk integration
+
+This release adds a new integration with the [Blynk](https://www.blynk.io/) IoT platform.
+
+#### InfluxDB v3
+
+This release updates the InfluxDB integration to also support InfluxDB v3.
+
+#### Move FCntUp out of device-session
+
+This moves the `f_cnt_up` field out of the device-session blob and stores it
+as a separate column in the `device` table. By doing this, it is no longer
+needed to wrap the uplink validation into a transaction and lock the device
+records matching the uplink DevAddr, as we can update the record with a
+`where f_cnt_up = OLD_F_CNT_UP` and check that the updated record-count != 0.
+Removing the transaction and locking the device-records matching the uplink
+DevAddr avoids a potential deadlock situation that might occur when multiple
+devices are sharing the same DevAddr.
+
+The `f_cnt_up` will be automatically migrated from the device-session into the
+`f_cnt_up` device column at runtime.
+
+### Improvements
+
+* Add `flush_queue` option to `Enqueue` API method.
+* Add configuration option to flatten json log output. ([#759](https://github.com/chirpstack/chirpstack/pull/759))
+* Update Docker Compose dependency versions (Mosquitto, PostgreSQL, Redis, RabbitMQ and Kafka versions).
+* Update internal dependencies.
+* Cleanup dead code + fix clippy warnings.
+* Move dependency versions into `[workspace.dependencies]` of `Cargo.toml` (such that versions can be managed at a single place).
+
+### Bugfixes
+
+* UI: Fix setting gateway last-seen to undefined. ([#75](https://github.com/chirpstack/chirpstack/issues/750))
+* Fix setting TX Info for OTAA join-accept such that RX2 can be prioritized over TX1.
+
 ## v4.14.1
 
 ### Improvements
