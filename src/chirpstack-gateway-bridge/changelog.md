@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.1.1
+
+### Bugfixes
+
+* Fix gateway re-connect issue caused by [#238](https://github.com/chirpstack/chirpstack-gateway-bridge/pull/238).
+
 ## v4.1.0
 
 ### Removal
