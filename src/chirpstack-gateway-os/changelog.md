@@ -1,5 +1,31 @@
 # Changelog
 
+## v4.9.0-test.1
+
+### Features
+
+#### Dragino LPS8N
+
+This release adds support for the Dragino LPS8N gateway.
+
+### Updates
+
+* Update ChirpStack Concentratord to v4.5.2.
+* Update ChirpStack to v4.15.0.
+
+### Improvements
+
+* Update configuration for RAK7391 gateway. ([#140](https://github.com/chirpstack/chirpstack-gateway-os/pull/140))
+* Add `watchcat` service to images. ([#141](https://github.com/chirpstack/chirpstack-gateway-os/issues/141))
+* Auto-generate API secret for ChirpStack service.
+* Make ChirpStack Gateway Mesh filter configuration configurable.
+* Update to OpenWrt v24.10.3.
+* RAK7391: Allow to select `ttyACM2` for concentrator modules. ([#19](https://github.com/chirpstack/chirpstack-openwrt-feed/pull/19))
+
+### Bugfixes
+
+* Fix `udp_server` > `udp_forwarder` in ChirpStack UDP Forwarder configuration. ([#146](https://github.com/chirpstack/chirpstack-gateway-os/issues/146))
+
 ## v4.8.3
 
 ### Bugfixes

@@ -45,7 +45,7 @@ This replaces the Chirpstack Gateway OS with the SenseCAP M2 open-source firmwar
 
 1. First download the latest SenseCAP M2 open-source firmware from [https://github.com/Seeed-Solution/LoRa_Gateway_OpenWRT/releases](https://github.com/Seeed-Solution/LoRa_Gateway_OpenWRT/releases).
 2. In the ChirpStack Gateway OS web-interface, navigate to **System > Backup / Flash Firmware**.
-3. Click the **Flash image...** button at the bottom of the page and select the ChirpStack Gateway OS image and click **Upload**.
+3. Click the **Flash image...** button at the bottom of the page and select the SenseCAP M2 image and click **Upload**.
 4. De-select the **Keep settings and retain the current configuration** option and **Continue**.
 5. Wait until the firmware is flashed, this will take some minutes.
 6. Continue with the [Login into Console](https://wiki.seeedstudio.com/flash_opensource_firmware_to_m2_gateway/#login-into-console) documentation.
