@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.9.0-test.1
+## v4.9.0
 
 ### Features
 
@@ -12,6 +12,8 @@ This release adds support for the Dragino LPS8N gateway.
 
 * Update ChirpStack Concentratord to v4.5.2.
 * Update ChirpStack to v4.15.0.
+* Update ChirpStack MQTT Forwarder to v4.4.1.
+* Update ChirpStack Gateway Mesh to v4.1.1.
 
 ### Improvements
 
