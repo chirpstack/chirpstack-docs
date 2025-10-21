@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.1.1
+
+### Improvements
+
+* Update internal dependencies and tune feature flags.
+
+### Bugfixes
+
+* Fix uplink filters and add missing filter configuration to config template.
+
 ## v4.1.0
 
 ### Features
