@@ -1,80 +1,99 @@
 # Connecting a Gateway
 
-This guide describes how to connect your gateway to ChirpStack and how
-to validate that it is successfully communicating with the ChirpStack Network Server.
-At this point it is expected that you have a working ChirpStack installation.
+This guide describes how to connect your gateway to ChirpStack, and how to
+validate that it is successfully communicating with ChirpStack.
 
 **Note:** This guide does not cover the configuration of MQTT credentials and / or
 (client) certificates.
 
 ## Requirements
 
-Before continuing, please make sure that you have installed both a
-packet-forwarder and the ChirpStack Gateway Bridge.
-The packet-forwarder that is installed on your gateway and
-the steps needed to install the ChirpStack Gateway Bridge vary per gateway vendor
-and model. In some cases you must also install the ChirpStack Gateway Bridge on the
-gateway. Please refer to the ChirpStack Gateway Bridge [Installation](../chirpstack-gateway-bridge/gateway/index.md)
-documentation, which contains instructions for various gateway models.
+### ChirpStack
 
-### Packet-forwarders
+It is expected that at this point, ChirpStack is up-and-running.
 
-There are different packet-forwarder implementations.
-The packet-forwarder that is installed on your gateway depends on the gateway vendor and model.
-The packet-forwarders that are compatible with ChirpStack:
+### ChirpStack Concentratord / Packet Forwarder
 
-* [ChirpStack Concentratord](../chirpstack-concentratord/index.md)
-* [Semtech UDP Packet Forwarder](https://github.com/lora-net/packet_forwarder)
-* [Semtech BasicStation](https://doc.sm.tc/station/)
+Please make sure that your gateway either has the [ChirpStack Concentratord](../chirpstack-concentratord/index.md),
+[Semtech UDP Packet Forwarder](https://github.com/lora-net/packet_forwarder) or
+the [LoRa Basics Station](https://doc.sm.tc/station/) installed.
 
-### ChirpStack Gateway Bridge
+### ChirpStack MQTT Forwarder
 
-The ChirpStack Gateway Bridge component acts as a backend for the above
-packet-forwarders. It uses [MQTT](https://mqtt.org/) to communicate with ChirpStack.
+The steps needed to install the ChirpStack MQTT Forwarder vary per gateway
+vendor and model. Please see [ChirpStack MQTT Forwarder installation](../chirpstack-mqtt-forwarder/install/index.md)
+for more information.
+
+In the case it is not possible to install the ChirpStack MQTT Forwarder on the
+gateway, you must install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)
+on a server and connect your gateway to it.
 
 ## Configuration
 
-There are two components that you need to configure. This section covers a
-summary. Please refer to the ChirpStack Gateway Bridge [Installation](../chirpstack-gateway-bridge/gateway/index.md)
-for instructions specific to your gateway model.
+There are two components that you need to configure; the ChirpStack Concentratord
+or packet-forwarder and the ChirpStack MQTT Forwarder or ChirpStack Gateway Bridge.
+Please note that this section only covers a summary. For more information,
+please refer to the documentation of each component.
 
-### Packet-forwarder
+### ChirpStack Concentratord / Packet Forwarder
 
-The packet-forwarder that is configured on your gateway must forward its data
-to the ChirpStack Gateway Bridge. As it controls the LoRa<sup>&reg;</sup> chipset of the
-gateway, it also must be configured for the correct frequencies. A mismatch
-in frequencies means that the gateway will not receive uplinks sent by a device
-and / or is unable to send downlink payloads when the downlink frequency is
-outside the configured frequency range. Usually gateway vendors provide
-configuration examples for various bands. Please validate that the configuration
-matches region configuration of ChirpStack which you want to use.
+#### ChirpStack Concentratord
 
-### ChirpStack Gateway Bridge
+ChirpStack provides pre-configured packages for various gateway models. No
+further configuration is required. Please see [ChirpStack Concentratord installation](../chirpstack-concentratord/installation/index.md)
+for more information.
 
-The ChirpStack Gateway Bridge must be configured
-with the correct packet-forwarder backend. Please refer to the ChirpStack Gateway Bridge [Installation](../../chirpstack-gateway-bridge/gateway/index.md)
-for instructions specific to your gateway model. When you have installed a
-vendor specific package, this has already been pre-configured for you.
+#### Packet Forwarder
 
-What you still need to configure is to which MQTT broker the ChirpStack Gateway
-Bridge will connect. This is configured in the following [Configuration](../chirpstack-gateway-bridge/configuration.md)
-section of the ChirpStack Gateway Bridge:
+In case the gateway comes with a Packet Forwarder pre-installed and you wish
+to use it instead of the ChirpStack Concentratord, then there are several
+scenarios:
 
-```toml
-# Generic MQTT authentication.
-[integration.mqtt.auth.generic]
-# MQTT servers.
-#
-# Configure one or multiple MQTT server to connect to. Each item must be in
-# the following format: scheme://host:port where scheme is tcp, ssl or ws.
-servers=[
-  "tcp://127.0.0.1:1883",
-]
-```
+##### Semtech UDP Forwarder
 
-Please refer to the ChirpStack Gateway Bridge [Configuration](../chirpstack-gateway-bridge/configuration.md)
-documentation for a full configuration example. After making changes to the
-configuration file, do not forget to restart the ChirpStack Gateway Bridge.
+In case it is possible to install the [ChirpStack MQTT Forwarder](../chirpstack-mqtt-forwarder/index.md)
+on the gateway, you must configure the Semtech UDP Packet Forwarder to forward
+its data to `localhost:1700`. In case it is **not** possible to install the
+ChirpStack MQTT Forwarder on the gateway, then you must point it to the
+hostname / IP of your [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)
+instance running in the cloud.
+
+##### LoRa Basics Station
+
+In this case you must configure the LoRa Basics Station to connect to the
+hostname / IP of your [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)
+instance running in the cloud.
+
+### ChirpStack MQTT Forwarder / ChirpStack Gateway Bridge
+
+#### ChirpStack MQTT Forwarder
+
+There are two important bits to configure:
+
+* You must configure the correct backend which is either the Semtech UDP Packet
+  Forwarder or the ChirpStack Concentratord.
+* You must configure it to connect to a MQTT broker. Please make sure to use
+  the correct MQTT topic prefix, matching the region-configuration of your gateway!
+
+Please refer to [ChirpStack MQTT Forwarder configuration](../chirpstack-mqtt-forwarder/configuration.md)
+for more information.
+
+#### ChirpStack Gateway Bridge
+
+In case it is not possible to install the ChirpStack MQTT Forwarder on the
+gateway, then you must install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)
+in the cloud.
+
+There are two important bits to configure:
+
+* You must configure the coorect backend which is either the Semtech UDP Packet
+  Forwarder or the LoRa Basics Station.
+* You must configure it to connect to a MQTT broker. If all components are
+  running on the same machine, then the default configuration will most
+  likely to be sufficient.
+
+Please refer to the [ChirpStack Gateway Bridge configuration](../chirpstack-gateway-bridge/configuration.md)
+for more information.
 
 ## Adding the gateway to ChirpStack
 
