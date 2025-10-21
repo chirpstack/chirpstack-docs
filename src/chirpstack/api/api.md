@@ -6,29 +6,32 @@
 - [api/application.proto](#api_application-proto)
     - [Application](#api-Application)
     - [Application.TagsEntry](#api-Application-TagsEntry)
+    - [ApplicationDeviceProfileListItem](#api-ApplicationDeviceProfileListItem)
+    - [ApplicationDeviceTagListItem](#api-ApplicationDeviceTagListItem)
     - [ApplicationListItem](#api-ApplicationListItem)
     - [AwsSnsIntegration](#api-AwsSnsIntegration)
     - [AzureServiceBusIntegration](#api-AzureServiceBusIntegration)
+    - [BlynkIntegration](#api-BlynkIntegration)
     - [CreateApplicationRequest](#api-CreateApplicationRequest)
     - [CreateApplicationResponse](#api-CreateApplicationResponse)
     - [CreateAwsSnsIntegrationRequest](#api-CreateAwsSnsIntegrationRequest)
     - [CreateAzureServiceBusIntegrationRequest](#api-CreateAzureServiceBusIntegrationRequest)
+    - [CreateBlynkIntegrationRequest](#api-CreateBlynkIntegrationRequest)
     - [CreateGcpPubSubIntegrationRequest](#api-CreateGcpPubSubIntegrationRequest)
     - [CreateHttpIntegrationRequest](#api-CreateHttpIntegrationRequest)
     - [CreateIftttIntegrationRequest](#api-CreateIftttIntegrationRequest)
     - [CreateInfluxDbIntegrationRequest](#api-CreateInfluxDbIntegrationRequest)
-    - [CreateLoraCloudIntegrationRequest](#api-CreateLoraCloudIntegrationRequest)
     - [CreateMyDevicesIntegrationRequest](#api-CreateMyDevicesIntegrationRequest)
     - [CreatePilotThingsIntegrationRequest](#api-CreatePilotThingsIntegrationRequest)
     - [CreateThingsBoardIntegrationRequest](#api-CreateThingsBoardIntegrationRequest)
     - [DeleteApplicationRequest](#api-DeleteApplicationRequest)
     - [DeleteAwsSnsIntegrationRequest](#api-DeleteAwsSnsIntegrationRequest)
     - [DeleteAzureServiceBusIntegrationRequest](#api-DeleteAzureServiceBusIntegrationRequest)
+    - [DeleteBlynkIntegrationRequest](#api-DeleteBlynkIntegrationRequest)
     - [DeleteGcpPubSubIntegrationRequest](#api-DeleteGcpPubSubIntegrationRequest)
     - [DeleteHttpIntegrationRequest](#api-DeleteHttpIntegrationRequest)
     - [DeleteIftttIntegrationRequest](#api-DeleteIftttIntegrationRequest)
     - [DeleteInfluxDbIntegrationRequest](#api-DeleteInfluxDbIntegrationRequest)
-    - [DeleteLoraCloudIntegrationRequest](#api-DeleteLoraCloudIntegrationRequest)
     - [DeleteMyDevicesIntegrationRequest](#api-DeleteMyDevicesIntegrationRequest)
     - [DeletePilotThingsIntegrationRequest](#api-DeletePilotThingsIntegrationRequest)
     - [DeleteThingsBoardIntegrationRequest](#api-DeleteThingsBoardIntegrationRequest)
@@ -41,6 +44,8 @@
     - [GetAwsSnsIntegrationResponse](#api-GetAwsSnsIntegrationResponse)
     - [GetAzureServiceBusIntegrationRequest](#api-GetAzureServiceBusIntegrationRequest)
     - [GetAzureServiceBusIntegrationResponse](#api-GetAzureServiceBusIntegrationResponse)
+    - [GetBlynkIntegrationRequest](#api-GetBlynkIntegrationRequest)
+    - [GetBlynkIntegrationResponse](#api-GetBlynkIntegrationResponse)
     - [GetGcpPubSubIntegrationRequest](#api-GetGcpPubSubIntegrationRequest)
     - [GetGcpPubSubIntegrationResponse](#api-GetGcpPubSubIntegrationResponse)
     - [GetHttpIntegrationRequest](#api-GetHttpIntegrationRequest)
@@ -49,8 +54,6 @@
     - [GetIftttIntegrationResponse](#api-GetIftttIntegrationResponse)
     - [GetInfluxDbIntegrationRequest](#api-GetInfluxDbIntegrationRequest)
     - [GetInfluxDbIntegrationResponse](#api-GetInfluxDbIntegrationResponse)
-    - [GetLoraCloudIntegrationRequest](#api-GetLoraCloudIntegrationRequest)
-    - [GetLoraCloudIntegrationResponse](#api-GetLoraCloudIntegrationResponse)
     - [GetMyDevicesIntegrationRequest](#api-GetMyDevicesIntegrationRequest)
     - [GetMyDevicesIntegrationResponse](#api-GetMyDevicesIntegrationResponse)
     - [GetPilotThingsIntegrationRequest](#api-GetPilotThingsIntegrationRequest)
@@ -62,23 +65,25 @@
     - [IftttIntegration](#api-IftttIntegration)
     - [InfluxDbIntegration](#api-InfluxDbIntegration)
     - [IntegrationListItem](#api-IntegrationListItem)
+    - [ListApplicationDeviceProfilesRequest](#api-ListApplicationDeviceProfilesRequest)
+    - [ListApplicationDeviceProfilesResponse](#api-ListApplicationDeviceProfilesResponse)
+    - [ListApplicationDeviceTagsRequest](#api-ListApplicationDeviceTagsRequest)
+    - [ListApplicationDeviceTagsResponse](#api-ListApplicationDeviceTagsResponse)
     - [ListApplicationsRequest](#api-ListApplicationsRequest)
     - [ListApplicationsResponse](#api-ListApplicationsResponse)
     - [ListIntegrationsRequest](#api-ListIntegrationsRequest)
     - [ListIntegrationsResponse](#api-ListIntegrationsResponse)
-    - [LoraCloudIntegration](#api-LoraCloudIntegration)
-    - [LoraCloudModemGeolocationServices](#api-LoraCloudModemGeolocationServices)
     - [MyDevicesIntegration](#api-MyDevicesIntegration)
     - [PilotThingsIntegration](#api-PilotThingsIntegration)
     - [ThingsBoardIntegration](#api-ThingsBoardIntegration)
     - [UpdateApplicationRequest](#api-UpdateApplicationRequest)
     - [UpdateAwsSnsIntegrationRequest](#api-UpdateAwsSnsIntegrationRequest)
     - [UpdateAzureServiceBusIntegrationRequest](#api-UpdateAzureServiceBusIntegrationRequest)
+    - [UpdateBlynkIntegrationRequest](#api-UpdateBlynkIntegrationRequest)
     - [UpdateGcpPubSubIntegrationRequest](#api-UpdateGcpPubSubIntegrationRequest)
     - [UpdateHttpIntegrationRequest](#api-UpdateHttpIntegrationRequest)
     - [UpdateIftttIntegrationRequest](#api-UpdateIftttIntegrationRequest)
     - [UpdateInfluxDbIntegrationRequest](#api-UpdateInfluxDbIntegrationRequest)
-    - [UpdateLoraCloudIntegrationRequest](#api-UpdateLoraCloudIntegrationRequest)
     - [UpdateMyDevicesIntegrationRequest](#api-UpdateMyDevicesIntegrationRequest)
     - [UpdatePilotThingsIntegrationRequest](#api-UpdatePilotThingsIntegrationRequest)
     - [UpdateThingsBoardIntegrationRequest](#api-UpdateThingsBoardIntegrationRequest)
@@ -103,6 +108,7 @@
     - [DeviceActivation](#api-DeviceActivation)
     - [DeviceKeys](#api-DeviceKeys)
     - [DeviceListItem](#api-DeviceListItem)
+    - [DeviceListItem.TagsEntry](#api-DeviceListItem-TagsEntry)
     - [DeviceQueueItem](#api-DeviceQueueItem)
     - [DeviceState](#api-DeviceState)
     - [DeviceStatus](#api-DeviceStatus)
@@ -129,14 +135,18 @@
     - [GetRandomDevAddrRequest](#api-GetRandomDevAddrRequest)
     - [GetRandomDevAddrResponse](#api-GetRandomDevAddrResponse)
     - [ListDevicesRequest](#api-ListDevicesRequest)
+    - [ListDevicesRequest.TagsEntry](#api-ListDevicesRequest-TagsEntry)
     - [ListDevicesResponse](#api-ListDevicesResponse)
     - [UpdateDeviceKeysRequest](#api-UpdateDeviceKeysRequest)
     - [UpdateDeviceRequest](#api-UpdateDeviceRequest)
+  
+    - [ListDevicesRequest.OrderBy](#api-ListDevicesRequest-OrderBy)
   
     - [DeviceService](#api-DeviceService)
   
 - [api/device_profile.proto](#api_device_profile-proto)
     - [AdrAlgorithmListItem](#api-AdrAlgorithmListItem)
+    - [AppLayerParams](#api-AppLayerParams)
     - [CreateDeviceProfileRequest](#api-CreateDeviceProfileRequest)
     - [CreateDeviceProfileResponse](#api-CreateDeviceProfileResponse)
     - [DeleteDeviceProfileRequest](#api-DeleteDeviceProfileRequest)
@@ -157,6 +167,9 @@
     - [MeasurementKind](#api-MeasurementKind)
     - [RelayModeActivation](#api-RelayModeActivation)
     - [SecondChAckOffset](#api-SecondChAckOffset)
+    - [Ts003Version](#api-Ts003Version)
+    - [Ts004Version](#api-Ts004Version)
+    - [Ts005Version](#api-Ts005Version)
   
     - [DeviceProfileService](#api-DeviceProfileService)
   
@@ -178,6 +191,7 @@
 - [api/gateway.proto](#api_gateway-proto)
     - [CreateGatewayRequest](#api-CreateGatewayRequest)
     - [DeleteGatewayRequest](#api-DeleteGatewayRequest)
+    - [DeleteRelayGatewayRequest](#api-DeleteRelayGatewayRequest)
     - [Gateway](#api-Gateway)
     - [Gateway.MetadataEntry](#api-Gateway-MetadataEntry)
     - [Gateway.TagsEntry](#api-Gateway-TagsEntry)
@@ -185,15 +199,25 @@
     - [GatewayListItem.PropertiesEntry](#api-GatewayListItem-PropertiesEntry)
     - [GenerateGatewayClientCertificateRequest](#api-GenerateGatewayClientCertificateRequest)
     - [GenerateGatewayClientCertificateResponse](#api-GenerateGatewayClientCertificateResponse)
+    - [GetGatewayDutyCycleMetricsRequest](#api-GetGatewayDutyCycleMetricsRequest)
+    - [GetGatewayDutyCycleMetricsResponse](#api-GetGatewayDutyCycleMetricsResponse)
     - [GetGatewayMetricsRequest](#api-GetGatewayMetricsRequest)
     - [GetGatewayMetricsResponse](#api-GetGatewayMetricsResponse)
     - [GetGatewayRequest](#api-GetGatewayRequest)
     - [GetGatewayResponse](#api-GetGatewayResponse)
+    - [GetRelayGatewayRequest](#api-GetRelayGatewayRequest)
+    - [GetRelayGatewayResponse](#api-GetRelayGatewayResponse)
     - [ListGatewaysRequest](#api-ListGatewaysRequest)
     - [ListGatewaysResponse](#api-ListGatewaysResponse)
+    - [ListRelayGatewaysRequest](#api-ListRelayGatewaysRequest)
+    - [ListRelayGatewaysResponse](#api-ListRelayGatewaysResponse)
+    - [RelayGateway](#api-RelayGateway)
+    - [RelayGatewayListItem](#api-RelayGatewayListItem)
     - [UpdateGatewayRequest](#api-UpdateGatewayRequest)
+    - [UpdateRelayGatewayRequest](#api-UpdateRelayGatewayRequest)
   
     - [GatewayState](#api-GatewayState)
+    - [ListGatewaysRequest.OrderBy](#api-ListGatewaysRequest-OrderBy)
   
     - [GatewayService](#api-GatewayService)
   
@@ -276,6 +300,37 @@
   
     - [UserService](#api-UserService)
   
+- [api/fuota.proto](#api_fuota-proto)
+    - [AddDevicesToFuotaDeploymentRequest](#api-AddDevicesToFuotaDeploymentRequest)
+    - [AddGatewaysToFuotaDeploymentRequest](#api-AddGatewaysToFuotaDeploymentRequest)
+    - [CreateFuotaDeploymentRequest](#api-CreateFuotaDeploymentRequest)
+    - [CreateFuotaDeploymentResponse](#api-CreateFuotaDeploymentResponse)
+    - [DeleteFuotaDeploymentRequest](#api-DeleteFuotaDeploymentRequest)
+    - [FuotaDeployment](#api-FuotaDeployment)
+    - [FuotaDeployment.OnCompleteSetDeviceTagsEntry](#api-FuotaDeployment-OnCompleteSetDeviceTagsEntry)
+    - [FuotaDeploymentDeviceListItem](#api-FuotaDeploymentDeviceListItem)
+    - [FuotaDeploymentGatewayListItem](#api-FuotaDeploymentGatewayListItem)
+    - [FuotaDeploymentJob](#api-FuotaDeploymentJob)
+    - [FuotaDeploymentListItem](#api-FuotaDeploymentListItem)
+    - [GetFuotaDeploymentRequest](#api-GetFuotaDeploymentRequest)
+    - [GetFuotaDeploymentResponse](#api-GetFuotaDeploymentResponse)
+    - [ListFuotaDeploymentDevicesRequest](#api-ListFuotaDeploymentDevicesRequest)
+    - [ListFuotaDeploymentDevicesResponse](#api-ListFuotaDeploymentDevicesResponse)
+    - [ListFuotaDeploymentGatewaysRequest](#api-ListFuotaDeploymentGatewaysRequest)
+    - [ListFuotaDeploymentGatewaysResponse](#api-ListFuotaDeploymentGatewaysResponse)
+    - [ListFuotaDeploymentJobsRequest](#api-ListFuotaDeploymentJobsRequest)
+    - [ListFuotaDeploymentJobsResponse](#api-ListFuotaDeploymentJobsResponse)
+    - [ListFuotaDeploymentsRequest](#api-ListFuotaDeploymentsRequest)
+    - [ListFuotaDeploymentsResponse](#api-ListFuotaDeploymentsResponse)
+    - [RemoveDevicesFromFuotaDeploymentRequest](#api-RemoveDevicesFromFuotaDeploymentRequest)
+    - [RemoveGatewaysFromFuotaDeploymentRequest](#api-RemoveGatewaysFromFuotaDeploymentRequest)
+    - [StartFuotaDeploymentRequest](#api-StartFuotaDeploymentRequest)
+    - [UpdateFuotaDeploymentRequest](#api-UpdateFuotaDeploymentRequest)
+  
+    - [RequestFragmentationSessionStatus](#api-RequestFragmentationSessionStatus)
+  
+    - [FuotaService](#api-FuotaService)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -316,6 +371,38 @@
 | ----- | ---- | ----- | ----------- |
 | key | [string](#string) |  |  |
 | value | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="api-ApplicationDeviceProfileListItem"></a>
+
+### ApplicationDeviceProfileListItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Device-profile ID (UUID). |
+| name | [string](#string) |  | Name. |
+
+
+
+
+
+
+<a name="api-ApplicationDeviceTagListItem"></a>
+
+### ApplicationDeviceTagListItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  | Tag key. |
+| values | [string](#string) | repeated | Used values. |
 
 
 
@@ -373,6 +460,22 @@
 | encoding | [Encoding](#api-Encoding) |  | Encoding. |
 | connection_string | [string](#string) |  | Connection string. |
 | publish_name | [string](#string) |  | Publish name. This is the name of the topic or queue. |
+
+
+
+
+
+
+<a name="api-BlynkIntegration"></a>
+
+### BlynkIntegration
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| application_id | [string](#string) |  | Application ID (UUID). |
+| token | [string](#string) |  | Blynk integration token. |
 
 
 
@@ -439,6 +542,21 @@
 
 
 
+<a name="api-CreateBlynkIntegrationRequest"></a>
+
+### CreateBlynkIntegrationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| integration | [BlynkIntegration](#api-BlynkIntegration) |  | Integration object to create. |
+
+
+
+
+
+
 <a name="api-CreateGcpPubSubIntegrationRequest"></a>
 
 ### CreateGcpPubSubIntegrationRequest
@@ -493,21 +611,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | integration | [InfluxDbIntegration](#api-InfluxDbIntegration) |  | Integration object to create. |
-
-
-
-
-
-
-<a name="api-CreateLoraCloudIntegrationRequest"></a>
-
-### CreateLoraCloudIntegrationRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| integration | [LoraCloudIntegration](#api-LoraCloudIntegration) |  | Integration object to create. |
 
 
 
@@ -604,6 +707,21 @@
 
 
 
+<a name="api-DeleteBlynkIntegrationRequest"></a>
+
+### DeleteBlynkIntegrationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| application_id | [string](#string) |  | Application ID (UUID). |
+
+
+
+
+
+
 <a name="api-DeleteGcpPubSubIntegrationRequest"></a>
 
 ### DeleteGcpPubSubIntegrationRequest
@@ -652,21 +770,6 @@
 <a name="api-DeleteInfluxDbIntegrationRequest"></a>
 
 ### DeleteInfluxDbIntegrationRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUID). |
-
-
-
-
-
-
-<a name="api-DeleteLoraCloudIntegrationRequest"></a>
-
-### DeleteLoraCloudIntegrationRequest
 
 
 
@@ -869,6 +972,36 @@
 
 
 
+<a name="api-GetBlynkIntegrationRequest"></a>
+
+### GetBlynkIntegrationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| application_id | [string](#string) |  | Application ID (UUID). |
+
+
+
+
+
+
+<a name="api-GetBlynkIntegrationResponse"></a>
+
+### GetBlynkIntegrationResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| integration | [BlynkIntegration](#api-BlynkIntegration) |  | Integration object. |
+
+
+
+
+
+
 <a name="api-GetGcpPubSubIntegrationRequest"></a>
 
 ### GetGcpPubSubIntegrationRequest
@@ -983,36 +1116,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | integration | [InfluxDbIntegration](#api-InfluxDbIntegration) |  | Integration object. |
-
-
-
-
-
-
-<a name="api-GetLoraCloudIntegrationRequest"></a>
-
-### GetLoraCloudIntegrationRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUID). |
-
-
-
-
-
-
-<a name="api-GetLoraCloudIntegrationResponse"></a>
-
-### GetLoraCloudIntegrationResponse
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| integration | [LoraCloudIntegration](#api-LoraCloudIntegration) |  | Integration object. |
 
 
 
@@ -1204,6 +1307,66 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 
 
 
+<a name="api-ListApplicationDeviceProfilesRequest"></a>
+
+### ListApplicationDeviceProfilesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| application_id | [string](#string) |  | Application ID (UUID). |
+
+
+
+
+
+
+<a name="api-ListApplicationDeviceProfilesResponse"></a>
+
+### ListApplicationDeviceProfilesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [ApplicationDeviceProfileListItem](#api-ApplicationDeviceProfileListItem) | repeated | Device-profiles. |
+
+
+
+
+
+
+<a name="api-ListApplicationDeviceTagsRequest"></a>
+
+### ListApplicationDeviceTagsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| application_id | [string](#string) |  | Application ID (UUID). |
+
+
+
+
+
+
+<a name="api-ListApplicationDeviceTagsResponse"></a>
+
+### ListApplicationDeviceTagsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| result | [ApplicationDeviceTagListItem](#api-ApplicationDeviceTagListItem) | repeated | Device tags. |
+
+
+
+
+
+
 <a name="api-ListApplicationsRequest"></a>
 
 ### ListApplicationsRequest
@@ -1212,7 +1375,7 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of applications to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of applications to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name (optional). |
 | tenant_id | [string](#string) |  | Tenant ID to list the applications for. |
@@ -1263,51 +1426,6 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 | ----- | ---- | ----- | ----------- |
 | total_count | [uint32](#uint32) |  | Total number of integrations available within the result-set. |
 | result | [IntegrationListItem](#api-IntegrationListItem) | repeated | Integrations within result-set. |
-
-
-
-
-
-
-<a name="api-LoraCloudIntegration"></a>
-
-### LoraCloudIntegration
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| application_id | [string](#string) |  | Application ID (UUID). |
-| modem_geolocation_services | [LoraCloudModemGeolocationServices](#api-LoraCloudModemGeolocationServices) |  | Modem &amp; Geolocation Services configuration. |
-
-
-
-
-
-
-<a name="api-LoraCloudModemGeolocationServices"></a>
-
-### LoraCloudModemGeolocationServices
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| token | [string](#string) |  | API token. |
-| modem_enabled | [bool](#bool) |  | Device implements Modem / Modem-E stack. |
-| forward_f_ports | [uint32](#uint32) | repeated | Forward FPorts. Forward uplink messages matching the given FPorts to the MGS. |
-| gnss_use_rx_time | [bool](#bool) |  | Use rx time for GNSS resolving. In case this is set to true, the MGS resolver will use the RX time of the network instead of the timestamp included in the LR1110 payload. |
-| gnss_use_gateway_location | [bool](#bool) |  | Use gateway location for GNSS resolving. In the case this is set to true, ChirpStack will provide the location of one of the gateways to the MGS resolver to aid the resolving process. Disable this in case the gateway location is not accurate / incorrectly configured as an incorrect location will cause the resolver to return an error. |
-| parse_tlv | [bool](#bool) |  | Parse TLV records. If enabled, stream records (expected in TLV format) are scanned for GNSS data (0x06 or 0x07). If found, ChirpStack will make an additional geolocation call to the MGS API for resolving the location of the detected payload. |
-| geolocation_buffer_ttl | [uint32](#uint32) |  | Geolocation buffer TTL (in seconds). If &gt; 0, uplink RX meta-data will be stored in a buffer so that the meta-data of multiple uplinks can be used for geolocation. |
-| geolocation_min_buffer_size | [uint32](#uint32) |  | Geolocation minimum buffer size. If &gt; 0, geolocation will only be performed when the buffer has at least the given size. |
-| geolocation_tdoa | [bool](#bool) |  | TDOA based geolocation is enabled. |
-| geolocation_rssi | [bool](#bool) |  | RSSI based geolocation is enabled. |
-| geolocation_gnss | [bool](#bool) |  | GNSS based geolocation is enabled (LR1110). |
-| geolocation_gnss_payload_field | [string](#string) |  | GNSS payload field. This holds the name of the field in the decoded payload object which contains the GNSS payload bytes (as HEX string). |
-| geolocation_gnss_use_rx_time | [bool](#bool) |  | GNSS use RX time. In case this is set to true, the resolver will use the RX time of the network instead of the timestamp included in the LR1110 payload. |
-| geolocation_wifi | [bool](#bool) |  | Wifi based geolocation is enabled. |
-| geolocation_wifi_payload_field | [string](#string) |  | Wifi payload field. This holds the name of the field in the decoded payload object which contains an array of objects with the following fields: * macAddress - e.g. 01:23:45:67:89:ab * signalStrength - e.g. -51 (optional) |
 
 
 
@@ -1408,6 +1526,21 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 
 
 
+<a name="api-UpdateBlynkIntegrationRequest"></a>
+
+### UpdateBlynkIntegrationRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| integration | [BlynkIntegration](#api-BlynkIntegration) |  | Integration object to update. |
+
+
+
+
+
+
 <a name="api-UpdateGcpPubSubIntegrationRequest"></a>
 
 ### UpdateGcpPubSubIntegrationRequest
@@ -1462,21 +1595,6 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | integration | [InfluxDbIntegration](#api-InfluxDbIntegration) |  | Integration object to update. |
-
-
-
-
-
-
-<a name="api-UpdateLoraCloudIntegrationRequest"></a>
-
-### UpdateLoraCloudIntegrationRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| integration | [LoraCloudIntegration](#api-LoraCloudIntegration) |  | Integration object to update. |
 
 
 
@@ -1567,6 +1685,7 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 | ---- | ------ | ----------- |
 | INFLUXDB_1 | 0 |  |
 | INFLUXDB_2 | 1 |  |
+| INFLUXDB_3 | 2 |  |
 
 
 
@@ -1581,13 +1700,13 @@ Notes: The first value is always used for the DevEUI. Ignored if arbitrary_json 
 | INFLUX_DB | 1 |  |
 | THINGS_BOARD | 2 |  |
 | MY_DEVICES | 3 |  |
-| LORA_CLOUD | 4 |  |
 | GCP_PUB_SUB | 5 |  |
 | AWS_SNS | 6 |  |
 | AZURE_SERVICE_BUS | 7 |  |
 | PILOT_THINGS | 8 |  |
 | MQTT_GLOBAL | 9 |  |
 | IFTTT | 10 |  |
+| BLYNK | 11 |  |
 
 
  
@@ -1625,10 +1744,6 @@ applications.
 | GetMyDevicesIntegration | [GetMyDevicesIntegrationRequest](#api-GetMyDevicesIntegrationRequest) | [GetMyDevicesIntegrationResponse](#api-GetMyDevicesIntegrationResponse) | Get myDevices integration. |
 | UpdateMyDevicesIntegration | [UpdateMyDevicesIntegrationRequest](#api-UpdateMyDevicesIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update myDevices integration. |
 | DeleteMyDevicesIntegration | [DeleteMyDevicesIntegrationRequest](#api-DeleteMyDevicesIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete myDevices integration. |
-| CreateLoraCloudIntegration | [CreateLoraCloudIntegrationRequest](#api-CreateLoraCloudIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Create LoRaCloud integration. |
-| GetLoraCloudIntegration | [GetLoraCloudIntegrationRequest](#api-GetLoraCloudIntegrationRequest) | [GetLoraCloudIntegrationResponse](#api-GetLoraCloudIntegrationResponse) | Get LoRaCloud integration. |
-| UpdateLoraCloudIntegration | [UpdateLoraCloudIntegrationRequest](#api-UpdateLoraCloudIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update LoRaCloud integration. |
-| DeleteLoraCloudIntegration | [DeleteLoraCloudIntegrationRequest](#api-DeleteLoraCloudIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete LoRaCloud integration. |
 | CreateGcpPubSubIntegration | [CreateGcpPubSubIntegrationRequest](#api-CreateGcpPubSubIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Create GCP Pub/Sub integration. |
 | GetGcpPubSubIntegration | [GetGcpPubSubIntegrationRequest](#api-GetGcpPubSubIntegrationRequest) | [GetGcpPubSubIntegrationResponse](#api-GetGcpPubSubIntegrationResponse) | Get GCP Pub/Sub integration. |
 | UpdateGcpPubSubIntegration | [UpdateGcpPubSubIntegrationRequest](#api-UpdateGcpPubSubIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update GCP Pub/Sub integration. |
@@ -1649,7 +1764,13 @@ applications.
 | GetIftttIntegration | [GetIftttIntegrationRequest](#api-GetIftttIntegrationRequest) | [GetIftttIntegrationResponse](#api-GetIftttIntegrationResponse) | Get IFTTT integration. |
 | UpdateIftttIntegration | [UpdateIftttIntegrationRequest](#api-UpdateIftttIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update IFTTT integration. |
 | DeleteIftttIntegration | [DeleteIftttIntegrationRequest](#api-DeleteIftttIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete IFTTT integration. |
+| CreateBlynkIntegration | [CreateBlynkIntegrationRequest](#api-CreateBlynkIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Create Blynk integration. |
+| GetBlynkIntegration | [GetBlynkIntegrationRequest](#api-GetBlynkIntegrationRequest) | [GetBlynkIntegrationResponse](#api-GetBlynkIntegrationResponse) | Get Blynk integration. |
+| UpdateBlynkIntegration | [UpdateBlynkIntegrationRequest](#api-UpdateBlynkIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update Blynk integration. |
+| DeleteBlynkIntegration | [DeleteBlynkIntegrationRequest](#api-DeleteBlynkIntegrationRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete Blynk integration. |
 | GenerateMqttIntegrationClientCertificate | [GenerateMqttIntegrationClientCertificateRequest](#api-GenerateMqttIntegrationClientCertificateRequest) | [GenerateMqttIntegrationClientCertificateResponse](#api-GenerateMqttIntegrationClientCertificateResponse) | Generates application ID specific client-certificate. |
+| ListDeviceProfiles | [ListApplicationDeviceProfilesRequest](#api-ListApplicationDeviceProfilesRequest) | [ListApplicationDeviceProfilesResponse](#api-ListApplicationDeviceProfilesResponse) | List device-profiles used within the given application. |
+| ListDeviceTags | [ListApplicationDeviceTagsRequest](#api-ListApplicationDeviceTagsRequest) | [ListApplicationDeviceTagsResponse](#api-ListApplicationDeviceTagsResponse) | List device tags used within the given application. |
 
  
 
@@ -1819,9 +1940,9 @@ applications.
 | dev_eui | [string](#string) |  | Device EUI (EUI64). |
 | dev_addr | [string](#string) |  | Device address (HEX encoded). |
 | app_s_key | [string](#string) |  | Application session key (HEX encoded). |
-| nwk_s_enc_key | [string](#string) |  | Network session encryption key (HEX encoded). |
-| s_nwk_s_int_key | [string](#string) |  | Serving network session integrity key (HEX encoded). |
-| f_nwk_s_int_key | [string](#string) |  | Forwarding network session integrity key (HEX encoded). |
+| nwk_s_enc_key | [string](#string) |  | Network session encryption key (HEX encoded). Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey. |
+| s_nwk_s_int_key | [string](#string) |  | Serving network session integrity key (HEX encoded). Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey. |
+| f_nwk_s_int_key | [string](#string) |  | Forwarding network session integrity key (HEX encoded). Note: For LoRaWAN 1.0.x devices, set this to the NwkSKey. |
 | f_cnt_up | [uint32](#uint32) |  | Uplink frame-counter. |
 | n_f_cnt_down | [uint32](#uint32) |  | Downlink network frame-counter. |
 | a_f_cnt_down | [uint32](#uint32) |  | Downlink application frame-counter. |
@@ -1842,6 +1963,7 @@ applications.
 | dev_eui | [string](#string) |  | DevEUI (EUI64). |
 | nwk_key | [string](#string) |  | Network root key (128 bit). Note: For LoRaWAN 1.0.x, use this field for the LoRaWAN 1.0.x &#39;AppKey`! |
 | app_key | [string](#string) |  | Application root key (128 bit). Note: This field only needs to be set for LoRaWAN 1.1.x devices! |
+| gen_app_key | [string](#string) |  | Gen App Key (128 bit). Note: This field only needs to be set for LoRaWAN 1.0.x devices that implement TS005 (remote multicast setup). |
 
 
 
@@ -1865,6 +1987,23 @@ applications.
 | device_profile_id | [string](#string) |  | Device-profile ID (UUID). |
 | device_profile_name | [string](#string) |  | Device-profile name. |
 | device_status | [DeviceStatus](#api-DeviceStatus) |  | Device status. |
+| tags | [DeviceListItem.TagsEntry](#api-DeviceListItem-TagsEntry) | repeated | Device tags. |
+
+
+
+
+
+
+<a name="api-DeviceListItem-TagsEntry"></a>
+
+### DeviceListItem.TagsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
 
 
 
@@ -1882,12 +2021,13 @@ applications.
 | id | [string](#string) |  | ID (UUID). This is automatically generated on enqueue. |
 | dev_eui | [string](#string) |  | Device EUI (EUI64). |
 | confirmed | [bool](#bool) |  | Confirmed. |
-| f_port | [uint32](#uint32) |  | FPort (must be &gt; 0). |
+| f_port | [uint32](#uint32) |  | FPort (must be &gt; 0). On enqueue and if using a JavaScript codec, this value might be automatically set by the codec function. |
 | data | [bytes](#bytes) |  | Data. Or use the json_object field when a codec has been configured. |
 | object | [google.protobuf.Struct](#google-protobuf-Struct) |  | Only use this when a codec has been configured that can encode this object to bytes. |
 | is_pending | [bool](#bool) |  | Is pending. This is set by ChirpStack to true when the downlink is pending (e.g. it has been sent, but a confirmation is still pending). |
 | f_cnt_down | [uint32](#uint32) |  | Downlink frame-counter. Do not set this for plain-text data payloads. It will be automatically set by ChirpStack when the payload has been sent as downlink. |
 | is_encrypted | [bool](#bool) |  | Is encrypted. This must be set to true if the end-application has already encrypted the data payload. In this case, the f_cnt_down field must be set to the corresponding frame-counter which has been used during the encryption. |
+| expires_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Expires at (optional). Expired queue-items will be automatically removed from the queue. |
 
 
 
@@ -1935,7 +2075,8 @@ applications.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| queue_item | [DeviceQueueItem](#api-DeviceQueueItem) |  |  |
+| queue_item | [DeviceQueueItem](#api-DeviceQueueItem) |  | Item to enqueue. |
+| flush_queue | [bool](#bool) |  | Flush queue before enqueue. |
 
 
 
@@ -2011,6 +2152,7 @@ applications.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | device_activation | [DeviceActivation](#api-DeviceActivation) |  | Device activation object. |
+| join_server_context | [common.JoinServerContext](#common-JoinServerContext) |  | Join-Server context. A non-empty value indicatest that ChirpStack does not have access to the AppSKey and that the encryption / decryption of the payloads is the responsibility of the end-application. |
 
 
 
@@ -2288,11 +2430,31 @@ applications.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of devices to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of devices to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name (optional). |
 | application_id | [string](#string) |  | Application ID (UUID) to filter devices on. |
 | multicast_group_id | [string](#string) |  | Multicst-group ID (UUID) to filter devices on. |
+| order_by | [ListDevicesRequest.OrderBy](#api-ListDevicesRequest-OrderBy) |  | If set, the given value will be used to sort by (optional). |
+| order_by_desc | [bool](#bool) |  | If set, the sorting direction will be decending (default = ascending) (optional). |
+| tags | [ListDevicesRequest.TagsEntry](#api-ListDevicesRequest-TagsEntry) | repeated | Tags to filter devices on. |
+| device_profile_id | [string](#string) |  | Device-profile ID (UUID) to filter devices on. |
+
+
+
+
+
+
+<a name="api-ListDevicesRequest-TagsEntry"></a>
+
+### ListDevicesRequest.TagsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
 
 
 
@@ -2345,6 +2507,20 @@ applications.
 
 
  
+
+
+<a name="api-ListDevicesRequest-OrderBy"></a>
+
+### ListDevicesRequest.OrderBy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NAME | 0 |  |
+| DEV_EUI | 1 |  |
+| LAST_SEEN_AT | 2 |  |
+| DEVICE_PROFILE_NAME | 3 |  |
+
 
  
 
@@ -2400,6 +2576,26 @@ DeviceService is the service providing API methods for managing devices.
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  | Algorithm ID. |
 | name | [string](#string) |  | Algorithm name. |
+
+
+
+
+
+
+<a name="api-AppLayerParams"></a>
+
+### AppLayerParams
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| ts003_version | [Ts003Version](#api-Ts003Version) |  | TS003 version (Application Layer Clock Sync). |
+| ts003_f_port | [uint32](#uint32) |  | TS003 fPort. |
+| ts004_version | [Ts004Version](#api-Ts004Version) |  | TS004 version (Fragmented Data Block Transport). |
+| ts004_f_port | [uint32](#uint32) |  | TS004 fPort. |
+| ts005_version | [Ts005Version](#api-Ts005Version) |  | TS005 version (Remote Multicast Setup). |
+| ts005_f_port | [uint32](#uint32) |  | TS005 fPort. |
 
 
 
@@ -2476,9 +2672,11 @@ DeviceService is the service providing API methods for managing devices.
 | supports_class_b | [bool](#bool) |  | Supports Class B. |
 | supports_class_c | [bool](#bool) |  | Supports Class-C. |
 | class_b_timeout | [uint32](#uint32) |  | Class-B timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
-| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7.
+| class_b_ping_slot_periodicity | [uint32](#uint32) |  | Class-B ping-slot periodicity. Valid options are: 0 - 7.
 
-The actual number of ping-slots per beacon period equals to 2^k. |
+Number of ping-slots per beacon-period: pingNb = 2^(7-periodicity)
+
+Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec |
 | class_b_ping_slot_dr | [uint32](#uint32) |  | Class-B ping-slot DR. |
 | class_b_ping_slot_freq | [uint32](#uint32) |  | Class-B ping-slot freq (Hz). |
 | class_c_timeout | [uint32](#uint32) |  | Class-C timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
@@ -2545,6 +2743,10 @@ Valid values (0 - 3): 0 = 1 1 = 2 2 = 4 3 = 12 |
 | allow_roaming | [bool](#bool) |  | Allow roaming.
 
 If set to true, it means that the device is allowed to use roaming. |
+| rx1_delay | [uint32](#uint32) |  | RX1 Delay.
+
+This makes it possible to override the system RX1 Delay. Please note that this values only has effect in case it is higher than the system value. In other words, it can be used to increase the RX1 Delay but not to decrease it. Valid options are 1 - 15 (0 = always use system RX1 Delay). |
+| app_layer_params | [AppLayerParams](#api-AppLayerParams) |  | Application Layer parameters. |
 
 
 
@@ -2663,7 +2865,7 @@ If set to true, it means that the device is allowed to use roaming. |
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of device-profiles to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of device-profiles to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name. |
 | tenant_id | [string](#string) |  | Tenant ID to list the device-profiles for. |
@@ -2795,6 +2997,45 @@ If set to true, it means that the device is allowed to use roaming. |
 | KHZ_3200 | 5 | 3200 kHz. |
 
 
+
+<a name="api-Ts003Version"></a>
+
+### Ts003Version
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TS003_NOT_IMPLEMENTED | 0 | Not implemented. |
+| TS003_V100 | 1 | v1.0.0. |
+| TS003_v200 | 2 | v2.0.0 |
+
+
+
+<a name="api-Ts004Version"></a>
+
+### Ts004Version
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TS004_NOT_IMPLEMENTED | 0 | Not implemented. |
+| TS004_V100 | 1 | v1.0.0. |
+| TS004_V200 | 2 | v2.0.0 |
+
+
+
+<a name="api-Ts005Version"></a>
+
+### Ts005Version
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| TS005_NOT_IMPLEMENTED | 0 | Not implemented. |
+| TS005_V100 | 1 | v1.0.0. |
+| TS005_V200 | 2 | v2.0.0 |
+
+
  
 
  
@@ -2882,9 +3123,11 @@ device-profiles.
 | supports_class_b | [bool](#bool) |  | Supports Class B. |
 | supports_class_c | [bool](#bool) |  | Supports Class-C. |
 | class_b_timeout | [uint32](#uint32) |  | Class-B timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
-| class_b_ping_slot_nb_k | [uint32](#uint32) |  | Class-B ping-slots per beacon period. Valid options are: 0 - 7.
+| class_b_ping_slot_periodicity | [uint32](#uint32) |  | Class-B ping-slot periodicity (only for Class-B). Valid options are: 0 - 7.
 
-The actual number of ping-slots per beacon period equals to 2^k. |
+Number of ping-slots per beacon-period: pingNb = 2^(7-periodicity)
+
+Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec |
 | class_b_ping_slot_dr | [uint32](#uint32) |  | Class-B ping-slot DR. |
 | class_b_ping_slot_freq | [uint32](#uint32) |  | Class-B ping-slot freq (Hz). |
 | class_c_timeout | [uint32](#uint32) |  | Class-C timeout (seconds). This is the maximum time ChirpStack will wait to receive an acknowledgement from the device (if requested). |
@@ -2999,7 +3242,7 @@ The actual number of ping-slots per beacon period equals to 2^k. |
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of device-profile templates to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of device-profile templates to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 
 
@@ -3092,6 +3335,22 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | gateway_id | [string](#string) |  | Gateway ID (EUI64). |
+
+
+
+
+
+
+<a name="api-DeleteRelayGatewayRequest"></a>
+
+### DeleteRelayGatewayRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tenant_id | [string](#string) |  | Tenant ID. |
+| relay_id | [string](#string) |  | Relay ID (4 byte HEX). |
 
 
 
@@ -3225,6 +3484,39 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 
 
 
+<a name="api-GetGatewayDutyCycleMetricsRequest"></a>
+
+### GetGatewayDutyCycleMetricsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| gateway_id | [string](#string) |  | Gateway ID (EUI64). |
+| start | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Interval start timestamp. |
+| end | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Interval end timestamp. |
+
+
+
+
+
+
+<a name="api-GetGatewayDutyCycleMetricsResponse"></a>
+
+### GetGatewayDutyCycleMetricsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| max_load_percentage | [common.Metric](#common-Metric) |  | Percentage relative to max load. |
+| window_percentage | [common.Metric](#common-Metric) |  | Percentage relative to tracking window. |
+
+
+
+
+
+
 <a name="api-GetGatewayMetricsRequest"></a>
 
 ### GetGatewayMetricsRequest
@@ -3297,6 +3589,40 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 
 
 
+<a name="api-GetRelayGatewayRequest"></a>
+
+### GetRelayGatewayRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tenant_id | [string](#string) |  | Tenant ID (UUID). |
+| relay_id | [string](#string) |  | Relay ID (4 byte HEX). |
+
+
+
+
+
+
+<a name="api-GetRelayGatewayResponse"></a>
+
+### GetRelayGatewayResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| relay_gateway | [RelayGateway](#api-RelayGateway) |  | Relay Gateway object. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
+| updated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Last update timestamp. |
+| last_seen_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Last seen at timestamp. |
+
+
+
+
+
+
 <a name="api-ListGatewaysRequest"></a>
 
 ### ListGatewaysRequest
@@ -3305,11 +3631,13 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of gateways to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of gateways to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name (optional). |
 | tenant_id | [string](#string) |  | Tenant ID (UUID) to filter gateways on. To list all gateways as a global admin user, this field can be left blank. |
 | multicast_group_id | [string](#string) |  | Multicast-group ID (UUID) to filter gateways on. |
+| order_by | [ListGatewaysRequest.OrderBy](#api-ListGatewaysRequest-OrderBy) |  | If set, the given value will be used to sort by (optional). |
+| order_by_desc | [bool](#bool) |  | If set, the sorting direction will be decending (default = ascending) (optional). |
 
 
 
@@ -3332,6 +3660,82 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 
 
 
+<a name="api-ListRelayGatewaysRequest"></a>
+
+### ListRelayGatewaysRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  | Max number of relay-gateways to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
+| offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
+| tenant_id | [string](#string) |  | Tenant ID (UUID) to filter relay-gateways on. To list all relay-gateways as a global admin user, this field can be left blank. |
+
+
+
+
+
+
+<a name="api-ListRelayGatewaysResponse"></a>
+
+### ListRelayGatewaysResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total_count | [uint32](#uint32) |  | Total number of relay-gateways. |
+| result | [RelayGatewayListItem](#api-RelayGatewayListItem) | repeated | Result-set. |
+
+
+
+
+
+
+<a name="api-RelayGateway"></a>
+
+### RelayGateway
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tenant_id | [string](#string) |  | Tenant ID. |
+| relay_id | [string](#string) |  | Relay ID (4 byte HEX). |
+| name | [string](#string) |  | Name. |
+| description | [string](#string) |  | Description. |
+| stats_interval | [uint32](#uint32) |  | Stats interval (seconds). This defines the expected interval in which the gateway sends its statistics. |
+| region_config_id | [string](#string) |  | Region configuration ID. |
+
+
+
+
+
+
+<a name="api-RelayGatewayListItem"></a>
+
+### RelayGatewayListItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tenant_id | [string](#string) |  | Tenant ID. |
+| relay_id | [string](#string) |  | Relay ID (4 byte HEX). |
+| name | [string](#string) |  | Name. |
+| description | [string](#string) |  | Description. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
+| updated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Last update timestamp. |
+| last_seen_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Last seen at timestamp. |
+| state | [GatewayState](#api-GatewayState) |  | Gateway state. Please note that the state of the relay is driven by the last received stats packet sent by the relay-gateway. |
+| region_config_id | [string](#string) |  | Region configuration ID. |
+
+
+
+
+
+
 <a name="api-UpdateGatewayRequest"></a>
 
 ### UpdateGatewayRequest
@@ -3341,6 +3745,21 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | gateway | [Gateway](#api-Gateway) |  | Gateway object. |
+
+
+
+
+
+
+<a name="api-UpdateRelayGatewayRequest"></a>
+
+### UpdateRelayGatewayRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| relay_gateway | [RelayGateway](#api-RelayGateway) |  | Relay Gateway object. |
 
 
 
@@ -3359,6 +3778,19 @@ DeviceProfileTemplateService is the service providing API methods for managing d
 | NEVER_SEEN | 0 | The gateway has never sent any stats. |
 | ONLINE | 1 | Online. |
 | OFFLINE | 2 | Offline. |
+
+
+
+<a name="api-ListGatewaysRequest-OrderBy"></a>
+
+### ListGatewaysRequest.OrderBy
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NAME | 0 |  |
+| GATEWAY_ID | 1 |  |
+| LAST_SEEN_AT | 2 |  |
 
 
  
@@ -3380,6 +3812,11 @@ GatewayService is the service providing API methods for managing gateways.
 | List | [ListGatewaysRequest](#api-ListGatewaysRequest) | [ListGatewaysResponse](#api-ListGatewaysResponse) | Get the list of gateways. |
 | GenerateClientCertificate | [GenerateGatewayClientCertificateRequest](#api-GenerateGatewayClientCertificateRequest) | [GenerateGatewayClientCertificateResponse](#api-GenerateGatewayClientCertificateResponse) | Generate client-certificate for the gateway. |
 | GetMetrics | [GetGatewayMetricsRequest](#api-GetGatewayMetricsRequest) | [GetGatewayMetricsResponse](#api-GetGatewayMetricsResponse) | GetMetrics returns the gateway metrics. |
+| GetDutyCycleMetrics | [GetGatewayDutyCycleMetricsRequest](#api-GetGatewayDutyCycleMetricsRequest) | [GetGatewayDutyCycleMetricsResponse](#api-GetGatewayDutyCycleMetricsResponse) | GetDutyCycleMetrics returns the duty-cycle metrics. Note that only the last 2 hours of data are stored. Currently only per minute aggregation is available. |
+| GetRelayGateway | [GetRelayGatewayRequest](#api-GetRelayGatewayRequest) | [GetRelayGatewayResponse](#api-GetRelayGatewayResponse) | Get the given Relay Gateway. |
+| ListRelayGateways | [ListRelayGatewaysRequest](#api-ListRelayGatewaysRequest) | [ListRelayGatewaysResponse](#api-ListRelayGatewaysResponse) | List the detected Relay Gateways. |
+| UpdateRelayGateway | [UpdateRelayGatewayRequest](#api-UpdateRelayGatewayRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update the given Relay Gateway. |
+| DeleteRelayGateway | [DeleteRelayGatewayRequest](#api-DeleteRelayGatewayRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete the given Relay Gateway. |
 
  
 
@@ -3584,7 +4021,7 @@ GatewayService is the service providing API methods for managing gateways.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of multicast groups to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of multicast groups to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name. |
 | application_id | [string](#string) |  | Application ID to list the multicast groups for. |
@@ -3629,7 +4066,11 @@ GatewayService is the service providing API methods for managing gateways.
 | group_type | [MulticastGroupType](#api-MulticastGroupType) |  | Multicast group type. |
 | dr | [uint32](#uint32) |  | Data-rate. |
 | frequency | [uint32](#uint32) |  | Frequency (Hz). |
-| class_b_ping_slot_period | [uint32](#uint32) |  | Ping-slot period (only for Class-B). |
+| class_b_ping_slot_periodicity | [uint32](#uint32) |  | Class-B ping-slot periodicity (only for Class-B). Valid options are: 0 - 7.
+
+Number of ping-slots per beacon-period: pingNb = 2^(7-periodicity)
+
+Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec |
 | class_c_scheduling_type | [MulticastGroupSchedulingType](#api-MulticastGroupSchedulingType) |  | Scheduling type (only for Class-C). |
 
 
@@ -3669,6 +4110,7 @@ GatewayService is the service providing API methods for managing gateways.
 | f_cnt | [uint32](#uint32) |  | Downlink frame-counter. This will be automatically set on enqueue. |
 | f_port | [uint32](#uint32) |  | FPort (must be &gt; 0). |
 | data | [bytes](#bytes) |  | Payload. |
+| expires_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Expires at (optional). Expired queue-items will be automatically removed from the queue. |
 
 
 
@@ -3807,7 +4249,7 @@ MulticastGroupService is the service managing multicast-groups.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of multicast groups to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of multicast groups to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | relay_dev_eui | [string](#string) |  | Relay DevEUI (EUI64). |
 
@@ -3840,7 +4282,7 @@ MulticastGroupService is the service managing multicast-groups.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of devices to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of devices to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | application_id | [string](#string) |  | Application ID (UUID). |
 
@@ -4093,7 +4535,7 @@ RelayService is the service providing API methos for managing relays.
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tenant_id | [string](#string) |  | Tenant ID (UUID). |
-| limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 
 
@@ -4125,7 +4567,7 @@ RelayService is the service providing API methos for managing relays.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 | search | [string](#string) |  | If set, the given string will be used to search on name. |
 | user_id | [string](#string) |  | If set, filters the result set to the tenants of the user. Only global API keys are able to filter by this field. |
@@ -4407,7 +4849,7 @@ TenantService is the service providing API methods for managing tenants.
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. |
+| limit | [uint32](#uint32) |  | Max number of tenants to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
 | offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
 
 
@@ -4538,6 +4980,497 @@ UserService is the service providing API methods for managing users.
 | Delete | [DeleteUserRequest](#api-DeleteUserRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete the user with the given ID. |
 | List | [ListUsersRequest](#api-ListUsersRequest) | [ListUsersResponse](#api-ListUsersResponse) | Get the list of users. |
 | UpdatePassword | [UpdateUserPasswordRequest](#api-UpdateUserPasswordRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update the password for the given user. |
+
+ 
+
+
+
+<a name="api_fuota-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## api/fuota.proto
+
+
+
+<a name="api-AddDevicesToFuotaDeploymentRequest"></a>
+
+### AddDevicesToFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+| dev_euis | [string](#string) | repeated | DevEUIs. Note that the DevEUIs must share the same device-profile as assigned to the FUOTA Deployment. |
+
+
+
+
+
+
+<a name="api-AddGatewaysToFuotaDeploymentRequest"></a>
+
+### AddGatewaysToFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+| gateway_ids | [string](#string) | repeated | Gateway IDs. Note that the Gateways must be under the same tenant as the FUOTA Deployment. |
+
+
+
+
+
+
+<a name="api-CreateFuotaDeploymentRequest"></a>
+
+### CreateFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| deployment | [FuotaDeployment](#api-FuotaDeployment) |  | Deployment. |
+
+
+
+
+
+
+<a name="api-CreateFuotaDeploymentResponse"></a>
+
+### CreateFuotaDeploymentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | ID of the created deployment. |
+
+
+
+
+
+
+<a name="api-DeleteFuotaDeploymentRequest"></a>
+
+### DeleteFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | FUOTA deployment ID. |
+
+
+
+
+
+
+<a name="api-FuotaDeployment"></a>
+
+### FuotaDeployment
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | Deployment ID. This value is automatically set on create. |
+| application_id | [string](#string) |  | Application ID. |
+| device_profile_id | [string](#string) |  | Device-profile ID. |
+| name | [string](#string) |  | Deployment name. |
+| multicast_group_type | [MulticastGroupType](#api-MulticastGroupType) |  | Multicast-group type. |
+| multicast_class_c_scheduling_type | [MulticastGroupSchedulingType](#api-MulticastGroupSchedulingType) |  | Multicast-group scheduling type (Class-C only). |
+| multicast_dr | [uint32](#uint32) |  | Multicast data-rate. |
+| multicast_class_b_ping_slot_periodicity | [uint32](#uint32) |  | Multicast ping-slot period (Class-B only). Valid options are: 0 - 7.
+
+Number of ping-slots per beacon-period: pingNb = 2^(7-periodicity)
+
+Periodicity: 0 = 128 ping-slots per beacon period = ~ every 1 sec Periodicity: 7 = 1 ping-slot per beacon period = ~ every 128 sec |
+| multicast_frequency | [uint32](#uint32) |  | Multicast frequency (Hz). |
+| multicast_timeout | [uint32](#uint32) |  | Multicast timeout. This defines the timeout of the multicast-session. Please refer to the Remote Multicast Setup specification as this field has a different meaning for Class-B and Class-C groups. |
+| calculate_multicast_timeout | [bool](#bool) |  | Calculate multicast timeout. If set to true, ChirpStack will calculate the multicast-timeout. |
+| unicast_max_retry_count | [uint32](#uint32) |  | The number of times ChirpStack will retry an unicast command before it considers it to be failed. |
+| fragmentation_fragment_size | [uint32](#uint32) |  | Fragmentation size. This defines the size of each payload fragment. Please refer to the Regional Parameters specification for the maximum payload sizes per data-rate and region. |
+| calculate_fragmentation_fragment_size | [bool](#bool) |  | Calculate fragmentation size. If set to true, ChirpStack will calculate the fragmentation size. |
+| fragmentation_redundancy_percentage | [uint32](#uint32) |  | Fragmentation redundancy percentage. The number represents the percentage (0 - 100) of redundant messages to send. |
+| fragmentation_session_index | [uint32](#uint32) |  | Fragmentation session index. |
+| fragmentation_matrix | [uint32](#uint32) |  | Fragmentation matrix. |
+| fragmentation_block_ack_delay | [uint32](#uint32) |  | Block ack delay. |
+| fragmentation_descriptor | [bytes](#bytes) |  | Descriptor (4 bytes). |
+| request_fragmentation_session_status | [RequestFragmentationSessionStatus](#api-RequestFragmentationSessionStatus) |  | Request fragmentation session status. |
+| payload | [bytes](#bytes) |  | Payload. The FUOTA payload to send. |
+| on_complete_set_device_tags | [FuotaDeployment.OnCompleteSetDeviceTagsEntry](#api-FuotaDeployment-OnCompleteSetDeviceTagsEntry) | repeated | Set device tags on complete. |
+
+
+
+
+
+
+<a name="api-FuotaDeployment-OnCompleteSetDeviceTagsEntry"></a>
+
+### FuotaDeployment.OnCompleteSetDeviceTagsEntry
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| key | [string](#string) |  |  |
+| value | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="api-FuotaDeploymentDeviceListItem"></a>
+
+### FuotaDeploymentDeviceListItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | ID. |
+| dev_eui | [string](#string) |  | DevEUI. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Completed at timestamp. |
+| mc_group_setup_completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | McGroupSetup completed at timestamp. |
+| mc_session_completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | McSession completed at timestamp. |
+| frag_session_setup_completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | FragSessionSetup completed at timestamp. |
+| frag_status_completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | FragStatus completed at timestamp. |
+| error_msg | [string](#string) |  | Error message. |
+
+
+
+
+
+
+<a name="api-FuotaDeploymentGatewayListItem"></a>
+
+### FuotaDeploymentGatewayListItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | ID. |
+| gateway_id | [string](#string) |  | Gateway ID. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
+
+
+
+
+
+
+<a name="api-FuotaDeploymentJob"></a>
+
+### FuotaDeploymentJob
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| job | [string](#string) |  | Job identifier. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at. |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Completed at. |
+| max_retry_count | [uint32](#uint32) |  | Max. retry count. |
+| attempt_count | [uint32](#uint32) |  | Attempt count. |
+| scheduler_run_after | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Scheduler run after. |
+| warning_msg | [string](#string) |  | Warning message. |
+| error_msg | [string](#string) |  | Error message. |
+
+
+
+
+
+
+<a name="api-FuotaDeploymentListItem"></a>
+
+### FuotaDeploymentListItem
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | ID. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
+| updated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Updated at timestamp. |
+| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Started at timestamp. |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Completed at timestamp. |
+| name | [string](#string) |  | Name. |
+
+
+
+
+
+
+<a name="api-GetFuotaDeploymentRequest"></a>
+
+### GetFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | FUOTA Deployment ID. |
+
+
+
+
+
+
+<a name="api-GetFuotaDeploymentResponse"></a>
+
+### GetFuotaDeploymentResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| deployment | [FuotaDeployment](#api-FuotaDeployment) |  | FUOTA Deployment. |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Created at timestamp. |
+| updated_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Updated at timestamp. |
+| started_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Started at timestamp. |
+| completed_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | Completed at timestamp. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentDevicesRequest"></a>
+
+### ListFuotaDeploymentDevicesRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  | Max number of devices to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
+| offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentDevicesResponse"></a>
+
+### ListFuotaDeploymentDevicesResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total_count | [uint32](#uint32) |  | Total number of devices. |
+| result | [FuotaDeploymentDeviceListItem](#api-FuotaDeploymentDeviceListItem) | repeated | Result-set. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentGatewaysRequest"></a>
+
+### ListFuotaDeploymentGatewaysRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  | Max number of gateways to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
+| offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentGatewaysResponse"></a>
+
+### ListFuotaDeploymentGatewaysResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total_count | [uint32](#uint32) |  | Total number of gateways. |
+| result | [FuotaDeploymentGatewayListItem](#api-FuotaDeploymentGatewayListItem) | repeated | Result-set. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentJobsRequest"></a>
+
+### ListFuotaDeploymentJobsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentJobsResponse"></a>
+
+### ListFuotaDeploymentJobsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| jobs | [FuotaDeploymentJob](#api-FuotaDeploymentJob) | repeated | Jobs. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentsRequest"></a>
+
+### ListFuotaDeploymentsRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| limit | [uint32](#uint32) |  | Max number of FUOTA deployments to return in the result-set. If not set, it will be treated as 0, and the response will only return the total_count. |
+| offset | [uint32](#uint32) |  | Offset in the result-set (for pagination). |
+| application_id | [string](#string) |  | Application ID to list the FUOTA Deployments for. This filter is mandatory. |
+
+
+
+
+
+
+<a name="api-ListFuotaDeploymentsResponse"></a>
+
+### ListFuotaDeploymentsResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| total_count | [uint32](#uint32) |  | Total number of FUOTA Deployments. |
+| result | [FuotaDeploymentListItem](#api-FuotaDeploymentListItem) | repeated | Result-test. |
+
+
+
+
+
+
+<a name="api-RemoveDevicesFromFuotaDeploymentRequest"></a>
+
+### RemoveDevicesFromFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+| dev_euis | [string](#string) | repeated | DevEUIs. |
+
+
+
+
+
+
+<a name="api-RemoveGatewaysFromFuotaDeploymentRequest"></a>
+
+### RemoveGatewaysFromFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| fuota_deployment_id | [string](#string) |  | FUOTA Deployment ID. |
+| gateway_ids | [string](#string) | repeated | Gateway IDs. |
+
+
+
+
+
+
+<a name="api-StartFuotaDeploymentRequest"></a>
+
+### StartFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [string](#string) |  | FUOTA deployment ID. |
+
+
+
+
+
+
+<a name="api-UpdateFuotaDeploymentRequest"></a>
+
+### UpdateFuotaDeploymentRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| deployment | [FuotaDeployment](#api-FuotaDeployment) |  | Deployment. |
+
+
+
+
+
+ 
+
+
+<a name="api-RequestFragmentationSessionStatus"></a>
+
+### RequestFragmentationSessionStatus
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| NO_REQUEST | 0 | Do not request the fragmentation-session status. |
+| AFTER_FRAGMENT_ENQUEUE | 1 | Enqueue the fragmentation-session status request command directly after enqueueing the fragmentation-session fragments. This is the recommended option for Class-A devices as the status request will stay in the downlink queue until the device sends its next uplink. |
+| AFTER_SESSION_TIMEOUT | 2 | Enqueue the fragmentation-session status request after the multicast session-timeout. This is the recommended option for Class-B and -C devices as selecting AFTER_FRAGMENT_ENQUEUE will likely cause the NS to schedule the downlink frame during the FUOTA multicast-session. |
+
+
+ 
+
+ 
+
+
+<a name="api-FuotaService"></a>
+
+### FuotaService
+FuotaService is the service providing API methods for FUOTA deployments.
+
+| Method Name | Request Type | Response Type | Description |
+| ----------- | ------------ | ------------- | ------------|
+| CreateDeployment | [CreateFuotaDeploymentRequest](#api-CreateFuotaDeploymentRequest) | [CreateFuotaDeploymentResponse](#api-CreateFuotaDeploymentResponse) | Create the given FUOTA deployment. |
+| GetDeployment | [GetFuotaDeploymentRequest](#api-GetFuotaDeploymentRequest) | [GetFuotaDeploymentResponse](#api-GetFuotaDeploymentResponse) | Get the FUOTA deployment for the given ID. |
+| UpdateDeployment | [UpdateFuotaDeploymentRequest](#api-UpdateFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Update the given FUOTA deployment. |
+| DeleteDeployment | [DeleteFuotaDeploymentRequest](#api-DeleteFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Delete the FUOTA deployment for the given ID. |
+| StartDeployment | [StartFuotaDeploymentRequest](#api-StartFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Start the FUOTA deployment. |
+| ListDeployments | [ListFuotaDeploymentsRequest](#api-ListFuotaDeploymentsRequest) | [ListFuotaDeploymentsResponse](#api-ListFuotaDeploymentsResponse) | List the FUOTA deployments. |
+| AddDevices | [AddDevicesToFuotaDeploymentRequest](#api-AddDevicesToFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Add the given DevEUIs to the FUOTA deployment. |
+| RemoveDevices | [RemoveDevicesFromFuotaDeploymentRequest](#api-RemoveDevicesFromFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Remove the given DevEUIs from the FUOTA deployment. |
+| ListDevices | [ListFuotaDeploymentDevicesRequest](#api-ListFuotaDeploymentDevicesRequest) | [ListFuotaDeploymentDevicesResponse](#api-ListFuotaDeploymentDevicesResponse) | List FUOTA Deployment devices. |
+| AddGateways | [AddGatewaysToFuotaDeploymentRequest](#api-AddGatewaysToFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Add the given Gateway IDs to the FUOTA deployment. By default, ChirpStack will automatically select the minimum amount of gateways needed to cover all devices within the multicast-group. Setting the gateways manually overrides this behaviour. |
+| ListGateways | [ListFuotaDeploymentGatewaysRequest](#api-ListFuotaDeploymentGatewaysRequest) | [ListFuotaDeploymentGatewaysResponse](#api-ListFuotaDeploymentGatewaysResponse) | List the gateways added to the FUOTA deployment. |
+| RemoveGateways | [RemoveGatewaysFromFuotaDeploymentRequest](#api-RemoveGatewaysFromFuotaDeploymentRequest) | [.google.protobuf.Empty](#google-protobuf-Empty) | Remove the given Gateway IDs from the FUOTA deployment. |
+| ListJobs | [ListFuotaDeploymentJobsRequest](#api-ListFuotaDeploymentJobsRequest) | [ListFuotaDeploymentJobsResponse](#api-ListFuotaDeploymentJobsResponse) | List jobs for the given FUOTA deployment. |
 
  
 
