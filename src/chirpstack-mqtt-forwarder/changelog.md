@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.4.1
+
+### Improvements
+
+* Update internal dependencies and tune feature flags.
+
+### Bugfixes
+
+* Fix `keep_alive_interval` in config template.
+* Do not encode `null` values to JSON for Semtech UDP backend.
+
 ## v4.4.0
 
 ### Features
