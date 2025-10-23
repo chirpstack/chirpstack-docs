@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.5.3
+
+### Features
+
+* Add support for `miromico_gwc_02_lw_868` and `miromico_gwc_02_lw_915` modules.
+
+### Improvements
+
+* Update internal dependencies + tune feature flags.
+
 ## v4.5.2
 
 ### Improvements
