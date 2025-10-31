@@ -36,7 +36,7 @@ The following Redis keys are used:
 Uplink frames are published under the `up` field of the Redis Stream. The content
 of this frame is a [Protobuf](https://developers.google.com/protocol-buffers/)
 encoded payload. The description of the `UplinkFrameLog` message can be found
-in the [frame_log.proto](https://github.com/chirpstack/chirpstack/blob/master/api/proto/api/frame_log.proto)
+in the [frame.proto](https://github.com/chirpstack/chirpstack/blob/master/api/proto/stream/frame.proto)
 file.
 
 ### Downlink
@@ -44,7 +44,7 @@ file.
 Downlink frames are published under the `down` field of the Redis Stream. The
 content of this frame is a [Protobuf](https://developers.google.com/protocol-buffers/)
 encoded payload. The description of the `DownlinkFrameLog` message can be found
-in the [frame_log.proto](https://github.com/chirpstack/chirpstack/blob/master/api/proto/api/frame_log.proto)
+in the [frame.proto](https://github.com/chirpstack/chirpstack/blob/master/api/proto/stream/frame.proto)
 file.
 
 ## Redis Streams
