@@ -51,7 +51,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/tektelic/kona/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_kona.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/tektelic/kona/chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION-r1_kona.ipk
 ```
 
 #### Install IPK
@@ -59,7 +59,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-sudo opkg install chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_kona.ipk
+sudo opkg install chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION-r1_kona.ipk
 ```
 
 #### Configuration

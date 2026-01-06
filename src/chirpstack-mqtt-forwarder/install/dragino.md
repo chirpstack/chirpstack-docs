@@ -45,7 +45,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/dragino/mips_24kc/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_mips_24kc.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/dragino/mips_24kc/chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION-r1_mips_24kc.ipk
 ```
 
 #### Install IPK
@@ -53,7 +53,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-opkg install chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_mips_24kc.ipk
+opkg install chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION-r1_mips_24kc.ipk
 ```
 
 **Note:** In case of an upgrade, it is recommeded to first uninstall the
@@ -124,7 +124,7 @@ ChirpStack MQTT Forwarder package:
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION_linux_armhf.deb
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION_linux_armhf.deb
 ```
 
 #### Install .deb
@@ -132,7 +132,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/chirpst
 Use the `dpkg` package-manager to install the downloaded package. Example:
 
 ```bash
-dpkg -i chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION_linux_armhf.deb
+dpkg -i chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION_linux_armhf.deb
 ```
 
 #### Configuration

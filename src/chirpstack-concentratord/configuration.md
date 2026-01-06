@@ -22,7 +22,7 @@ The `chirpstack-concentratord-sx1301` binary has the following command-line
 flags:
 
 ```text
-concentratord $CONCENTRATORD_VERSION
+concentratord %CONCENTRATORD_VERSION
 Orne Brocaar <info@brocaar.com>
 LoRa concentrator HAL daemon (v1)
 
@@ -53,7 +53,7 @@ The `chirpstack-concentratord-sx1302` binary has the following command-line
 flags:
 
 ```text
-chirpstack-concentratord-sx1302 $CONCENTRATORD_VERSION
+chirpstack-concentratord-sx1302 %CONCENTRATORD_VERSION
 Orne Brocaar <info@brocaar.com>
 LoRa concentrator HAL daemon for SX1302
 
@@ -88,7 +88,7 @@ The `chirpstack-concentratord-2g4` binary has the following command-line
 flags:
 
 ```text
-concentratord $CONCENTRATORD_VERSION
+concentratord %CONCENTRATORD_VERSION
 Orne Brocaar <info@brocaar.com>
 LoRa concentrator HAL daemon (2.4GHz)
 

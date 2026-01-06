@@ -4,24 +4,24 @@
 
 | File name | Type | DB | OS | Arch |
 | --------- | ---- | -- | -- | ---- |
-| [chirpstack_$CHIRPSTACK_VERSION_linux_amd64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_linux_amd64.deb) | .deb | PostgreSQL | Linux | amd64 |
-| [chirpstack_$CHIRPSTACK_VERSION_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_linux_armhf.deb) | .deb | PostgreSQL | Linux | armv7 |
-| [chirpstack_$CHIRPSTACK_VERSION_linux_arm64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_linux_arm64.deb) | .deb | PostgreSQL | Linux | arm64 |
-| [chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_amd64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_amd64.deb) | .deb | SQLite | Linux | amd64 |
-| [chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_armhf.deb) | .deb | SQLite | Linux | armv7 |
-| [chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_arm64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_arm64.deb) | .deb | SQLite | Linux | arm64 |
-| [chirpstack_$CHIRPSTACK_VERSION_postgres_linux_amd64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_postgres_linux_amd64.tar.gz) | .tar.gz | PostgreSQL | Linux | amd64 |
-| [chirpstack_$CHIRPSTACK_VERSION_postgres_linux_armv7hf.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_postgres_linux_armv7hf.tar.gz) | .tar.gz | PostgreSQL | Linux | armv7 |
-| [chirpstack_$CHIRPSTACK_VERSION_postgres_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_postgres_linux_arm64.tar.gz) | .tar.gz | PostgreSQL | Linux | arm64 |
-| [chirpstack_$CHIRPSTACK_VERSION_sqlite_linux_amd64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_sqlite_linux_amd64.tar.gz) | .tar.gz | SQLite | Linux | amd64 |
-| [chirpstack_$CHIRPSTACK_VERSION_sqlite_linux_armv7hf.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_sqlite_linux_armv7hf.tar.gz) | .tar.gz | SQLite | Linux | armv7 |
-| [chirpstack_$CHIRPSTACK_VERSION_sqlite_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_sqlite_linux_arm64.tar.gz) | .tar.gz | SQLite | Linux | arm64 |
-| [chirpstack_$CHIRPSTACK_VERSION_linux_amd64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_linux_amd64.rpm) | .rpm | PostgreSQL | Linux | amd64 |
-| [chirpstack_$CHIRPSTACK_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_linux_armv7.rpm) | .rpm | PostgreSQL | Linux | armv7 |
-| [chirpstack_$CHIRPSTACK_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_$CHIRPSTACK_VERSION_linux_arm64.rpm) | .rpm | PostgreSQL | Linux | arm64 |
-| [chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_amd64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_amd64.rpm) | .rpm | SQLite | Linux | amd64 |
-| [chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_armv7.rpm) | .rpm | SQLite | Linux | armv7 |
-| [chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_$CHIRPSTACK_VERSION_linux_arm64.rpm) | .rpm | SQLite | Linux | arm64 |
+| [chirpstack_%CHIRPSTACK_VERSION_linux_amd64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_linux_amd64.deb) | .deb | PostgreSQL | Linux | amd64 |
+| [chirpstack_%CHIRPSTACK_VERSION_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_linux_armhf.deb) | .deb | PostgreSQL | Linux | armv7 |
+| [chirpstack_%CHIRPSTACK_VERSION_linux_arm64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_linux_arm64.deb) | .deb | PostgreSQL | Linux | arm64 |
+| [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_amd64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_amd64.deb) | .deb | SQLite | Linux | amd64 |
+| [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_armhf.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_armhf.deb) | .deb | SQLite | Linux | armv7 |
+| [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_arm64.deb](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_arm64.deb) | .deb | SQLite | Linux | arm64 |
+| [chirpstack_%CHIRPSTACK_VERSION_postgres_linux_amd64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_postgres_linux_amd64.tar.gz) | .tar.gz | PostgreSQL | Linux | amd64 |
+| [chirpstack_%CHIRPSTACK_VERSION_postgres_linux_armv7hf.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_postgres_linux_armv7hf.tar.gz) | .tar.gz | PostgreSQL | Linux | armv7 |
+| [chirpstack_%CHIRPSTACK_VERSION_postgres_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_postgres_linux_arm64.tar.gz) | .tar.gz | PostgreSQL | Linux | arm64 |
+| [chirpstack_%CHIRPSTACK_VERSION_sqlite_linux_amd64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_sqlite_linux_amd64.tar.gz) | .tar.gz | SQLite | Linux | amd64 |
+| [chirpstack_%CHIRPSTACK_VERSION_sqlite_linux_armv7hf.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_sqlite_linux_armv7hf.tar.gz) | .tar.gz | SQLite | Linux | armv7 |
+| [chirpstack_%CHIRPSTACK_VERSION_sqlite_linux_arm64.tar.gz](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_sqlite_linux_arm64.tar.gz) | .tar.gz | SQLite | Linux | arm64 |
+| [chirpstack_%CHIRPSTACK_VERSION_linux_amd64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_linux_amd64.rpm) | .rpm | PostgreSQL | Linux | amd64 |
+| [chirpstack_%CHIRPSTACK_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_linux_armv7.rpm) | .rpm | PostgreSQL | Linux | armv7 |
+| [chirpstack_%CHIRPSTACK_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack_%CHIRPSTACK_VERSION_linux_arm64.rpm) | .rpm | PostgreSQL | Linux | arm64 |
+| [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_amd64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_amd64.rpm) | .rpm | SQLite | Linux | amd64 |
+| [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_armv7.rpm) | .rpm | SQLite | Linux | armv7 |
+| [chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack/chirpstack-sqlite_%CHIRPSTACK_VERSION_linux_arm64.rpm) | .rpm | SQLite | Linux | arm64 |
 
 
 ## Debian / Ubuntu repository

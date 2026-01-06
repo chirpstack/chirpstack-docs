@@ -40,7 +40,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /user/.updates
-wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/kerlink/ifemtocell/chirpstack-concentratord_$CONCENTRATORD_VERSION-r1_klkgw.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/kerlink/ifemtocell/chirpstack-concentratord_%CONCENTRATORD_VERSION-r1_klkgw.ipk
 ```
 
 ### Install IPK

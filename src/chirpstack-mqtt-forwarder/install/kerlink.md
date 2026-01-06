@@ -63,7 +63,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /user/.updates
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/kerlink/klkgw/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_klkgw.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/kerlink/klkgw/chirpstack-mqtt-forwarder_%MQTT_FORWARDER_VERSION-r1_klkgw.ipk
 ```
 
 #### Install IPK
