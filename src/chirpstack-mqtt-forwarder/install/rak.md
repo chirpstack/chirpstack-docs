@@ -44,7 +44,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/rak/mipsel_24kc/chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_mipsel_24kc.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/rak/mipsel_24kc/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_mipsel_24kc.ipk
 ```
 
 #### Install IPK
@@ -52,7 +52,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-opkg install chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_mipsel_24kc.ipk
+opkg install chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_mipsel_24kc.ipk
 ```
 
 #### Configuration

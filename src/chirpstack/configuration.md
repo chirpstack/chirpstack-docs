@@ -57,15 +57,12 @@ complete overview of configuration examples can be found here:
 ### Example `chirpstack.toml` configuration
 
 ```toml
-{%raw%}
 {{#include chirpstack.toml}}
-{%endraw%}
 ```
 
 ### Example `region_eu868.toml` configuration
 
 ```toml
-{%raw%}
 # This file contains an example EU868 configuration.
 [[regions]]
 
@@ -336,5 +333,4 @@ complete overview of configuration examples can be found here:
     frequency=867900000
     min_dr=0
     max_dr=5
-{%endraw%}
 ```

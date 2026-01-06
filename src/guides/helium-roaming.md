@@ -23,37 +23,30 @@ devices.
 Helium will forward the data to you using the [Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder/blob/master/PROTOCOL.TXT)
 protocol. Effectively, the Helium roaming works as a virtual gateway.
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-
-	subgraph cluster_0 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-
-		"chirpstack" -> "pub-sub" [dir="both",label="MQTT"];
-		"chirpstack-gateway-bridge-cloud" -> "pub-sub" [dir="both" label="MQTT"];
-
-		"chirpstack" [label="ChirpStack"];
-		"pub-sub" [label="MQTT broker"];
-		"chirpstack-gateway-bridge-cloud" [label="ChirpStack Gateway Bridge"];
-
-		label = "Cloud / server / VM";
-	}
-
-	subgraph cluster_1 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="Helium Network";
-
-		"helium-packet-router" -> "chirpstack-gateway-bridge-cloud" [label="UDP",dir="both"];
-		"helium-packet-router" [label="Helium Packet Router"];
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
 	}
 }
+
+vm: Cloud / VM
+helium: Helium Network
+
+vm: {
+  chirpstack: ChirpStack
+  chirpstack_gateway_bridge: ChirpStack Gateway Bridge
+  mqtt_broker: MQTT Broker
+
+  chirpstack <> mqtt_broker: MQTT
+  chirpstack_gateway_bridge <> mqtt_broker: MQTT
+}
+
+helium: {
+  helium_packet_broker: Helium Packet Broker
+}
+
+helium.helium_packet_broker <> vm.chirpstack_gateway_bridge: UDP
 ```
 
 ## Step by step guide

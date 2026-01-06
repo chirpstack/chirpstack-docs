@@ -24,20 +24,18 @@ and [Smart Parks](https://www.smartparks.org/).
 
 ## ChirpStack Gateway Mesh architecture
 
-```dot process
-digraph G {
-    node [shape=record,fontsize="10"];
-    edge [fontsize="10"];
-    fontsize="10";
-    style=filled;
-    color="#bbdefb";
-    node [style=filled,color="#e3f2fd"];
-
-    "End Device" -> "Relay Gateway 1" [dir="both", label="LoRaWAN payload"];
-    "Relay Gateway 1" -> "Relay Gateway 2" [dir="both", label="Mesh encapsulated LoRaWAN payload"];
-    "Relay Gateway 2" -> "Border Gateway" [dir="both", label="Mesh encapsulated LoRaWAN payload"];
-    "Border Gateway" -> "ChirpStack" [dir="both", label="LoRaWAN payload + Mesh context blob"];
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
+	}
 }
+
+End Device -> Relay Gateway 1: LoRaWAN payload
+Relay Gateway 1 <> Relay Gateway 2: Mesh encapsulated LoRaWAN payload
+Relay Gateway 2 <> Border Gateway: Mesh encapsulated LoRaWAN payload
+Border Gateway <> ChirpStack: LoRaWAN payload + Mesh context blob
+
 ```
 
 ### End Device
@@ -58,22 +56,14 @@ hardware capabilities + use-case requirements).
 In this setup, only the ChirpStack Concentratord and ChirpStack Gateway Mesh
 components must be installed on the gateway.
 
-```dot process
-digraph G {
-    node [shape=record,fontsize="10"];
-    edge [fontsize="10"];
-    fontsize="10";
-    style=filled;
-    color="#bbdefb";
-    node [style=filled,color="#e3f2fd"];
-
-    subgraph cluster_0 {
-        label = "LoRa&reg; Gateway";
-        node [style=filled,color="#e3f2fd"];
-
-        "ChirpStack Gateway Mesh" -> "ChirpStack Concentratord" [dir="both", label="ZeroMQ"];
-    }
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
+	}
 }
+
+ChirpStack Gateway Mesh <> ChirpStack Concentratord
 ```
 
 ### Border Gateway
@@ -89,27 +79,19 @@ ChirpStack MQTT Forwarder must be installed on the gateway. ChirpStack MQTT
 Forwarder will in this case be configured to use the ChirpStack Gateway Mesh
 API interface instead of the ChirpStack Concentratord.
 
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
+	}
+}
 
-```dot process
-digraph G {
-    node [shape=record,fontsize="10"];
-    edge [fontsize="10"];
-    fontsize="10";
-    style=filled;
-    color="#bbdefb";
-    node [style=filled,color="#e3f2fd"];
-
-    subgraph cluster_0 {
-        label = "LoRa&reg; Gateway";
-        node [style=filled,color="#e3f2fd"];
-
-        "ChirpStack Gateway Mesh" -> "ChirpStack Concentratord" [dir="both", label="ZeroMQ"];
-        "ChirpStack MQTT Forwarder" -> "ChirpStack Gateway Mesh" [dir="both", label="ZeroMQ"];
-        "ChirpStack MQTT Forwarder" -> "MQTT Broker" [dir="both", label="MQTT"];
-    }
+lora_gateway: LoRa Gateway {
+    ChirpStack Gateway Mesh <> ChirpStack Concentratord
+    ChirpStack MQTT Forwarder <> ChirpStack Gateway Mesh
+    ChirpStack MQTT Forwarder <> MQTT Broker
 }
 ```
-
 
 ### ChirpStack
 

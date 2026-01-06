@@ -15,68 +15,52 @@ The following backends are provided:
 
 ### ChirpStack Concentratord
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-
-	subgraph cluster_0 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="LoRa&reg; Gateway";
-
-		"chirpstack-mqtt-forwarder" -> "chirpstack-concentratord" [dir="both" label="ZeroMQ"];
-
-		"chirpstack-concentratord" [label="ChirpStack Concentratord"];
-		"chirpstack-mqtt-forwarder" [label="ChirpStack MQTT Forwarder"];
-
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
 	}
-
-	subgraph cluster_1 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="Cloud / server / VM";
-
-		"mqtt-broker" [label="MQTT broker"];
-	}
-
-	"chirpstack-mqtt-forwarder" -> "mqtt-broker" [dir="both" label="MQTT"];
 }
+
+lora_gateway: LoRa Gateway
+vm: Cloud / VM
+
+lora_gateway: {
+	chirpstack_concentratord: ChirpStack Concentratord
+	chirpstack_mqtt_forwarder: ChirpStack MQTT Forwarder
+
+	chirpstack_concentratord <> chirpstack_mqtt_forwarder: ZeroMQ
+}
+
+vm: {
+	mqtt_broker: MQTT Broker
+}
+
+lora_gateway.chirpstack_mqtt_forwarder <-> vm.mqtt_broker: MQTT
 ```
 
 ### Semtech UDP Packet Forwarder
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-
-	subgraph cluster_0 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="LoRa&reg; Gateway";
-
-		"chirpstack-mqtt-forwarder" -> "semtech-udp-packet-forwarder" [dir="both" label="UDP"];
-
-		"semtech-udp-packet-forwarder" [label="Semtech UDP Packet Forwarder"];
-		"chirpstack-mqtt-forwarder" [label="ChirpStack MQTT Forwarder"];
-
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
 	}
-
-	subgraph cluster_1 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="Cloud / server / VM";
-
-		"mqtt-broker" [label="MQTT broker"];
-	}
-
-	"chirpstack-mqtt-forwarder" -> "mqtt-broker" [dir="both" label="MQTT"];
 }
+
+lora_gateway: LoRa Gateway
+vm: Cloud / VM
+
+lora_gateway: {
+	udp_forwarder: Semtech UDP Packet Forwarder
+	chirpstack_mqtt_forwarder: ChirpStack MQTT Forwarder
+
+	udp_forwarder <> chirpstack_mqtt_forwarder: UDP
+}
+
+vm: {
+	mqtt_broker: MQTT Broker
+}
+
+lora_gateway.chirpstack_mqtt_forwarder <-> vm.mqtt_broker: MQTT
 ```

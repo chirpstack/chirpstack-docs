@@ -30,18 +30,17 @@ to which ChirpStack publishes integration events. Please see the
 `device_frame_log_max_history` setting in the [ChirpStack Configuration](../configuration.md)
 to enable this feature.
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-    node [style=filled,color="#e3f2fd"];
-
-    "ChirpStack" -> "Redis Stream";
-    "Redis Stream" -> "Integration 1";
-    "Redis Stream" -> "Integration 2";
-    "Redis Stream" -> "Integration ...";
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
+	}
 }
+
+ChirpStack -> Redis Stream
+Redis Stream -> Integration 1
+Redis Stream -> Integration 2
+Redis Stream -> Integration n
 ```
 
 ChirpStack provides a [`chirpstack-intergration`](https://crates.io/crates/chirpstack-integration)

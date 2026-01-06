@@ -22,7 +22,7 @@ The `chirpstack-concentratord-sx1301` binary has the following command-line
 flags:
 
 ```text
-concentratord {{ concentratord_version }}
+concentratord $CONCENTRATORD_VERSION
 Orne Brocaar <info@brocaar.com>
 LoRa concentrator HAL daemon (v1)
 
@@ -44,9 +44,7 @@ SUBCOMMANDS:
 ### Configuration example
 
 ```toml
-{%raw%}
 {{#include chirpstack-concentratord-sx1301.toml}}
-{%endraw%}
 ```
 
 ## `chirpstack-concentratord-sx1302`
@@ -55,7 +53,7 @@ The `chirpstack-concentratord-sx1302` binary has the following command-line
 flags:
 
 ```text
-chirpstack-concentratord-sx1302 {{ concentratord_version }}
+chirpstack-concentratord-sx1302 $CONCENTRATORD_VERSION
 Orne Brocaar <info@brocaar.com>
 LoRa concentrator HAL daemon for SX1302
 
@@ -81,9 +79,7 @@ Unlike the `-sx1301` binary, there is no option for configuring the
 by the Concentratord daemon.
 
 ```toml
-{%raw%}
 {{#include chirpstack-concentratord-sx1302.toml}}
-{%endraw%}
 ```
 
 ## `chirpstack-concentratord-2g4`
@@ -92,7 +88,7 @@ The `chirpstack-concentratord-2g4` binary has the following command-line
 flags:
 
 ```text
-concentratord {{ concentratord_version }}
+concentratord $CONCENTRATORD_VERSION
 Orne Brocaar <info@brocaar.com>
 LoRa concentrator HAL daemon (2.4GHz)
 
@@ -118,7 +114,5 @@ Unlike the `-sx1301` binary, there is no option for configuring the
 by the Concentratord daemon.
 
 ```toml
-{%raw%}
 {{#include chirpstack-concentratord-2g4.toml}}
-{%endraw%}
 ```

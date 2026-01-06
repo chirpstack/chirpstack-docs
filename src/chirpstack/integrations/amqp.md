@@ -30,8 +30,8 @@ the AMQP broker URL and the routing-key. Example:
 
 ```toml
 # AMQP / RabbitMQ integration configuration.
-{%raw %}[integration.amqp]
+[integration.amqp]
   url="amqp://guest:guest@localhost:5672"
   event_routing_key="application.{{application_id}}.device.{{dev_eui}}.event.{{event}}"
-  json=true{% endraw %}
+  json=true
 ```

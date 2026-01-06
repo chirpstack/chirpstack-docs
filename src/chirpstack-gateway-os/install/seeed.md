@@ -8,11 +8,11 @@ might void your warranty. Use at your own risk.
 ## Downloads
 
 Please use one of the download options below to download the latest
-(v{{gateway_os_version}}) ChirpStack Gateway OS image.
+(v$GATEWAY_OS_VERSION) ChirpStack Gateway OS image.
 
 | Model | Factory image | Sysupgrade image |
 | ----- | ------------- | ---------------- |
-| SenseCAP M2 | | [Download](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-os/{{gateway_os_version}}/seeed/ramips/mt76x8/chirpstack-gateway-os-{{gateway_os_version}}-sensecap-m2-ramips-mt76x8-sensecap_wm7628n-squashfs-sysupgrade.bin) |
+| SenseCAP M2 | | [Download](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-os/$GATEWAY_OS_VERSION/seeed/ramips/mt76x8/chirpstack-gateway-os-$GATEWAY_OS_VERSION-sensecap-m2-ramips-mt76x8-sensecap_wm7628n-squashfs-sysupgrade.bin) |
 
 ## Installation
 

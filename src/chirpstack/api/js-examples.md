@@ -14,5 +14,5 @@ The example below demonstrates:
 ### `enqueue_downlink.js`
 
 ```js
-{% raw %}{{#include ../../../examples/chirpstack/api/js/enqueue_downlink.js}}{%endraw %}
+{{#include ../../../examples/chirpstack/api/js/enqueue_downlink.js}}
 ```

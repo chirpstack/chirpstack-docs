@@ -7,7 +7,8 @@
 
 [output.html]
   no-section-label = true
-  additional-css = ["theme/css/chirpstack.css"]
+  additional-css = ["theme/css/chirpstack.css", "theme/pagetoc.css"]
+  additional-js = ["theme/pagetoc.js"]
   git-repository-url = "https://github.com/chirpstack/chirpstack-docs"
   git-repository-icon = "fa-github"
   edit-url-template = "https://github.com/chirpstack/chirpstack-docs/edit/master/{path}"
@@ -19,12 +20,19 @@
     enable = true
     level = 0
 
-[preprocessor.tera]
-  command = "mdbook-tera --json ./src/context.json"
+[preprocessor.pagetoc]
 
-[preprocessor.graphviz]
-  command = "mdbook-graphviz"
+[preprocessor.d2]
+  path = "d2"
+  inline = false
 
-[preprocessor.toc]
-  command = "mdbook-toc"
-  renderer = ["html"]
+[preprocessor.alerts]
+
+[preprocessor.findrep]
+  chirpstack_version = "4.15.0"
+  gateway_os_version = "4.9.0"
+  gateway_bridge_version = "4.1.1"
+  concentratord_version = "4.5.3"
+  mqtt_forwarder_version = "4.4.1"
+  pulsar_integration_version = "4.0.0-test.3"
+  gateway_mesh_version = "4.1.1"

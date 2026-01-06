@@ -67,7 +67,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit/chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_arm926ejste.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_arm926ejste.ipk
 ```
 
 #### Install IPK
@@ -75,7 +75,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-sudo opkg install chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_arm926ejste.ipk
+sudo opkg install chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_arm926ejste.ipk
 ```
 
 #### Configuration
@@ -199,7 +199,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit_ap/chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_arm926ejste.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit_ap/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_arm926ejste.ipk
 ```
 
 #### Install IPK
@@ -207,7 +207,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-sudo opkg install chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_arm926ejste.ipk
+sudo opkg install chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_arm926ejste.ipk
 ```
 
 #### Configuration
@@ -308,7 +308,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit_ap3/chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_mtcap3.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/multitech/conduit_ap3/chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_mtcap3.ipk
 ```
 
 #### Install IPK
@@ -316,7 +316,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-mqtt-forwarder/vendor/
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-sudo opkg install chirpstack-mqtt-forwarder_{{mqtt_forwarder_version}}-r1_mtcap3.ipk
+sudo opkg install chirpstack-mqtt-forwarder_$MQTT_FORWARDER_VERSION-r1_mtcap3.ipk
 ```
 
 #### Configuration

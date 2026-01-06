@@ -13,11 +13,11 @@
 
 | mCard | Concentratord IPK | Concentratord configuration directory |
 | ----- | ----------------- | ----------------- |
-| MTAC-003E00 | [chirpstack-concentratord-sx1302_{{concentratord_version}}_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_{{concentratord_version}}-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
-| MTAC-003U00 | [chirpstack-concentratord-sx1302_{{concentratord_version}}_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_{{concentratord_version}}-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
-| MTAC-LORA-H-915 | [chirpstack-concentratord-sx1301_{{concentratord_version}}_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1301_{{concentratord_version}}-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1301` |
-| MTAC-LORA-H-868 | [chirpstack-concentratord-sx1301_{{concentratord_version}}_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1301_{{concentratord_version}}-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1301` |
-| MTAC-LORA-2G4 | [chirpstack-concentratord-2g4_{{concentratord_version}}_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-2g4_{{concentratord_version}}-r1_arm926ejste.ipk) | `/var/config/chirpstack/concentratord-2g4` |
+| MTAC-003E00 | [chirpstack-concentratord-sx1302_$CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
+| MTAC-003U00 | [chirpstack-concentratord-sx1302_$CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
+| MTAC-LORA-H-915 | [chirpstack-concentratord-sx1301_$CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1301_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1301` |
+| MTAC-LORA-H-868 | [chirpstack-concentratord-sx1301_$CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1301_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1301` |
+| MTAC-LORA-2G4 | [chirpstack-concentratord-2g4_$CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-2g4_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack/concentratord-2g4` |
 
 ### Disable internal packet forwarder
 
@@ -80,7 +80,7 @@ wget <Concentratord IPK URL>
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-# E.g. sudo opkg install chirpstack-concentratord-sx1302_{{concentratord_version}}_r1_arm926ejste.ipk
+# E.g. sudo opkg install chirpstack-concentratord-sx1302_$CONCENTRATORD_VERSION_r1_arm926ejste.ipk
 sudo opkg install <Concentratord IPK>
 ```
 
@@ -230,7 +230,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap/chirpstack-concentratord_{{concentratord_version}}-r1_arm926ejste.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap/chirpstack-concentratord_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk
 ```
 
 #### Install IPK
@@ -238,7 +238,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/m
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-sudo opkg install chirpstack-concentratord_{{concentratord_version}}-r1_arm926ejste.ipk
+sudo opkg install chirpstack-concentratord_$CONCENTRATORD_VERSION-r1_arm926ejste.ipk
 ```
 
 #### Configuration
@@ -339,7 +339,7 @@ Use the following commands to download the latest version of the
 
 ```bash
 cd /tmp
-wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap3/chirpstack-concentratord_{{concentratord_version}}-r1_mtcap3.ipk
+wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit-ap3/chirpstack-concentratord_$CONCENTRATORD_VERSION-r1_mtcap3.ipk
 ```
 
 #### Install IPK
@@ -347,7 +347,7 @@ wget https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/m
 Use the `opkg` package-manager to install the downloaded package. Example:
 
 ```bash
-sudo opkg install chirpstack-concentratord_{{concentratord_version}}-r1_mtcap3.ipk
+sudo opkg install chirpstack-concentratord_$CONCENTRATORD_VERSION-r1_mtcap3.ipk
 ```
 
 #### Configuration

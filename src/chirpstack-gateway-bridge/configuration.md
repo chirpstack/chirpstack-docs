@@ -53,7 +53,7 @@ chirpstack-gateway-bridge configfile --config chirpstack-gateway-bridge-old.toml
 Example configuration file:
 
 ```toml
-{%raw%}{{#include chirpstack-gateway-bridge.toml}}{%endraw%}
+{{#include chirpstack-gateway-bridge.toml}}
 ```
 
 ## Environment variables

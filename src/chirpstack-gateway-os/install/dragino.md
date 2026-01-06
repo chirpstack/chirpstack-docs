@@ -8,11 +8,11 @@ might void your warranty. Use at your own risk.
 ## Downloads
 
 Please use one of the download options below to download the latest
-(v{{gateway_os_version}}) ChirpStack Gateway OS image.
+(v$GATEWAY_OS_VERSION) ChirpStack Gateway OS image.
 
 | Model | Factory image | Sysupgrade image |
 | ----- | ------------- | ---------------- |
-| Dragino LPS8N | | [Download](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-os/{{gateway_os_version}}/dragino/ath79/generic/chirpstack-gateway-os-{{gateway_os_version}}-lps8n-ath79-generic-dragino_lps8n-squashfs-sysupgrade.bin) |
+| Dragino LPS8N | | [Download](https://artifacts.chirpstack.io/downloads/chirpstack-gateway-os/$GATEWAY_OS_VERSION/dragino/ath79/generic/chirpstack-gateway-os-$GATEWAY_OS_VERSION-lps8n-ath79-generic-dragino_lps8n-squashfs-sysupgrade.bin) |
 
 ## Installation
 

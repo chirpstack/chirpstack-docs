@@ -23,7 +23,5 @@ Options:
 Example `chirpstack-gateway-mesh.toml` configuration:
 
 ```toml
-{%raw-%}
 {{#include chirpstack-gateway-mesh.toml}}
-{%endraw-%}
 ```

@@ -23,33 +23,25 @@ a pull-request. You will find the source of this documentation at
 
 ### Gateways supporting Semtech UDP Packet Forwarder protocol
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-
-	subgraph cluster_0 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="LoRa&reg; Gateway";
-
-		"semtech-udp-packet-forwarder" [label="Semtech UDP Packet Forwarder"];
-
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
 	}
-
-	subgraph cluster_1 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="Cloud / server / VM";
-
-		"chirpstack-gateway-bridge" [label="ChirpStack Gateway Bridge"];
-	}
-
-	"semtech-udp-packet-forwarder" -> "chirpstack-gateway-bridge" [label="UDP"];
 }
+
+lora_gateway: LoRa(R) Gateway
+vm: Cloud / VM
+
+lora_gateway {
+  udp_packet_forwarder: Semtech UDP Packet Forwarder
+}
+
+vm: {
+  chirpstack_gateway_bridge: ChirpStack Gateway Bridge
+}
+
+lora_gateway.udp_packet_forwarder -> vm.chirpstack_gateway_bridge: UDP
 ```
 
 * You need to install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)
@@ -63,33 +55,25 @@ digraph G {
 
 ### Gateways supporting Basics Station Packet Forwarder protocol
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-
-	subgraph cluster_0 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="LoRa&reg; Gateway";
-
-		"semtech-basics-station" [label="Semtech Basics Station"];
-
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
 	}
-
-	subgraph cluster_1 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label="Cloud / server / VM";
-
-		"chirpstack-gateway-bridge" [label="ChirpStack Gateway Bridge"];
-	}
-
-	"semtech-basics-station" -> "chirpstack-gateway-bridge" [label="WebSocket"];
 }
+
+lora_gateway: LoRa(R) Gateway
+vm: Cloud / VM
+
+lora_gateway {
+  basics_station: Semtech Basics Station
+}
+
+vm: {
+  chirpstack_gateway_bridge: ChirpStack Gateway Bridge
+}
+
+lora_gateway.basics_station -> vm.chirpstack_gateway_bridge: WebSocket
 ```
 
 * You need to install the [ChirpStack Gateway Bridge](../chirpstack-gateway-bridge/index.md)

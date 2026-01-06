@@ -15,5 +15,5 @@ The example below demonstrates:
 ### `main.go`
 
 ```go
-{% raw %}{{#include ../../../examples/chirpstack/api/go/enqueue_downlink.go}}{% endraw %}
+{{#include ../../../examples/chirpstack/api/go/enqueue_downlink.go}}
 ```

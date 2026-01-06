@@ -21,29 +21,24 @@ Semtech HALs:
 
 ## Architecture example
 
-```dot process
-digraph G {
-	node [shape=record,fontsize="10"];
-	edge [fontsize="10"];
-	fontsize="10";
-
-	subgraph cluster_0 {
-		style=filled;
-		color="#bbdefb";
-		node [style=filled,color="#e3f2fd"];
-		label = "LoRa&reg; Gateway";
-
-		"chirpstack-concentratord" -> "concentrator" [dir="both", label="Semtech HAL"];
-		"chirpstack-mqtt-forwarder" -> "chirpstack-concentratord" [dir="both", label="ZeroMQ"];
-		"chirpstack-udp-forwarder" -> "chirpstack-concentratord" [dir="both", label="ZeroMQ"];
-		"monitoring" -> "chirpstack-concentratord" [dir="both", label="ZeroMQ"];
-
-		"concentrator" [label="SX1301 / SX1302 / 2G4"];
-		"chirpstack-concentratord" [label="ChirpStack Concentratord"];
-		"chirpstack-mqtt-forwarder" [label="ChirpStack MQTT Forwarder"];
-		"chirpstack-udp-forwarder" [label="ChirpStack UDP Forwarder"];
-		"monitoring" [label="Third-party monitoring app"];
+```d2
+vars: {
+	d2-config: {
+		layout-engine: elk
 	}
+}
 
+lora_gateway: LoRa Gateway {
+	concentrator: SX1301 / SX1302 / 2G4
+	chirpstack_concentratord: ChirpStack Concentratord
+	chirpstack_mqtt_forwarder: ChirpStack MQTT Forwarder
+	chirpstack_udp_forwarder: ChirpStack UDP Forwarder
+	monitoring: Third-party monitoring app
+
+
+	chirpstack_concentratord <> concentrator: Semtech HAL
+	monitoring <> chirpstack_concentratord: ZeroMQ
+	chirpstack_mqtt_forwarder <> chirpstack_concentratord: ZeroMQ
+	chirpstack_udp_forwarder <> chirpstack_concentratord: ZeroMQ
 }
 ```
