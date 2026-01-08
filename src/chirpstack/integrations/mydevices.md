@@ -5,6 +5,6 @@ data to an myDevices endpoint.
 
 When configuring the myDevices integration, there are three possible endpoints:
 
-* Cayenne
-* IoT in a Box
-* Custom endpoint URL
+- Cayenne
+- IoT in a Box
+- Custom endpoint URL

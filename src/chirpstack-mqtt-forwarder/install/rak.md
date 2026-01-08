@@ -4,26 +4,28 @@
 
 ## RAK7268V2
 
-* [Product details](https://store.rakwireless.com/products/rak7268-8-channel-indoor-lorawan-gateway)
+- [Product details](https://store.rakwireless.com/products/rak7268-8-channel-indoor-lorawan-gateway)
 
 ### Configure Packet Forwarder
 
 In the RAK WisGate OS web-interface, you must configure the Packet Forwarder
 such that it forwards to `localhost` on port `1700`.
 
-Please refer to the [WisGate OS 2 manual](https://docs.rakwireless.com/Product-Categories/Software-APIs-and-Libraries/WisGateOS-2/Overview/)
+Please refer to the
+[WisGate OS 2 manual](https://docs.rakwireless.com/Product-Categories/Software-APIs-and-Libraries/WisGateOS-2/Overview/)
 for instructions on how to access the web-interface.
 
-* In the left menu, click the **Configuration** icon (second icon from top to bottom).
-* Configure the following settings:
-  * **Work mode:** _Packet forwarder_
-  * Under **Protocol**:
-    * **Protocol:** _Semtech UDP GWMP Protocol_
-  * Under **UDP Protocol parameters**:
-    * **Server address:** _localhost_
-    * **Server port up:** _1700_
-    * **Server port down:** _1700_
-* Click **Save changes**
+- In the left menu, click the **Configuration** icon (second icon from top to
+  bottom).
+- Configure the following settings:
+  - **Work mode:** _Packet forwarder_
+  - Under **Protocol**:
+    - **Protocol:** _Semtech UDP GWMP Protocol_
+  - Under **UDP Protocol parameters**:
+    - **Server address:** _localhost_
+    - **Server port up:** _1700_
+    - **Server port down:** _1700_
+- Click **Save changes**
 
 ### Install ChirpStack MQTT Forwarder
 
@@ -63,7 +65,8 @@ the ChirpStack MQTT Forwarder configuration file. This file is located at:
 
 #### (Re)start and stop commands
 
-Use the following commands to (re)start and stop the ChirpStack MQTT Forwarder service:
+Use the following commands to (re)start and stop the ChirpStack MQTT Forwarder
+service:
 
 ```bash
 # start

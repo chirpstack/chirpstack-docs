@@ -2,14 +2,14 @@
 
 ChirpStack supports the (re)configuration of the following RX parameters:
 
-* **RX delay** the delay between the end of TX and the first reception slot.
-* **RX1 data-rate offset** the offset used to calculate the RX1 data-rate,
-  based on the uplink data-rate.
-* **RX2 data-rate** the data-rate used for the RX2 receive-window.
-* **RX2 frequency** the frequency used for the RX2 receive-window.
+- **RX delay** the delay between the end of TX and the first reception slot.
+- **RX1 data-rate offset** the offset used to calculate the RX1 data-rate, based
+  on the uplink data-rate.
+- **RX2 data-rate** the data-rate used for the RX2 receive-window.
+- **RX2 frequency** the frequency used for the RX2 receive-window.
 
-The first three parameters are sent to the device as part of the OTAA join-accept
-frame. The RX2 frequency parameter is pushed to the device using the
+The first three parameters are sent to the device as part of the OTAA
+join-accept frame. The RX2 frequency parameter is pushed to the device using the
 `RXParamSetupReq` mac-command.
 
 **Note:** on a ChirpStack configuration change, the new parameters will be

@@ -11,18 +11,17 @@ Bytes:
 | ----------- | --------------- | -------- | ------------------ | ------- |
 | Uplink MHDR | Uplink Metadata | Relay ID | LoRaWAN PHYPayload | MIC     |
 
-
 ## Uplink MHDR
 
 Bits:
 
 | 7..5  | 4..3         | 2..0      |
-| ----- | -------------| --------- |
+| ----- | ------------ | --------- |
 | MType | Payload type | Hop count |
 
-* MType = `111` (= Proprietary LoRaWAN MType)
-* Payload type = `00` (= Relayed uplink)
-* Hop count = `000` = 1, ... `111` = 8
+- MType = `111` (= Proprietary LoRaWAN MType)
+- Payload type = `00` (= Relayed uplink)
+- Hop count = `000` = 1, ... `111` = 8
 
 **Note:** The hop count is incremented each time the uplink payload is relayed
 by an other Relay Gateway. As this changes the uplink payload, the MIC must be
@@ -90,6 +89,6 @@ The received LoRaWAN PHYPayload.
 ## MIC
 
 Message integrity code, used by other Relay and Border gateways to check the
-data integrity of the packet. This is obtained by calculating the CMAC over
-the uplink payload (- MIC bytes), and using the first 4 bytes of the calculated
-CMAC as MIC.
+data integrity of the packet. This is obtained by calculating the CMAC over the
+uplink payload (- MIC bytes), and using the first 4 bytes of the calculated CMAC
+as MIC.

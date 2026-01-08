@@ -113,7 +113,6 @@ lora_gateway_mqtt_eu868.chirpstack_mqtt_forwarder <> vm.mqtt_broker: MQTT\neu868
 lora_gateway_mqtt_us915.chirpstack_mqtt_forwarder <> vm.mqtt_broker: MQTT\nus915_0/gateway/...
 ```
 
-
 ## Multi-region example 2
 
 As an alternative to the previous diagram, it is also possible to setup a
@@ -179,25 +178,26 @@ based API that can be used by one or multiple (forwarder) applications to
 interact with the gateway hardware.
 
 ### ChirpStack MQTT Forwarder
+
 [ChirpStack MQTT Forwarder](./chirpstack-mqtt-forwarder/index.md) is an
-open-source Protobuf or JSON MQTT packet forwarder, which can either use
-the [Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder)
-or [ChirpStack Concentratord](./chirpstack-concentratord/index.md) as
-gateway backend. It is intended to be installed on each gateway.
+open-source Protobuf or JSON MQTT packet forwarder, which can either use the
+[Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder) or
+[ChirpStack Concentratord](./chirpstack-concentratord/index.md) as gateway
+backend. It is intended to be installed on each gateway.
 
 ### ChirpStack Gateway Bridge
 
 [ChirpStack Gateway Bridge](./chirpstack-gateway-bridge/index.md) is an
 open-source bridge which converts messages received from the
-[Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder)
-or [Semtech Basics Station](https://github.com/lorabasics/basicstation)
-into MQTT. It can be installed on the gateway, or in the cloud.
+[Semtech UDP Packet Forwarder](https://github.com/Lora-net/packet_forwarder) or
+[Semtech Basics Station](https://github.com/lorabasics/basicstation) into MQTT.
+It can be installed on the gateway, or in the cloud.
 
 ### ChirpStack
 
-[ChirpStack](./chirpstack/index.md) is an open-source LoRaWAN Network Server which can be used to
-to setup private or public LoRaWAN networks. ChirpStack provides a web-interface
-for the management of gateways, devices and tenants as well to setup data
-integrations with the major cloud providers, databases and services commonly
-used for handling device data. ChirpStack provides a gRPC based API that can
-be used to integrate or extend ChirpStack.
+[ChirpStack](./chirpstack/index.md) is an open-source LoRaWAN Network Server
+which can be used to to setup private or public LoRaWAN networks. ChirpStack
+provides a web-interface for the management of gateways, devices and tenants as
+well to setup data integrations with the major cloud providers, databases and
+services commonly used for handling device data. ChirpStack provides a gRPC
+based API that can be used to integrate or extend ChirpStack.

@@ -1,7 +1,7 @@
 # Configuration
 
-To list all CLI options, start `chirpstack-gateway-mesh` with the `--help`
-flag. This will print:
+To list all CLI options, start `chirpstack-gateway-mesh` with the `--help` flag.
+This will print:
 
 ```text
 ChirpStack Gateway Mesh

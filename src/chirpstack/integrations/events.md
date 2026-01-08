@@ -2,11 +2,12 @@
 
 Depending the integration, it is possible to encode events in several ways:
 
-* JSON: JSON based on the Protocol Buffers JSON mapping
-* Protobuf: Protocol Buffers binary encoding
+- JSON: JSON based on the Protocol Buffers JSON mapping
+- Protobuf: Protocol Buffers binary encoding
 
-For the [Protobuf](https://developers.google.com/protocol-buffers/)
-message definitions, please refer to [integration.proto](https://github.com/chirpstack/chirpstack/blob/master/api/proto/integration/integration.proto).
+For the [Protobuf](https://developers.google.com/protocol-buffers/) message
+definitions, please refer to
+[integration.proto](https://github.com/chirpstack/chirpstack/blob/master/api/proto/integration/integration.proto).
 
 <!-- toc -->
 
@@ -17,7 +18,6 @@ message definitions, please refer to [integration.proto](https://github.com/chir
 Defined by the `UplinkEvent` Protobuf message.
 
 JSON example:
-
 
 ```json
 {
@@ -70,7 +70,6 @@ Defined by the `StatusEvent` Protobuf message.
 
 JSON example:
 
-
 ```json
 {
 	"deduplicationId": "bf2a9746-1c8b-49be-a92e-f0b89c8534e4",
@@ -95,7 +94,6 @@ JSON example:
 Defined by the `JoinEvent` Protobuf message.
 
 JSON example:
-
 
 ```json
 {
@@ -123,7 +121,6 @@ JSON example:
 Defined by the `AckEvent` Protobuf message.
 
 JSON example:
-
 
 ```json
 {
@@ -153,7 +150,6 @@ JSON example:
 Defined by the `TxAckEvent` Protobuf message.
 
 JSON example:
-
 
 ```json
 {
@@ -201,7 +197,6 @@ JSON example:
 Defined by the `LogEvent` Protobuf message.
 
 JSON example:
-
 
 ```json
 {

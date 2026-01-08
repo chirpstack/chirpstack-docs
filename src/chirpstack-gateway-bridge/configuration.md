@@ -29,22 +29,23 @@ Use "chirpstack-gateway-bridge [command] --help" for more information about a co
 By default `chirpstack-gateway-bridge` will look in the following order for a
 configuration at the following paths when `--config` / `-c` is not set:
 
-* `chirpstack-gateway-bridge.toml` (current working directory)
-* `$HOME/.config/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`
-* `/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`
+- `chirpstack-gateway-bridge.toml` (current working directory)
+- `$HOME/.config/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`
+- `/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`
 
 To load configuration from a different location, use the `--config` flag.
 
-To generate a new configuration file `chirpstack-gateway-bridge.toml`, execute the following command:
+To generate a new configuration file `chirpstack-gateway-bridge.toml`, execute
+the following command:
 
 ```bash
 chirpstack-gateway-bridge configfile > chirpstack-gateway-bridge.toml
 ```
 
-Note that this configuration file will be pre-filled with the current configuration
-(either loaded from the paths mentioned above, or by using the `--config` flag).
-This makes it possible when new fields get added to upgrade your configuration file
-while preserving your old configuration. Example:
+Note that this configuration file will be pre-filled with the current
+configuration (either loaded from the paths mentioned above, or by using the
+`--config` flag). This makes it possible when new fields get added to upgrade
+your configuration file while preserving your old configuration. Example:
 
 ```bash
 chirpstack-gateway-bridge configfile --config chirpstack-gateway-bridge-old.toml > chirpstack-gateway-bridge-new.toml
@@ -58,9 +59,9 @@ Example configuration file:
 
 ## Environment variables
 
-Although using the configuration file is recommended, it is also possible
-to use environment variables to set configuration variables. Configuration 
-dots `.` are replaced with double underscores `__`.
+Although using the configuration file is recommended, it is also possible to use
+environment variables to set configuration variables. Configuration dots `.` are
+replaced with double underscores `__`.
 
 Example:
 

@@ -24,7 +24,6 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 
 [![Object Spectrum](./sponsors/objectspectrum.png)](https://objectspectrum.com/)
 
-
 </div>
 
 ## Feature sponsors

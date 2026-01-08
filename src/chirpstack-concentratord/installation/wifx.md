@@ -1,6 +1,7 @@
 # Wifx
 
-LORIX OS, running on Wifx gateways, provides built-in support for ChirpStack Concentratord on modern Wifx gateway models.
+LORIX OS, running on Wifx gateways, provides built-in support for ChirpStack
+Concentratord on modern Wifx gateway models.
 
 ## Gateway Compatibility
 
@@ -13,16 +14,20 @@ The following Wifx gateways have native support of the ChirpStack Concentratord:
 - **Platform**: LORIX OS
 - **Gateway Bridge Backend**: ChirpStack Concentratord
 - **Connectivity**: Ethernet
-- **Product Information**: [Wifx L1 product page](https://iot.wifx.net/en/products/wifx-l1/)
-- **Product Documentation**: [Wifx L1 documentation](https://iot.wifx.net/docs/wifx-l1)
+- **Product Information**:
+  [Wifx L1 product page](https://iot.wifx.net/en/products/wifx-l1/)
+- **Product Documentation**:
+  [Wifx L1 documentation](https://iot.wifx.net/docs/wifx-l1)
 
 #### Wifx L1 4G
 
 - **Platform**: LORIX OS
 - **Gateway Bridge Backend**: ChirpStack Concentratord
 - **Connectivity**: Ethernet + 4G/LTE cellular
-- **Product Information**: [Wifx L1 4G product page](https://iot.wifx.net/en/products/wifx-l1-4g/)
-- **Product Documentation**: [Wifx L1 4G documentation](https://iot.wifx.net/docs/wifx-l1-4g)
+- **Product Information**:
+  [Wifx L1 4G product page](https://iot.wifx.net/en/products/wifx-l1-4g/)
+- **Product Documentation**:
+  [Wifx L1 4G documentation](https://iot.wifx.net/docs/wifx-l1-4g)
 
 ### Legacy Gateways
 
@@ -33,7 +38,10 @@ The following Wifx gateways have native support of the ChirpStack Concentratord:
 
 ## Configuration
 
-For detailed configuration instructions and setup procedures, please refer to the [ChirpStack Gateway Bridge configuration guide](https://iot.wifx.net/docs/lorix-os/latest/wifx-l1/user-s-guide/lorawan/packet-forwarders/chirpstack-gateway-bridge) in the official LORIX OS documentation.
+For detailed configuration instructions and setup procedures, please refer to
+the
+[ChirpStack Gateway Bridge configuration guide](https://iot.wifx.net/docs/lorix-os/latest/wifx-l1/user-s-guide/lorawan/packet-forwarders/chirpstack-gateway-bridge)
+in the official LORIX OS documentation.
 
 The LORIX OS documentation provides comprehensive guidance on:
 

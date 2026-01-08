@@ -1,16 +1,16 @@
 # Quickstart Debian / Ubuntu
 
-This tutorial describes the steps needed to setup ChirpStack
-on a single machine. Recommended distributions are:
+This tutorial describes the steps needed to setup ChirpStack on a single
+machine. Recommended distributions are:
 
-* Ubuntu (latest LTS)
-* Debian (latest stable)
+- Ubuntu (latest LTS)
+- Debian (latest stable)
 
 ## Note before you start
 
-The purpose of this tutorial is to help you getting started. Topics like
-HA setup, database backups, setting up firewall rules are beyond the scope
-of this tutorial.
+The purpose of this tutorial is to help you getting started. Topics like HA
+setup, database backups, setting up firewall rules are beyond the scope of this
+tutorial.
 
 ## Install requirements
 
@@ -95,9 +95,10 @@ sudo apt install chirpstack-gateway-bridge
 
 ### Configuration
 
-The configuration file is located at `/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`.
-Please update the `[integration.mqtt]` section to match the region prefix for
-the region that applies to this ChirpStack Gateway Bridge instance.
+The configuration file is located at
+`/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml`. Please update
+the `[integration.mqtt]` section to match the region prefix for the region that
+applies to this ChirpStack Gateway Bridge instance.
 
 Example for EU868:
 

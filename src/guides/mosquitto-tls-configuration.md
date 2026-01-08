@@ -3,26 +3,25 @@
 This guide describes how to configure [Mosquitto](https://www.mosquitto.org/)
 with TLS configuration. It describes how you can:
 
-* Generate your own CA (certificate authority)
-* Generate a server-certificate
-* How to setup ChirpStack such that it can use the generated CA to sign
+- Generate your own CA (certificate authority)
+- Generate a server-certificate
+- How to setup ChirpStack such that it can use the generated CA to sign
   client-certificates for gateways and the application MQTT integration
 
 Please note:
 
-While this guide describes the steps for Mosquitto, with some changes these
-can be applied to other MQTT brokers too.
-These steps might vary slightly based on your setup.
-The provided configuration are examples, based on your requirements you
-might need to modify these.
+While this guide describes the steps for Mosquitto, with some changes these can
+be applied to other MQTT brokers too. These steps might vary slightly based on
+your setup. The provided configuration are examples, based on your requirements
+you might need to modify these.
 
- 
 <!-- toc -->
 
 ## Requirements
 
-Before proceeding, please make sure that you have installed the [cfssl](https://github.com/cloudflare/cfssl)
-utility. You should also already have a working ChirpStack environment.
+Before proceeding, please make sure that you have installed the
+[cfssl](https://github.com/cloudflare/cfssl) utility. You should also already
+have a working ChirpStack environment.
 
 If using Debian or Ubuntu, this package can be installed using:
 
@@ -34,8 +33,8 @@ sudo apt-get install golang-cfssl
 
 The CA certificate (and key) has two purposes:
 
-* It is used to sign certificates
-* It is used to validate certificates (checking it has been signed by the CA)
+- It is used to sign certificates
+- It is used to validate certificates (checking it has been signed by the CA)
 
 Save the following files to disk:
 
@@ -84,8 +83,8 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 The MQTT server-sertificate is used to establish a secure TLS connection between
 the MQTT client (gateway or integration) and the MQTT broker.
 
-Save the following file to disk and change `example.com` into the hostname
-that will be used by clients that will connect to the MQTT broker:
+Save the following file to disk and change `example.com` into the hostname that
+will be used by clients that will connect to the MQTT broker:
 
 `mqtt-server.json`:
 
@@ -115,8 +114,8 @@ generated in the previous step. ChirpStack will use the CA certificate (+ key)
 to sign the gateway or application MQTT integration client-certificates when
 generated using the web-interface.
 
-Create a directory for the certificate files and copy these files
-using the following command:
+Create a directory for the certificate files and copy these files using the
+following command:
 
 ```bash
 mkdir -p /etc/chirpstack/certs
@@ -124,11 +123,11 @@ cp ca.pem /etc/chirpstack/certs
 cp ca-key.pem /etc/chirpstack/certs
 ```
 
-Depending your setup, you might need to modify the ownership and / or permissions
-of the created directory and files.
+Depending your setup, you might need to modify the ownership and / or
+permissions of the created directory and files.
 
-Update the following configuration sections in the `chirpstack.toml` configuration
-file:
+Update the following configuration sections in the `chirpstack.toml`
+configuration file:
 
 `[gateway]` section:
 
@@ -159,11 +158,11 @@ cp mqtt-server.pem /etc/mosquitto/certs
 cp mqtt-server-key.pem /etc/mosquitto/certs
 ```
 
-Depending your setup, you might need to modify the ownership and / or permissions
-of the created directory and files.
+Depending your setup, you might need to modify the ownership and / or
+permissions of the created directory and files.
 
-To restrict MQTT clients (gateway and integrations) to their own topics,
-create the following ACL file:
+To restrict MQTT clients (gateway and integrations) to their own topics, create
+the following ACL file:
 
 `/etc/mosquitto/acl`:
 
@@ -178,9 +177,9 @@ prefix.
 
 The following configuration file will configure two listeners:
 
-* One listener on port `1883` (no TLS), which is accessible by any MQTT on
-  the same machine (`localhost` only).
-* One listener on port `8883` (TLS), which is accessible on any network
+- One listener on port `1883` (no TLS), which is accessible by any MQTT on the
+  same machine (`localhost` only).
+- One listener on port `8883` (TLS), which is accessible on any network
   interface. Client must use a client-certificate in order to connect to this
   listener.
 
@@ -226,9 +225,10 @@ mosquitto_sub -h example.com -p 8883 --cafile ca.pem --cert cert.pem --key key.p
 
 Please note:
 
-* The `ca.pem`, `cert.pem` and `key.pem` must be obtained from the ChirpStack
-  web-interface (gateway certificate or application MQTT integration certificate).
-* Verify that your firewall rules allow incoming connections to the MQTT broker.
-* In case you see TLS related errors, please verify that the hostname
-  (of the `-h` flag) matches the MQTT server-certificate. Validation of the 
+- The `ca.pem`, `cert.pem` and `key.pem` must be obtained from the ChirpStack
+  web-interface (gateway certificate or application MQTT integration
+  certificate).
+- Verify that your firewall rules allow incoming connections to the MQTT broker.
+- In case you see TLS related errors, please verify that the hostname (of the
+  `-h` flag) matches the MQTT server-certificate. Validation of the
   server-certificate can be disabled using the `--insecure` flag.

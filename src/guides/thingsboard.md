@@ -4,14 +4,14 @@
 Device management, data collection, processing and visualization for your IoT
 solution.
 
-This guide describes how to setup ChirpStack so that it forwards device-data
-to [ThingsBoard](https://www.thingsboard.io) for processing and visualization.
+This guide describes how to setup ChirpStack so that it forwards device-data to
+[ThingsBoard](https://www.thingsboard.io) for processing and visualization.
 
 ## Installing ChirpStack components
 
-The installation of the ChirpStack components is not covered in this guide. The easiest
-option to get started is the [Docker Compose](../getting-started/docker.md), on which this
-guide continues.
+The installation of the ChirpStack components is not covered in this guide. The
+easiest option to get started is the
+[Docker Compose](../getting-started/docker.md), on which this guide continues.
 
 Before you continue, make sure that you have a working ChirpStack environment.
 
@@ -38,12 +38,12 @@ together with all ChirpStack components when running a `docker-compose up`.
 Add the following snippet under `services`:
 
 ```yaml
-  thingsboard:
-    image: thingsboard/tb-postgres
-    volumes:
-      - thingsboarddata:/data
-    ports:
-      - 9090:9090
+thingsboard:
+  image: thingsboard/tb-postgres
+  volumes:
+    - thingsboarddata:/data
+  ports:
+    - 9090:9090
 ```
 
 Your `docker-compose.yml` file now looks like:
@@ -74,7 +74,7 @@ services:
 Add the following under `volumes`:
 
 ```yaml
-  thingsboarddata:
+thingsboarddata:
 ```
 
 Your `docker-compose.yml` file now looks like:
@@ -98,10 +98,10 @@ guide. The important thing is that you have created Device within ThingsBoard.
 
 ### Get Device Auth Token
 
-In order to let ChirpStack push data to your ThingsBoard device, you need
-to obtain the ThingsBoard Device _Access Token_. Within ThingsBoard, open your
-Device and click the **Copy Access Token** button. This will copy the
-_Access Token_ to your clipboard.
+In order to let ChirpStack push data to your ThingsBoard device, you need to
+obtain the ThingsBoard Device _Access Token_. Within ThingsBoard, open your
+Device and click the **Copy Access Token** button. This will copy the _Access
+Token_ to your clipboard.
 
 ### Set Device Auth Token in ChirpStack
 
@@ -113,18 +113,18 @@ from your clipboard (containing the ThingsBoard Device _Access Token_).
 
 ### Setup ChirpStack ThingsBoard integration
 
-Inside the ChirpStack web-interface, navigate to the Application to
-which the Device belongs. Click **Integrations**, then under **ThingsBoard**
-click **+**.
+Inside the ChirpStack web-interface, navigate to the Application to which the
+Device belongs. Click **Integrations**, then under **ThingsBoard** click **+**.
 
-* ThingsBoard.io server: Usually this is **http://host:9090** (where **host**
-  is replaced by the hostname of the server serving ThingsBoard). When you are
-  using the Docker Compose instructions, set this to **http://thingsboard:9090**.
+- ThingsBoard.io server: Usually this is **http://host:9090** (where **host** is
+  replaced by the hostname of the server serving ThingsBoard). When you are
+  using the Docker Compose instructions, set this to
+  **http://thingsboard:9090**.
 
 ## Validate integration
 
-When you have completed all the steps, then ThingsBoard is ready to receive uplink
-data (or telemetry) and ChirpStack is setup to forward data for your
+When you have completed all the steps, then ThingsBoard is ready to receive
+uplink data (or telemetry) and ChirpStack is setup to forward data for your
 Device, using the _Access Token_ for authentication.
 
 The last step is to let your device send some data and validate that this data

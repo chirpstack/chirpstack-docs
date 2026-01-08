@@ -1,14 +1,14 @@
 # Configuration
 
-ChirpStack Concentratord provides different binaries in order to target different
-hardware platforms.
+ChirpStack Concentratord provides different binaries in order to target
+different hardware platforms.
 
 ChirpStack Concentratord makes it possible to use multiple configuration files,
 by repeating the `-c` argument. For example:
 
-* `concentratord.toml` for generic configuration
-* `region.toml` for region specific settings (e.g. Class-B beacon configuration)
-* `channels.toml` to configure the channels
+- `concentratord.toml` for generic configuration
+- `region.toml` for region specific settings (e.g. Class-B beacon configuration)
+- `channels.toml` to configure the channels
 
 When using ChirpStack Concentratord within a region supporting multiple
 sub-bands, this means that only the `channels.toml` file needs to be updated
@@ -75,8 +75,8 @@ SUBCOMMANDS:
 ### Configuration example
 
 Unlike the `-sx1301` binary, there is no option for configuring the
-`gateway_id`. The unique gateway ID is embedded in the SX1302 and read
-by the Concentratord daemon.
+`gateway_id`. The unique gateway ID is embedded in the SX1302 and read by the
+Concentratord daemon.
 
 ```toml
 {{#include chirpstack-concentratord-sx1302.toml}}
@@ -84,8 +84,7 @@ by the Concentratord daemon.
 
 ## `chirpstack-concentratord-2g4`
 
-The `chirpstack-concentratord-2g4` binary has the following command-line
-flags:
+The `chirpstack-concentratord-2g4` binary has the following command-line flags:
 
 ```text
 concentratord %CONCENTRATORD_VERSION
@@ -110,8 +109,8 @@ SUBCOMMANDS:
 ### Configuration example
 
 Unlike the `-sx1301` binary, there is no option for configuring the
-`gateway_id`. The unique gateway ID is embedded in the concentrator and read
-by the Concentratord daemon.
+`gateway_id`. The unique gateway ID is embedded in the concentrator and read by
+the Concentratord daemon.
 
 ```toml
 {{#include chirpstack-concentratord-2g4.toml}}

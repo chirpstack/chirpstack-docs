@@ -1,14 +1,13 @@
 # Join server
 
-ChirpStack supports the activation of devices through an
-external Join Server, using the API as specified in the LoRaWAN Backend
-Interfaces specification. In this case the session-keys will not be derived by
-ChirpStack and there is no need to configure the `AppKey` (and `NwkKey` in case
-of a LoRaWAN 1.1 device).
+ChirpStack supports the activation of devices through an external Join Server,
+using the API as specified in the LoRaWAN Backend Interfaces specification. In
+this case the session-keys will not be derived by ChirpStack and there is no
+need to configure the `AppKey` (and `NwkKey` in case of a LoRaWAN 1.1 device).
 
 Routing a join-request to a Join Server is based on the `JoinEUI` which is part
-of the LoRaWAN join-request. If ChirpStack finds a server matching
-the `JoinEUI`, then it will forward the join-request to this server. In any other
+of the LoRaWAN join-request. If ChirpStack finds a server matching the
+`JoinEUI`, then it will forward the join-request to this server. In any other
 case, ChirpStack will handle the join-request.
 
 ## Configuration
@@ -18,23 +17,22 @@ case, ChirpStack will handle the join-request.
 To configure the Semtech LoRa Cloud Join Server with ChirpStack obtain the TLS
 certificates that you must use from the LoRa Cloud web-interface.
 
-* Under **Your network servers** click **Add Server**
-* Then click download credentials
+- Under **Your network servers** click **Add Server**
+- Then click download credentials
 
 Within the obtained credentials archive you will find three files that you need
 to configure within the ChirpStack configuration:
 
-* `.trust`: must be configured as `ca_cert`
-* `.crt`: must be configured as `tls_cert`
-* `.key`: must be configured as `tls_key`
+- `.trust`: must be configured as `ca_cert`
+- `.crt`: must be configured as `tls_cert`
+- `.key`: must be configured as `tls_key`
 
 **Note:** While the web-interface indicates that `https://js.loracloud.com:7009`
 is the **LoRa Cloud Join Server**, this is not the endpoint that must be
-configured as `server` within the ChirpStack configuration. The
-correct endpoint is `https://js.loracloud.com:7009/api/v1/rens/rens-XYZ/lbi`.
-You have to replace `rens-XYZ` with the actual Rens ID, you will find this value
-in the LoRa Cloud web-interface.
-
+configured as `server` within the ChirpStack configuration. The correct endpoint
+is `https://js.loracloud.com:7009/api/v1/rens/rens-XYZ/lbi`. You have to replace
+`rens-XYZ` with the actual Rens ID, you will find this value in the LoRa Cloud
+web-interface.
 
 Example configuration:
 

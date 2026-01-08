@@ -1,3 +1,3 @@
 # Installation
 
-* [RAK](./rak.md)
+- [RAK](./rak.md)

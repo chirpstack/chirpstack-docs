@@ -10,17 +10,16 @@ set in the device integration for data submission to be successful.
 
 ## Attributes
 
-For each uplink message, ChirpStack will send Pilot Things
-the following data:
+For each uplink message, ChirpStack will send Pilot Things the following data:
 
-* RSSI
-* LoRa SNR
-* RF chain
-* Antenna ID
-* Board ID
-* Device name
-* Raw message data
-* Device EUI
-* LoRa port
-* Device address
-* Frame count
+- RSSI
+- LoRa SNR
+- RF chain
+- Antenna ID
+- Board ID
+- Device name
+- Raw message data
+- Device EUI
+- LoRa port
+- Device address
+- Frame count

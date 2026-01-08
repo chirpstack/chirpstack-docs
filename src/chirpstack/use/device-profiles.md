@@ -1,21 +1,22 @@
 # Device profiles
 
-A Device Profile defines the device capabilities and boot parameters
-that are needed by ChirpStack for setting the LoRaWAN<sup>&reg;</sup> radio
-access service. These information elements shall be provided by the
-end-device manufacturer.
+A Device Profile defines the device capabilities and boot parameters that are
+needed by ChirpStack for setting the LoRaWAN<sup>&reg;</sup> radio access
+service. These information elements shall be provided by the end-device
+manufacturer.
 
-**Note**: RX and TX related parameters configured in the device-profile are
-the parameters that ChirpStack will use on initial communication. However,
-ChirpStack will re-configure the parameters using mac-commands to the
-parameters set in the [Configuration](../configuration.md) file.
+**Note**: RX and TX related parameters configured in the device-profile are the
+parameters that ChirpStack will use on initial communication. However,
+ChirpStack will re-configure the parameters using mac-commands to the parameters
+set in the [Configuration](../configuration.md) file.
 
 ## Global device-profiles
 
-ChirpStack has started providing a repository for global device-profiles: [https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles).
+ChirpStack has started providing a repository for global device-profiles:
+[https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles).
 Once imported, these device-profiles can be listed by any ChirpStack tenant
-under **Network Server > Device Profiles** and can be selected when adding
-a new device.
+under **Network Server > Device Profiles** and can be selected when adding a new
+device.
 
 ### Importing device profiles
 
@@ -29,13 +30,14 @@ git clone https://github.com/chirpstack/chirpstack-device-profiles.git
 chirpstack -c /etc/chirpstack import-device-profiles -d /path/to/chirpstack-device-profiles
 ```
 
-After updates to `/path/to/chirpstack-device-profiles`, it is safe to re-run
-the above command to synchronize all changes. ChirpStack will update device-profiles
+After updates to `/path/to/chirpstack-device-profiles`, it is safe to re-run the
+above command to synchronize all changes. ChirpStack will update device-profiles
 that have changed and it will create the device-profiles that have been added.
 
 ### Adding new device-profiles
 
-To add new device profiles to the repository, please see [Add devices to device-profiles](../../getting-started/add-devices-to-device-profiles.md).
+To add new device profiles to the repository, please see
+[Add devices to device-profiles](../../getting-started/add-devices-to-device-profiles.md).
 
 ## Per-tenant device-profiles
 
@@ -48,12 +50,12 @@ that are not shared with other tenants under **Tenants > Device Profiles**.
 
 The general tab configures the main properties of the device like the:
 
-* Name
-* Description
-* MAC version
-* Region
-* Regional parameters revision
-* ...
+- Name
+- Description
+- MAC version
+- Region
+- Regional parameters revision
+- ...
 
 #### Join (OTAA / ABP)
 
@@ -62,19 +64,19 @@ of ABP, you must configure the initial RX configuration.
 
 ### Class-B
 
-For Class-B devices you must configure the Class-B confirmed downlink timeout
-in (seconds), which is the time that ChirpStack will wait for a confirmation
-on a confirmed downlink. If this time has passed, it will considered as not
+For Class-B devices you must configure the Class-B confirmed downlink timeout in
+(seconds), which is the time that ChirpStack will wait for a confirmation on a
+confirmed downlink. If this time has passed, it will considered as not
 acknowledged and the item will be discarded from the queue.
 
-As well you will need to configure the (initial) Class-B ping-slot parameters
-as configured by the device.
+As well you will need to configure the (initial) Class-B ping-slot parameters as
+configured by the device.
 
 ### Class-C
 
-For Class-C devices you must configure the Class-C confirmed downlink timeout
-in (seconds), which is the time that ChirpStack will wait for a confirmation
-on a confirmed downlink.
+For Class-C devices you must configure the Class-C confirmed downlink timeout in
+(seconds), which is the time that ChirpStack will wait for a confirmation on a
+confirmed downlink.
 
 #### Codec
 
@@ -86,8 +88,8 @@ configured.
 
 ##### Cayenne LPP
 
-If selecting the Cayenne LPP codec, ChirpStack will decode and encode
-following the [Cayenne Low Power Payload](https://mydevices.com/cayenne/docs/lora/)
+If selecting the Cayenne LPP codec, ChirpStack will decode and encode following
+the [Cayenne Low Power Payload](https://mydevices.com/cayenne/docs/lora/)
 specification.
 
 ##### JavaScript functions
@@ -95,9 +97,9 @@ specification.
 If selecting the Custom JavaScript codec functions option, you can write your
 own (JavaScript) functions to decode an array of bytes to a JavaScript object
 and encode a JavaScript object to an array of bytes. The JavaScript environment
-in which the codecs are executed is based on [QuickJS](https://bellard.org/quickjs/)
-which supports the ES2020 specification. The Node.js `Buffer` class is also
-available.
+in which the codecs are executed is based on
+[QuickJS](https://bellard.org/quickjs/) which supports the ES2020 specification.
+The Node.js `Buffer` class is also available.
 
 Example template:
 
@@ -166,9 +168,9 @@ In this tab you can assign additional tags to the Device Profile. These tags
 will be exposed on device events and can include additional metadata for
 example:
 
-* Vendor name
-* Device model
-* ...
+- Vendor name
+- Device model
+- ...
 
 #### Measurements
 
@@ -178,5 +180,5 @@ under the **Measurements** tab of the device-profile.
 
 Once a measurement kind has been selected, ChirpStack will start aggregating
 these measurements and will visualize these under **Device metrics** on the
-device dashboard. Aggregation is per hour for the last 24 hours, per day for
-the last 31 days and per month for the last year.
+device dashboard. Aggregation is per hour for the last 24 hours, per day for the
+last 31 days and per month for the last year.

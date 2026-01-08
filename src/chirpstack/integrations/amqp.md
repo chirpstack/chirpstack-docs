@@ -2,12 +2,13 @@
 
 The [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) /
 [RabbitMQ](https://www.rabbitmq.com/) integration publishes events to an AMQP
-routing-key. By creating one or multiple bindings to one or multiple queues,
-it is possible to subscribe to all data, or just a sub-set.
+routing-key. By creating one or multiple bindings to one or multiple queues, it
+is possible to subscribe to all data, or just a sub-set.
 
 ## Activating integration
 
-This integration must be configured in the [Configuration](../configuration.md) file.
+This integration must be configured in the [Configuration](../configuration.md)
+file.
 
 ### Enable integration
 
@@ -25,8 +26,8 @@ this case, the modified line should appear as enabled=["mqtt", "amqp"].
 
 ### Configuration
 
-You must also add / update the `[integration.amqp]` section with the URL of
-the AMQP broker URL and the routing-key. Example:
+You must also add / update the `[integration.amqp]` section with the URL of the
+AMQP broker URL and the routing-key. Example:
 
 ```toml
 # AMQP / RabbitMQ integration configuration.

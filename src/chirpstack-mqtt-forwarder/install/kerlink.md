@@ -14,8 +14,8 @@ The first step is to log in into the gateway using ssh:
 ssh root@GATEWAY-IP-ADDRESS
 ```
 
-Please refer to the [Kerlink wiki](http://wikikerlink.fr/wirnet-productline)
-for login instructions.
+Please refer to the [Kerlink wiki](http://wikikerlink.fr/wirnet-productline) for
+login instructions.
 
 ### Packet-forwarder configuration
 
@@ -23,8 +23,8 @@ for login instructions.
 
 ##### Enable Kerlink CPF
 
-By default, the Kerlink Common Packet-Forwarder (CPF) is disabled. Please
-make sure it is enabled. The following command can be used to enable the CPF:
+By default, the Kerlink Common Packet-Forwarder (CPF) is disabled. Please make
+sure it is enabled. The following command can be used to enable the CPF:
 
 ```bash
 klk_apps_config --activate-cpf
@@ -42,7 +42,8 @@ service.uplink = 1700
 service.downlink = 1700
 ```
 
-After updating this configuration file, make sure to restart the `lorafwd` service:
+After updating this configuration file, make sure to restart the `lorafwd`
+service:
 
 ```bash
 monit restart lorafwd
@@ -51,7 +52,8 @@ monit restart lorafwd
 #### Option 2 - ChirpStack Concentratord
 
 ChirpStack Concentratord supports some Kerlink gateways. Please refer to the
-ChirpStack Concentratord [installation instructions](../../chirpstack-concentratord/installation/kerlink.md)
+ChirpStack Concentratord
+[installation instructions](../../chirpstack-concentratord/installation/kerlink.md)
 for installing the ChirpStack Concentratord on Kerlink gateways.
 
 ### Install ChirpStack MQTT Forwarder

@@ -1,7 +1,8 @@
 # Prometheus metrics
 
 Independent from the chosen MQTT authentication type, the MQTT integration
-exposes the following [Prometheus](https://prometheus.io/) metrics for monitoring.
+exposes the following [Prometheus](https://prometheus.io/) metrics for
+monitoring.
 
 #### integration_mqtt_event_count
 
@@ -21,4 +22,5 @@ The number of times the integration disconnected from the MQTT broker.
 
 #### integration_mqtt_reconnect_count
 
-The number of times the integration reconnected to the MQTT broker (this also increments the disconnect and connect counters).
+The number of times the integration reconnected to the MQTT broker (this also
+increments the disconnect and connect counters).

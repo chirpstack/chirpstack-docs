@@ -9,9 +9,9 @@ Please note that the device must already created (see [Devices](devices.md).
 
 ## Provisioning of the device
 
-The provisioning of the multicast-group on the device happens out-of-band.
-This means that after adding a device to a multicast-group, you must also
-configure the device with the multicast-address, session-keys etc...
+The provisioning of the multicast-group on the device happens out-of-band. This
+means that after adding a device to a multicast-group, you must also configure
+the device with the multicast-address, session-keys etc...
 
 ## Sending data
 

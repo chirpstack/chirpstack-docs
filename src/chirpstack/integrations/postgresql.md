@@ -5,16 +5,16 @@ If configured, the PostgreSQL integration will write device data into an
 
 ## Creating database
 
-You must create a separate database for using the PostgreSQL integration.
-To enter the command line utility for PostgreSQL:
+You must create a separate database for using the PostgreSQL integration. To
+enter the command line utility for PostgreSQL:
 
 ```bash
 sudo -u postgres psql
 ```
 
 Inside this prompt, execute the following queries to setup the
-`chirpstack_integration` database. It is recommended to use a different
-username (role) and password.
+`chirpstack_integration` database. It is recommended to use a different username
+(role) and password.
 
 ```sql
 -- create role for authentication
@@ -57,7 +57,7 @@ hostname, username, password and the name of the database. Example:
 ```
 
 In the dns= line, modify `<username>`, `<password>`, `<host>`, and `<database>`
-with your appropriate credentials and targets. If you followed the example above,
-you would use chirpstack_integration as your username and target database. If
-your target Postgres database is on the same machine as ChirpStack, use
-localhost as your host.
+with your appropriate credentials and targets. If you followed the example
+above, you would use chirpstack_integration as your username and target
+database. If your target Postgres database is on the same machine as ChirpStack,
+use localhost as your host.

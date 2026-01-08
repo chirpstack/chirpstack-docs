@@ -1,7 +1,7 @@
 # Python examples
 
-* [Python gRPC quickstart](https://grpc.io/docs/languages/python/quickstart/)
-* [`chirpstack-api` Python package](https://pypi.org/project/chirpstack-api/)
+- [Python gRPC quickstart](https://grpc.io/docs/languages/python/quickstart/)
+- [`chirpstack-api` Python package](https://pypi.org/project/chirpstack-api/)
 
 ChirpStack provides a Python package `chirpstack-api` that can be installed
 using `pip`:
@@ -14,9 +14,9 @@ pip install chirpstack-api
 
 The example below demonstrates:
 
-* Connecting to a gRPC server
-* Defining a service client / stub
-* Performing an API call (in this case `Enqeue`)
+- Connecting to a gRPC server
+- Defining a service client / stub
+- Performing an API call (in this case `Enqeue`)
 
 ### `enqueue_downlink.py`
 

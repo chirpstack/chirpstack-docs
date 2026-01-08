@@ -25,9 +25,10 @@ sudo systemctl [start|stop|restart|status] chirpstack-gateway-bridge
 
 ## ChirpStack Gateway Bridge log output
 
-Now you've setup ChirpStack Gateway Bridge and your gateway is configured to forward
-it's data to it, it is a good time to verify that data is being received.
-To view the ChirpStack Gateway Bridge logs, execute the following command:
+Now you've setup ChirpStack Gateway Bridge and your gateway is configured to
+forward it's data to it, it is a good time to verify that data is being
+received. To view the ChirpStack Gateway Bridge logs, execute the following
+command:
 
 ```bash
 journalctl -u chirpstack-gateway-bridge -f -n 50

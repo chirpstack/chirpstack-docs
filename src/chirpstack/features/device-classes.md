@@ -4,13 +4,14 @@
 
 ### Uplink
 
-ChirpStack supports LoRaWAN<sup>&reg;</sup> Class-A devices. In Class-A a device is always in sleep
-mode, unless it has something to transmit. Only after an uplink transmission
-by the device, ChirpStack is able to schedule a downlink transmission.
+ChirpStack supports LoRaWAN<sup>&reg;</sup> Class-A devices. In Class-A a device
+is always in sleep mode, unless it has something to transmit. Only after an
+uplink transmission by the device, ChirpStack is able to schedule a downlink
+transmission.
 
 Received frames are de-duplicated (in case it has been received by multiple
-gateways), after which the mac-layer is handled by ChirpStack and the
-decrypted application-payload is forwarded to the configured integrations.
+gateways), after which the mac-layer is handled by ChirpStack and the decrypted
+application-payload is forwarded to the configured integrations.
 
 ### Downlink
 
@@ -21,21 +22,21 @@ priority over application-payloads.
 
 #### Confirmed data
 
-ChirpStack sends an ack event with `ack: true` to the configured integration
-as soon the device has acknowledged the confirmed uplink. If the next uplink
-does not contain an acknowledgement, an ack event with `ack: false` is sent
-to the configured integrations.
+ChirpStack sends an ack event with `ack: true` to the configured integration as
+soon the device has acknowledged the confirmed uplink. If the next uplink does
+not contain an acknowledgement, an ack event with `ack: false` is sent to the
+configured integrations.
 
-**Note:** Always check the value of the `ack` field in the ack event! For
-some integrations default values are omitted, which is equal to `ack: false`!
+**Note:** Always check the value of the `ack` field in the ack event! For some
+integrations default values are omitted, which is equal to `ack: false`!
 
 ## Class-B
 
-ChirpStack supports Class-B devices. A Class-B device synchronizes its
-internal clock using Class-B beacons emitted by the gateway, this process
-is also called a "beacon lock". Once in the state of a beacon lock, the
-device negotiates its ping-interval. ChirpStack is then able to schedule
-downlink transmissions on each occurring ping-interval. 
+ChirpStack supports Class-B devices. A Class-B device synchronizes its internal
+clock using Class-B beacons emitted by the gateway, this process is also called
+a "beacon lock". Once in the state of a beacon lock, the device negotiates its
+ping-interval. ChirpStack is then able to schedule downlink transmissions on
+each occurring ping-interval.
 
 ### Confirmed downlink
 
@@ -53,16 +54,15 @@ The device must be able to operate in Class-B mode.
 #### Gateway
 
 The gateway must have a GNSS based time-source, as Class-B beacon and ping-slot
-scheduling must be very precise. The packet-forwarder must be configured to
-send Class-B beacons such that the device is able to synchronize its internal
-clock.
+scheduling must be very precise. The packet-forwarder must be configured to send
+Class-B beacons such that the device is able to synchronize its internal clock.
 
 ## Class-C
 
 ### Downlink
 
-ChirpStack supports Class-C devices and uses the same Class-A
-downlink device-queue for Class-C downlink transmissions. 
+ChirpStack supports Class-C devices and uses the same Class-A downlink
+device-queue for Class-C downlink transmissions.
 
 ### Confirmed data
 

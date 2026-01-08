@@ -1,24 +1,24 @@
 # FUOTA
 
-Firmware update over the air (sometimes called FUOTA) makes it possible to
-push firmware updates to one or multiple devices, making use of multicast.
-It is standardized by the following LoRa<sup>&reg;</sup> Alliance specifications:
+Firmware update over the air (sometimes called FUOTA) makes it possible to push
+firmware updates to one or multiple devices, making use of multicast. It is
+standardized by the following LoRa<sup>&reg;</sup> Alliance specifications:
 
-* LoRaWAN<sup>&reg;</sup> Application Layer Clock Synchronization (v1 & v2)
-* LoRaWAN<sup>&reg;</sup> Fragmented Data Block Transport (v1 & v2)
-* LoRaWAN<sup>&reg;</sup> Remote Multicast Setup (v1 & v2)
+- LoRaWAN<sup>&reg;</sup> Application Layer Clock Synchronization (v1 & v2)
+- LoRaWAN<sup>&reg;</sup> Fragmented Data Block Transport (v1 & v2)
+- LoRaWAN<sup>&reg;</sup> Remote Multicast Setup (v1 & v2)
 
-It is important to note that the implementation of this feature by devices
-is optional and therefore, unless your device explicitly states that it
-implements FUOTA it is safe to assume it does not.
+It is important to note that the implementation of this feature by devices is
+optional and therefore, unless your device explicitly states that it implements
+FUOTA it is safe to assume it does not.
 
-For a step-by-step guide how to perform a FUOTA deployment, please see
-the [FUOTA usage guide](../use/fuota.md).
+For a step-by-step guide how to perform a FUOTA deployment, please see the
+[FUOTA usage guide](../use/fuota.md).
 
 ## FUOTA flow
 
-The following diagram provides a high-level overview of the ChirpStack
-FUOTA implementation:
+The following diagram provides a high-level overview of the ChirpStack FUOTA
+implementation:
 
 ```d2
 vars: {
@@ -86,5 +86,4 @@ frag_session_status_req -> frag_session_status_ans_wait
 frag_session_status_ans_wait -> frag_session_status_ans_ok
 frag_session_status_ans_ok -> frag_session_status_req: No, retry if < max retries
 frag_session_status_ans_ok -> cleanup: Yes / max retries reached
-
 ```

@@ -1,7 +1,7 @@
 # ChirpStack v3 to v4 migration
 
-The purpose of this document is to describe the steps needed to migrate
-data from ChirpStack v3 to ChirpStack v4.
+The purpose of this document is to describe the steps needed to migrate data
+from ChirpStack v3 to ChirpStack v4.
 
 <!-- toc -->
 
@@ -9,13 +9,13 @@ data from ChirpStack v3 to ChirpStack v4.
 
 ### ChirpStack Application Server
 
-Please make sure to upgrade to the latest v3 version. It is recommended to
-make a database backup.
+Please make sure to upgrade to the latest v3 version. It is recommended to make
+a database backup.
 
 ### ChirpStack Network Server
 
-Please make sure to upgrade to the latest v3 version. It is recommended to
-make a database backup.
+Please make sure to upgrade to the latest v3 version. It is recommended to make
+a database backup.
 
 ### ChirpStack Gateway Bridge
 
@@ -24,23 +24,24 @@ v3.14.0+ is compatible with both ChirpStack v3 and ChirpStack v4.
 
 ChirpStack v4 supports the latest ChirpStack Gateway Bridge v3, but it does
 require the `marshaler` option to be set to `protobuf` and the `v4_migrate`
-option to be set to `true` (default `false`), please see below for details
-on how to enable this.
+option to be set to `true` (default `false`), please see below for details on
+how to enable this.
 
 After the migration has been completed, it is recommended to upgrade to
-ChirpStack Gateway Bridge v4 or ChirpStack MQTT Forwarder v4. And remove
-the `v4_migrate` configuration flag.
+ChirpStack Gateway Bridge v4 or ChirpStack MQTT Forwarder v4. And remove the
+`v4_migrate` configuration flag.
 
 ### ChirpStack (v4)
 
-As the migration script is compatible with the latest v4.11.x version only, please
-make sure that you have the latest ChirpStack **v4.11.x** version installed and
-that it is up and running. You must create a new PostgreSQL database, while not
-strictly required, it is also recommended to create a new Redis server.
+As the migration script is compatible with the latest v4.11.x version only,
+please make sure that you have the latest ChirpStack **v4.11.x** version
+installed and that it is up and running. You must create a new PostgreSQL
+database, while not strictly required, it is also recommended to create a new
+Redis server.
 
 **Note:** Do not create any gateways and devices yet, as the migration script
-will delete all objects from the ChirpStack v4 database, before copying over
-the data from the v3 databases.
+will delete all objects from the ChirpStack v4 database, before copying over the
+data from the v3 databases.
 
 ## Enable v3 compatibility to ChirpStack
 
@@ -51,20 +52,22 @@ configuration section (`region_xxxxx.toml`) and restart ChirpStack:
 v4_migrate=true
 ```
 
-This will add backwards compatibility to ChirpStack to work with
-ChirpStack Gateway Bridge v3.14.0+. As this adds some overhead in terms of
-data sent between the gateway <> Network Server, you should disable this once
-the migration has been completed.
+This will add backwards compatibility to ChirpStack to work with ChirpStack
+Gateway Bridge v3.14.0+. As this adds some overhead in terms of data sent
+between the gateway <> Network Server, you should disable this once the
+migration has been completed.
 
-See also the [ChirpStack Changelog](https://www.chirpstack.io/docs/chirpstack/changelog.html#disable-v3-compatibility-option).
+See also the
+[ChirpStack Changelog](https://www.chirpstack.io/docs/chirpstack/changelog.html#disable-v3-compatibility-option).
 
 ## Data migration
 
-The ChirpStack project provides a migration script which will copy data from
-the ChirpStack Application Server and ChirpStack Network Server databases:
+The ChirpStack project provides a migration script which will copy data from the
+ChirpStack Application Server and ChirpStack Network Server databases:
 [https://github.com/chirpstack/chirpstack-v3-to-v4](https://github.com/chirpstack/chirpstack-v3-to-v4).
-Please see the [Releases](https://github.com/chirpstack/chirpstack-v3-to-v4/releases)
-for pre-compiled binaries.
+Please see the
+[Releases](https://github.com/chirpstack/chirpstack-v3-to-v4/releases) for
+pre-compiled binaries.
 
 This script requires at least three configuration files (see below):
 
@@ -82,12 +85,12 @@ Example:
 ```
 
 It will iterate over all the items in the v3 databases (ChirpStack Application
-Server and ChirpStack Network Server), and will write these into the
-ChirpStack v4 database.
+Server and ChirpStack Network Server), and will write these into the ChirpStack
+v4 database.
 
-**Important:** In case you have multiple ChirpStack Network Server instances setup for
-multi-region support, you must repeat the `--ns-config-file` option for each
-instance.
+**Important:** In case you have multiple ChirpStack Network Server instances
+setup for multi-region support, you must repeat the `--ns-config-file` option
+for each instance.
 
 Example:
 
@@ -106,13 +109,14 @@ in the ChirpStack region configuration are aligned.
 
 The default configuration that is provided by ChirpStack v4 assumes a region
 name as MQTT topic prefix (e.g. `eu868/gateway/...` or `us915_0/gateway/...` for
-the US915 region with channels 0 - 7). Please refer to the [Multi region](./chirpstack/features/multi-region.md)
-documentation for more information.
+the US915 region with channels 0 - 7). Please refer to the
+[Multi region](./chirpstack/features/multi-region.md) documentation for more
+information.
 
 ## Validation
 
-To make validate that the migration was successful, validate the following
-steps in the ChirpStack v4 web-interface:
+To make validate that the migration was successful, validate the following steps
+in the ChirpStack v4 web-interface:
 
 - [ ] Gateways last seen status is periodically updated
 - [ ] Gateway frames are being reported

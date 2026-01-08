@@ -1,7 +1,8 @@
 # Applications
 
-An application is a collection of devices with the same purpose / of the same type.
-Think of a weather station collecting data at different locations for example.
+An application is a collection of devices with the same purpose / of the same
+type. Think of a weather station collecting data at different locations for
+example.
 
 ## Integrations
 

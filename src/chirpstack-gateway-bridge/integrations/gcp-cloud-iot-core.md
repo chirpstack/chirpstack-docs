@@ -3,24 +3,25 @@
 The Google Cloud Platform [Cloud IoT Core](https://cloud.google.com/iot-core/)
 authentication type must be used when connecting to the
 [Cloud IoT Core MQTT Bridge](https://cloud.google.com/iot/docs/how-tos/mqtt-bridge).
-Cloud IoT Core will publish the received events from the LoRa<sup>&reg;</sup> Gateway to
-a Google Cloud Platform [Cloud Pub/Sub topic](https://cloud.google.com/pubsub/).
+Cloud IoT Core will publish the received events from the LoRa<sup>&reg;</sup>
+Gateway to a Google Cloud Platform
+[Cloud Pub/Sub topic](https://cloud.google.com/pubsub/).
 
 ## Limitations
 
-* Please note that this authentication type is only available for the `json` or
+- Please note that this authentication type is only available for the `json` or
   `protobuf` marshaler.
-* As you need to setup the device ID (in this case the device is the gateway)
-  when provisioning the device (LoRa Gateway) in Cloud IoT Core,
-  this does not allow to connect multiple LoRa Gateways to a single ChirpStack Gateway
-  Bridge instance.
+- As you need to setup the device ID (in this case the device is the gateway)
+  when provisioning the device (LoRa Gateway) in Cloud IoT Core, this does not
+  allow to connect multiple LoRa Gateways to a single ChirpStack Gateway Bridge
+  instance.
 
 ## Conventions
 
 ### Device ID naming
 
-The Cloud IoT Core device ID must equal `gw-[GATEWAY_ID]`. So when your gateway ID
-equals to `0102030405060708`, then your Cloud IoT Core device ID equals to
+The Cloud IoT Core device ID must equal `gw-[GATEWAY_ID]`. So when your gateway
+ID equals to `0102030405060708`, then your Cloud IoT Core device ID equals to
 `gw-0102030405060708`.
 
 ### MQTT topics
@@ -32,34 +33,37 @@ Cloud IoT Core and will ignore the MQTT topics as configured in the
 
 #### Uplink topics
 
-* `/devices/gw-[GATEWAY_ID]/events/up`: uplink frame
-* `/devices/gw-[GATEWAY_ID]/events/stats`: gateway statistics
-* `/devices/gw-[GATEWAY_ID]/events/ack`: downlink frame acknowledgements (scheduling)
+- `/devices/gw-[GATEWAY_ID]/events/up`: uplink frame
+- `/devices/gw-[GATEWAY_ID]/events/stats`: gateway statistics
+- `/devices/gw-[GATEWAY_ID]/events/ack`: downlink frame acknowledgements
+  (scheduling)
 
 #### Downlink topics
 
-* `/devices/gw-[GATEWAY_ID]/commands/down`: scheduling downlink frame transmission
-* `/devices/gw-[GATEWAY_ID]/commands/config`: gateway configuration
+- `/devices/gw-[GATEWAY_ID]/commands/down`: scheduling downlink frame
+  transmission
+- `/devices/gw-[GATEWAY_ID]/commands/config`: gateway configuration
 
 ## Sending commands to the LoRa Gateway
 
-For sending commands to the LoRa Gateway (e.g. scheduling a downlink transmission
-or reconfigure the channel-plan), you can use the Cloud IoT Core
-[sendCommandToDevice](https://cloud.google.com/iot/docs/reference/rest/) API method.
+For sending commands to the LoRa Gateway (e.g. scheduling a downlink
+transmission or reconfigure the channel-plan), you can use the Cloud IoT Core
+[sendCommandToDevice](https://cloud.google.com/iot/docs/reference/rest/) API
+method.
 
 ### Cloud Function
 
-When you would like to use a Pub/Sub topic for sending commands to the
-LoRa Gateway, you could use Cloud Function to trigger the `sendCommandToDevice`
-API method. Example:
+When you would like to use a Pub/Sub topic for sending commands to the LoRa
+Gateway, you could use Cloud Function to trigger the `sendCommandToDevice` API
+method. Example:
 
 #### `index.js`
 
 You need to replace:
 
-* `REGION` with your GCP region
-* `PROJECT_ID` with your GCP project ID
-* `REGISTRY_ID` with your GCP Cloud IoT Core registry ID
+- `REGION` with your GCP region
+- `PROJECT_ID` with your GCP project ID
+- `REGISTRY_ID` with your GCP Cloud IoT Core registry ID
 
 ```js
 'use strict';
@@ -133,7 +137,6 @@ exports.sendMessage = (event, context, callback) => {
 
 #### `package.json`
 
-
 ```json
 {
   "name": "gateway-commands",
@@ -150,7 +153,7 @@ exports.sendMessage = (event, context, callback) => {
 Besides the `json` or `protobuf` message, the above Cloud Function expects the
 following attributes:
 
-* `deviceId`:  the LoRa Gateway ID (e.g. `gw-0102030405060708`)
-* `subFolder`: the command type
-   * `down`: for scheduling downlink frames
-   * `config`: for sending gateway configuration
+- `deviceId`: the LoRa Gateway ID (e.g. `gw-0102030405060708`)
+- `subFolder`: the command type
+  - `down`: for scheduling downlink frames
+  - `config`: for sending gateway configuration

@@ -2,17 +2,16 @@
 
 The Generic MQTT authentication type provides a generic MQTT client where most
 of the connection parameters can be configured using the
-[Configuration file](../configuration.md). This is the
-recommended authentication type for most MQTT brokers.
+[Configuration file](../configuration.md). This is the recommended
+authentication type for most MQTT brokers.
 
 ## Consuming data
 
-To receive events from your gateways, you need to subscribe to its MQTT topic(s).
-For debugging, you can use a (command-line) tool like `mosquitto_sub`
+To receive events from your gateways, you need to subscribe to its MQTT
+topic(s). For debugging, you can use a (command-line) tool like `mosquitto_sub`
 which is part of the [Mosquitto](http://mosquitto.org/) MQTT broker.
 
-Use ``+`` for a single-level wildcard, ``#`` for a multi-level wildcard.
-Examples:
+Use `+` for a single-level wildcard, `#` for a multi-level wildcard. Examples:
 
 ```bash
 # show data from all gateways 

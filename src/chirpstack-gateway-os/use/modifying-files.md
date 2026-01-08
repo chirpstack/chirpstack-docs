@@ -1,9 +1,10 @@
 # Modifying files
 
-ChirpStack Gateway OS uses an [OverlayFS](https://en.wikipedia.org/wiki/OverlayFS)
-on top of the read-only root filesystem. This means you can make modifications that
-are persisted even after a software update as these changes are written to a
-different data partition.
+ChirpStack Gateway OS uses an
+[OverlayFS](https://en.wikipedia.org/wiki/OverlayFS) on top of the read-only
+root filesystem. This means you can make modifications that are persisted even
+after a software update as these changes are written to a different data
+partition.
 
 ## Important
 

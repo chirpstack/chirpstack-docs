@@ -4,8 +4,8 @@
 
 ### Base
 
-The ChirpStack Gateway OS **Base** image provides all the components to use
-the hardware has a LoRa<sup>&reg;</sup> gateway. This includes:
+The ChirpStack Gateway OS **Base** image provides all the components to use the
+hardware has a LoRa<sup>&reg;</sup> gateway. This includes:
 
 - [ChirpStack Concentratord](../chirpstack-concentratord/index.md)
 - [ChirpStack MQTT Forwarder](../chirpstack-mqtt-forwarder/index.md)
@@ -21,8 +21,8 @@ components, network (Wi-Fi, ethernet, firewall, ...) and system settings.
 The ChirpStack Gateway OS **Full** image contains everything that is included
 with the **Base** image, but is also bundled with:
 
-* [ChirpStack LoRaWAN Network Server](../chirpstack/index.md)
-* *[NodeRED](https://nodered.org/)
+- [ChirpStack LoRaWAN Network Server](../chirpstack/index.md)
+- *[NodeRED](https://nodered.org/)
 
 This image is intended to provide an easy-to-setup Gateway + Network Server
 solution for prototyping and testing.
@@ -31,5 +31,5 @@ solution for prototyping and testing.
 
 ## Other targets
 
-For other targets, only a single ChirpStack Gateway OS image exists matching
-the gateway architecture.
+For other targets, only a single ChirpStack Gateway OS image exists matching the
+gateway architecture.

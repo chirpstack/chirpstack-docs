@@ -1,11 +1,11 @@
 # The ChirpStack project
 
-ChirpStack is an open-source LoRaWAN Network Server which can be used to
-setup private or public LoRaWAN networks. ChirpStack provides a web-interface
-for the management of gateways, devices and tenants as well to setup data
-integrations with the major cloud providers, databases and services commonly
-used for handling device data. ChirpStack provides a gRPC based API that can
-be used to integrate or extend ChirpStack.
+ChirpStack is an open-source LoRaWAN Network Server which can be used to setup
+private or public LoRaWAN networks. ChirpStack provides a web-interface for the
+management of gateways, devices and tenants as well to setup data integrations
+with the major cloud providers, databases and services commonly used for
+handling device data. ChirpStack provides a gRPC based API that can be used to
+integrate or extend ChirpStack.
 
 ### Supported regions
 

@@ -4,20 +4,20 @@
 
 ## Multitech Conduit
 
-* [Product detail page](https://www.multitech.com/brands/multiconnect-conduit)
-* [Product documentation page](http://www.multitech.net/developer/products/multiconnect-conduit-platform/)
+- [Product detail page](https://www.multitech.com/brands/multiconnect-conduit)
+- [Product documentation page](http://www.multitech.net/developer/products/multiconnect-conduit-platform/)
 
 **Note:** This was tested with the following firmware version: `6.0.0`.
 
 ### Supported cards
 
-| mCard | Concentratord IPK | Concentratord configuration directory |
-| ----- | ----------------- | ----------------- |
-| MTAC-003E00 | [chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
-| MTAC-003U00 | [chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
+| mCard           | Concentratord IPK                                                                                                                                                                                                                                  | Concentratord configuration directory         |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| MTAC-003E00     | [chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
+| MTAC-003U00     | [chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1302_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1302` |
 | MTAC-LORA-H-915 | [chirpstack-concentratord-sx1301_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1301_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1301` |
 | MTAC-LORA-H-868 | [chirpstack-concentratord-sx1301_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-sx1301_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack-concentratord-sx1301` |
-| MTAC-LORA-2G4 | [chirpstack-concentratord-2g4_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-2g4_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk) | `/var/config/chirpstack/concentratord-2g4` |
+| MTAC-LORA-2G4   | [chirpstack-concentratord-2g4_%CONCENTRATORD_VERSION_r1_arm926ejste.ipk](https://artifacts.chirpstack.io/downloads/chirpstack-concentratord/vendor/multitech/conduit/chirpstack-concentratord-2g4_%CONCENTRATORD_VERSION-r1_arm926ejste.ipk)       | `/var/config/chirpstack/concentratord-2g4`    |
 
 ### Disable internal packet forwarder
 
@@ -40,12 +40,13 @@ will probably raise a warning.
 
 #### Enable SSH
 
-In order to install ChirpStack packages on the gateway, you must first enable SSH
-in the web-interface.
+In order to install ChirpStack packages on the gateway, you must first enable
+SSH in the web-interface.
 
-1. In the left menu, click _Administration_ and then _Access configuration_. 
+1. In the left menu, click _Administration_ and then _Access configuration_.
 2. Under _SSH Settings_, make sure this option is **Enabled**.
-3. In case of changes, click _Submit_ and then _Save and Apply_ in the left menu.
+3. In case of changes, click _Submit_ and then _Save and Apply_ in the left
+   menu.
 
 #### SSH log in
 
@@ -55,14 +56,15 @@ To log in into your gateway, use the following command:
 ssh USERNAME@IP-ADDRESS
 ```
 
-Where `USERNAME` is the username that you use to gain access to the web-interface
-of the gateway and `IP-ADDRESS` with the IP address of the gateway.
+Where `USERNAME` is the username that you use to gain access to the
+web-interface of the gateway and `IP-ADDRESS` with the IP address of the
+gateway.
 
 #### Download IPK
 
 You must select the correct Concentratord IPK package for the card(s) that you
-have installed in your Multitech Conduit gateway. Please refer to the _Supported cards_
-table and copy the link of the corresponding IPK package.
+have installed in your Multitech Conduit gateway. Please refer to the _Supported
+cards_ table and copy the link of the corresponding IPK package.
 
 **Note:** Multiple ChirpStack Concentratord variants can be installed
 simultaneously, e.g. if you have a MTAC-003E00 installed in AP1 and a
@@ -86,9 +88,10 @@ sudo opkg install <Concentratord IPK>
 
 #### Configuration
 
-On first start, the ChirpStack Concentratord will automatically detect the hardware
-region of your card. After the first start, you will the Concentratord either
-in the `ap1` or `ap2` sub-directory of the Concentratord configuration directory.
+On first start, the ChirpStack Concentratord will automatically detect the
+hardware region of your card. After the first start, you will the Concentratord
+either in the `ap1` or `ap2` sub-directory of the Concentratord configuration
+directory.
 
 To start the ChirpStack Concentratord, use the following command:
 
@@ -96,8 +99,8 @@ To start the ChirpStack Concentratord, use the following command:
 sudo /etc/init.d/chirpstack-concentratord-<variant>-<port> start
 ```
 
-* `<variant>` can be: `sx1301`, `sx1302` or `2g4`.
-* `<port>` can be: `ap` or `ap2`.
+- `<variant>` can be: `sx1301`, `sx1302` or `2g4`.
+- `<port>` can be: `ap` or `ap2`.
 
 Example:
 
@@ -111,9 +114,9 @@ sudo /etc/init.d/chirpstack-concentratord-2g4-ap2 start
 
 #### Enabling ChirpStack Concentratord
 
-To automatically enable ChirpStack Concentratord on boot, you must copy
-the [Monit](https://mmonit.com/monit/) configuration file(s) for the
-corresponding APs:
+To automatically enable ChirpStack Concentratord on boot, you must copy the
+[Monit](https://mmonit.com/monit/) configuration file(s) for the corresponding
+APs:
 
 ```bash
 # Copy Monit configuration file(s)
@@ -155,7 +158,6 @@ monit stop chirpstack-mqtt-forwarder-<variant>-<port>
 monit restart chirpstack-mqtt-forwarder-<variant>-<port>
 ```
 
-
 #### Log output
 
 To view the ChirpStack Concentratord log output, use the following command:
@@ -168,8 +170,8 @@ tail -f -n 100 /var/log/messages |grep chirpstack-concentratord
 
 ##### MTAC-LORA-H-XXX
 
-In case the Concentratord does not start, please make sure the FPGA version is 31.
-To validate:
+In case the Concentratord does not start, please make sure the FPGA version
+is 31. To validate:
 
 1. In the lest menu, click **LoRaWAN&reg; > Network Settings**
 2. Under _LoRa Card Information_ you will find _FPGA Version_
@@ -178,11 +180,10 @@ To validate:
 
 ## Multitech Conduit AP
 
-* [Product detail page](https://www.multitech.com/brands/multiconnect-conduit-ap)
-* [Product documentation page](https://www.multitech.net/developer/products/multiconnect-conduit-access-point/)
+- [Product detail page](https://www.multitech.com/brands/multiconnect-conduit-ap)
+- [Product documentation page](https://www.multitech.net/developer/products/multiconnect-conduit-access-point/)
 
 **Note:** This was tested with the following firmware version: `6.0.1`.
-
 
 ### Disable internal packet forwarder
 
@@ -205,12 +206,13 @@ will probably raise a warning.
 
 #### Enable SSH
 
-In order to install ChirpStack packages on the gateway, you must first enable SSH
-in the web-interface.
+In order to install ChirpStack packages on the gateway, you must first enable
+SSH in the web-interface.
 
-1. In the left menu, click _Administration_ and then _Access configuration_. 
+1. In the left menu, click _Administration_ and then _Access configuration_.
 2. Under _SSH Settings_, make sure this option is **Enabled**.
-3. In case of changes, click _Submit_ and then _Save and Apply_ in the left menu.
+3. In case of changes, click _Submit_ and then _Save and Apply_ in the left
+   menu.
 
 #### SSH log in
 
@@ -220,8 +222,9 @@ To log in into your gateway, use the following command:
 ssh USERNAME@IP-ADDRESS
 ```
 
-Where `USERNAME` is the username that you use to gain access to the web-interface
-of the gateway and `IP-ADDRESS` with the IP address of the gateway.
+Where `USERNAME` is the username that you use to gain access to the
+web-interface of the gateway and `IP-ADDRESS` with the IP address of the
+gateway.
 
 #### Download IPK
 
@@ -243,8 +246,8 @@ sudo opkg install chirpstack-concentratord_%CONCENTRATORD_VERSION-r1_arm926ejste
 
 #### Configuration
 
-The first time ChirpStack Concentratord is started, it will automatically
-detect the region of the gateway, and copy the configuration.
+The first time ChirpStack Concentratord is started, it will automatically detect
+the region of the gateway, and copy the configuration.
 
 To start the Concentratord, use the following command:
 
@@ -254,9 +257,11 @@ sudo monit start chirpstack-concentratord
 
 Configuration files can be found at:
 
-* `/var/config/chirpstack-concentratord/concentratord.toml` - Concentratord configuration
-* `/var/config/chirpstack-concentratord/channels.toml` - Channel configuration
-* `/var/config/chirpstack-concentratord/examples` - Directory containing example configuration
+- `/var/config/chirpstack-concentratord/concentratord.toml` - Concentratord
+  configuration
+- `/var/config/chirpstack-concentratord/channels.toml` - Channel configuration
+- `/var/config/chirpstack-concentratord/examples` - Directory containing example
+  configuration
 
 #### (Re)start and stop commands
 
@@ -287,11 +292,10 @@ tail -f -n 100 /var/log/messages |grep chirpstack-concentratord
 
 ## Multitech Conduit AP3
 
-* [Product detail page](https://www.multitech.com/brands/conduit-ap-300)
-* [Product documentation page](https://www.multitech.net/developer/products/multiconnect-conduit-access-point/)
+- [Product detail page](https://www.multitech.com/brands/conduit-ap-300)
+- [Product documentation page](https://www.multitech.net/developer/products/multiconnect-conduit-access-point/)
 
 **Note:** This was tested with the following firmware version: `6.3.0`.
-
 
 ### Disable internal packet forwarder
 
@@ -314,12 +318,13 @@ will probably raise a warning.
 
 #### Enable SSH
 
-In order to install ChirpStack packages on the gateway, you must first enable SSH
-in the web-interface.
+In order to install ChirpStack packages on the gateway, you must first enable
+SSH in the web-interface.
 
-1. In the left menu, click _Administration_ and then _Access configuration_. 
+1. In the left menu, click _Administration_ and then _Access configuration_.
 2. Under _SSH Settings_, make sure this option is **Enabled**.
-3. In case of changes, click _Submit_ and then _Save and Apply_ in the left menu.
+3. In case of changes, click _Submit_ and then _Save and Apply_ in the left
+   menu.
 
 #### SSH log in
 
@@ -329,8 +334,9 @@ To log in into your gateway, use the following command:
 ssh USERNAME@IP-ADDRESS
 ```
 
-Where `USERNAME` is the username that you use to gain access to the web-interface
-of the gateway and `IP-ADDRESS` with the IP address of the gateway.
+Where `USERNAME` is the username that you use to gain access to the
+web-interface of the gateway and `IP-ADDRESS` with the IP address of the
+gateway.
 
 #### Download IPK
 
@@ -352,8 +358,8 @@ sudo opkg install chirpstack-concentratord_%CONCENTRATORD_VERSION-r1_mtcap3.ipk
 
 #### Configuration
 
-The first time ChirpStack Concentratord is started, it will automatically
-detect the region of the gateway, and copy the configuration.
+The first time ChirpStack Concentratord is started, it will automatically detect
+the region of the gateway, and copy the configuration.
 
 To start the Concentratord, use the following command:
 
@@ -363,9 +369,11 @@ sudo monit start chirpstack-concentratord
 
 Configuration files can be found at:
 
-* `/var/config/chirpstack-concentratord/concentratord.toml` - Concentratord configuration
-* `/var/config/chirpstack-concentratord/channels.toml` - Channel configuration
-* `/var/config/chirpstack-concentratord/examples` - Directory containing example configuration
+- `/var/config/chirpstack-concentratord/concentratord.toml` - Concentratord
+  configuration
+- `/var/config/chirpstack-concentratord/channels.toml` - Channel configuration
+- `/var/config/chirpstack-concentratord/examples` - Directory containing example
+  configuration
 
 #### (Re)start and stop commands
 

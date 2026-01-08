@@ -45,12 +45,11 @@ sudo apt install postgresql
 Please refer to the [PostgreSQL download](https://www.postgresql.org/download/)
 page for information how to setup PostgreSQL on your platform.
 
-### Create database 
+### Create database
 
-Once PostgreSQL has been installed, you can use the following command to
-create a `chirpstack` role with `chirpstack` as password and a `chirpstack`
-database. **Note:** the `pg_trgm` extension must be installed (see example
-below).
+Once PostgreSQL has been installed, you can use the following command to create
+a `chirpstack` role with `chirpstack` as password and a `chirpstack` database.
+**Note:** the `pg_trgm` extension must be installed (see example below).
 
 From the CLI:
 
@@ -79,18 +78,19 @@ create extension pg_trgm;
 
 ## SQLite database
 
-As an alternative to PostgreSQL, ChirpStack can use [SQLite](https://www.sqlite.org) as persistent
-data-storage.
+As an alternative to PostgreSQL, ChirpStack can use
+[SQLite](https://www.sqlite.org) as persistent data-storage.
 
 There is no extra software to install or configure to use SQLite database.
 
-Make sure to run the `chirpstack-sqlite` binary to use SQLite database. It can be found in
+Make sure to run the `chirpstack-sqlite` binary to use SQLite database. It can
+be found in
 [Downloads](https://www.chirpstack.io/docs/chirpstack/downloads.html).
 
 ## Redis database
 
-ChirpStack stores device-sessions, metrics and cache into a [Redis](http://redis.io)
-database. Note that at least Redis 6.2.0 is required.
+ChirpStack stores device-sessions, metrics and cache into a
+[Redis](http://redis.io) database. Note that at least Redis 6.2.0 is required.
 
 ### Install
 

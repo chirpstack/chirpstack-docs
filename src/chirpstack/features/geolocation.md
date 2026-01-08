@@ -1,9 +1,10 @@
 # Geolocation
 
-ChirpStack supports various forms of geolocation through the [LoRa Cloud](../integrations/loracloud.md)
-integration. As ChirpStack does expose meta-data like gateway location, RSSI, SNR
-and fine-timestamp (if supported by the gateway) in every uplink event, it is
-also possible to implement your own geolocation resolver.
+ChirpStack supports various forms of geolocation through the
+[LoRa Cloud](../integrations/loracloud.md) integration. As ChirpStack does
+expose meta-data like gateway location, RSSI, SNR and fine-timestamp (if
+supported by the gateway) in every uplink event, it is also possible to
+implement your own geolocation resolver.
 
 ## Requirements
 

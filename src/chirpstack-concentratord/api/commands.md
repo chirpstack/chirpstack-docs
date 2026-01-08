@@ -1,8 +1,9 @@
 # Commands
 
-Commands can be sent to Concentratord using a [ZeroMQ REQ](http://zguide.zeromq.org/page:all#toc52)
-socket. The first data-frame holds the command type (string), the second
-data-frame holds the command payload encoded using Protobuf.
+Commands can be sent to Concentratord using a
+[ZeroMQ REQ](http://zguide.zeromq.org/page:all#toc52) socket. The first
+data-frame holds the command type (string), the second data-frame holds the
+command payload encoded using Protobuf.
 
 ## `gateway_id`
 
@@ -19,8 +20,8 @@ message). A downlink command is responded by a `DownlinkTXAck` message.
 Request to re-configure the channel-configuration (`GatewayConfiguration`
 Protobuf message). The response is empty.
 
-The re-configuration happens in-memory only. This means that when
-Concentratord is restarted, it will revert to the configuration as specified
-in the configuration file. This allows for restarting Concentratord in case of
-a re-configuration error (in which case the process will terminate) and
-reverting back to the original configuration.
+The re-configuration happens in-memory only. This means that when Concentratord
+is restarted, it will revert to the configuration as specified in the
+configuration file. This allows for restarting Concentratord in case of a
+re-configuration error (in which case the process will terminate) and reverting
+back to the original configuration.

@@ -2,9 +2,9 @@
 
 ## Cisco Wireless Gateway
 
-* [Product detail page](https://www.cisco.com/c/en/us/products/routers/wireless-gateway-lorawan/index.html)
-* [Product documentation](https://www.cisco.com/c/en/us/support/routers/interface-module-lorawan/tsd-products-support-series-home.html)
-* [Firmware downloads](https://software.cisco.com/download/home/286311296/type/286311234/release/)
+- [Product detail page](https://www.cisco.com/c/en/us/products/routers/wireless-gateway-lorawan/index.html)
+- [Product documentation](https://www.cisco.com/c/en/us/support/routers/interface-module-lorawan/tsd-products-support-series-home.html)
+- [Firmware downloads](https://software.cisco.com/download/home/286311296/type/286311234/release/)
 
 ### Preparation
 
@@ -13,12 +13,11 @@ antennas and (PoE) ethernet interface as documented by the Cisco manual.
 
 The following steps are executed using the Cisco Console interface, for which
 you need a special USB (connected to your computer) to RJ45 (connected to the
-gateway) console cable. 
+gateway) console cable.
 
 **Note:** the following instructions only reflect the configuration to get you
 started. Please consult the Cisco Wireless Gateway documentation for a complete
 manual.
-
 
 ### Connect to console
 
@@ -59,9 +58,9 @@ version installed, please update it first.
 
 #### Upgrade
 
-To upgrade the firmware, put the firmware image on an USB key, then insert
-the USB key into the gateway. In the following example, the firmware image
-is named `ixm_mdm_i_k9-2.1.0.2.tar.gz`.
+To upgrade the firmware, put the firmware image on an USB key, then insert the
+USB key into the gateway. In the following example, the firmware image is named
+`ixm_mdm_i_k9-2.1.0.2.tar.gz`.
 
 Mount the USB key and change directory and list its content:
 
@@ -183,14 +182,14 @@ copy running-config startup-config
 ### Common Packet Forwarder
 
 The Cisco Wireless Gateway comes with a Common Packet Forwarder which is
-compatible with the [Semtech Basic Station](https://doc.sm.tc/station/).
-In this case, the ChirpStack Gateway Bridge will not run on the gateway, but
-must be installed on a separate server, with the Basic Station backend enabled.
+compatible with the [Semtech Basic Station](https://doc.sm.tc/station/). In this
+case, the ChirpStack Gateway Bridge will not run on the gateway, but must be
+installed on a separate server, with the Basic Station backend enabled.
 
 #### ChirpStack Gateway Bridge configuration
 
-Below you will find a simplified configuration example for the EU868 band.
-Refer to the [Configuration](../configuration.md) page for a full configuration
+Below you will find a simplified configuration example for the EU868 band. Refer
+to the [Configuration](../configuration.md) page for a full configuration
 example.
 
 ```toml
@@ -326,9 +325,9 @@ marshaler="protobuf"
 
 #### Common Packet Forwarder configuration
 
-**Note:** Common Packet Forwarder will use the GPS module to determine the country
-and region. In case `cpf enable` will result in an error that the region is
-undefined, make sure that the gateway is able to obtain a GPS position and
+**Note:** Common Packet Forwarder will use the GPS module to determine the
+country and region. In case `cpf enable` will result in an error that the region
+is undefined, make sure that the gateway is able to obtain a GPS position and
 try again.
 
 Enter the following commands to configure the Common Packet Forwarder:

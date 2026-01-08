@@ -29,10 +29,10 @@ Options:
 ## Configuration files
 
 ChirpStack must be started using the `-c` / `--config-dir` argument. This
-directory must contain one or multiple `.toml` configuration files. Typically
-it will contain a single `chirpstack.toml` configuration file for common
-configuration, and multiple `region_...toml` configuration files, one for
-each region configuration.
+directory must contain one or multiple `.toml` configuration files. Typically it
+will contain a single `chirpstack.toml` configuration file for common
+configuration, and multiple `region_...toml` configuration files, one for each
+region configuration.
 
 ## Environment variables
 
@@ -45,13 +45,13 @@ Example:
   json=true
 ```
 
-In the above example, `$MQTT_BROKER_HOST` gets replaced if the `MQTT_BROKER_HOST`
-variable is set, with the value of this environment variable.
+In the above example, `$MQTT_BROKER_HOST` gets replaced if the
+`MQTT_BROKER_HOST` variable is set, with the value of this environment variable.
 
 ## Configuration examples
 
 Configuration examples are included in most ChirpStack distributables. A
-complete overview of configuration examples can be found here: 
+complete overview of configuration examples can be found here:
 [https://github.com/chirpstack/chirpstack/tree/master/chirpstack/configuration](https://github.com/chirpstack/chirpstack/tree/master/chirpstack/configuration)
 
 ### Example `chirpstack.toml` configuration
