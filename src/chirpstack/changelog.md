@@ -1,5 +1,55 @@
 # Changelog
 
+## v4.16.0 (unreleased)
+
+### Features
+
+#### RP002-1.0.5 support
+
+This adds support for RP002-1.0.5 support, which includes support for
+LoRa SF5 and SF6. This also refactors how the min / max data-rate range
+works internally. This is required as with RP002-1.0.5 the semantics of
+min / max data-rates has changed and is no longer guaranteed to be a
+range. Please refer to the RP002-1.0.5 specs for more information.
+
+As devices supporting RP002-1.0.5 are not required to implement all
+data-rates, ChirpStack assumes the device only supports the mandatory
+data-rates, unless otherwise configured in the device-profile.
+
+#### DNS-based join-server resolving
+
+This release adds DNS-based join-server resolving, based on the JoinEUI
+from the join-request.
+
+#### Device-profile refactor
+
+This change refactors the device-profile templates into the device profiles.
+Device profiles can now be global (and used by multiple tenants) and / or
+managed per-tenant (when the device profiles can only be used by the given
+tenant). This way, it is no longer needed to copy a device-profile template
+into a device profile. It also means that changes to a global device profile
+immediately propagate to the devices using the change device profile.
+
+This change replaces the `import-legacy-lorawan-devices-repository` device profile
+import command by `import-device-profiles`, which import device profiles
+from [https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles).
+Vendors and ChirpStack-users are encouraged to add their devices / devices
+they are using to this repository.
+
+### Improvements
+
+* Add configurable PostgreSQL connection recycling method. ([#794](https://github.com/chirpstack/chirpstack/pull/794))
+* Remove unused "integration" event code-traces.
+* Replace `rand` by `getrandom` crate to reduce number of dependencies.
+* Add option to filter out non-LoRaWAN frames in `lrwn_filters` crate.
+* Move shared meta-data to workspace `Cargo.toml`.
+* Update internal dependencies.
+
+### Bugfixes
+
+* Fix typo in `region_eu433.toml` description. ([#775](https://github.com/chirpstack/chirpstack/pull/775))
+* Fix saving measurements + auto-detect options in device profiles. ([#769](https://github.com/chirpstack/chirpstack/issues/769))
+
 ## v4.15.0
 
 ### Features
