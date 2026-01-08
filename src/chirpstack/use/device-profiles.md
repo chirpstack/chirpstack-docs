@@ -1,6 +1,5 @@
 # Device profiles
 
-
 A Device Profile defines the device capabilities and boot parameters
 that are needed by ChirpStack for setting the LoRaWAN<sup>&reg;</sup> radio
 access service. These information elements shall be provided by the
@@ -11,17 +10,41 @@ the parameters that ChirpStack will use on initial communication. However,
 ChirpStack will re-configure the parameters using mac-commands to the
 parameters set in the [Configuration](../configuration.md) file.
 
-<!-- toc -->
+## Global device-profiles
 
-## Device-profile templates
+ChirpStack has started providing a repository for global device-profiles: [https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles).
+Once imported, these device-profiles can be listed by any ChirpStack tenant
+under **Network Server > Device Profiles** and can be selected when adding
+a new device.
 
-On create or update it is possible to use a device-profile template to fill in
-most device-profile values. This also includes payload codecs. Please refer to
-[Device-profile templates](device-profile-templates.md) for more information.
+### Importing device profiles
 
-## Configuration
+Example commands to import the `chirpstack-device-profiles` repository:
 
-### General
+```bash
+# Clone the chirpstack-device-profiles repository.
+git clone https://github.com/chirpstack/chirpstack-device-profiles.git
+
+# Execute the import command.
+chirpstack -c /etc/chirpstack import-device-profiles -d /path/to/chirpstack-device-profiles
+```
+
+After updates to `/path/to/chirpstack-device-profiles`, it is safe to re-run
+the above command to synchronize all changes. ChirpStack will update device-profiles
+that have changed and it will create the device-profiles that have been added.
+
+### Adding new device-profiles
+
+To add new device profiles to the repository, please see [Add devices to device-profiles](../../getting-started/add-devices-to-device-profiles.md).
+
+## Per-tenant device-profiles
+
+Alternatively, each tenant can create and manage its own set of device-profiles,
+that are not shared with other tenants under **Tenants > Device Profiles**.
+
+### Configuration
+
+#### General
 
 The general tab configures the main properties of the device like the:
 
@@ -32,7 +55,7 @@ The general tab configures the main properties of the device like the:
 * Regional parameters revision
 * ...
 
-### Join (OTAA / ABP)
+#### Join (OTAA / ABP)
 
 The Join (OTAA / ABP) tab defines the activation method of the device. In case
 of ABP, you must configure the initial RX configuration.
@@ -53,7 +76,7 @@ For Class-C devices you must configure the Class-C confirmed downlink timeout
 in (seconds), which is the time that ChirpStack will wait for a confirmation
 on a confirmed downlink.
 
-### Codec
+#### Codec
 
 In this tab you can configure a payload codec. A codec will handle the encoding
 and decoding of raw (binary) payloads.
@@ -61,13 +84,13 @@ and decoding of raw (binary) payloads.
 **Note:** the raw payload will always be available, even when a codec has been
 configured.
 
-#### Cayenne LPP
+##### Cayenne LPP
 
 If selecting the Cayenne LPP codec, ChirpStack will decode and encode
 following the [Cayenne Low Power Payload](https://mydevices.com/cayenne/docs/lora/)
 specification.
 
-#### JavaScript functions
+##### JavaScript functions
 
 If selecting the Custom JavaScript codec functions option, you can write your
 own (JavaScript) functions to decode an array of bytes to a JavaScript object
@@ -111,13 +134,13 @@ function encodeDownlink(input) {
 }
 ```
 
-### Relay
+#### Relay
 
 The Relay tab lets you configure Relay and Relay end-device configuration.
 Please refer to [TS011](https://resources.lora-alliance.org/) for more
 information about the Relay protocol.
 
-#### Device is a Relay
+##### Device is a Relay
 
 A Relay device acts as an repeater between Relay capable end-devices and nearby
 LoRa gateways.
@@ -126,7 +149,7 @@ If this option is enabled, you must configure the channel-configuration as well
 as the bucket size and refresh rate. Please refer to _TS011_ for more
 information about these properties.
 
-#### Device is a Relay capable end-device
+##### Device is a Relay capable end-device
 
 A Relay capable end-device is a device which is able to operate under a Relay.
 For this it needs to implement the _TS011_ specification.
@@ -137,7 +160,7 @@ bucket size as well as the activation mode.
 **Note:** To ignore uplinks from Relay capable end-devices that are directly
 received by nearby LoRa gateways, you can enable **Only use Relay**.
 
-### Tags
+#### Tags
 
 In this tab you can assign additional tags to the Device Profile. These tags
 will be exposed on device events and can include additional metadata for
@@ -147,7 +170,7 @@ example:
 * Device model
 * ...
 
-### Measurements
+#### Measurements
 
 If a codec has been configured, then ChirpStack will automatically detect the
 measurements in the decoded uplink payload. Detected measurements can be found

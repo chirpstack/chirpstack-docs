@@ -15,6 +15,7 @@
 - [Debian / Ubuntu](./getting-started/debian-ubuntu.md)
 - [Raspberry Pi](./getting-started/raspberry-pi.md)
 - [Ansible and Vagrant](./getting-started/ansible-vagrant.md)
+- [Add devices to device profiles](./getting-started/add-devices-to-device-profiles.md)
 
 - [Guides](./guides/index.md)
   - [Connecting a gateway](./guides/connect-gateway.md)
@@ -65,7 +66,6 @@
 - [Use](./chirpstack/use/index.md)
   - [Applications](./chirpstack/use/applications.md)
   - [Device profiles](./chirpstack/use/device-profiles.md)
-  - [Device-profile templates](./chirpstack/use/device-profile-templates.md)
   - [Devices](./chirpstack/use/devices.md)
   - [Event log](./chirpstack/use/event-log.md)
   - [Frame log](./chirpstack/use/frame-log.md)
