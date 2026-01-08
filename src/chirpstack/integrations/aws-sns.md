@@ -31,7 +31,7 @@ an [AWS SQS](https://aws.amazon.com/sqs/) subscription.
 `main.go`:
 
 ```go
-{% raw %}{{#include ../../../examples/chirpstack/integrations/aws-sns/go/main.go}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/aws-sns/go/main.go}}
 ```
 
 ### Python
@@ -42,5 +42,5 @@ for setting up the API credentials.
 `main.py`:
 
 ```python
-{% raw %}{{#include ../../../examples/chirpstack/integrations/aws-sns/python/main.py}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/aws-sns/python/main.py}}
 ```

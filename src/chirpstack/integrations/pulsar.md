@@ -72,9 +72,7 @@ Options:
 Example configuration file:
 
 ```toml
-{%raw%}
 {{#include chirpstack-pulsar-integration.toml}}
-{%endraw%}
 ```
 
 ### ChirpStack configuration

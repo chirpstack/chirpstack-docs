@@ -194,7 +194,7 @@ Refer to the [Configuration](../configuration.md) page for a full configuration
 example.
 
 ```toml
-{%raw%}# Gateway backend configuration.
+Gateway backend configuration.
 [backend]
 
 # Backend type.
@@ -321,7 +321,7 @@ marshaler="protobuf"
     # the following format: scheme://host:port where scheme is tcp, ssl or ws.
     servers=[
       "tcp://127.0.0.1:1883",
-    ]{%endraw%}
+    ]
 ```
 
 #### Common Packet Forwarder configuration

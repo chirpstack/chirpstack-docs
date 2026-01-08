@@ -27,7 +27,7 @@ a [GCP Pub/Sub Subscription](https://cloud.google.com/pubsub/docs/overview).
 `main.go`:
 
 ```go
-{% raw %}{{#include ../../../examples/chirpstack/integrations/gcp-pub-sub/go/main.go}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/gcp-pub-sub/go/main.go}}
 ```
 
 ### Python
@@ -38,5 +38,5 @@ section for creating a service-account and setting up the credentials.
 `main.py`:
 
 ```python
-{% raw %}{{#include ../../../examples/chirpstack/integrations/gcp-pub-sub/python/main.py}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/gcp-pub-sub/python/main.py}}
 ```

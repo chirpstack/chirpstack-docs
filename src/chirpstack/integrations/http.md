@@ -25,7 +25,7 @@ the endpoint for the HTTP integration is `http://localhost:8090`.
 `main.go`:
 
 ```go
-{% raw %}{{#include ../../../examples/chirpstack/integrations/http/go/main.go}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/http/go/main.go}}
 ```
 
 ### Python
@@ -38,5 +38,5 @@ then the endpoint for the HTTP integration is `http://localhost:8090`.
 `main.py`:
 
 ```python
-{% raw %}{{#include ../../../examples/chirpstack/integrations/http/python/main.py}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/http/python/main.py}}
 ```

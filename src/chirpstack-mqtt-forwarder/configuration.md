@@ -23,7 +23,5 @@ Options:
 Example `chirpstack-mqtt-forwarder.toml` configuration:
 
 ```toml
-{%raw%}
 {{#include chirpstack-mqtt-forwarder.toml}}
-{%endraw%}
 ```

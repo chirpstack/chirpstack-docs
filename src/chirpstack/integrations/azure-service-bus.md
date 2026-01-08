@@ -26,7 +26,7 @@ an [Azure Service-Bus Queue](https://docs.microsoft.com/en-us/azure/service-bus-
 `main.go`:
 
 ```go
-{% raw %}{{#include ../../../examples/chirpstack/integrations/azure-service-bus/go/main.go}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/azure-service-bus/go/main.go}}
 ```
 
 ### Python
@@ -34,5 +34,5 @@ an [Azure Service-Bus Queue](https://docs.microsoft.com/en-us/azure/service-bus-
 `main.py`:
 
 ```python
-{% raw %}{{#include ../../../examples/chirpstack/integrations/azure-service-bus/python/main.py}}{% endraw %}
+{{#include ../../../examples/chirpstack/integrations/azure-service-bus/python/main.py}}
 ```

@@ -21,5 +21,5 @@ The example below demonstrates:
 ### `Program.cs`
 
 ```csharp
-{% raw %}{{#include ../../../examples/chirpstack/api/csharp/Program.cs}}{%endraw %}
+{{#include ../../../examples/chirpstack/api/csharp/Program.cs}}
 ```

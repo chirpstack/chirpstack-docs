@@ -559,22 +559,18 @@ Below a summary:
 The MQTT topic configuration has been updated from:
 
 ```toml
-{% raw %}
 uplink_topic_template="gateway/{{ .MAC }}/rx"
 downlink_topic_template="gateway/{{ .MAC }}/tx"
 stats_topic_template="gateway/{{ .MAC }}/stats"
 ack_topic_template="gateway/{{ .MAC }}/ack"
 config_topic_template="gateway/{{ .MAC }}/config"
-{% endraw %}
 ```
 
 To:
 
 ```toml
-{% raw %}
 event_topic_template="gateway/{{ .GatewayID }}/event/{{ .EventType }}"
 command_topic_template="gateway/{{ .GatewayID }}/command/#"
-{% endraw %}
 ```
 
 Event types are: `up`, `stats` and `ack`.
@@ -585,13 +581,11 @@ but you will need to update the MQTT topics in your `loraserver.toml` file.
 Example snippet:
 
 ```toml
-{% raw %}
 uplink_topic_template="gateway/+/event/up"
 stats_topic_template="gateway/+/event/stats"
 ack_topic_template="gateway/+/event/ack"
 downlink_topic_template="gateway/{{ .MAC }}/command/down"
 config_topic_template="gateway/{{ .MAC }}/command/config"
-{% endraw %}
 ```
 
 #### Backends

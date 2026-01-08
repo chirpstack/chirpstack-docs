@@ -102,9 +102,9 @@ the region that applies to this ChirpStack Gateway Bridge instance.
 Example for EU868:
 
 ```toml
-{%raw%}[integration.mqtt]
+[integration.mqtt]
 event_topic_template="eu868/gateway/{{ .GatewayID }}/event/{{ .EventType }}"
-command_topic_template="eu868/gateway/{{ .GatewayID }}/command/#"{%endraw%}
+command_topic_template="eu868/gateway/{{ .GatewayID }}/command/#"
 ```
 
 You can find the region configurations that are included by default here:

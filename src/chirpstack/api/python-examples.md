@@ -21,5 +21,5 @@ The example below demonstrates:
 ### `enqueue_downlink.py`
 
 ```python
-{% raw %}{{#include ../../../examples/chirpstack/api/python/enqueue_downlink.py}}{% endraw %}
+{{#include ../../../examples/chirpstack/api/python/enqueue_downlink.py}}
 ```
