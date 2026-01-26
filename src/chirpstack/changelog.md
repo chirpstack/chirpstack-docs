@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.16.1
+
+### Bugfixes
+
+- Fix missing RP002-1.0.5 in reg. params. revision dropdown.
+- Fix incorrect `google.api.http` option in `DeviceProfileService` Protobuf
+  file.
+
 ## v4.16.0
 
 ### Features

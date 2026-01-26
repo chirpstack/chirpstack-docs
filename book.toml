@@ -29,7 +29,7 @@
 [preprocessor.alerts]
 
 [preprocessor.findrep]
-  chirpstack_version = "4.16.0"
+  chirpstack_version = "4.16.1"
   gateway_os_version = "4.9.0"
   gateway_bridge_version = "4.1.1"
   concentratord_version = "4.5.3"
