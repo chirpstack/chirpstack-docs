@@ -65,6 +65,7 @@
   - [RX parameters (re)configuration](./chirpstack/features/rx-parameters-configuration.md)
 - [Use](./chirpstack/use/index.md)
   - [Applications](./chirpstack/use/applications.md)
+  - [CLI commands](./chirpstack/use/cli-commands.md)
   - [Device profiles](./chirpstack/use/device-profiles.md)
   - [Devices](./chirpstack/use/devices.md)
   - [Event log](./chirpstack/use/event-log.md)

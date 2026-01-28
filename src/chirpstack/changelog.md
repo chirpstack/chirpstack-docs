@@ -1,5 +1,33 @@
 # Changelog
 
+## v4.17.0
+
+### Features
+
+#### CLI reset-password command
+
+This release adds a new `reset-password` command to the ChirpStack CLI. This
+command enables resetting user passwords without API access, which is useful for:
+
+- Initial setup of fresh installations
+- Automated deployment scripts
+- Recovery from forgotten passwords
+
+**Usage:**
+
+```bash
+# Interactive password reset
+chirpstack --config /etc/chirpstack reset-password -e admin@example.com
+
+# Password from file
+chirpstack --config /etc/chirpstack reset-password -e admin@example.com -p /tmp/pw.txt
+
+# Password from stdin (for scripting)
+echo "SecurePassword123" | chirpstack --config /etc/chirpstack reset-password -e admin@example.com --stdin
+```
+
+See [CLI commands](./use/cli-commands.md) for more information.
+
 ## v4.16.1
 
 ### Bugfixes
