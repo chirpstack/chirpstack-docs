@@ -1,5 +1,20 @@
 # Changelog
 
+## v4.5.1
+
+### Features
+
+- Add option to filter out non-LoRaWAN payloads.
+
+### Improvements
+
+- Add Taplo based formatting configuration for TOML.
+- Update internal dependencies.
+
+## v4.5.0
+
+Unreleased.
+
 ## v4.4.1
 
 ### Improvements

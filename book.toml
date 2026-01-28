@@ -33,6 +33,6 @@
   gateway_os_version = "4.9.0"
   gateway_bridge_version = "4.1.1"
   concentratord_version = "4.6.0"
-  mqtt_forwarder_version = "4.4.1"
+  mqtt_forwarder_version = "4.5.1"
   pulsar_integration_version = "4.0.0-test.3"
   gateway_mesh_version = "4.1.1"
