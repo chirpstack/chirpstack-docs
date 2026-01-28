@@ -1,4 +1,4 @@
-# Device depository and metrics
+# Device repository and metrics
 
 This guide explains how to import the
 [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices) Device
