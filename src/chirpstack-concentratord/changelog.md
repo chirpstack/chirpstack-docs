@@ -1,5 +1,21 @@
 # Changelog
 
+## v4.6.0
+
+### Features
+
+- sx1302: Add support for Listen-Before-Talk (for supported modules).
+  ([3254](https://github.com/chirpstack/chirpstack-concentratord/issues/254))
+
+### Improvements
+
+- Add Taplo based formatting configuration for TOML.
+- Update internal dependencies.
+
+### Bugfixes
+
+- sx1302: Add missing CN470 configuration.
+
 ## v4.5.3
 
 ### Features
