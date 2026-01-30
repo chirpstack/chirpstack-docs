@@ -11,18 +11,16 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![Project-Q](./sponsors/project_q.png)](https://project-q.ai/)
 
 [![Dragino](./sponsors/dragino.png)](https://www.dragino.com)
+[![Object Spectrum](./sponsors/objectspectrum.png)](https://objectspectrum.com/)
+
+[![Actall](./sponsors/actall.png)](https://actall.net/)
 [![Milesight](./sponsors/milesight.png)](https://www.milesight.com)
 
+[![Seeed Studio](./sponsors/seeed.png)](https://www.seeedstudio.com/)
 [![Smart Parks](./sponsors/smartparks.png)](http://www.smartparks.org)
+
 [![Reese](./sponsors/reese.jpg)](https://reesesystems.com)
-
-[![Pollex](./sponsors/pollex.png)](https://pollex.nl/)
 [![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
-
-[![Browan](./sponsors/browan.png)](https://browan.com)
-[![Kerlink](./sponsors/kerlink.png)](https://www.kerlink.com)
-
-[![Object Spectrum](./sponsors/objectspectrum.png)](https://objectspectrum.com/)
 
 </div>
 
@@ -48,3 +46,8 @@ significant ChirpStack feature:
 [![SIDN Fonds](./sponsors/sidn_fonds.png)](https://www.sidnfonds.nl/)
 
 </div>
+
+## Past GitHub sponsors
+
+A complete list of all current and past GitHub sponsors can be found at
+[https://github.com/sponsors/chirpstack/](https://github.com/sponsors/chirpstack/).
