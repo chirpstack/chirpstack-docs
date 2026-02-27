@@ -1,32 +1,57 @@
 # Changelog
 
-## v4.17.0
+## v4.17.0 (in development)
 
 ### Features
 
-#### CLI reset-password command
+#### CLI password reset
 
-This release adds a new `reset-password` command to the ChirpStack CLI. This
-command enables resetting user passwords without API access, which is useful for:
+This release adds a new CLI option to reset passwords, either by prompt stdin or
+by password file. See [CLI commands](./use/cli-commands.md) for more
+information. ([#820](https://github.com/chirpstack/chirpstack/pull/820))
 
-- Initial setup of fresh installations
-- Automated deployment scripts
-- Recovery from forgotten passwords
+#### Secondary NetIDs for roaming
 
-**Usage:**
+This feature makes it possible to assign secondary NetIDs to a
+roaming-agreement. This makes it possible to use multiple NetIDs within a single
+roaming-agreement.
 
-```bash
-# Interactive password reset
-chirpstack --config /etc/chirpstack reset-password -e admin@example.com
+#### Read-only API keys
 
-# Password from file (recommended for scripts)
-chirpstack --config /etc/chirpstack reset-password -e admin@example.com -p /tmp/pw.txt
+This release adds the option to create read-only API keys. If a key is
+configured as read-only, it is not possible to create, update or delete objects
+with this key.
 
-# Password from stdin (e.g. piped from a secrets manager)
-my-secrets-tool get admin-password | chirpstack --config /etc/chirpstack reset-password -e admin@example.com --stdin
-```
+### Improvements
 
-See [CLI commands](./use/cli-commands.md) for more information.
+- Update Docker base-image to Alpine v3.23.3
+- Update dependencies for API clients.
+- Misc. UI improvements.
+  ([#823](https://github.com/chirpstack/chirpstack/pull/823))
+- Add `dev_eui` filter to list multicast groups API.
+  ([#728](https://github.com/chirpstack/chirpstack/pull/728))
+- Set `enabled_uplink_channel_indices` on first uplink for ABP devices.
+  ([#844](https://github.com/chirpstack/chirpstack/pull/844))
+- Add PKCE challenge support for OIDC.
+  ([#851](https://github.com/chirpstack/chirpstack/pull/851))
+
+- Update internal dependencies.
+
+### Bugfixes
+
+- Remove FCnt increment check from `get_for_phypayload` function.
+  ([#813](https://github.com/chirpstack/chirpstack/issues/813))
+- Remove `device_profile_templates` import from Python API client.
+  ([#842](https://github.com/chirpstack/chirpstack/pull/842))
+- Fix JS codec / Buffer module unable to import `ieee754` module.
+  ([#841](https://github.com/chirpstack/chirpstack/issues/841)). **Warning:** As
+  a side-effect of this fix, strict mode is now enforced by the JS runtime!
+- Fix MQTT integration shared subscription for command subscribe.
+- Remove `ws://` option from `configfile` template in MQTT configuration, as
+  this scheme is (currently) not available.
+  ([#741](https://github.com/chirpstack/chirpstack/issues/741))
+- Fix OIDC user dropdown menu in UI.
+  ([#852](https://github.com/chirpstack/chirpstack/pull/852))
 
 ## v4.16.2
 
