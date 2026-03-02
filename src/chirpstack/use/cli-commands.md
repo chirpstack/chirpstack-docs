@@ -33,11 +33,11 @@ chirpstack --config /etc/chirpstack reset-password --email <EMAIL> [OPTIONS]
 
 **Options:**
 
-| Option | Description |
-|--------|-------------|
-| `-e, --email <EMAIL>` | User email address (required) |
+| Option                       | Description                          |
+| ---------------------------- | ------------------------------------ |
+| `-e, --email <EMAIL>`        | User email address (required)        |
 | `-p, --password-file <FILE>` | Path to file containing new password |
-| `--stdin` | Read password from stdin |
+| `--stdin`                    | Read password from stdin             |
 
 **Examples:**
 
@@ -57,9 +57,12 @@ my-secrets-tool get admin-password | chirpstack --config /etc/chirpstack reset-p
 
 **Security notes:**
 
-- When using a file, set restrictive permissions (`chmod 600`) and delete it after use
-- Avoid embedding a plaintext password in a command (e.g. `echo "pass" | ...`): it appears in shell history and is visible via process inspection
-- For scripts, prefer the file method or pipe from a secrets manager — see the [Password handling](#password-handling) table below
+- When using a file, set restrictive permissions (`chmod 600`) and delete it
+  after use
+- Avoid embedding a plaintext password in a command (e.g. `echo "pass" | ...`):
+  it appears in shell history and is visible via process inspection
+- For scripts, prefer the file method or pipe from a secrets manager — see the
+  [Password handling](#password-handling) table below
 
 **Password requirements:**
 
@@ -137,11 +140,11 @@ chirpstack --config /etc/chirpstack print-ds --dev-eui <DEV_EUI>
 The CLI provides multiple methods for password input, each with different
 security implications:
 
-| Method | Security | Use case |
-|--------|----------|----------|
-| Interactive prompt | Highest | Manual administration |
-| File (0600 permissions) | Medium | Scripted deployments |
-| Stdin | Low | Pipelines (ensure no history) |
+| Method                  | Security | Use case                      |
+| ----------------------- | -------- | ----------------------------- |
+| Interactive prompt      | Highest  | Manual administration         |
+| File (0600 permissions) | Medium   | Scripted deployments          |
+| Stdin                   | Low      | Pipelines (ensure no history) |
 
 For scripted deployments using password files:
 
@@ -167,3 +170,4 @@ credentials:
 
 **It is strongly recommended to change this password immediately upon first
 login** using either the web interface or the `reset-password` command.
+
