@@ -9,16 +9,14 @@ ChirpStack is an open-source LoRaWAN(TM) Network Server
 Usage: chirpstack --config <DIR> [COMMAND]
 
 Commands:
-  configfile
-          Print the configuration template
-  print-ds
-          Print the device-session for debugging
-  import-legacy-lorawan-devices-repository
-          Import legacy lorawan-devices repository
-  create-api-key
-          Create global API key
-  help
-          Print this message or the help of the given subcommand(s)
+  configfile                           Print the configuration template
+  print-ds                             Print the device-session for debugging
+  import-device-profiles               Import device-profiles repository
+  create-api-key                       Create global API key
+  set-password                         Set user password
+  migrate-device-sessions-to-postgres  Migrate device-sessions from Redis to PostgreSQL
+  migrate-device-profile-templates     Migrate device-profile templates to device profiles
+  help                                 Print this message or the help of the given subcommand(s)
 
 Options:
   -c, --config <DIR>  Path to configuration directory
