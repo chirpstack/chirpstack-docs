@@ -1,5 +1,20 @@
 # Changelog
 
+## v4.7.0 (in development)
+
+### Features
+
+This release refactors the way GNSS timestamp data and GNSS location data is
+handled, solving the issue of timedrift issues in case the GNSS module
+temporarily loses its fix. This refactor will also make it possible to use
+non-Ublox GNSS modules for only UTC timestamp and location data.
+
+### Improvements
+
+- Update internal dependencies.
+- Implement building of Debian / Ubuntu .deb packages.
+  ([#275](https://github.com/chirpstack/chirpstack-concentratord/pull/275))
+
 ## v4.6.0
 
 ### Features
