@@ -25,26 +25,31 @@ events by directly subscribing to the Redis event
 | [chirpstack-pulsar-integration_%PULSAR_INTEGRATION_VERSION_linux_armv7.rpm](https://artifacts.chirpstack.io/downloads/chirpstack-pulsar-integration/chirpstack-pulsar-integration_%PULSAR_INTEGRATION_VERSION_linux_armv7.rpm)           | .rpm    | Linux | armv7 |
 | [chirpstack-pulsar-integration_%PULSAR_INTEGRATION_VERSION_linux_arm64.rpm](https://artifacts.chirpstack.io/downloads/chirpstack-pulsar-integration/chirpstack-pulsar-integration_%PULSAR_INTEGRATION_VERSION_linux_arm64.rpm)           | .rpm    | Linux | arm64 |
 
-### Debian / Ubuntu repository
+### Setup software repository
 
-ChirpStack provides pre-compiled binaries as Debian (`.deb`) packages. To
-activate this repository, execute the following commands:
+ChirpStack provides a Debian / Ubuntu repository which can be used to install
+the latest ChirpStack version. First make sure that `gpg` is installed:
 
 ```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
-
-sudo echo "deb https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack_4.list
-sudo apt update
+sudo apt install gpg
 ```
 
-ChirpStack also provides a repository for test-builds. To activate the test
-channel use the following commands (notice that `stable` has changed into
-`testing`):
+Set up the key for the ChirpStack repository:
 
 ```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
+sudo mkdir -p /etc/apt/keyrings/
+sudo sh -c 'wget -q -O - https://artifacts.chirpstack.io/packages/chirpstack.key | gpg --dearmor > /etc/apt/keyrings/chirpstack.gpg'
+```
 
-sudo echo "deb https://artifacts.chirpstack.io/packages/4.x/deb testing main" | sudo tee /etc/apt/sources.list.d/chirpstack_4.list
+Add the repository to the repository list:
+
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/chirpstack.gpg] https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
+```
+
+Update the apt package cache:
+
+```bash
 sudo apt update
 ```
 

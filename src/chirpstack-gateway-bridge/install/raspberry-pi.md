@@ -12,12 +12,28 @@ Gateway OS documentation for installation instructions.
 ### ChirpStack Gateway Bridge
 
 ChirpStack provides a package repository that is compatible with Raspberry Pi
-OS. In order to add this repository, execute the following command:
+OS. In order to add this repository, execute the following commands:
 
 ```bash
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1CE2AFD36DBCCA00
+sudo apt install gpg
+```
 
-sudo echo "deb https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
+Set up the key for the ChirpStack repository:
+
+```bash
+sudo mkdir -p /etc/apt/keyrings/
+sudo sh -c 'wget -q -O - https://artifacts.chirpstack.io/packages/chirpstack.key | gpg --dearmor > /etc/apt/keyrings/chirpstack.gpg'
+```
+
+Add the repository to the repository list:
+
+```bash
+echo "deb [signed-by=/etc/apt/keyrings/chirpstack.gpg] https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
+```
+
+Update the apt package cache:
+
+```bash
 sudo apt update
 ```
 
