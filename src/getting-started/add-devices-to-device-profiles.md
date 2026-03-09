@@ -9,7 +9,7 @@ repository by adding their devices or the devices they are using.
 ## How to contribute?
 
 1. Create a fork of the
-   [https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles])
+   [https://github.com/chirpstack/chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles)
    repository.
 2. Create a local clone of this fork.
 3. Make modifications (can be done through a simple web-interface).
