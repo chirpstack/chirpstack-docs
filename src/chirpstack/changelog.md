@@ -26,15 +26,19 @@ with this key.
 
 - Update Docker base-image to Alpine v3.23.3
 - Update dependencies for API clients.
+- Update React to v19.2 and Antd to v6.1.
+- Improve scheduler concurrency + add new `scheduler_lock_duration` setting.
 - Misc. UI improvements.
-  ([#823](https://github.com/chirpstack/chirpstack/pull/823))
+  ([#823](https://github.com/chirpstack/chirpstack/pull/823),
+  [#873](https://github.com/chirpstack/chirpstack/pull/873))
+- Move from `yarn` to `pnpm` as package manager.
+  [#874](https://github.com/chirpstack/chirpstack/pull/874))
 - Add `dev_eui` filter to list multicast groups API.
   ([#728](https://github.com/chirpstack/chirpstack/pull/728))
 - Set `enabled_uplink_channel_indices` on first uplink for ABP devices.
   ([#844](https://github.com/chirpstack/chirpstack/pull/844))
 - Add PKCE challenge support for OIDC.
   ([#851](https://github.com/chirpstack/chirpstack/pull/851))
-
 - Update internal dependencies.
 
 ### Bugfixes
