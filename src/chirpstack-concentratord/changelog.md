@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.7.0 (in development)
+## v4.7.0
 
 ### Features
 
