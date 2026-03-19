@@ -1,5 +1,15 @@
 # Changelog
 
+## v4.1.3
+
+### Improvements
+
+- Update internal dependencies.
+
+### Bugfixes
+
+- Re-create ZMQ REQ and SUB sockets in case of error.
+
 ## v4.1.2
 
 ### Improvements
