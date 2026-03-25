@@ -8,9 +8,7 @@ LoRa concentrator shields (in case of Raspberry Pi gateways).
 The Raspberry Pi images come in two versions:
 
 - **Base**: Image containing containing all gateway components
-- **Full**: Base image + additional applications
-  - ChirpStack Network Server
-  - Node-RED
+- **Full**: Base image + ChirStack LoRaWAN Network Server
 
 For off-the-shelf gateways only a single version is provided, capabilities of
 the gateway.

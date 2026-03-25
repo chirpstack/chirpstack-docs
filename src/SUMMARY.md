@@ -189,7 +189,6 @@
   - [Modifying files](./chirpstack-gateway-os/use/modifying-files.md)
   - [Software update](./chirpstack-gateway-os/use/software-update.md)
   - [ChirpStack Gateway Mesh](./chirpstack-gateway-os/use/chirpstack-gateway-mesh.md)
-  - [Node-RED](./chirpstack-gateway-os/use/node-red.md)
 - [Contribute & source](./chirpstack-gateway-os/contribute.md)
 
 # ChirpStack Gateway Mesh
