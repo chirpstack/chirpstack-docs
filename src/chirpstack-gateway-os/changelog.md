@@ -1,5 +1,32 @@
 # Changelog
 
+## v4.11.0
+
+### Node-RED removal
+
+**Important:** The **full** images no longer includes Node-RED. After upgrading
+to OpenWrt v24.10.6, it no longer worked properly, returning 400 responses to
+all requests. After debugging this for several days, it was decided to remove
+Node-RED. Please note that OpenWrt v25.12.x changed the `node` package to
+host-only, due to several other issues (see below).
+
+See also:
+
+- [https://github.com/chirpstack/chirpstack-openwrt-feed/commit/a6153a558ac74afba8d7cf76685b1cb1f65f1bfd](https://github.com/chirpstack/chirpstack-openwrt-feed/commit/a6153a558ac74afba8d7cf76685b1cb1f65f1bfd)
+- [https://github.com/openwrt/packages/issues/26078](https://github.com/openwrt/packages/issues/26078)
+
+### Updates
+
+- Update ChirpStack Gateway Mesh to v4.1.3.
+- Update ChirpStack to v4.17.0.
+- Update ChirpStack Device Profiles to latest commit.
+
+### Improvements
+
+- Update to OpenWrt v24.10.6.
+- RAK: add packages for reading cellular status + control LED.
+  ([#24](https://github.com/chirpstack/chirpstack-openwrt-feed/pull/24))
+
 ## v4.10.1
 
 This fixes a critical issue in the ChirpStack SQLite build that was found in
