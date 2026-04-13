@@ -19,7 +19,7 @@ through [GitHub Sponsors](https://github.com/sponsors/chirpstack):
 [![Seeed Studio](./sponsors/seeed.png)](https://www.seeedstudio.com/)
 [![Smart Parks](./sponsors/smartparks.png)](http://www.smartparks.org)
 
-[![Reese](./sponsors/reese.jpg)](https://reesesystems.com)
+[![Reese](./sponsors/reese.png)](https://racknet.io)
 [![myDevices](./sponsors/my_devices.png)](https://www.mydevices.com)
 
 </div>
