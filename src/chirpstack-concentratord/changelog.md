@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.7.1
+
+### Features
+
+- Add support for Elecro LR1302 shield.
+  ([#280](https://github.com/chirpstack/chirpstack-concentratord/pull/280))
+
 ## v4.7.0
 
 ### Features
