@@ -37,10 +37,11 @@ The `chirpstack-concentratord-sx1302` binary implements the
 | Vendor    | Gateway / Shield               | Flags          | Regions                                                                                  | Model                                |
 | --------- | ------------------------------ | -------------- | ---------------------------------------------------------------------------------------- | ------------------------------------ |
 | Dragino   | PG1302                         |                | EU868, US915                                                                             | dragino_pg1302                       |
+| Elcrow    | LR1302                         | USB, GNSS      | AS923, AS923_2, AS923_3, AS923_4, AU915, EU868, IN865, KR920, RU864, US915               | elecrow_lr1302                       |
 | Miromico  | GWC-02-LW-868                  |                | EU868, IN865, RU864                                                                      | miromico_gwc_02_lw_868               |
 | Miromico  | GWC-02-LW-915                  |                | AS923, AS923_2, AS923_3, AS923_4, AU915, KR920, US915                                    | miromico_gwc_02_lw_915               |
-| Multitech | Multitech Conduit AP3 EU868    |                | mtcap3_003e00                                                                            |                                      |
-| Multitech | Multitech Conduit AP3 US915    | mtcap3_003u00  |                                                                                          |                                      |
+| Multitech | Multitech Conduit AP3 EU868    |                | EU868                                                                                    | mtcap3_003e00                        |
+| Multitech | Multitech Conduit AP3 US915    |                | US915                                                                                    | mtcap3_003u00                        |
 | Multitech | Multitech Conduit MTAC-003E00  | AP1, AP2, GNSS | EU868                                                                                    | multitech_mtac_003e00                |
 | Multitech | Multitech Conduit MTAC-003U00  | AP1, AP2, GNSS | US915                                                                                    | multitech_mtac_003u00                |
 | RAK       | RAK2287 AS923                  | GNSS, USB      | AS923, AS923_2, AS923_3, AS923_4, AU915, CN470, EU433, EU868, IN865, KR920, RU864, US915 | rak_2287                             |
