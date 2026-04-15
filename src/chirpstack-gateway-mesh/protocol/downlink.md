@@ -4,7 +4,7 @@
 
 On downlink, the Border Gateway creates and re-transmits a Relay encapsulated to
 the Relay Gateway in the following format. The Relay encapsulation overhead is
-15 bytes.
+15 bytes. Note that only Class-A downlinks are supported.
 
 Bytes:
 
