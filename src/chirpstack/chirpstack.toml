@@ -47,6 +47,18 @@
   # store.
   ca_cert=""
 
+  # Connection recycling method.
+  #
+  # This controls how connections are validated when returned to the connection pool.
+  # Options:
+  #  * verified - Run a validation query (SELECT 1) when recycling connections (safer, slightly slower)
+  #  * fast - Skip validation query when recycling connections (faster, but may return stale connections)
+  #
+  # The 'verified' method is recommended for production use to ensure connection health.
+  # Use 'fast' when using an external connection pooler (PgBouncer, AWS RDS Proxy,
+  # GCP Cloud SQL Connection Pooling) that already handles connection validation.
+  connection_recycling_method = "verified"
+
 
 # SQLite configuration.
 #
@@ -264,6 +276,13 @@
     # overlap between scheduling Class-C downlinks and / or spreading the 
     # downlink capacity load on the gateway.
     class_c_lock_duration="5s"
+
+    # Scheduler lock duration.
+    #
+    # This defines the duration the scheduler locks the device or multicast
+    # queue-item when it was selected for downlink transmission. This is set
+    # to avoid concurrency issues.
+    scheduler_lock_duration="2s"
 
     # Multicast Class-C margin.
     #
