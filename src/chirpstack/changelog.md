@@ -1,5 +1,32 @@
 # Changelog
 
+## v4.18.0 (in development)
+
+### Features
+
+- Make it possible to list multicast groups by `tenant_api`
+  ([#783](https://github.com/chirpstack/chirpstack/issues/783))
+- Make it possible to list FUOTA deployments by `tenant_id`
+  ([#783](https://github.com/chirpstack/chirpstack/issues/783))
+- Add missing Cayenne LPP parsers.
+  ([#909](https://github.com/chirpstack/chirpstack/pull/909))
+
+### Improvements
+
+- Make MQTT channel capacity configurable.
+- Improve Redis Stream write performance by using approximate trimming (which is
+  more efficient than exact trimming).
+- Update internal dependencies.
+
+### Bugfixes
+
+- Remove `toolchain` from `go.mod` for Go API client.
+- Only flush non-pending downlinks on queue.
+  ([#897](https://github.com/chirpstack/chirpstack/pull/897))
+- Add missing `connection_recycling_method` to config template.
+- Fix descriptor to fragmentation-session setup (v2) MIC calculation.
+  ([#910](https://github.com/chirpstack/chirpstack/issues/910))
+
 ## v4.17.0
 
 ### Features
