@@ -2,6 +2,13 @@
 
 ## v4.18.0 (in development)
 
+**Upgrade note:** This release contains a dependency update related to the
+hashing of passwords. If you are upgrading ChirpStack from a previous version
+and have not changed the default `admin` password, you must do this before
+upgrading to this version. The old default password was hashed with `1`
+iteration, which is no longer accepted by `pbkdf2`, which now enforces `1000`
+hash iterations.
+
 ### Features
 
 - Make it possible to list multicast groups by `tenant_api`
