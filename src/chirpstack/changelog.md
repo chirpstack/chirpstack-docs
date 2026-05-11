@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.18.0 (in development)
+## v4.18.0
 
 **Upgrade note:** This release contains a dependency update related to the
 hashing of passwords. If you are upgrading ChirpStack from a previous version
@@ -28,6 +28,7 @@ hash iterations (minimum).
 ### Bugfixes
 
 - Remove `toolchain` from `go.mod` for Go API client.
+- Fix dependency conflict in `js` API client.
 - Only flush non-pending downlinks on queue.
   ([#897](https://github.com/chirpstack/chirpstack/pull/897))
 - Add missing `connection_recycling_method` to config template.
