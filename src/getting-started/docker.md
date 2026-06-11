@@ -87,7 +87,7 @@ To import the TTN
 repository (optional step), run the following command:
 
 ```bash
-make import-lorawan-devices
+make import-device-profiles
 ```
 
 This will clone the `lorawan-devices` repository and execute the import command
