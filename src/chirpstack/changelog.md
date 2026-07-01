@@ -1,5 +1,74 @@
 # Changelog
 
+## v4.19.0 (in development)
+
+### Features
+
+#### Class-B improvements
+
+This release adds a `class_b_schedule_advance` configuration option, which
+controls how far in advance a Class-B downlink can be scheduled. The previous
+behavior was to immediately schedule the next ping-slot, which could be minutes
+in the future and causing frame-counter issues in case a Class-A downlink was
+sent before the already scheduled Class-B ping-slot.
+
+It also adds a device-profile option to only send application payloads using
+Class-B (if enabled). This option can also help reduce out-of-order downlinks
+and can reduce data-rate related issues (e.g. payload exceeds max. payload size
+for Class-A downlink data-rate).
+
+#### Per-tenant DevAddr range
+
+This release adds support for assigning DevAddr ranges per tenant, providing the
+option to let each tenant use their own DevAddr range. Note that these DevAddr
+ranges must be a sub-set of the network available DevAddr range. ChirpStack does
+not enforce that each tenant has an unique range (but provides an API to check
+if a given range has already been used by).
+
+#### Improve Class-B / Class-C downlink path selection
+
+This option makes it possible to configure the uplink history that ChirpStack
+keeps for Class-B / Class-C downlink path selection. Based on this history,
+ChirpStack will select the best gateway using SNR, RSSI and number of times a
+gateway reported an uplink within the kept history. This means that gateway
+reporting uplinks more often are considered more stable and are therefore
+preferred over the other gateways.
+
+#### Add downlink priority gateway config
+
+This option can be used to increase / decrease scoring when ChirpStack selects a
+gateway for downlink transmissions. E.g. gateways with a high-gain antenna might
+not be the best downlink path, and with this option could be assigned a low
+priority for downlink.
+
+#### Other features
+
+- Add support for `max_mac_command_error_count` configuration.
+  ([#955](https://github.com/chirpstack/chirpstack/pull/955))
+
+### Improvements
+
+- Add `class_b_schedule_advance` config option.
+- Add device-profile option to send application payloads only using Class-B (if
+  enabled).
+- ui: Switch to plugin react, re-add `onSelect`, fix header typings, make google
+  protobuf peer dep. ([#936](https://github.com/chirpstack/chirpstack/pull/936))
+- ui: Refactor `PageHeader` component / remove pro-layout dependency.
+- Update internal dependencies.
+
+### Bugfixes
+
+- Fix sessing `timeout_after` timestamp for Class-B.
+- Fix non-TLS unix socket connections to PostgreSQL.
+  ([#912](https://github.com/chirpstack/chirpstack/pull/912))
+  - Fix `flatten_json` + remove unused `use_target_role_suffix` configuration in
+    config template.
+    ([#965](https://github.com/chirpstack/chirpstack/issues/965))
+- Fix typo in FUOTA start confirm.
+  ([#973](https://github.com/chirpstack/chirpstack/pull/973))
+- ui: Fix `isTenantGatewayAdmin` function.
+  ([#938](https://github.com/chirpstack/chirpstack/issues/938))
+
 ## v4.18.0
 
 **Upgrade note:** This release contains a dependency update related to the
