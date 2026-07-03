@@ -61,9 +61,8 @@ priority for downlink.
 - Fix sessing `timeout_after` timestamp for Class-B.
 - Fix non-TLS unix socket connections to PostgreSQL.
   ([#912](https://github.com/chirpstack/chirpstack/pull/912))
-  - Fix `flatten_json` + remove unused `use_target_role_suffix` configuration in
-    config template.
-    ([#965](https://github.com/chirpstack/chirpstack/issues/965))
+- Fix `flatten_json` + remove unused `use_target_role_suffix` configuration in
+  config template. ([#965](https://github.com/chirpstack/chirpstack/issues/965))
 - Fix typo in FUOTA start confirm.
   ([#973](https://github.com/chirpstack/chirpstack/pull/973))
 - ui: Fix `isTenantGatewayAdmin` function.
