@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.19.0 (in development)
+## v4.19.0
 
 ### Features
 
@@ -63,6 +63,8 @@ priority for downlink.
   ([#912](https://github.com/chirpstack/chirpstack/pull/912))
 - Fix `flatten_json` + remove unused `use_target_role_suffix` configuration in
   config template. ([#965](https://github.com/chirpstack/chirpstack/issues/965))
+- Fix require gateway-admin for relay-gateway update/delete.
+  ([#982](https://github.com/chirpstack/chirpstack/pull/982))
 - Fix typo in FUOTA start confirm.
   ([#973](https://github.com/chirpstack/chirpstack/pull/973))
 - ui: Fix `isTenantGatewayAdmin` function.

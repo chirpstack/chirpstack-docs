@@ -16,7 +16,7 @@
   json=false
   
   # Flatten JSON logs
-  json=false
+  flatten_json=false
 
 
 # PostgreSQL configuration.
@@ -182,6 +182,19 @@
   # server time.
   rx_timestamp_max_drift="30s"
 
+  # Device <> Gateway mapping history.
+  #
+  # This defines the gateway meta-data per uplink that ChirpStack keeps per
+  # device. Excluding Class-A (in which case ChirpStack must use one of the
+  # uplink receiving gateways), this history is used to determine the best
+  # downlink path. When selecting the downlink path, ChirpStack will prefer
+  # gatewways that occur more often in the kept history over gateway that
+  # occur less often.
+  #
+  # The configured number defines the number of uplinks for which ChirpStack
+  # stores the gateway meta-data.
+  device_gateway_mapping_history_uplinks=1
+
 
 # Network related configuration.
 [network]
@@ -252,6 +265,13 @@
   adr_plugins=[
   ]
 
+  # Max mac-command error count.
+  #
+  # When a mac-command is nACKed for more than the configured value, then
+  # ChirpStack will stop sending this mac-command to the device. This setting
+  # prevents that Chirpstack will keep sending mac-commands on every downlink
+  # in case of a malfunctioning device.
+  max_mac_command_error_count=1
 
   # Scheduler settings.
   [network.scheduler]
@@ -297,6 +317,13 @@
     # (within the same multicast-group). This value must be equal or greater than the
     # scheduler interval.
     multicast_class_b_margin="5s"
+
+    # Class-B schedule advance.
+    #
+    # This defines how much time in advance a Class-B downlink item is sent to the gateway
+    # before its ping-slot. Setting this too much in advance can cause frame-counter
+    # isses when a Class-A downlink is sent before an already scheduled Class-B ping-slot.
+    class_b_schedule_advance="5s"
 
 
 # Monitoring related configuration.
@@ -458,6 +485,14 @@
 
     # TLS key file (PKCS#8) (optional)
     tls_key=""
+
+    # Channel capacity.
+    #
+    # This defines the size of the MQTT client channel capacity. This channel
+    # is the buffer in which the client stores the incoming messages before
+    # these are consumed from the channel by ChirpStack. Under very high load,
+    # or when dealing with peaks, you might want to increase this value.
+    channel_capacity=100
 
 
     # Configuration for MQTT clients.
@@ -773,12 +808,6 @@
       #
       # If set, this will bypass the DNS resolving of the server.
       server=""
- 
-      # Use target role suffix.
-      #
-      # Depending the context of the remote server, this will add
-      # the /sns or /fns path to the server endpoint.
-      use_target_role_suffix=
  
       # CA certificate (path).
       ca_cert=""
