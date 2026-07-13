@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1.2
+
+### Improvements
+
+- Update internal dependencies.
+- Update Docker base image to Alpine v3.24.1.
+
 ## v4.1.1
 
 ### Bugfixes
