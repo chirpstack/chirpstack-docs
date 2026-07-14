@@ -1,5 +1,17 @@
 # Changelog
 
+## v4.6.0
+
+### Features
+
+- Add support for metadata commands returning (multi-line) key/value output.
+  ([#71](https://github.com/chirpstack/chirpstack-mqtt-forwarder/pull/71))
+
+### Improvements
+
+- Add additional MQTT (re)subscribe error handling / retry logic.
+- Update internal dependencies.
+
 ## v4.5.1
 
 ### Features
