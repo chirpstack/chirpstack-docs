@@ -1,5 +1,44 @@
 # Changelog
 
+## v4.12.0
+
+### Features
+
+#### Statistics
+
+This release adds the `luci-app-statistics` to all targets for tracking basic
+statistics like memory, CPU and network usage.
+
+For the RAK7289v2 and RAK7267 gateways, this also adds battery metrics (voltage,
+health and remaining charge) if a RAK battery is connected.
+
+#### Other features
+
+- Add Elecrow LR1302 configuration option.
+  ([#153](https://github.com/chirpstack/chirpstack-gateway-os/issues/153))
+
+### Updates
+
+- Update OpenWrt to v24.10.7.
+- Update ChirpStack to v4.19.0.
+- Update ChirpStack Concentratord to v4.7.1.
+- Update ChirpStack MQTT Forwarder to v4.6.0.
+- Update ChirpStack Device Profiles to latest commit.
+
+### Bugfixes
+
+#### RAK7289v2 watchdog
+
+This release adds a watchdog feeder for the RAK7289v2 gateways. Please note that
+this watchdog was added to the latest hardware revision of the RAK7289v2
+gateway. Without this feeder, the gateway will reboot every 10 minutes.
+([#155](https://github.com/chirpstack/chirpstack-gateway-os/issues/155)).
+
+#### Other Bugfixes
+
+- Fix invert logo in dark mode.
+  ([#154](https://github.com/chirpstack/chirpstack-gateway-os/issues/154))
+
 ## v4.11.0
 
 ### Node-RED removal
