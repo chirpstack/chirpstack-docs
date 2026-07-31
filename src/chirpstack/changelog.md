@@ -1,5 +1,43 @@
 # Changelog
 
+## v4.20.0 (in development)
+
+### Features
+
+#### Tenant device-profile and application admin
+
+This feature refactors the tenant device-admin such that it becomes possible to
+provide tenant-users admin access to certain device-profiles and applications.
+With this change:
+
+- Regular tenant users (non-admin) are no longer able to see applications and
+  resources under an application (devices, integrations, etc..). They can still
+  see device-profiles but can not modify these.
+- Tenant device-admins have full admin access to device-profiles and
+  applications (+ everything under an application).
+- Device-profile admins gain update permissions to the selected device-profiles
+  (but can not delete these device-profiles, as this would cascade to deleting
+  devices using these profiles too).
+- Application users gain access to the selected applications (+ everything under
+  it). Optionally, this permission can be set to read-only such that users can
+  not make modifications.
+
+Use-cases for this feature are for example providing a device vendor access to
+the device-profile such that it can make modifications to the codec if needed
+and / or provide users access to a limited set of applications.
+
+#### Other features
+
+- Add support for MQTT session expiration interval.
+  ([#993](https://github.com/chirpstack/chirpstack/pull/993))
+
+### Bugfixes
+
+- Fix `RemoveRelayDeviceRequest` REST URL.
+- Fix set default gateway priority to 10 in UI and API if undefined.
+- Fix typos in `TenantForm`.
+  ([#992](https://github.com/chirpstack/chirpstack/pull/992))
+
 ## v4.19.0
 
 ### Features
