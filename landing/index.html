@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ChirpStack open-source LoRaWAN Network Server</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
     <link href="css/style.css" rel="stylesheet" />
@@ -53,11 +53,9 @@
         >
       </div>
       <div class="chirpstack-links">
-        <strong>Home</strong> | <a href="/docs">Documentation (v4)</a> |
-        <a href="https://www.chirpstack.io/docs/v3-documentation.html"
-          >Documentation (v3)</a
-        >
-        | <a href="https://support.chirpstack.io">Community support</a>
+        <strong>Home</strong> |
+        <a href="https://www.chirpstack.io/docs/">Documentation </a> |
+        <a href="https://support.chirpstack.io">Community support</a>
       </div>
     </div>
     <div class="container">
@@ -66,20 +64,58 @@
           ChirpStack, open-source LoRaWAN<sup>&reg;</sup> Network Server
         </h1>
         <p class="lead">
-          ChirpStack is an open-source LoRaWAN Network Server which can be used
-          to setup LoRaWAN networks. ChirpStack provides a web-interface for the
-          management of gateways, devices and tenants as well to setup data
-          integrations with the major cloud providers, databases and services
-          commonly used for handling device data. ChirpStack provides a gRPC
-          based API that can be used to integrate or extend ChirpStack.
+          ChirpStack is an open-source LoRaWAN Network Server for deploying
+          LoRaWAN networks. It offers a web interface for managing gateways,
+          devices, and tenants, along with built-in integrations for major cloud
+          providers, databases, and services commonly used to handle device
+          data. Additionally, ChirpStack exposes a gRPC-based API that can be
+          used to integrate with or extend its functionality.
         </p>
         <p class="lead">
-          <a href="/docs"
-            ><button type="button" class="btn btn-primary btn-lg">
-              Documentation
-            </button></a
+          <a
+            class="btn btn-primary btn-lg"
+            href="https://www.chirpstack.io/docs/"
+            >Documentation</a
           >
+          <a class="btn btn-secondary btn-lg" href="#sponsors">Sponsors</a>
+          <a class="btn btn-secondary btn-lg" href="mailto:info@brocaar.com">
+            Commercial support
+          </a>
         </p>
+      </div>
+      <div class="row text-center">
+        <h3>Newsletter</h3>
+        <form
+          method="post"
+          action="https://listmonk.brocaar.com/subscription/form"
+          class="listmonk-form"
+        >
+          <input type="hidden" name="nonce" />
+          <input
+            type="hidden"
+            name="l"
+            value="f1b51389-3a7b-4cb8-ae45-e3d22a84b139"
+          />
+          <div class="row justify-content-center">
+            <div class="col-6">
+              Receive periodic updates about the ChirpStack project by
+              subscribing to the ChirpStack newsletter. You can unsubscribe any
+              time.
+            </div>
+            <div class="col-3">
+              <input
+                required
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="example@email.com"
+              />
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="row">
         <div class="col">
@@ -97,109 +133,152 @@
         </div>
       </div>
       <div class="row text-center">
+        <h2>Components</h2>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>ChirpStack</h4>
+          <p>
+            ChirpStack is the core-component of the ChirpStack project,
+            providing a LoRaWAN Network Server with a multi-tenant
+            web-interface, integrations to major platforms and API endpoints for
+            integration in other systems.
+          </p>
+        </div>
+        <div class="col">
+          <h4>Concentratord</h4>
+          <p>
+            Concentratord provides a gateway daemon exposing the Semtech SX1301,
+            SX1302/3 and 2.4GHz hardware abstractions as a generic ZeroMQ-based
+            API. This generic API is used by the ChirpStack MQTT Forwarder, and
+            can be used by other application for gateway monitoring.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>MQTT Forwarder</h4>
+          <p>
+            The ChirpStack MQTT Forwarder forwards LoRa gateway messages
+            (uplink, downlink, statistics) to a MQTT broker either using
+            size-efficient Protobuf or as JSON. It uses the Concentratord or
+            Semtech UDP Packet Forwarder as backend.
+          </p>
+        </div>
+        <div class="col">
+          <h4>Gateway OS</h4>
+          <p>
+            Open-source firmware for LoRa gateways including the ChirpStack
+            Concentratord and ChirpStack MQTT Forwarder, supporting Raspberry
+            Pi-based gateways, RAK, Dragino and Seeed. Optionally with
+            ChirpStack pre-installed it provides a complete ready-to-use
+            solution for testing and local deployments.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h4>Gateway Mesh</h4>
+          <p>
+            The ChirpStack Gateway Mesh provides a mesh solution for extending
+            LoRaWAN coverage through (solar powered) Relay gateways. The
+            ChirpStack Gateway Mesh does not require end-device changes, and is
+            therefore compatible with all existing LoRaWAN devices.
+          </p>
+        </div>
+        <div class="col">
+          <h4>Gateway Bridge</h4>
+          <p>
+            In case the ChirpStack MQTT Forwarder can't be installed on the
+            gateway, the ChirpStack Gateway Bridge allows gateways to
+            communicate directly using the Semtech UDP Packet Forwarder or
+            Semtech Basics Station Websocket protocols.
+          </p>
+        </div>
+      </div>
+      <div class="row text-center">
         <div class="col">
           <h2>Features</h2>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h4>Class-A support</h4>
-          End-devices of Class A allow for bi-directional communications whereby
-          each end-device‘s uplink transmission is followed by two short
-          downlink receive windows. The transmission slot scheduled by the
-          end-device is based on its own communication needs with a small
-          variation based on a random time basis (ALOHA-type of protocol).
-          <p></p>
-        </div>
-        <div class="col">
-          <h4>Class-B support</h4>
+          <h4>Class-A / -B / -C</h4>
           <p>
-            End-devices of Class B allow for more receive slots. In addition to
-            the Class A random receive windows, Class B devices open extra
-            receive windows at scheduled times. In order for the End-device to
-            open it receive window at the scheduled time it receives a time
-            synchronized Beacon from the gateway.
+            ChirpStack supports unicast Class-A, Class-B and Class-C devices.
+            For for multicast Class-B and Class-C is supported.
           </p>
         </div>
         <div class="col">
-          <h4>Class-C support</h4>
+          <h4>FUOTA</h4>
           <p>
-            End-devices of Class C have nearly continuously open receive
-            windows, only closed when transmitting. Class C end-device will use
-            more power to operate than Class A or Class B but they offer the
-            lowest latency for server to end-device communication.
+            ChirpStack has built-in support for FUOTA (both v1 as v2
+            specifications). Deployment progress can be monitored through
+            web-interface and API.
+          </p>
+        </div>
+        <div class="col">
+          <h4>Adaptive data-rate (ADR)</h4>
+          <p>
+            Adaptive data-rate support is provided out-of-the-box for LoRa and
+            LR-FHSS modulations. Custom algorithms are supported through
+            (JavaScript-based) plugins.
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h4>Adaptive data-rate</h4>
+          <h4>Multi-region</h4>
           <p>
-            When the end-device has ADR enabled, the ChirpStack LoRaWAN
-            network-server will ensure that the device will operate using the
-            most efficient data-rate and tx-power. this will not only save
-            energy at the device-side, but will also optimize the usage of the
-            radio spectrum, lowering the risk of collisions.
+            ChirpStack supports serving multiple regions simultaniously, it also
+            supports serving multiple configurations of the same region
+            simultaniously.
           </p>
         </div>
         <div class="col">
-          <h4>Live frame-logging</h4>
+          <h4>Tenants and permissions</h4>
           <p>
-            The ChirpStack LoRaWAN application-server provides live
-            frame-logging per gateway and device. It will display all the RX /
-            TX meta-data, together with the raw LoRaWAN PHYPayload in a readable
-            format. It is like Wireshark for LoRaWAN!
+            Gateways and devices can be isolated per tenant. Within a tenant
+            users can be restricted to certain resources within a tenant
+            (gateways, device-profiles, applications and devices).
           </p>
         </div>
         <div class="col">
-          <h4>Channel (re)configuration</h4>
+          <h4>Realtime frames and events</h4>
           <p>
-            Whether you want to use a sub-set of the LoRaWAN defined channels
-            (e.g. for the US band) or want to configure additional channels
-            (e.g. for the EU band), the ChirpStack LoRaWAN network-server will
-            make sure the device stays always in sync with the network
-            configured channels (using the CFList field and / or mac-commands).
+            The web-interface provides real-time access to LoRaWAN frames and
+            published integration events for debugging.
           </p>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <h4>Multi-tenant</h4>
+          <h4>MAC-state synchronization</h4>
           <p>
-            The ChirpStack LoRaWAN application-server supports the creation of
-            multiple organizations to which (administrator) users can be
-            assigned. By integrating the user-accounts into the MQTT broker
-            authentication, organizations will only see their own data.
+            ChirpStack keeps an internal state of the device, and will send
+            mac-commands in case its state no longer reflects the desired
+            configuration (RX / TX parameters, channel configuration, ...).
           </p>
         </div>
         <div class="col">
-          <h4>APIs and integration</h4>
+          <h4>APIs</h4>
           <p>
-            ChirpStack provides gRPC and REST APIs for integration with external
-            services. By default all application data is published to a MQTT
-            broker, however integrations are available for various
-            cloud-providers, databases and visualization platforms.
+            gRPC and REST APIs are provided, such that ChirpStack can be
+            embedded into external solutions. As the web-interface is built on
+            top of the Chirpstack API, all web-interface actions can be
+            programmatically performed through the API.
           </p>
         </div>
         <div class="col">
-          <h4>LoRaWAN 1.0 and 1.1 compatible</h4>
+          <h4>And there is more...</h4>
           <p>
-            The ChirpStack LoRaWAN network-server supports LoRaWAN 1.0 and
-            LoRaWAN 1.1 devices simultaniously, including all LoRaWAN Regional
-            Parameter Specification revisions and bands.
+            ChirpStack offers many more features, from SSO support through
+            OpenID Connect, many integrations, passive-roaming support, ...
+            Please refer to the
+            <a href="https://www.chirpstack.io/docs/">documentation</a> for more
+            information.
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <h4>And there is much more...</h4>
-          <p>
-            Please refer to the <a href="/docs/">ChirpStack documentation</a>
-            to learn more about all the features provided!
-          </p>
-        </div>
-        <div class="col"></div>
-        <div class="col"></div>
       </div>
       <div class="row">
         <div class="col">
@@ -231,7 +310,7 @@
           <h4>Commercial support</h4>
           <p>
             For commercial support, contact
-            <a href="http://www.brocaar.com">Orne Brocaar</a>, the author of
+            <a href="mailto:info@brocaar.com">Orne Brocaar</a>, the author of
             ChirpStack.
           </p>
         </div>
@@ -241,7 +320,7 @@
           <hr />
         </div>
       </div>
-      <div class="row text-center">
+      <div class="row text-center" id="sponsors">
         <div class="col">
           <h2>GitHub sponsors</h2>
         </div>
