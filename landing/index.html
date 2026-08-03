@@ -25,10 +25,58 @@
 
       gtag("config", "G-YC61K7WX95");
     </script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
 
   <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg" id="chirpstack-header">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img class="chirpstack-logo" src="img/logo.png" alt="ChirpStack" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.chirpstack.io/docs/"
+                >Documentation</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://support.chirpstack.io"
+                >Community support</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/sponsors/chirpstack/"
+                >Sponsoring</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/chirpstack/"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--
     <div id="chirpstack-header">
       <div class="chirpstack-logo">
         <a href="/">
@@ -58,7 +106,8 @@
         <a href="https://support.chirpstack.io">Community support</a>
       </div>
     </div>
-    <div class="container">
+    -->
+    <div class="container content">
       <div class="row text-center">
         <h1 class="display-6">
           ChirpStack, open-source LoRaWAN<sup>&reg;</sup> Network Server
@@ -97,12 +146,12 @@
             value="f1b51389-3a7b-4cb8-ae45-e3d22a84b139"
           />
           <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
               Receive periodic updates about the ChirpStack project by
               subscribing to the ChirpStack newsletter. You can unsubscribe any
               time.
             </div>
-            <div class="col-3">
+            <div class="col-6 col-md-3">
               <input
                 required
                 type="email"
@@ -136,7 +185,7 @@
         <h2>Components</h2>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-6">
           <h4>ChirpStack</h4>
           <p>
             ChirpStack is the core-component of the ChirpStack project,
@@ -145,7 +194,7 @@
             integration in other systems.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-6">
           <h4>Concentratord</h4>
           <p>
             Concentratord provides a gateway daemon exposing the Semtech SX1301,
@@ -154,9 +203,7 @@
             can be used by other application for gateway monitoring.
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-6">
           <h4>MQTT Forwarder</h4>
           <p>
             The ChirpStack MQTT Forwarder forwards LoRa gateway messages
@@ -165,7 +212,7 @@
             Semtech UDP Packet Forwarder as backend.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-6">
           <h4>Gateway OS</h4>
           <p>
             Open-source firmware for LoRa gateways including the ChirpStack
@@ -175,9 +222,7 @@
             solution for testing and local deployments.
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-6">
           <h4>Gateway Mesh</h4>
           <p>
             The ChirpStack Gateway Mesh provides a mesh solution for extending
@@ -186,7 +231,7 @@
             therefore compatible with all existing LoRaWAN devices.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-6">
           <h4>Gateway Bridge</h4>
           <p>
             In case the ChirpStack MQTT Forwarder can't be installed on the
@@ -195,21 +240,19 @@
             Semtech Basics Station Websocket protocols.
           </p>
         </div>
-      </div>
-      <div class="row text-center">
         <div class="col">
           <h2>Features</h2>
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Class-A / -B / -C</h4>
           <p>
             ChirpStack supports unicast Class-A, Class-B and Class-C devices.
             For for multicast Class-B and Class-C is supported.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>FUOTA</h4>
           <p>
             ChirpStack has built-in support for FUOTA (both v1 as v2
@@ -217,7 +260,7 @@
             web-interface and API.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Adaptive data-rate (ADR)</h4>
           <p>
             Adaptive data-rate support is provided out-of-the-box for LoRa and
@@ -225,9 +268,7 @@
             (JavaScript-based) plugins.
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Multi-region</h4>
           <p>
             ChirpStack supports serving multiple regions simultaniously, it also
@@ -235,7 +276,7 @@
             simultaniously.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Tenants and permissions</h4>
           <p>
             Gateways and devices can be isolated per tenant. Within a tenant
@@ -243,16 +284,14 @@
             (gateways, device-profiles, applications and devices).
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Realtime frames and events</h4>
           <p>
             The web-interface provides real-time access to LoRaWAN frames and
             published integration events for debugging.
           </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>MAC-state synchronization</h4>
           <p>
             ChirpStack keeps an internal state of the device, and will send
@@ -260,7 +299,7 @@
             configuration (RX / TX parameters, channel configuration, ...).
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>APIs</h4>
           <p>
             gRPC and REST APIs are provided, such that ChirpStack can be
@@ -269,7 +308,7 @@
             programmatically performed through the API.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>And there is more...</h4>
           <p>
             ChirpStack offers many more features, from SSO support through
@@ -291,7 +330,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Report bugs</h4>
           <p>
             Please report a bug by creating an issue at the related GitHub
@@ -299,14 +338,14 @@
             each component.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Community support</h4>
           <p>
             For questions and community support, please refer to
             <a href="https://support.chirpstack.io">support.chirpstack.io</a>.
           </p>
         </div>
-        <div class="col">
+        <div class="col-12 col-sm-4">
           <h4>Commercial support</h4>
           <p>
             For commercial support, contact
@@ -422,10 +461,5 @@
         <div class="col"></div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
