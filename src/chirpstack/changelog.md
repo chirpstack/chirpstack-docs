@@ -38,6 +38,14 @@ and / or provide users access to a limited set of applications.
 - Fix typos in `TenantForm`.
   ([#992](https://github.com/chirpstack/chirpstack/pull/992))
 
+## v4.19.1
+
+### Bugfixes
+
+- Set default gateway priority to 10 in UI and API if undefined.
+- Add `unknown_gateway_downlink_priority` config option (with 10 as default) for
+  setting downlink priority of unknonwn gateways (if enabled).
+
 ## v4.19.0
 
 ### Features
