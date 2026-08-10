@@ -1,5 +1,13 @@
 # Changelog
 
+## v4.6.1
+
+### Improvements
+
+- Treat all-zeros Gateway ID as error.
+  ([#73](https://github.com/chirpstack/chirpstack-mqtt-forwarder/issues/73))
+- Update internal dependencies.
+
 ## v4.6.0
 
 ### Features
