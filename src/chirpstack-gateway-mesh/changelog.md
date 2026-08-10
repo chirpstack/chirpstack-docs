@@ -1,5 +1,18 @@
 # Changelog
 
+## v4.1.4
+
+### Improvements
+
+- Add `uplink_id` to dropped package trace.
+  ([#122](https://github.com/chirpstack/chirpstack-gateway-mesh/issues/122))
+- Update internal dependencies.
+
+### Bugfixes
+
+- Fix setup order (setup backend before proxy).
+  ([#130](https://github.com/chirpstack/chirpstack-gateway-mesh/issues/130))
+
 ## v4.1.3
 
 ### Improvements
