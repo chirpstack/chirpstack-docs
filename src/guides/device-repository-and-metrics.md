@@ -1,8 +1,8 @@
 # Device repository and metrics
 
 This guide explains how to import the
-[lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices) Device
-Repository and to how to visualize the decoded data directly within the
+[chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles)
+repository and to how to visualize the decoded data directly within the
 ChirpStack web-interface. In this guide we will use the
 [Tektelic Smart Room Sensor](https://tektelic.com/products/sensors/comfort-base-smart-room-sensor/)
 as an example to visualize the temperature and humidity measurements, but it can
@@ -14,14 +14,15 @@ be easily substituted by any other device present in the repository.
 
 ## Device Repository
 
-The [lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
-Device Repository contains information about many LoRaWAN devices. For most
-devices a payload codec is included, which makes it really easy as you will
-immediately see the decoded payload, rather than a binary blob.
+The
+[chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles)
+repository contains information about many LoRaWAN devices. For most devices a
+payload codec is included, which makes it really easy as you will immediately
+see the decoded payload, rather than a binary blob.
 
 ChirpStack provides support for importing this repository into the ChirpStack
 database. Once imported, you will find the information about these devices under
-[device-profile templates](../chirpstack/use/device-profile-templates.md).
+[Device Profiles](../chirpstack/use/device-profiles.md).
 
 ### Importing
 
@@ -39,7 +40,7 @@ example code, then you need to execute the following command to import the
 repository:
 
 ```bash
-make import-lorawan-devices
+make import-device-profiles
 ```
 
 Note that this requires that you have the `make` and `git` commands installed.
@@ -51,12 +52,9 @@ packages, then you need to execute the following command to import the
 repository:
 
 ```bash
-git clone https://github.com/brocaar/lorawan-devices /tmp/lorawan-devices
-chirpstack -c /etc/chirpstack import-ttn-lorawan-devices -d /tmp/lorawan-devices
+git clone https://github.com/chirpstack/chirpstack-device-profiles /tmp/chirpstack-device-profiles
+chirpstack -c /etc/chirpstack import-device-profiles -d /tmp/chirpstack-device-profiles
 ```
-
-**Note:** an older snapshot of the `lorawan-devices` repository is cloned as the
-latest revision no longer contains a `LICENSE` file.
 
 ## Connecting the device
 
