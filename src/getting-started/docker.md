@@ -35,7 +35,7 @@ this can be changed to any supported region.
 Execute the following command to start ChirpStack and its dependencies:
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 Please note that the first time you execute this command, there might be some
@@ -80,19 +80,19 @@ The example Compose environment provides an instance of the ChirpStack Gateway
 Bridge with Basics Station backend listening on port `3001`. Please consult the
 documentation of your gateway for configuration instructions.
 
-## Import LoRaWAN device repository
+## Import ChirpStack device profiles
 
-To import the TTN
-[lorawan-devices](https://github.com/TheThingsNetwork/lorawan-devices)
+To import the
+[chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles)
 repository (optional step), run the following command:
 
 ```bash
 make import-device-profiles
 ```
 
-This will clone the `lorawan-devices` repository and execute the import command
-of ChirpStack. Please note that for this step, you need to have the `git` and
-`make` commands installed.
+This will clone the `chirpstack-device-profiles` repository and execute the
+import command of ChirpStack. Please note that for this step, you need to have
+the `git` and `make` commands installed.
 
 ## Login
 
