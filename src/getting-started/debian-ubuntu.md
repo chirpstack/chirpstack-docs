@@ -26,6 +26,9 @@ sudo apt install \
 	postgresql
 ```
 
+**Note:** `redis-server` and `redis-tools` can be replaced by `valkey-server`
+and `valkey-tools` if Valkey is preferred over Redis.
+
 ## PostgreSQL setup
 
 To enter the command line utility for PostgreSQL:
