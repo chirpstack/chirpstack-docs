@@ -42,3 +42,18 @@ integrate or extend ChirpStack.
 - [x] RP002-1.0.1
 - [x] RP002-1.0.2
 - [x] RP002-1.0.3
+- [x] RP002-1.0.4
+
+### Application layer packages
+
+- [x] TS003-1.0.0 (Application Layer Clock Synchronization)
+- [x] TS003-2.0.0 (Application Layer Clock Synchronization)
+- [x] TS004-1.0.0 (Fragmented Data Block Transport)
+- [x] TS004-2.0.0 (Fragmented Data Block Transport)
+- [x] TS005-1.0.0 (Remote Multicast Setup)
+- [x] TS005-2.0.0 (Remote Multicast Setup)
+
+### Other supported specifications
+
+- [x] TS011-1.0.0 (Relay)
+- [x] TS013-1.0.0 (Payload Codec API)
