@@ -73,10 +73,15 @@ sudo mkdir -p /etc/apt/keyrings/
 sudo sh -c 'wget -q -O - https://artifacts.chirpstack.io/packages/chirpstack.key | gpg --dearmor > /etc/apt/keyrings/chirpstack.gpg'
 ```
 
-Add the repository to the repository list:
+Add the ChirpStack repository by creating a file called
+`/etc/apt/sources.list.d/chirpstack.sources` with the following content:
 
-```bash
-echo "deb [signed-by=/etc/apt/keyrings/chirpstack.gpg] https://artifacts.chirpstack.io/packages/4.x/deb stable main" | sudo tee /etc/apt/sources.list.d/chirpstack.list
+```
+Types: deb
+URIs: https://artifacts.chirpstack.io/packages/4.x/deb
+Suites: stable
+Components: main
+Signed-By: /etc/apt/keyrings/chirpstack.gpg
 ```
 
 Update the apt package cache:
