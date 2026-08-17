@@ -20,7 +20,7 @@
 - [Guides](./guides/index.md)
   - [Connecting a gateway](./guides/connect-gateway.md)
   - [Connecting a device](./guides/connect-device.md)
-  - [Device repository and metrics](./guides/device-repository-and-metrics.md)
+  - [Device profiles and metrics](./guides/device-repository-and-metrics.md)
   - [Mosquitto TLS configuration](./guides/mosquitto-tls-configuration.md)
   - [Node-RED integration](./guides/node-red-integration.md)
   - [ThingsBoard integration](./guides/thingsboard.md)

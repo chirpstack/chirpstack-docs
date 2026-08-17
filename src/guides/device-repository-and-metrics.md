@@ -1,4 +1,4 @@
-# Device repository and metrics
+# Device profiles and metrics
 
 This guide explains how to import the
 [chirpstack-device-profiles](https://github.com/chirpstack/chirpstack-device-profiles)
