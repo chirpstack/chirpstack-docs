@@ -14,7 +14,7 @@
 - [Docker](./getting-started/docker.md)
 - [Debian / Ubuntu](./getting-started/debian-ubuntu.md)
 - [Raspberry Pi](./getting-started/raspberry-pi.md)
-- [Ansible and Vagrant](./getting-started/ansible-vagrant.md)
+- [Ansible](./getting-started/ansible.md)
 - [Add devices to device profiles](./getting-started/add-devices-to-device-profiles.md)
 
 - [Guides](./guides/index.md)
