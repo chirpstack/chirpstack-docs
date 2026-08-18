@@ -5,6 +5,7 @@
   src = "src"
 
 [output.html]
+  site-url = "/docs/"
   no-section-label = true
   additional-css = ["theme/css/chirpstack.css"]
   git-repository-url = "https://github.com/chirpstack/chirpstack-docs"
