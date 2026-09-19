@@ -38,6 +38,13 @@ and / or provide users access to a limited set of applications.
 - Fix typos in `TenantForm`.
   ([#992](https://github.com/chirpstack/chirpstack/pull/992))
 
+## v4.19.2
+
+### Bugfixes
+
+- Apply the validated tenant_id to the MulticastGroupService::list query
+  ([cec1896](https://github.com/chirpstack/chirpstack/commit/cec18962f91d2aadf00c449f1ce30bcd8237758b)).
+
 ## v4.19.1
 
 ### Bugfixes
