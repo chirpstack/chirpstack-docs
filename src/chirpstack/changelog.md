@@ -30,13 +30,30 @@ and / or provide users access to a limited set of applications.
 
 - Add support for MQTT session expiration interval.
   ([#993](https://github.com/chirpstack/chirpstack/pull/993))
+- Add app-layer parameters to device-profile import.
+- Warn users on insecure `api.secret` + auto-generate secret on Debian / Ubuntu
+  install. ([#1025](https://github.com/chirpstack/chirpstack/pull/1025))
 
 ### Bugfixes
 
 - Fix `RemoveRelayDeviceRequest` REST URL.
-- Fix set default gateway priority to 10 in UI and API if undefined.
+- Fix set default gateway downlink priority to 10 in UI and API if undefined.
+- Add config option to set downlink priority for unknown gateways.
 - Fix typos in `TenantForm`.
   ([#992](https://github.com/chirpstack/chirpstack/pull/992))
+- Do not count `LinkADRAns` with nACK in case the error is recoverable.
+- Fix list multicast-groups / fuota deployments when there are no applications.
+  ([#1018](https://github.com/chirpstack/chirpstack/issues/1018))
+- Fix set `dev_eui_relayed` when saving relayed join-accept downlink-frame.
+  ([#1014](https://github.com/chirpstack/chirpstack/pull/1014))
+- Fix enable KR920 DR12 and DR13 for downlink.
+  ([#1023](https://github.com/chirpstack/chirpstack/pull/1023))
+- Fix using the end-device data-rate for relayed uplinks in ADR handling.
+  ([#1026](https://github.com/chirpstack/chirpstack/pull/1026))
+- Fix validate that fuota payload is not empty.
+  ([#1031](https://github.com/chirpstack/chirpstack/pull/1031))
+- Fix delete multicast-group after session timeout on `FragStatusReq` retry.
+  ([#1033](https://github.com/chirpstack/chirpstack/pull/1033))
 
 ## v4.19.2
 
