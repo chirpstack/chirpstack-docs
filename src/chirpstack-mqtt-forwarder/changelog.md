@@ -1,5 +1,16 @@
 # Changelog
 
+## v4.7.0 (in development)
+
+### Features
+
+- Support reloading of TLS certificate using `SIGHUP` signal.
+
+### Improvements
+
+- Migrate from `rumqttc` to `rumqttc-next` (resolving several security issues in
+  dependency-chain).
+
 ## v4.6.1
 
 ### Improvements
