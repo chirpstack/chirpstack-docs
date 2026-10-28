@@ -32,17 +32,18 @@ significant ChirpStack feature:
 <div class="sponsors">
 
 [![RAK](./sponsors/rak.png)](https://www.rakwireless.com/en-us)
+[![Nexelec](./sponsors/nexelec.png)](https://nexelec.eu/en)
+
 [![Afnic](./sponsors/afnic.jpg)](https://www.afnic.fr/)
-
 [![Miitors](./sponsors/miitors.png)](https://www.miitors.com/)
+
 [![Wifx](./sponsors/wifx.png)](https://www.lorixone.io/)
-
 [![Thingstream](./sponsors/thingstream.png)](https://thingstream.io/)
+
 [![F3 Wireless](./sponsors/f3.png)](http://f3wireless.com/)
-
 [![TWTG](./sponsors/twtg.png)](https://www.twtg.io/)
-[![CableLabs](./sponsors/cablelabs.png)](https://www.cablelabs.com/)
 
+[![CableLabs](./sponsors/cablelabs.png)](https://www.cablelabs.com/)
 [![SIDN Fonds](./sponsors/sidn_fonds.png)](https://www.sidnfonds.nl/)
 
 </div>
