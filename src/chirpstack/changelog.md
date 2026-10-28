@@ -1,5 +1,23 @@
 # Changelog
 
+## v4.20.1 (in development)
+
+### Improvements
+
+- Replace `rumqttc` dependency with `rumqttc-next` (solving several security
+  issues in its dependencies).
+- Implement retry for `FragStatusReq` in FUOTA flow (before it only tried once).
+- Accept caller-supplied queue-item ID on enqueue.
+  ([#1054](https://github.com/chirpstack/chirpstack/pull/1054)).
+- Add Redis Sentinal support.
+  ([#1043](https://github.com/chirpstack/chirpstack/pull/1043)).
+  - Make batch-size of stream reads configurable.
+    ([#1022](https://github.com/chirpstack/chirpstack/pull/1022))
+
+### Bugfixes
+
+- Only increment retries in FUOTA flow if it is re-sending commands.
+
 ## v4.20.0
 
 ### Features
