@@ -1,6 +1,6 @@
 # Changelog
 
-## v4.20.0 (in development)
+## v4.20.0
 
 ### Features
 
@@ -33,6 +33,10 @@ and / or provide users access to a limited set of applications.
 - Add app-layer parameters to device-profile import.
 - Warn users on insecure `api.secret` + auto-generate secret on Debian / Ubuntu
   install. ([#1025](https://github.com/chirpstack/chirpstack/pull/1025))
+
+### Improvements
+
+- Update cross-compiling Dockerfiles after `cross-rs` base-image updates.
 
 ### Bugfixes
 
