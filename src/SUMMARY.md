@@ -37,6 +37,7 @@
   - [Multitech](./gateway-configuration/multitech.md)
   - [RAK](./gateway-configuration/rak.md)
   - [Tektelic](./gateway-configuration/tektelic.md)
+  - [Xunlink](./gateway-configuration/xunlink.md)
 
 # ChirpStack
 
