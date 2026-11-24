@@ -1,22 +1,43 @@
 # Changelog
 
-## v4.20.1 (in development)
+## v4.20.1
+
+### Features
+
+- Add Redis Sentinel support.
+  (#[1043](https://github.com/chirpstack/chirpstack/pull/1043))
+- Allow creating global device-profiles through API.
+  ([#1071](https://github.com/chirpstack/chirpstack/pull/1071))
+- Add API option to delete single item from device queue.
+  ([#1081](https://github.com/chirpstack/chirpstack/pull/1081))
 
 ### Improvements
 
-- Replace `rumqttc` dependency with `rumqttc-next` (solving several security
-  issues in its dependencies).
 - Implement retry for `FragStatusReq` in FUOTA flow (before it only tried once).
 - Accept caller-supplied queue-item ID on enqueue.
   ([#1054](https://github.com/chirpstack/chirpstack/pull/1054)).
 - Add Redis Sentinal support.
   ([#1043](https://github.com/chirpstack/chirpstack/pull/1043)).
-  - Make batch-size of stream reads configurable.
-    ([#1022](https://github.com/chirpstack/chirpstack/pull/1022))
+- Make batch-size of stream reads configurable.
+  ([#1022](https://github.com/chirpstack/chirpstack/pull/1022))
+
+### Bugfixes
+
+- Set FUOTA steps in devices to _completed_at even in case of an error.
 
 ### Bugfixes
 
 - Only increment retries in FUOTA flow if it is re-sending commands.
+- Use `BEGIN IMMEDIATE` for read-then-write SQLite transactions.
+  ([#1065](https://github.com/chirpstack/chirpstack/pull/1065))
+- Mask out RFU bits of `DevStatusAnsPayload`.
+- Add `google.api.http` options to FUOTA methods (for REST API).
+- Use the RX timestamp rules for the uplink frame log time.
+  ([#1080](https://github.com/chirpstack/chirpstack/pull/1080))
+- Fix `UpdateDeployment` method authorization of FUOTA API. (@BennourMA)
+- Fix read-only API key validation for `ValidateUsersAccess`. (@BennourMA)
+- Fix filtering tenants in `ListByDevAddrPrefixOverlap` API method for non-admin
+  users. (@BennourMA)
 
 ## v4.20.0
 
