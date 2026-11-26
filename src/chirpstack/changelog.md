@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.20.2
+
+### Bugfixes
+
+- Fix segfault in SQLite version.
+  ([#1086](https://github.com/chirpstack/chirpstack/issues/1086))
+
 ## v4.20.1
 
 ### Features
